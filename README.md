@@ -29,6 +29,7 @@ The static assets are in the `static` directory. The layout and templates are in
         |__ footer.html     -> Footer that will appear in all the pages
         |__ layout.html     -> Main layout of your wiki. All the pages will follow its structure
         |__ menu.html       -> Menu that will appear in all the pages
+        |__ wiki-tools.html -> Wiki tools to help getting started with this template
         |__ pages/          -> Directory for all the pages
             |__ *.html      -> Actual pages of your wiki
     |__ .gitignore          -> Tells GitLab which files/directories should not be uploaded to the repository

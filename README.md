@@ -1,4 +1,4 @@
-# iGEM TeamName Wiki
+# Team City-of-London-UK 2023 Wiki
 
 This repository **MUST** contain all coding assets to generate your team's wiki (HTML, CSS, JavaScript, TypeScript, Python, etc).
 
@@ -52,8 +52,8 @@ To work locally with this project, follow the steps below:
 
 #### Install
 ```bash
-git clone https://gitlab.igem.org/templates/wiki-frozen-flask.git
-cd wiki-frozen-flask
+git clone https://gitlab.igem.org/2023/city-of-london-uk.git
+cd city-of-london-uk
 python3 -m venv venv
 . venv/bin/activate # on Linux, MacOS; or
 . venv\Scripts\activate # on Windows

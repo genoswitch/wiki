@@ -23,8 +23,8 @@ def serve():
     freezer.run()
 
 @app.route('/')
-def index():
-    return render_template('pages/index.html')
+def home():
+    return render_template('pages/home.html')
 
 @app.route('/<page>')
 def pages(page):

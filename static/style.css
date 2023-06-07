@@ -1,7 +1,7 @@
 body { padding-top: 56px; }
 .left-aligned { margin-left: auto; }
 .bg-dark { background-color: #343a40 !important; }
-.bg-hero { background-color: #7952b3; }
+.bg-hero { background-color: #45b06cff; }
 
 /* CALLOUT */
 .bd-callout { padding:1.25rem; margin-top:1.25rem; margin-bottom:1.25rem; border:1px solid #e9ecef; border-left-width:.25rem; border-radius:.25rem }

@@ -29,7 +29,6 @@ The static assets are in the `static` directory. The layout and templates are in
         |__ footer.html     -> Footer that will appear in all the pages
         |__ layout.html     -> Main layout of your wiki. All the pages will follow its structure
         |__ menu.html       -> Menu that will appear in all the pages
-        |__ wiki-tools.html -> Wiki tools to help getting started with this template
         |__ pages/          -> Directory for all the pages
             |__ *.html      -> Actual pages of your wiki
     |__ .gitignore          -> Tells GitLab which files/directories should not be uploaded to the repository
@@ -49,14 +48,15 @@ The static assets are in the `static` directory. The layout and templates are in
 
 ### Building locally (advanced users)
 
-To work locally with this project, you'll have to follow the steps below:
+To work locally with this project, follow the steps below:
 
 #### Install
 ```bash
-git clone https://gitlab.igem.org/templates/wiki-frozen-flask
-cd example
+git clone https://gitlab.igem.org/templates/wiki-frozen-flask.git
+cd wiki-frozen-flask
 python3 -m venv venv
-. venv/bin/activate
+. venv/bin/activate # on Linux, MacOS; or
+. venv\Scripts\activate # on Windows
 pip install -r dependencies.txt
 ```
 

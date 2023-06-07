@@ -13,7 +13,7 @@
     <!-- Custom CSS -->
     <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">
 
-    <title>{% block title %}{% endblock %} | TeamName - iGEM 2022</title>
+    <title>{% block title %}{% endblock %} | TeamName - iGEM 2023</title>
 
 </head>
 <body>
@@ -39,9 +39,6 @@
 
   <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
   {% include 'footer.html' %}
-
-  <!-- Wiki Tools: Teams are allowed to remove it -->
-  {% include 'wiki-tools.html' %}
 
   <!-- Bootstrap Bundle with Popper -->
   <script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>

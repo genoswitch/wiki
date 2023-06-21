@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "graphql.vscode-graphql",
+        "dsznajder.es7-react-js-snippets",
+        "graphql.vscode-graphql-syntax"
+    ]
+}

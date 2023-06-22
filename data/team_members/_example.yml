@@ -20,3 +20,6 @@ description: "Example description"
 
 # Optional: Fixed position in the team member list
 position: 1
+
+# Invalid keys will be ignored.
+invalidKey: uwu

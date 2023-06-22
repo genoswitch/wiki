@@ -1,25 +1,10 @@
+import fs from "fs"
+
 import { GatsbyNode } from "gatsby"
 
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
-    actions.createTypes(`
-        # Define (override the auto-generated) the type for TeamMember
-
-        # Opt out of type inferrance using @dontInfer
-        # (https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#opting-out-of-type-inference)
-        # This means we must explicitly provide typedefs for each field.
-        # The effect of this is that extra keys will be ignored by GraphQL.
-
-        type TeamMember implements Node @dontInfer {
-            # Non-nullable fields
-            name: String!
-            title: String!
-            picturePath: String!
-            tags: [String]!
-            description: String!
-
-            # Position is the only nullable (optional) field
-            position: Int
-        }
-    
-    `)
+    // Import typedefs from file
+    // Example: https://github.com/gatsbyjs/gatsby/blob/fd4d702bf3e969bed1289e62106314be9fd41345/examples/using-type-definitions/gatsby-node.js#L55
+    const teamMemberTypeDef = fs.readFileSync("./src/graphql/teamMember.gql", { encoding: "utf-8" });
+    actions.createTypes(teamMemberTypeDef);
 }

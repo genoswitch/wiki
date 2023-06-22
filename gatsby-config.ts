@@ -13,9 +13,6 @@ const config: GatsbyConfig = {
   plugins: [
     {
       resolve: "gatsby-transformer-yaml",
-      options: {
-        typeName: "TeamMember"
-      }
     },
     {
       resolve: "gatsby-source-filesystem",

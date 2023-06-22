@@ -34,7 +34,7 @@ export default class TeamPage extends React.PureComponent<PageProps<Queries.GetA
         this.members = this.props.pageResources.json.data;
 
         // Iterate over each member and create a entry for each.
-        this.members.allTeamMember.nodes.forEach((member: TeamMemberNode) => {
+        this.members.allTeamMemberYaml.nodes.forEach((member: TeamMemberNode) => {
             console.log(`Adding entry for '${member.name}'`)
             this.entries.push(
                 <CreditEntry member={member} assetBasePath={this.props.pageResources.json.data.site?.siteMetadata?.assetBasePath} />
@@ -68,7 +68,7 @@ export default class TeamPage extends React.PureComponent<PageProps<Queries.GetA
  */
 export const query = graphql`
     query GetAllTeamMembersAndAssetBasePath {
-        allTeamMember(sort: {position: ASC}, filter: {name: {ne: "Example"}}) {
+        allTeamMemberYaml(sort: {position: ASC}, filter: {name: {ne: "Example"}}) {
             nodes {
                 name
                 picturePath

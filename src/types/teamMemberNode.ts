@@ -6,6 +6,6 @@ interface TeamMemberUnnnededKeys {
 }
 
 /**
- * {@link Queries.TeamMember} without GraphQL specific keys
+ * {@link Queries.TeamMemberYaml} without GraphQL specific keys
  */
-export type TeamMemberNode = Omit<Queries.TeamMember, keyof TeamMemberUnnnededKeys>
+export type TeamMemberNode = Omit<Queries.TeamMemberYaml, keyof TeamMemberUnnnededKeys>

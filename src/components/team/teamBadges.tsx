@@ -41,7 +41,7 @@ const tagColors = {
 	leaders: "primary",
 };
 
-export type TeamBadgesProps = { tags: TeamTagColourNode[] };
+export type TeamBadgesProps = { tags: TeamTagColourNode[], sortAlphabetically?: boolean };
 
 interface TeamBadgesState {
 	isReady: boolean;
@@ -63,10 +63,13 @@ export class TeamBadges extends React.Component<TeamBadgesProps, TeamBadgesState
 	// Tags is sometimes empty. problem upstream.
 	componentDidMount(): void {
 		if (this.props.tags) {
-			// Sort tags alphabetically by tag name
-			this.props.tags.sort((a, b) => {
-				return a.tag.localeCompare(b.tag);
-			});
+
+			if (this.props.sortAlphabetically) {
+				// Sort tags alphabetically by tag name
+				this.props.tags.sort((a, b) => {
+					return a.tag.localeCompare(b.tag);
+				});
+			}
 
 			// Iterate over each tag and construct a badge.
 			this.props.tags.forEach(tag => {

@@ -16,7 +16,7 @@ interface CreditEntryState {
 export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntryState> {
 	assetBasePath: string;
 
-	teamBadgeEntries: object[];
+	teamBadgeEntries: TeamTagColourNode[];
 
 	constructor(props: CreditEntryArgs) {
 		super(props);

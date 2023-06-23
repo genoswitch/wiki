@@ -16,7 +16,9 @@ tags:
   - example
 
 
-description: "Example description"
+description:
+  "This is the first line
+  This is also the first line"
 
 # Optional: Fixed position in the team member list
 position: 1

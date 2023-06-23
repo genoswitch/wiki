@@ -1,0 +1,28 @@
+# Example team member entry
+
+# To create a new entry, create a new yml file.
+# The file name is not important, but it would
+# be helpful if it was the team member's name
+
+
+name: Zac Robb
+title: Co-Head of Human Practices
+
+# Relative path to picture
+picturePath: icon.png
+
+# Team tags
+tags:
+  - leaders
+  - human practices
+
+
+description: "With his glaring hatred of socialism and love for economies of scale, Zac has been steadfastly guiding City iGEMs economic progress.
+He has embraced the maxim "work smarter not harder" alongside its key tenets of delegation, procrastination, weaselling his way out of events he organised himself. Combined with his admiration for Blairite economics, this has enabled Zac to run the tight ship necessary in the often tumultuous environment of an iGEM team."
+
+
+# Optional: Fixed position in the team member list
+position: 9
+
+# Invalid keys will be ignored.
+invalidKey: uwu

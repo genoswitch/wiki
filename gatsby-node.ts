@@ -1,10 +1,20 @@
 import fs from "fs"
 
-import { GatsbyNode } from "gatsby"
+import { Actions, GatsbyNode } from "gatsby"
+
+/**
+ * Import typedefs from file
+ * 
+ * Example: https://github.com/gatsbyjs/gatsby/blob/fd4d702bf3e969bed1289e62106314be9fd41345/examples/using-type-definitions/gatsby-node.js#L55
+ * 
+ * @param actions {@link Actions} paramater from {@link createSchemaCustomization}
+ * @param filename The filename of a grahQL file to load and create types from.
+ */
+const createTypeFromFile = ((actions: Actions, filename: string) => {
+    const typeDef = fs.readFileSync(filename, { encoding: "utf-8" })
+    actions.createTypes(typeDef)
+})
 
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
-    // Import typedefs from file
-    // Example: https://github.com/gatsbyjs/gatsby/blob/fd4d702bf3e969bed1289e62106314be9fd41345/examples/using-type-definitions/gatsby-node.js#L55
-    const teamMemberTypeDef = fs.readFileSync("./src/graphql/teamMember.gql", { encoding: "utf-8" });
-    actions.createTypes(teamMemberTypeDef);
+    createTypeFromFile(actions, "./src/graphql/teamMember.gql")
 }

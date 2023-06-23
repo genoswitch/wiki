@@ -23,7 +23,7 @@
 - tag: hardware
   colour: 991D20
 
-- tag: human-practices
+- tag: human practices
   colour: EE68A1
 
 - tag: modelling
@@ -31,7 +31,7 @@
 
 # Staff use default colour (black/000000)
 
-- tag: year-11s
+- tag: J6 / Year 12
   colour: 80471E
 
 # Wiki colour has not been finalized yet

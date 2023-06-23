@@ -48,8 +48,11 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 
 			// Create and add anentry to teamBadgeEntries
 			this.teamBadgeEntries.push({
-				tag,
-				colour: tagColour,
+				// ! - Assert that these are not null
+				// Tells TS that even though this could be null, it is not.
+				// More info on this operator: https://stackoverflow.com/a/57062363
+				tag: tag!,
+				colour: tagColour!,
 			});
 		});
 

@@ -1,0 +1,22 @@
+image: node:latest
+
+# This folder is cached between builds
+# https://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
+    - node_modules/
+    # Enables git-lab CI caching. Both .cache and public must be cached, otherwise builds will fail.
+    - .cache/
+    - public/
+
+pages:
+  stage: build
+  script:
+    - npm install
+    - npm run clean
+    - npm run build
+  artifacts:
+    paths:
+      - public
+  only:
+    - main

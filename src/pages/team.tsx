@@ -37,7 +37,7 @@ export default class TeamPage extends React.PureComponent<PageProps<Queries.Team
         this.data.allTeamMemberYaml.nodes.forEach((member: TeamMemberNode) => {
             console.log(`Adding entry for '${member.name}'`)
             this.entries.push(
-                <CreditEntry member={member} assetBasePath={this.data.site?.siteMetadata?.assetBasePath} />
+                <CreditEntry member={member} data={this.data} />
             )
             this.setState({ isReady: true })
         })

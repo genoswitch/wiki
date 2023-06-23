@@ -1,27 +1,10 @@
-# Example team member entry
-
-# To create a new entry, create a new yml file.
-# The file name is not important, but it would
-# be helpful if it was the team member's name
-
-
 name: Carter Stevens
 title: Head of Modelling
-
-# Relative path to picture
 picturePath: icon.png
-
-# Team tags
 tags:
   - leaders
   - modelling
 
 
 description: "While he is the head of modelling, Carter's ability to run an interesting discourse on many intellectual topics ranging from Quantum and Number theory to the efficacy of spaceflight or just plain old Star Wars is an impressive sight to behold. However his attempts to introduce pantera to a wider audience have not been so successful (what even is a pantera?). Although his hand-written mathematical hieroglyphs may be indecipherable to the uninitiated, the now-iconic yellow paper on which he presents his findings has become a symbol for the academic excellence towards which every member of City iGEM strives."
-
-
-# Optional: Fixed position in the team member list
 position: 10
-
-# Invalid keys will be ignored.
-invalidKey: uwu

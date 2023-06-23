@@ -1,26 +1,9 @@
-# Example team member entry
-
-# To create a new entry, create a new yml file.
-# The file name is not important, but it would
-# be helpful if it was the team member's name
-
-
 name: Olivia Gordon
 title: Biology Team Member
-
-# Relative path to picture
 picturePath: icon.png
-
-# Team tags
 tags:
   - biology
 
 
 description: "TBD"
-
-
-# Optional: Fixed position in the team member list
 position: 16
-
-# Invalid keys will be ignored.
-invalidKey: uwu

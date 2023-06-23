@@ -1,17 +1,6 @@
-# Example team member entry
-
-# To create a new entry, create a new yml file.
-# The file name is not important, but it would
-# be helpful if it was the team member's name
-
-
 name: Rishabh Das
 title: Head of Software
-
-# Relative path to picture
 picturePath: icon.png
-
-# Team tags
 tags:
   - leaders
   - software
@@ -19,10 +8,4 @@ tags:
 
 
 description: "Rishabh is our resident Prince of Puns and connoisseur of interesting icebreakers. His proficiency in tinkering with video games (resulting in him having more Skyrim mods than millimetres in height) have translated well into his quick wit, sharp pen, and aptitude for solving challenging problems. His ability to adopt sleek graphic styles and write efficient (albeit poorly documented) code have resulted in both breath-taking pieces of media and breakthroughs in the bio-software of our project, making him a truly invaluable asset to the team."
-
-
-# Optional: Fixed position in the team member list
 position: 11
-
-# Invalid keys will be ignored.
-invalidKey: uwu

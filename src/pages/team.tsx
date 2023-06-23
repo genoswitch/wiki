@@ -13,8 +13,8 @@ interface TeamPageState {
 }
 
 // Use React.PureComponent for TS types on this.props <https://github.com/gatsbyjs/gatsby/issues/8431#issue-362717669>
-export default class TeamPage extends React.PureComponent<PageProps<Queries.GetAllTeamMembersAndAssetBasePathQuery>, TeamPageState>  {
-    constructor(props: PageProps<Queries.GetAllTeamMembersAndAssetBasePathQuery>) {
+export default class TeamPage extends React.PureComponent<PageProps<Queries.TeamPageDataQuery>, TeamPageState>  {
+    constructor(props: PageProps<Queries.TeamPageDataQuery>) {
         super(props);
 
         this.state = {
@@ -23,21 +23,21 @@ export default class TeamPage extends React.PureComponent<PageProps<Queries.GetA
     }
 
     // TODO: Definitely assigned (!) - is this wise?
-    members!: Queries.GetAllTeamMembersAndAssetBasePathQuery;
+    data!: Queries.TeamPageDataQuery;
 
     entries: CreditEntry[] = [];
 
     componentDidMount(): void {
         this.setState({ isReady: false })
 
-        // Set this.members to the result of the query
-        this.members = this.props.pageResources.json.data;
+        // Set this.data to the result of the query
+        this.data = this.props.pageResources.json.data;
 
         // Iterate over each member and create a entry for each.
-        this.members.allTeamMemberYaml.nodes.forEach((member: TeamMemberNode) => {
+        this.data.allTeamMemberYaml.nodes.forEach((member: TeamMemberNode) => {
             console.log(`Adding entry for '${member.name}'`)
             this.entries.push(
-                <CreditEntry member={member} assetBasePath={this.props.pageResources.json.data.site?.siteMetadata?.assetBasePath} />
+                <CreditEntry member={member} assetBasePath={this.data.site?.siteMetadata?.assetBasePath} />
             )
             this.setState({ isReady: true })
         })
@@ -67,7 +67,7 @@ export default class TeamPage extends React.PureComponent<PageProps<Queries.GetA
 
  */
 export const query = graphql`
-    query GetAllTeamMembersAndAssetBasePath {
+    query TeamPageData {
         allTeamMemberYaml(sort: {position: ASC}, filter: {name: {ne: "Example"}}) {
             nodes {
                 name

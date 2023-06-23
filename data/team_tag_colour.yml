@@ -1,0 +1,38 @@
+# Colour codes/values for tag badges.
+# If using hex codes, please omit the hash as this turns the line into a comment.
+
+# Default colour when a match cannot be found
+- tag: default
+  colour: black
+
+# Example tag colour definition using hex codes. (DO NOT TOUCH, for reference only)
+- tag: example
+  colour: 000000"
+
+# Place your colour definitons here, in the same format as the example.
+# Feel free to copy and paste from the example and modify it.
+- tag: leaders
+  colour: FEBF10
+
+- tag: biology
+  colour: 268C43
+
+- tag: software
+  colour: 6D3D97
+
+- tag: hardware
+  colour: 991D20
+
+- tag: human-practices
+  colour: EE68A1
+
+- tag: modelling
+  colour: 4567B0
+
+# Staff use default colour (black/000000)
+
+- tag: year-11s
+  colour: 80471E
+
+# Wiki colour has not been finalized yet
+

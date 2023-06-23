@@ -28,7 +28,7 @@ export default class TeamPage extends React.PureComponent<
 	// TODO: Definitely assigned (!) - is this wise?
 	data!: Queries.TeamPageDataQuery;
 
-	entries: CreditEntry[] = [];
+	entries: React.JSX.Element[] = [];
 
 	componentDidMount(): void {
 		this.setState({ isReady: false });

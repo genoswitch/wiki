@@ -4,7 +4,6 @@
 # The file name is not important, but it would
 # be helpful if it was the team member's name
 
-
 name: Example
 title: Head of Example Production
 
@@ -15,9 +14,7 @@ picturePath: example.png
 tags:
   - example
 
-
-description:
-  "This is the first line
+description: "This is the first line
   This is also the first line"
 
 # Optional: Fixed position in the team member list

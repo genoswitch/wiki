@@ -6,13 +6,13 @@
 # The effect of this is that extra keys will be ignored by GraphQL.
 
 type TeamMemberYaml implements Node @dontInfer {
-    # Non-nullable fields
-    name: String!
-    title: String!
-    picturePath: String!
-    tags: [String]!
-    description: String!
+	# Non-nullable fields
+	name: String!
+	title: String!
+	picturePath: String!
+	tags: [String]!
+	description: String!
 
-    # Position is the only nullable (optional) field
-    position: Int
+	# Position is the only nullable (optional) field
+	position: Int
 }

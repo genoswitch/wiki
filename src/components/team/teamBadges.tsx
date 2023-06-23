@@ -1,9 +1,8 @@
-// Team Badges class and support code from iGEM 2022.
-// TODO: Refactor for 2023 (graphql badge colours)
-
 import * as React from 'react';
 
-import Badge from 'react-bootstrap/Badge'
+import BadgeCustomColours from '../bootstrap/BadgeCustomColours';
+
+import { TeamTagColourNode } from '../../types/teamTagColourNode';
 
 const capitalizeWords = (words: string) => {
     const wordArray = words.split(' ');
@@ -16,9 +15,17 @@ const capitalizeWords = (words: string) => {
 };
 
 const ConstructBadge = (text: string, bgCol: string): React.JSX.Element => {
+
+    // Check if bgcol is a hex value. If so, add a '#'.
+    if (/^[0-9A-F]{6}$/i.test(bgCol)) {
+        // Regex based on https://stackoverflow.com/questions/8027423/how-to-check-if-a-string-is-a-valid-hex-color-representation
+        bgCol = `#${bgCol}`
+    }
     return (
         <span style={{ paddingRight: 16 }}>
-            <Badge bg={bgCol}>{capitalizeWords(text)}</Badge>
+            {/** Use bgCol and text to create a key.*/}
+
+            <BadgeCustomColours key={`${bgCol}-${text}`} bg={bgCol}>{capitalizeWords(text)}</BadgeCustomColours>
         </span>
     );
 };
@@ -33,16 +40,55 @@ const tagColors = {
     leaders: 'primary',
 };
 
-export type TeamBadgesProps = { tags: string[] }
+export type TeamBadgesProps = { tags: TeamTagColourNode[] }
 
-export class TeamBadges extends React.PureComponent<TeamBadgesProps, {}> {
-    render() {
-        const tagComponents: React.JSX.Element[] = [];
+interface TeamBadgesState {
+    isReady: boolean
+}
+
+export class TeamBadges extends React.Component<TeamBadgesProps, TeamBadgesState> {
+
+    tagComponents: React.JSX.Element[]
+
+    constructor(props: TeamBadgesProps) {
+        super(props);
+
+        this.tagComponents = []
+
+        this.state = {
+            isReady: false
+        }
+    }
+
+    // Tags is sometimes empty. problem upstream.
+    componentDidMount(): void {
         if (this.props.tags) {
-            this.props.tags.forEach((tag: string) => {
-                tagComponents.push(ConstructBadge(tag, tagColors[tag]));
+            // Sort tags alphabetically by tag name
+            this.props.tags.sort((a, b) => {
+                return a.tag.localeCompare(b.tag)
+            })
+
+            // Iterate over each tag and construct a badge.
+            this.props.tags.forEach(tag => {
+                this.tagComponents.push(ConstructBadge(tag.tag, tag.colour));
             });
-            return <div style={{ paddingTop: 16 }}>{tagComponents}</div>;
+        }
+        this.setState({ isReady: true })
+    }
+    render() {
+        if (this.state.isReady) {
+            return <div style={{ paddingTop: 16 }}>
+                {this.tagComponents.map((component, index) => (
+                    <React.Fragment key={index}>
+                        {component}
+                    </React.Fragment>
+                ))}
+
+            </div>;
+        }
+
+        else {
+            return (<div>Preparing...</div>)
         }
     }
 }

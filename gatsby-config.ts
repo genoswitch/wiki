@@ -2,7 +2,7 @@ import type { GatsbyConfig } from "gatsby"
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: (process.env.SITE_URL || "https://2023.igem.wiki/city-of-london-uk/"),
     assetBasePath: (process.env.ASSET_BASE_PATH || "https://static.igem.wiki/teams/4642/wiki/")
   
   },

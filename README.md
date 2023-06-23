@@ -9,13 +9,14 @@ For up-to-date requirements, resources, help and guidance, visit [competition.ig
 ## Getting started
 
 You should probably only edit the files inside folders `static`, `wiki` and `wiki > pages`.
+
 1. Open the Web IDE
 1. Make the changes on the files you wish:
-    * For the menu, change the file [menu.html](wiki/menu.html)
-    * For the layout, change the file [layout.html](wiki/layout.html)
-    * For the pages, change the corresponding file in the foler [pages](wiki/pages)
+   - For the menu, change the file [menu.html](wiki/menu.html)
+   - For the layout, change the file [layout.html](wiki/layout.html)
+   - For the pages, change the corresponding file in the foler [pages](wiki/pages)
 1. Review the changes you made
-1. Once you are done, save the changes by **committing** them to the *main branch* of the repository
+1. Once you are done, save the changes by **committing** them to the _main branch_ of the repository
 1. An automated script will build, test and deploy your wiki, which should take less than 30 seconds.
 
 ## About this Template
@@ -40,17 +41,18 @@ The static assets are in the `static` directory. The layout and templates are in
 
 ### Technologies
 
-  * [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/)
-  * [Python](https://www.python.org): Programming language
-  * [Flask](https://palletsprojects.com/p/flask/): Python framework
-  * [Fronzen-Flask](https://pythonhosted.org/Frozen-Flask): Library that builds the wiki to be deployed as a static website
-  * [Bootstrap](https://getbootstrap.com/docs/5.0/components): CSS and JS components used
+- [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/)
+- [Python](https://www.python.org): Programming language
+- [Flask](https://palletsprojects.com/p/flask/): Python framework
+- [Fronzen-Flask](https://pythonhosted.org/Frozen-Flask): Library that builds the wiki to be deployed as a static website
+- [Bootstrap](https://getbootstrap.com/docs/5.0/components): CSS and JS components used
 
 ### Building locally (advanced users)
 
 To work locally with this project, follow the steps below:
 
 #### Install
+
 ```bash
 git clone https://gitlab.igem.org/2023/city-of-london-uk.git
 cd city-of-london-uk
@@ -61,6 +63,7 @@ pip install -r dependencies.txt
 ```
 
 #### Execute
+
 ```bash
 python app.py
 ```

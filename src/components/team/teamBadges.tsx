@@ -26,7 +26,7 @@ const ConstructBadge = (text: string, bgCol: string): React.JSX.Element => {
 const tagColors = {
     wiki: 'dark',
     biology: 'success',
-    'human practices': 'warning',
+    'human practices': 'EE68A1',
     hardware: 'info',
     modelling: 'danger',
     meow: 'secondary',

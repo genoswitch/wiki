@@ -78,6 +78,12 @@ export const query = graphql`
                 position
             }
         }
+        allTeamTagColourYaml(filter: {tag: {ne: "example"}}) {
+            nodes {
+                colour
+                tag
+            }
+        }
         site {
             siteMetadata {
                 assetBasePath

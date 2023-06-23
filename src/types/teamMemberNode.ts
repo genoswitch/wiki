@@ -1,11 +1,6 @@
-interface TeamMemberUnnnededKeys {
-    children: unknown
-    internal: unknown
-    id: unknown,
-    parent: unknown
-}
+import { NodeUnneededKeys } from "./nodeUnneededKeys";
 
 /**
  * {@link Queries.TeamMemberYaml} without GraphQL specific keys
  */
-export type TeamMemberNode = Omit<Queries.TeamMemberYaml, keyof TeamMemberUnnnededKeys>
+export type TeamMemberNode = Omit<Queries.TeamMemberYaml, keyof NodeUnneededKeys>

@@ -1,7 +1,5 @@
 import * as React from "react";
 
-import BadgeCustomColours from "../bootstrap/BadgeCustomColours";
-
 import TeamTag from "../../types/teamTag";
 import { Chip, Theme } from "@mui/material";
 
@@ -18,11 +16,6 @@ const capitalizeWords = (words: string) => {
 const ConstructBadge = (tag: TeamTag): React.JSX.Element => {
 	return (
 		<span style={{ paddingRight: 16 }}>
-			{/** Use bgCol and text to create a key.*/}
-
-			<BadgeCustomColours key={`${tag.colour}-${tag.name}`} bg={tag.colour}>
-				{capitalizeWords(tag.name)}
-			</BadgeCustomColours>
 			<Chip label={capitalizeWords(tag.name)} color={tag.paletteName} size="small" sx={{ fontWeight: "bold" }} />
 		</span>
 	);

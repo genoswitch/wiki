@@ -20,6 +20,15 @@ const config: GatsbyConfig = {
 				path: "./data/",
 			},
 		},
+		{
+			resolve: "gatsby-plugin-remote-images",
+			options: {
+				nodeType: "TeamMemberYaml",
+				imagePath: "picturePath",
+				name: "dynamicImage",
+				prepareUrl: (url: string) => `${config.siteMetadata.assetBasePath}${url}`,
+			},
+		},
 	],
 };
 

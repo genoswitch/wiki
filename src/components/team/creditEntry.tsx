@@ -2,15 +2,19 @@ import * as React from "react";
 
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
+import Modal from "react-bootstrap/Modal";
 
 import { TeamBadges } from "./teamBadges";
 import { TeamMemberNode } from "../../types/teamMemberNode";
 import { TeamTagColourNode } from "../../types/teamTagColourNode";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 type CreditEntryArgs = { member: TeamMemberNode; data: Queries.TeamPageDataQuery; key?: string };
 
 interface CreditEntryState {
 	isReady: boolean;
+	showModal: boolean;
+	modalIsReady: boolean;
 }
 
 export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntryState> {
@@ -28,6 +32,8 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 
 		this.state = {
 			isReady: false,
+			showModal: false,
+			modalIsReady: false,
 		};
 	}
 
@@ -63,12 +69,22 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 		if (!this.state.isReady) {
 			return <div>Loading... </div>;
 		} else {
+			if (this.state.showModal && !this.state.modalIsReady) {
+				// Preload the modal image
+				const image = new Image();
+				image.onload = () => {
+					this.setState({ modalIsReady: true });
+				};
+				image.src = this.assetBasePath + this.props.member.picturePath;
+			}
+			const image = getImage(this.props.member.dynamicImage!);
 			return (
 				<div style={{ padding: 16 }}>
 					<Card>
 						<Row>
-							<div className="col-md-4">
-								<Card.Img src={this.assetBasePath + this.props.member.picturePath} />
+							<div className="col-md-4" onClick={() => this.setState({ showModal: true })}>
+								{/*<Card.Img src={this.assetBasePath + this.props.member.picturePath} />*/}
+								<GatsbyImage image={image} />
 							</div>
 							<div className="col-md-8">
 								<Card.Body>
@@ -87,6 +103,19 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 							</div>
 						</Row>
 					</Card>
+					{/** Modal when clicking on the image for a higher res version. */}
+					<Modal show={this.state.showModal} onHide={() => this.setState({ showModal: false })}>
+						<Modal.Header closeButton>
+							<Modal.Title>{this.props.member.title}</Modal.Title>
+						</Modal.Header>
+						<Modal.Body>
+							{this.state.modalIsReady ? (
+								<Card.Img src={this.assetBasePath + this.props.member.picturePath} />
+							) : (
+								<div>Loading...</div>
+							)}
+						</Modal.Body>
+					</Modal>
 				</div>
 			);
 		}

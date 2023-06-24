@@ -5,7 +5,7 @@ import { graphql, PageProps } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/teamMemberNode";
-import { TextField } from "@mui/material";
+import { createTheme, TextField, Theme } from "@mui/material";
 
 import { TeamTagColourNode } from "../types/teamTagColourNode";
 import TeamTag from "../types/teamTag";
@@ -37,6 +37,9 @@ export default class TeamPage extends React.PureComponent<
 	entries: React.JSX.Element[] = [];
 
 	discoveredTags: TeamTag[] = [];
+
+	muiTheme: Theme | undefined = undefined;
+	muiPaletteJson: any = {};
 
 	componentDidMount(): void {
 		this.setState({ isReady: false });
@@ -93,7 +96,12 @@ export default class TeamPage extends React.PureComponent<
 		// colour will never be null as we return defaultTagColour instead of null.
 		const tag = new TeamTag(name, colour!);
 
-		this.discoveredTags.push(tag)
+		// 4. TeamTag creates a paletteColour attribute, a unique key
+		//	  to identify this colour and tag combination.
+		//	  We will now add this to our material UI palette.
+		this.addTagToThemePalette(tag);
+
+		this.discoveredTags.push(tag);
 	}
 
 	/**
@@ -106,6 +114,23 @@ export default class TeamPage extends React.PureComponent<
 	}
 
 	// #endregion
+
+	// TODO: is it possible to have one theme and change it's Palette instead.
+	// There *is* a palette class and createPalette.
+	addTagToThemePalette(tag: TeamTag) {
+		// Check if the tag has already been added to the palette.
+		// In theory this should never be called when it's already added but it's good practice to check.
+		if (!this.muiPaletteJson[tag.paletteName]) {
+			// Tag has not been added to the palette
+
+			// Add the tag to the palette
+			this.muiPaletteJson[tag.paletteName] = { main: tag.colour }
+
+			// Recreate the palette
+			this.muiTheme = createTheme({ palette: this.muiPaletteJson })
+
+		}
+	}
 
 	render(): React.ReactNode {
 		if (!this.state["isReady"]) {

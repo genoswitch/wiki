@@ -1,6 +1,7 @@
 export default class TeamTag {
 	name: string;
 	colour: string;
+	paletteName: string;
 	constructor(name: string, colour: string) {
 		this.name = name;
 
@@ -11,5 +12,7 @@ export default class TeamTag {
 		}
 
 		this.colour = colour;
+
+		this.paletteName = `TeamTag-${name}-${colour}`;
 	}
 }

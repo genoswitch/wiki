@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import { TeamBadges } from "./teamBadges";
 import { TeamMemberNode } from "../../types/teamMemberNode";
 import { TeamTagColourNode } from "../../types/teamTagColourNode";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 type CreditEntryArgs = { member: TeamMemberNode; data: Queries.TeamPageDataQuery; key?: string };
 
@@ -63,12 +64,14 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 		if (!this.state.isReady) {
 			return <div>Loading... </div>;
 		} else {
+			const image = getImage(this.props.member.dynamicImage!)
 			return (
 				<div style={{ padding: 16 }}>
 					<Card>
 						<Row>
 							<div className="col-md-4">
-								<Card.Img src={this.assetBasePath + this.props.member.picturePath} />
+								{/*<Card.Img src={this.assetBasePath + this.props.member.picturePath} />*/}
+								<GatsbyImage image={image} />
 							</div>
 							<div className="col-md-8">
 								<Card.Body>

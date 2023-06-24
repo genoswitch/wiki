@@ -23,7 +23,7 @@ const ConstructBadge = (tag: TeamTag): React.JSX.Element => {
 			<BadgeCustomColours key={`${tag.colour}-${tag.name}`} bg={tag.colour}>
 				{capitalizeWords(tag.name)}
 			</BadgeCustomColours>
-			<Chip label={capitalizeWords(tag.name)} color={tag.paletteName} />
+			<Chip label={capitalizeWords(tag.name)} color={tag.paletteName} size="small" sx={{ fontWeight: "bold" }} />
 		</span>
 	);
 };

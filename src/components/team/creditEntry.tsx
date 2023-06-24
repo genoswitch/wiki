@@ -9,8 +9,9 @@ import { TeamMemberNode } from "../../types/teamMemberNode";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import TeamTag from "../../types/teamTag";
+import { Theme } from "@mui/material";
 
-type CreditEntryArgs = { member: TeamMemberNode; data: Queries.TeamPageDataQuery; tags: TeamTag[] };
+type CreditEntryArgs = { member: TeamMemberNode; data: Queries.TeamPageDataQuery; tags: TeamTag[], muiTheme: Theme };
 
 interface CreditEntryState {
 	isReady: boolean;
@@ -88,7 +89,7 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 									<br />
 									{this.props.member.description}
 									<br />
-									<TeamBadges tags={this.teamBadgeEntries} />
+									<TeamBadges tags={this.teamBadgeEntries} muiTheme={this.props.muiTheme} />
 								</Card.Body>
 							</div>
 						</Row>

@@ -5,7 +5,7 @@ import { graphql, PageProps } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/teamMemberNode";
-import { createTheme, TextField, Theme } from "@mui/material";
+import { createTheme, TextField, Theme, ThemeProvider } from "@mui/material";
 
 import { TeamTagColourNode } from "../types/teamTagColourNode";
 import TeamTag from "../types/teamTag";
@@ -62,7 +62,7 @@ export default class TeamPage extends React.PureComponent<
 				}
 			})
 			console.log(`Adding entry for '${member.name}'`);
-			this.entries.push(<CreditEntry member={member} data={this.data} tags={this.discoveredTags} />);
+			this.entries.push(<CreditEntry member={member} data={this.data} tags={this.discoveredTags} muiTheme={this.muiTheme} />);
 			this.setState({ isReady: true });
 		});
 	}
@@ -124,7 +124,8 @@ export default class TeamPage extends React.PureComponent<
 			// Tag has not been added to the palette
 
 			// Add the tag to the palette
-			this.muiPaletteJson[tag.paletteName] = { main: tag.colour }
+			// Provide every color token (light, main, dark, and contrastText) when using
+			this.muiPaletteJson[tag.paletteName] = { main: tag.colour, light: tag.colour, dark: tag.colour, contrastText: "rgba(0,0,0,0.87)" }
 
 			// Recreate the palette
 			this.muiTheme = createTheme({ palette: this.muiPaletteJson })
@@ -136,8 +137,9 @@ export default class TeamPage extends React.PureComponent<
 		if (!this.state["isReady"]) {
 			return <div>Preparing...</div>;
 		} else {
+			console.log(this.muiPaletteJson)
 			return (
-				<div>
+				<ThemeProvider theme={this.muiTheme}>
 					{/**
 					 * Search bar
 					 * To match the entries, we pad the top and left of the containing div by 16px.
@@ -150,24 +152,26 @@ export default class TeamPage extends React.PureComponent<
 							onChange={event => this.setState({ searchQuery: event.target.value })}
 						/>
 					</div>
-					{this.entries.filter(entry => {
-						// Cast entry (React.JSX.Element to CreditEntry)
-						const entryCast = entry as unknown as CreditEntry;
+					{
+						this.entries.filter(entry => {
+							// Cast entry (React.JSX.Element to CreditEntry)
+							const entryCast = entry as unknown as CreditEntry;
 
-						// If the search query is empty (default state) allow everything
-						if (this.state.searchQuery == "") {
-							return true;
-						}
-						// Otherwise only return people whose names match the query string.
-						else if (
-							entryCast.props.member.name
-								.toLowerCase()
-								.includes(this.state.searchQuery.toLowerCase())
-						) {
-							return true;
-						}
-					})}
-				</div>
+							// If the search query is empty (default state) allow everything
+							if (this.state.searchQuery == "") {
+								return true;
+							}
+							// Otherwise only return people whose names match the query string.
+							else if (
+								entryCast.props.member.name
+									.toLowerCase()
+									.includes(this.state.searchQuery.toLowerCase())
+							) {
+								return true;
+							}
+						})
+					}
+				</ThemeProvider>
 			);
 		}
 	}

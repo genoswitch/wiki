@@ -3,6 +3,7 @@ import * as React from "react";
 import BadgeCustomColours from "../bootstrap/BadgeCustomColours";
 
 import TeamTag from "../../types/teamTag";
+import { Chip, Theme } from "@mui/material";
 
 const capitalizeWords = (words: string) => {
 	const wordArray = words.split(" ");
@@ -14,19 +15,15 @@ const capitalizeWords = (words: string) => {
 	return processedArray.join(" ");
 };
 
-const ConstructBadge = (text: string, bgCol: string): React.JSX.Element => {
-	// Check if bgcol is a hex value. If so, add a '#'.
-	if (/^[0-9A-F]{6}$/i.test(bgCol)) {
-		// Regex based on https://stackoverflow.com/questions/8027423/how-to-check-if-a-string-is-a-valid-hex-color-representation
-		bgCol = `#${bgCol}`;
-	}
+const ConstructBadge = (tag: TeamTag): React.JSX.Element => {
 	return (
 		<span style={{ paddingRight: 16 }}>
 			{/** Use bgCol and text to create a key.*/}
 
-			<BadgeCustomColours key={`${bgCol}-${text}`} bg={bgCol}>
-				{capitalizeWords(text)}
+			<BadgeCustomColours key={`${tag.colour}-${tag.name}`} bg={tag.colour}>
+				{capitalizeWords(tag.name)}
 			</BadgeCustomColours>
+			<Chip label={capitalizeWords(tag.name)} color={tag.paletteName} />
 		</span>
 	);
 };
@@ -41,7 +38,7 @@ const tagColors = {
 	leaders: "primary",
 };
 
-export type TeamBadgesProps = { tags: TeamTag[]; sortAlphabetically?: boolean };
+export type TeamBadgesProps = { tags: TeamTag[]; muiTheme: Theme; sortAlphabetically?: boolean };
 
 interface TeamBadgesState {
 	isReady: boolean;
@@ -72,7 +69,7 @@ export class TeamBadges extends React.Component<TeamBadgesProps, TeamBadgesState
 
 			// Iterate over each tag and construct a badge.
 			this.props.tags.forEach(tag => {
-				this.tagComponents.push(ConstructBadge(tag.name, tag.colour));
+				this.tagComponents.push(ConstructBadge(tag));
 			});
 		}
 		this.setState({ isReady: true });

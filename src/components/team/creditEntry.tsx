@@ -94,11 +94,10 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 										<Card.Subtitle>{this.props.member.title}</Card.Subtitle>
 									) : undefined}
 
-									{/* Display the person's description */}
-									<br />
-									{this.props.member.description}
-									<br />
 									<TeamBadges tags={this.teamBadgeEntries} />
+									<br />
+									{/* Display the person's description */}
+									{this.props.member.description}
 								</Card.Body>
 							</div>
 						</Row>

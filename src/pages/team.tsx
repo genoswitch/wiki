@@ -62,7 +62,7 @@ export default class TeamPage extends React.PureComponent<
 				}
 			})
 			console.log(`Adding entry for '${member.name}'`);
-			this.entries.push(<CreditEntry member={member} data={this.data} tags={this.discoveredTags} muiTheme={this.muiTheme} />);
+			this.entries.push(<CreditEntry member={member} data={this.data} tags={this.discoveredTags} muiTheme={this.muiTheme!} />);
 			this.setState({ isReady: true });
 		});
 	}
@@ -139,7 +139,7 @@ export default class TeamPage extends React.PureComponent<
 		} else {
 			console.log(this.muiPaletteJson)
 			return (
-				<ThemeProvider theme={this.muiTheme}>
+				<ThemeProvider theme={this.muiTheme!}>
 					{/**
 					 * Search bar
 					 * To match the entries, we pad the top and left of the containing div by 16px.

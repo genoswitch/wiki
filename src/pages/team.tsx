@@ -7,6 +7,9 @@ import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/teamMemberNode";
 import { TextField } from "@mui/material";
 
+import { TeamTagColourNode } from "../types/teamTagColourNode";
+import TeamTag from "../types/teamTag";
+
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
 interface TeamPageState {
@@ -33,6 +36,8 @@ export default class TeamPage extends React.PureComponent<
 
 	entries: React.JSX.Element[] = [];
 
+	discoveredTags: TeamTag[] = [];
+
 	componentDidMount(): void {
 		this.setState({ isReady: false });
 
@@ -41,11 +46,63 @@ export default class TeamPage extends React.PureComponent<
 
 		// Iterate over each member and create a entry for each.
 		this.data.allTeamMemberYaml.nodes.forEach((member: TeamMemberNode) => {
+			// Iterate over each tag
+			member.tags.forEach(tag => {
+				// Tag is of type (GraphQL) Queries.Maybe<string>
+				// If we are in this iterator, there is a tag here.
+				// Therefore we can use the notnull operator (!).
+
+				// Check if the tag has already been registered
+				if (this.isTagRegistered(tag!)) {
+					// Has not been registered! Let's register it.
+					this.registerTag(tag!);
+				}
+			})
 			console.log(`Adding entry for '${member.name}'`);
 			this.entries.push(<CreditEntry member={member} data={this.data} />);
 			this.setState({ isReady: true });
 		});
 	}
+
+	/**
+	 * Register the current tag.
+	 * 
+	 * This function retrieves the tag colour from the GraphQL response.
+	 * 
+	 * @param name tag name
+	 */
+	registerTag(name: string) {
+		// Use the graphql query to determine the tag colour.
+		console.log("Registering tag with name: " + name);
+
+		// 1. Get the default colour.
+		const defaultTagColour = this.props.data.allTeamTagColourYaml.nodes.find(
+			(entry: TeamTagColourNode) => entry.tag == "default"
+		)?.colour;
+
+		// 2. Find the tag colour from the GraphQL query response,
+		//	  Falling back to the default colour if a match is not found.
+
+		const colour = this.props.data.allTeamTagColourYaml.nodes.find(
+			(entry: TeamTagColourNode) => entry.tag == name
+		)?.colour || defaultTagColour;
+
+		// 3. Create a new TeamTag instance for this tag.
+		// colour will never be null as we return defaultTagColour instead of null.
+		const tag = new TeamTag(name, colour!);
+
+		this.discoveredTags.push(tag)
+	}
+
+	/**
+	 * Check if the given tag name is registered in the list of tags.
+	 * 
+	 * @param tagName tag name to check
+	 */
+	isTagRegistered(tagName: string) {
+		return this.discoveredTags.find(entry => entry.name == tagName) == undefined
+	}
+
 	render(): React.ReactNode {
 		if (!this.state["isReady"]) {
 			return <div>Preparing...</div>;

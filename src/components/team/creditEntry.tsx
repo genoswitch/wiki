@@ -6,10 +6,11 @@ import Modal from "react-bootstrap/Modal";
 
 import { TeamBadges } from "./teamBadges";
 import { TeamMemberNode } from "../../types/teamMemberNode";
-import { TeamTagColourNode } from "../../types/teamTagColourNode";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-type CreditEntryArgs = { member: TeamMemberNode; data: Queries.TeamPageDataQuery; key?: string };
+import TeamTag from "../../types/teamTag";
+
+type CreditEntryArgs = { member: TeamMemberNode; data: Queries.TeamPageDataQuery; tags: TeamTag[] };
 
 interface CreditEntryState {
 	isReady: boolean;
@@ -20,7 +21,7 @@ interface CreditEntryState {
 export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntryState> {
 	assetBasePath: string;
 
-	teamBadgeEntries: TeamTagColourNode[];
+	teamBadgeEntries: TeamTag[];
 
 	constructor(props: CreditEntryArgs) {
 		super(props);
@@ -38,28 +39,17 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 	}
 
 	componentDidMount(): void {
-		// Construct team badge entries
-		// TeamBadgeEntry shares the same properties as coloursYaml
-		// TODO: better name for TeamBadgeEntry given this / more docs?
-		const defaultTagColour = this.props.data.allTeamTagColourYaml.nodes.find(
-			(entry: TeamTagColourNode) => entry.tag == "default"
-		)?.colour;
+		// Iterate over the member's tags.
+		this.props.member.tags.forEach(tagName => {
 
-		this.props.member.tags.forEach(tag => {
-			// Get the colour for the tag, else defaultNodeColoud
-			const tagColour =
-				this.props.data.allTeamTagColourYaml.nodes.find(
-					(entry: TeamTagColourNode) => entry.tag == tag
-				)?.colour || defaultTagColour;
+			// Use this.props.tags (TeamTag[]) to look up the TeamTag instance for this tag.
+			// This instance includes the tag colour.
+			// All in-use tags are registered in team.tsx.
+			// Therefore, we can notNull the find response.
+			const tag = this.props.tags.find(t => t.name == tagName)!
 
-			// Create and add anentry to teamBadgeEntries
-			this.teamBadgeEntries.push({
-				// ! - Assert that these are not null
-				// Tells TS that even though this could be null, it is not.
-				// More info on this operator: https://stackoverflow.com/a/57062363
-				tag: tag!,
-				colour: tagColour!,
-			});
+			// Add the instance to an array of entries.
+			this.teamBadgeEntries.push(tag);
 		});
 
 		this.setState({ isReady: true });

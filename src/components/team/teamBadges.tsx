@@ -2,7 +2,7 @@ import * as React from "react";
 
 import BadgeCustomColours from "../bootstrap/BadgeCustomColours";
 
-import { TeamTagColourNode } from "../../types/teamTagColourNode";
+import TeamTag from "../../types/teamTag";
 
 const capitalizeWords = (words: string) => {
 	const wordArray = words.split(" ");
@@ -41,7 +41,7 @@ const tagColors = {
 	leaders: "primary",
 };
 
-export type TeamBadgesProps = { tags: TeamTagColourNode[]; sortAlphabetically?: boolean };
+export type TeamBadgesProps = { tags: TeamTag[]; sortAlphabetically?: boolean };
 
 interface TeamBadgesState {
 	isReady: boolean;
@@ -66,13 +66,13 @@ export class TeamBadges extends React.Component<TeamBadgesProps, TeamBadgesState
 			if (this.props.sortAlphabetically) {
 				// Sort tags alphabetically by tag name
 				this.props.tags.sort((a, b) => {
-					return a.tag.localeCompare(b.tag);
+					return a.name.localeCompare(b.name);
 				});
 			}
 
 			// Iterate over each tag and construct a badge.
 			this.props.tags.forEach(tag => {
-				this.tagComponents.push(ConstructBadge(tag.tag, tag.colour));
+				this.tagComponents.push(ConstructBadge(tag.name, tag.colour));
 			});
 		}
 		this.setState({ isReady: true });

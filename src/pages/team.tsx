@@ -59,7 +59,7 @@ export default class TeamPage extends React.PureComponent<
 				}
 			})
 			console.log(`Adding entry for '${member.name}'`);
-			this.entries.push(<CreditEntry member={member} data={this.data} />);
+			this.entries.push(<CreditEntry member={member} data={this.data} tags={this.discoveredTags} />);
 			this.setState({ isReady: true });
 		});
 	}

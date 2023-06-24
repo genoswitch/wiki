@@ -64,11 +64,22 @@ export const query = graphql`
 		allTeamMemberYaml(sort: { position: ASC }, filter: { name: { ne: "Example" } }) {
 			nodes {
 				name
-				picturePath
 				title
 				description
 				tags
 				position
+				# static, higher res image (used in the modal)
+				picturePath
+				# gatsby-plugin-image
+				dynamicImage {
+					childImageSharp {
+						gatsbyImageData(
+							width: 800 # 800x(~1200)
+							placeholder: BLURRED
+							formats: [AUTO, WEBP, PNG]
+						)
+					}
+				}
 			}
 		}
 		allTeamTagColourYaml(filter: { tag: { ne: "example" } }) {

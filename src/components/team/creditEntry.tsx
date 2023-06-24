@@ -14,6 +14,7 @@ type CreditEntryArgs = { member: TeamMemberNode; data: Queries.TeamPageDataQuery
 interface CreditEntryState {
 	isReady: boolean;
 	showModal: boolean;
+	modalIsReady: boolean;
 }
 
 export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntryState> {
@@ -31,7 +32,8 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 
 		this.state = {
 			isReady: false,
-			showModal: false
+			showModal: false,
+			modalIsReady: false
 		};
 	}
 
@@ -67,6 +69,14 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 		if (!this.state.isReady) {
 			return <div>Loading... </div>;
 		} else {
+			if (this.state.showModal && !this.state.modalIsReady) {
+				// Preload the modal image
+				const image = new Image();
+				image.onload = () => {
+					this.setState({ modalIsReady: true })
+				}
+				image.src = this.assetBasePath + this.props.member.picturePath;
+			}
 			const image = getImage(this.props.member.dynamicImage!)
 			return (
 				<div style={{ padding: 16 }}>
@@ -99,7 +109,8 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 							<Modal.Title>{this.props.member.title}</Modal.Title>
 						</Modal.Header>
 						<Modal.Body>
-							<Card.Img src={this.assetBasePath + this.props.member.picturePath} />
+							{(this.state.modalIsReady ? <Card.Img src={this.assetBasePath + this.props.member.picturePath} /> : <div>Loading...</div>)}
+
 						</Modal.Body>
 					</Modal>
 				</div>

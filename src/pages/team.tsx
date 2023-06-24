@@ -64,6 +64,8 @@ export default class TeamPage extends React.PureComponent<
 		});
 	}
 
+	// #region tag discovery helper functions
+
 	/**
 	 * Register the current tag.
 	 * 
@@ -102,6 +104,8 @@ export default class TeamPage extends React.PureComponent<
 	isTagRegistered(tagName: string) {
 		return this.discoveredTags.find(entry => entry.name == tagName) == undefined
 	}
+
+	// #endregion
 
 	render(): React.ReactNode {
 		if (!this.state["isReady"]) {

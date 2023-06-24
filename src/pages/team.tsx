@@ -68,6 +68,8 @@ export const query = graphql`
 				description
 				tags
 				position
+				# static, higher res image (used in the modal)
+				picturePath
 				# gatsby-plugin-image
 				dynamicImage {
 					childImageSharp {

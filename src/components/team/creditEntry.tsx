@@ -2,6 +2,7 @@ import * as React from "react";
 
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
+import Modal from "react-bootstrap/Modal";
 
 import { TeamBadges } from "./teamBadges";
 import { TeamMemberNode } from "../../types/teamMemberNode";
@@ -12,6 +13,7 @@ type CreditEntryArgs = { member: TeamMemberNode; data: Queries.TeamPageDataQuery
 
 interface CreditEntryState {
 	isReady: boolean;
+	showModal: boolean;
 }
 
 export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntryState> {
@@ -29,6 +31,7 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 
 		this.state = {
 			isReady: false,
+			showModal: false
 		};
 	}
 
@@ -69,7 +72,7 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 				<div style={{ padding: 16 }}>
 					<Card>
 						<Row>
-							<div className="col-md-4">
+							<div className="col-md-4" onClick={() => this.setState({ showModal: true })}>
 								{/*<Card.Img src={this.assetBasePath + this.props.member.picturePath} />*/}
 								<GatsbyImage image={image} />
 							</div>
@@ -90,6 +93,15 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 							</div>
 						</Row>
 					</Card>
+					{/** Modal when clicking on the image for a higher res version. */}
+					<Modal show={this.state.showModal} onHide={() => this.setState({ showModal: false })}>
+						<Modal.Header closeButton>
+							<Modal.Title>{this.props.member.title}</Modal.Title>
+						</Modal.Header>
+						<Modal.Body>
+							<Card.Img src={this.assetBasePath + this.props.member.picturePath} />
+						</Modal.Body>
+					</Modal>
 				</div>
 			);
 		}

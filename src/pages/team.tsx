@@ -125,7 +125,7 @@ export default class TeamPage extends React.PureComponent<
 
 			// Add the tag to the palette
 			// Provide every color token (light, main, dark, and contrastText) when using
-			this.muiPaletteJson[tag.paletteName] = { main: tag.colour, light: tag.colour, dark: tag.colour, contrastText: "rgba(0,0,0,0.87)" }
+			this.muiPaletteJson[tag.paletteName] = { main: tag.colour, light: tag.colour, dark: tag.colour, contrastText: "rgba(255,255,255,1)" }
 
 			// Recreate the palette
 			this.muiTheme = createTheme({ palette: this.muiPaletteJson })

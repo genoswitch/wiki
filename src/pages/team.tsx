@@ -5,11 +5,13 @@ import { graphql, PageProps } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/teamMemberNode";
+import { TextField } from "@mui/material";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
 interface TeamPageState {
 	isReady: boolean;
+	searchQuery: string;
 }
 
 // Use React.PureComponent for TS types on this.props <https://github.com/gatsbyjs/gatsby/issues/8431#issue-362717669>
@@ -22,6 +24,7 @@ export default class TeamPage extends React.PureComponent<
 
 		this.state = {
 			isReady: false,
+			searchQuery: "",
 		};
 	}
 
@@ -47,7 +50,39 @@ export default class TeamPage extends React.PureComponent<
 		if (!this.state["isReady"]) {
 			return <div>Preparing...</div>;
 		} else {
-			return <div>{this.entries}</div>;
+			return (
+				<div>
+					{/**
+					 * Search bar
+					 * To match the entries, we pad the top and left of the containing div by 16px.
+					 */}
+					<div style={{ paddingTop: 16, paddingLeft: 16 }}>
+						<TextField
+							id="outlined-basic"
+							label="Search"
+							variant="outlined"
+							onChange={event => this.setState({ searchQuery: event.target.value })}
+						/>
+					</div>
+					{this.entries.filter(entry => {
+						// Cast entry (React.JSX.Element to CreditEntry)
+						const entryCast = entry as unknown as CreditEntry;
+
+						// If the search query is empty (default state) allow everything
+						if (this.state.searchQuery == "") {
+							return true;
+						}
+						// Otherwise only return people whose names match the query string.
+						else if (
+							entryCast.props.member.name
+								.toLowerCase()
+								.includes(this.state.searchQuery.toLowerCase())
+						) {
+							return true;
+						}
+					})}
+				</div>
+			);
 		}
 	}
 }

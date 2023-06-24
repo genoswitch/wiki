@@ -33,7 +33,7 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 		this.state = {
 			isReady: false,
 			showModal: false,
-			modalIsReady: false
+			modalIsReady: false,
 		};
 	}
 
@@ -73,11 +73,11 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 				// Preload the modal image
 				const image = new Image();
 				image.onload = () => {
-					this.setState({ modalIsReady: true })
-				}
+					this.setState({ modalIsReady: true });
+				};
 				image.src = this.assetBasePath + this.props.member.picturePath;
 			}
-			const image = getImage(this.props.member.dynamicImage!)
+			const image = getImage(this.props.member.dynamicImage!);
 			return (
 				<div style={{ padding: 16 }}>
 					<Card>
@@ -109,8 +109,11 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 							<Modal.Title>{this.props.member.title}</Modal.Title>
 						</Modal.Header>
 						<Modal.Body>
-							{(this.state.modalIsReady ? <Card.Img src={this.assetBasePath + this.props.member.picturePath} /> : <div>Loading...</div>)}
-
+							{this.state.modalIsReady ? (
+								<Card.Img src={this.assetBasePath + this.props.member.picturePath} />
+							) : (
+								<div>Loading...</div>
+							)}
 						</Modal.Body>
 					</Modal>
 				</div>

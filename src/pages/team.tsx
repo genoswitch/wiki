@@ -75,7 +75,7 @@ export const query = graphql`
 					childImageSharp {
 						gatsbyImageData(
 							width: 800 # 800x(~1200)
-							placeholder: BLURRED,
+							placeholder: BLURRED
 							formats: [AUTO, WEBP, PNG]
 						)
 					}

@@ -3,7 +3,7 @@
 
 # Default colour when a match cannot be found
 - tag: default
-  colour: black
+  colour: "000000" # black; FIXME?: MUI does not like string "black" as a colour for disabled filter chip.
 
 # Example tag colour definition using hex codes. (DO NOT TOUCH, for reference only)
 - tag: example

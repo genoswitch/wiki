@@ -12,16 +12,6 @@ const ConstructBadge = (tag: TeamTag): React.JSX.Element => {
 	);
 };
 
-const tagColors = {
-	wiki: "dark",
-	biology: "success",
-	"human practices": "warning",
-	hardware: "info",
-	modelling: "danger",
-	meow: "secondary",
-	leaders: "primary",
-};
-
 export type TeamBadgesProps = { tags: TeamTag[]; muiTheme: Theme; sortAlphabetically?: boolean };
 
 interface TeamBadgesState {

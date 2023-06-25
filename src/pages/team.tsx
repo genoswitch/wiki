@@ -17,6 +17,7 @@ import ExtendablePalette from "../types/extendablePalette";
 import { FilterChip, FilterChipEntry } from "../types/filterChip";
 
 import capitalizeWords from "../capitalizeWords";
+import teamEntryFilter from "../filters/teamEntryFilter";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
@@ -213,23 +214,7 @@ export default class TeamPage extends React.PureComponent<
 						})}
 					</div>
 					{
-						this.entries.filter(entry => {
-							// Cast entry (React.JSX.Element to CreditEntry)
-							const entryCast = entry as unknown as CreditEntry;
-
-							// If the search query is empty (default state) allow everything
-							if (this.state.searchQuery == "") {
-								return true;
-							}
-							// Otherwise only return people whose names match the query string.
-							else if (
-								entryCast.props.member.name
-									.toLowerCase()
-									.includes(this.state.searchQuery.toLowerCase())
-							) {
-								return true;
-							}
-						})
+						teamEntryFilter(this.entries, this.state.searchQuery, this.state.filterChip)
 					}
 				</ThemeProvider>
 			);

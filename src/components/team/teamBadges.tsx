@@ -2,16 +2,7 @@ import * as React from "react";
 
 import TeamTag from "../../types/teamTag";
 import { Chip, Theme } from "@mui/material";
-
-const capitalizeWords = (words: string) => {
-	const wordArray = words.split(" ");
-
-	const processedArray = wordArray.map(item => {
-		return item.charAt(0).toUpperCase() + item.slice(1).toLowerCase();
-	});
-
-	return processedArray.join(" ");
-};
+import capitalizeWords from "../../capitalizeWords";
 
 const ConstructBadge = (tag: TeamTag): React.JSX.Element => {
 	return (

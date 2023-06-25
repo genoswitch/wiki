@@ -8,7 +8,7 @@ name: Example
 title: Head of Example Production
 
 # Relative path to picture
-picturePath: example.png
+picturePath: icon.png
 
 # Team tags
 tags:

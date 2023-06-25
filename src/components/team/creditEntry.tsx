@@ -11,7 +11,12 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import TeamTag from "../../types/teamTag";
 import { Theme } from "@mui/material";
 
-type CreditEntryArgs = { member: TeamMemberNode; data: Queries.TeamPageDataQuery; tags: TeamTag[], muiTheme: Theme };
+type CreditEntryArgs = {
+	member: TeamMemberNode;
+	data: Queries.TeamPageDataQuery;
+	tags: TeamTag[];
+	muiTheme: Theme;
+};
 
 interface CreditEntryState {
 	showModal: boolean;
@@ -64,18 +69,19 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 								{this.props.member.description}
 								<br />
 								{/* Important: make sure the key prop is set to avoid React displaying the wrong component instance! */}
-								<TeamBadges key={`TeamBadges-${this.props.member.name}=$${this.props.member.tags}`}
-									tags={
-										this.props.member.tags.map(tagName => {
-											// Use this.props.tags (TeamTag[]) to look up the TeamTag instance for this tag.
-											// This instance includes the tag colour.
-											// All in-use tags are registered in team.tsx.
-											// Therefore, we can notNull the find response.
-											const tag = this.props.tags.find(t => t.name == tagName)!
+								<TeamBadges
+									key={`TeamBadges-${this.props.member.name}=$${this.props.member.tags}`}
+									tags={this.props.member.tags.map(tagName => {
+										// Use this.props.tags (TeamTag[]) to look up the TeamTag instance for this tag.
+										// This instance includes the tag colour.
+										// All in-use tags are registered in team.tsx.
+										// Therefore, we can notNull the find response.
+										const tag = this.props.tags.find(t => t.name == tagName)!;
 
-											return tag;
-										})
-									} muiTheme={this.props.muiTheme} />
+										return tag;
+									})}
+									muiTheme={this.props.muiTheme}
+								/>
 							</Card.Body>
 						</div>
 					</Row>

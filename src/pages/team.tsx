@@ -5,11 +5,17 @@ import { graphql, PageProps } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/teamMemberNode";
-import { Chip, createTheme, SimplePaletteColorOptions, TextField, Theme, ThemeProvider } from "@mui/material";
-import AddIcon from '@mui/icons-material/Add';
+import {
+	Chip,
+	createTheme,
+	SimplePaletteColorOptions,
+	TextField,
+	Theme,
+	ThemeProvider,
+} from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 
-import update from 'immutability-helper';
-
+import update from "immutability-helper";
 
 import { TeamTagColourNode } from "../types/teamTagColourNode";
 import TeamTag from "../types/teamTag";
@@ -38,7 +44,7 @@ export default class TeamPage extends React.PureComponent<
 		this.state = {
 			isReady: false,
 			searchQuery: "",
-			filterChip: []
+			filterChip: [],
 		};
 	}
 
@@ -71,18 +77,25 @@ export default class TeamPage extends React.PureComponent<
 					// Has not been registered! Let's register it.
 					this.registerTag(tag!);
 				}
-			})
+			});
 			console.log(`Adding entry for '${member.name}'`);
-			this.entries.push(<CreditEntry member={member} data={this.data} tags={this.discoveredTags} muiTheme={this.muiTheme!} />);
+			this.entries.push(
+				<CreditEntry
+					member={member}
+					data={this.data}
+					tags={this.discoveredTags}
+					muiTheme={this.muiTheme!}
+				/>
+			);
 		});
 
 		// Add an entry to filterChip for each discovered tag.
 		this.discoveredTags.forEach(tag => {
 			this.state.filterChip.push({
 				tag,
-				enabled: true
-			})
-		})
+				enabled: true,
+			});
+		});
 
 		// Evertything is done! Update the state.
 		this.setState({ isReady: true });
@@ -92,9 +105,9 @@ export default class TeamPage extends React.PureComponent<
 
 	/**
 	 * Register the current tag.
-	 * 
+	 *
 	 * This function retrieves the tag colour from the GraphQL response.
-	 * 
+	 *
 	 * @param name tag name
 	 */
 	registerTag(name: string) {
@@ -109,9 +122,10 @@ export default class TeamPage extends React.PureComponent<
 		// 2. Find the tag colour from the GraphQL query response,
 		//	  Falling back to the default colour if a match is not found.
 
-		const colour = this.props.data.allTeamTagColourYaml.nodes.find(
-			(entry: TeamTagColourNode) => entry.tag == name
-		)?.colour || defaultTagColour;
+		const colour =
+			this.props.data.allTeamTagColourYaml.nodes.find(
+				(entry: TeamTagColourNode) => entry.tag == name
+			)?.colour || defaultTagColour;
 
 		// 3. Create a new TeamTag instance for this tag.
 		// colour will never be null as we return defaultTagColour instead of null.
@@ -127,11 +141,11 @@ export default class TeamPage extends React.PureComponent<
 
 	/**
 	 * Check if the given tag name is registered in the list of tags.
-	 * 
+	 *
 	 * @param tagName tag name to check
 	 */
 	isTagRegistered(tagName: string) {
-		return this.discoveredTags.find(entry => entry.name == tagName) == undefined
+		return this.discoveredTags.find(entry => entry.name == tagName) == undefined;
 	}
 
 	// #endregion
@@ -153,14 +167,13 @@ export default class TeamPage extends React.PureComponent<
 				main: tag.colour,
 				light: tag.colour,
 				dark: tag.colour,
-				contrastText: "rgba(255,255,255,1)"
-			}
+				contrastText: "rgba(255,255,255,1)",
+			};
 
 			this.muiPaletteOptions[tag.paletteName] = colourOptions;
 
 			// Recreate the palette
-			this.muiTheme = createTheme({ palette: this.muiPaletteOptions })
-
+			this.muiTheme = createTheme({ palette: this.muiPaletteOptions });
 		}
 	}
 
@@ -168,23 +181,22 @@ export default class TeamPage extends React.PureComponent<
 		//console.log("CHIP DISABLE");
 		//debugger;
 
-
 		// entry.enabled = xyz does not update the state
-		const entryIndex = this.state.filterChip.indexOf(entry)
+		const entryIndex = this.state.filterChip.indexOf(entry);
 
-		console.log(this.state)
+		console.log(this.state);
 		this.setState({
-			filterChip: update(this.state.filterChip, { [entryIndex]: { enabled: { $set: !this.state.filterChip[entryIndex].enabled } } })
-		})
-
-
+			filterChip: update(this.state.filterChip, {
+				[entryIndex]: { enabled: { $set: !this.state.filterChip[entryIndex].enabled } },
+			}),
+		});
 	}
 
 	render(): React.ReactNode {
 		if (!this.state["isReady"]) {
 			return <div>Preparing...</div>;
 		} else {
-			console.log(this.muiPaletteOptions)
+			console.log(this.muiPaletteOptions);
 			return (
 				<ThemeProvider theme={this.muiTheme!}>
 					{/**
@@ -203,19 +215,35 @@ export default class TeamPage extends React.PureComponent<
 						 */}
 						{this.state.filterChip.map(entry => {
 							if (entry.enabled) {
-								return <span style={{ paddingLeft: 16 }}>
-									<Chip onClick={(event: any) => this.handleChipClick(event, entry)} label={capitalizeWords(entry.tag.name)} color={entry.tag.paletteName} size="small" sx={{ fontWeight: "bold" }} />
-								</span>
+								return (
+									<span style={{ paddingLeft: 16 }}>
+										<Chip
+											onClick={(event: any) => this.handleChipClick(event, entry)}
+											label={capitalizeWords(entry.tag.name)}
+											color={entry.tag.paletteName}
+											size="small"
+											sx={{ fontWeight: "bold" }}
+										/>
+									</span>
+								);
 							} else {
-								return <span style={{ paddingLeft: 16 }}>
-									<Chip variant="outlined" deleteIcon={<AddIcon />} onClick={(event: any) => this.handleChipClick(event, entry)} label={capitalizeWords(entry.tag.name)} color={entry.tag.paletteName} size="small" sx={{ fontWeight: "bold" }} />
-								</span>
+								return (
+									<span style={{ paddingLeft: 16 }}>
+										<Chip
+											variant="outlined"
+											deleteIcon={<AddIcon />}
+											onClick={(event: any) => this.handleChipClick(event, entry)}
+											label={capitalizeWords(entry.tag.name)}
+											color={entry.tag.paletteName}
+											size="small"
+											sx={{ fontWeight: "bold" }}
+										/>
+									</span>
+								);
 							}
 						})}
 					</div>
-					{
-						teamEntryFilter(this.entries, this.state.searchQuery, this.state.filterChip)
-					}
+					{teamEntryFilter(this.entries, this.state.searchQuery, this.state.filterChip)}
 				</ThemeProvider>
 			);
 		}

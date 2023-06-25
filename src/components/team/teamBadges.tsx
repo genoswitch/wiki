@@ -7,7 +7,12 @@ import capitalizeWords from "../../capitalizeWords";
 const ConstructBadge = (tag: TeamTag): React.JSX.Element => {
 	return (
 		<span style={{ paddingRight: 16 }}>
-			<Chip label={capitalizeWords(tag.name)} color={tag.paletteName} size="small" sx={{ fontWeight: "bold" }} />
+			<Chip
+				label={capitalizeWords(tag.name)}
+				color={tag.paletteName}
+				size="small"
+				sx={{ fontWeight: "bold" }}
+			/>
 		</span>
 	);
 };

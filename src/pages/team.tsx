@@ -5,17 +5,25 @@ import { graphql, PageProps } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/teamMemberNode";
-import { createTheme, SimplePaletteColorOptions, TextField, Theme, ThemeProvider } from "@mui/material";
+import { Chip, createTheme, SimplePaletteColorOptions, TextField, Theme, ThemeProvider } from "@mui/material";
+import AddIcon from '@mui/icons-material/Add';
+
+import update from 'immutability-helper';
+
 
 import { TeamTagColourNode } from "../types/teamTagColourNode";
 import TeamTag from "../types/teamTag";
 import ExtendablePalette from "../types/extendablePalette";
+import { FilterChip, FilterChipEntry } from "../types/filterChip";
+
+import capitalizeWords from "../capitalizeWords";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
 interface TeamPageState {
 	isReady: boolean;
 	searchQuery: string;
+	filterChip: FilterChip;
 }
 
 // Use React.PureComponent for TS types on this.props <https://github.com/gatsbyjs/gatsby/issues/8431#issue-362717669>
@@ -29,6 +37,7 @@ export default class TeamPage extends React.PureComponent<
 		this.state = {
 			isReady: false,
 			searchQuery: "",
+			filterChip: []
 		};
 	}
 
@@ -64,8 +73,18 @@ export default class TeamPage extends React.PureComponent<
 			})
 			console.log(`Adding entry for '${member.name}'`);
 			this.entries.push(<CreditEntry member={member} data={this.data} tags={this.discoveredTags} muiTheme={this.muiTheme!} />);
-			this.setState({ isReady: true });
 		});
+
+		// Add an entry to filterChip for each discovered tag.
+		this.discoveredTags.forEach(tag => {
+			this.state.filterChip.push({
+				tag,
+				enabled: true
+			})
+		})
+
+		// Evertything is done! Update the state.
+		this.setState({ isReady: true });
 	}
 
 	// #region tag discovery helper functions
@@ -144,6 +163,22 @@ export default class TeamPage extends React.PureComponent<
 		}
 	}
 
+	handleChipClick(event: React.SyntheticEvent<typeof Chip>, entry: FilterChipEntry) {
+		//console.log("CHIP DISABLE");
+		//debugger;
+
+
+		// entry.enabled = xyz does not update the state
+		const entryIndex = this.state.filterChip.indexOf(entry)
+
+		console.log(this.state)
+		this.setState({
+			filterChip: update(this.state.filterChip, { [entryIndex]: { enabled: { $set: !this.state.filterChip[entryIndex].enabled } } })
+		})
+
+
+	}
+
 	render(): React.ReactNode {
 		if (!this.state["isReady"]) {
 			return <div>Preparing...</div>;
@@ -162,6 +197,20 @@ export default class TeamPage extends React.PureComponent<
 							variant="outlined"
 							onChange={event => this.setState({ searchQuery: event.target.value })}
 						/>
+						{/**
+						 * Filter chips
+						 */}
+						{this.state.filterChip.map(entry => {
+							if (entry.enabled) {
+								return <span style={{ paddingLeft: 16 }}>
+									<Chip onClick={(event: any) => this.handleChipClick(event, entry)} label={capitalizeWords(entry.tag.name)} color={entry.tag.paletteName} size="small" sx={{ fontWeight: "bold" }} />
+								</span>
+							} else {
+								return <span style={{ paddingLeft: 16 }}>
+									<Chip variant="outlined" deleteIcon={<AddIcon />} onClick={(event: any) => this.handleChipClick(event, entry)} label={capitalizeWords(entry.tag.name)} color={entry.tag.paletteName} size="small" sx={{ fontWeight: "bold" }} />
+								</span>
+							}
+						})}
 					</div>
 					{
 						this.entries.filter(entry => {

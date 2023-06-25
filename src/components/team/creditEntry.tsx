@@ -40,14 +40,6 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 	}
 
 	render() {
-		/**
-	 * There is a bug which manifests when using the filter system.
-	 * To reproduce, deselect all, then select year12, then staff.
-	 * All is well.
-	 * Then deselect year12 and the staff entries' teamBadgeEntries are set to what was previously in that position.
-	 * So in this case, they show y12.
-	 * However, this.props.tags is fine. So we can recreate that array here as a hacky fix.
-	 */
 		if (!this.state.isReady) {
 			return <div>Loading... </div>;
 		} else {
@@ -80,17 +72,19 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 									<br />
 									{this.props.member.description}
 									<br />
-									<TeamBadges tags={
-										this.props.member.tags.map(tagName => {
-											// Use this.props.tags (TeamTag[]) to look up the TeamTag instance for this tag.
-											// This instance includes the tag colour.
-											// All in-use tags are registered in team.tsx.
-											// Therefore, we can notNull the find response.
-											const tag = this.props.tags.find(t => t.name == tagName)!
+									{/* Important: make sure the key prop is set to avoid React displaying the wrong component instance! */}
+									<TeamBadges key={`TeamBadges-${this.props.member.name}=$${this.props.member.tags}`}
+										tags={
+											this.props.member.tags.map(tagName => {
+												// Use this.props.tags (TeamTag[]) to look up the TeamTag instance for this tag.
+												// This instance includes the tag colour.
+												// All in-use tags are registered in team.tsx.
+												// Therefore, we can notNull the find response.
+												const tag = this.props.tags.find(t => t.name == tagName)!
 
-											return tag;
-										})
-									} muiTheme={this.props.muiTheme} />
+												return tag;
+											})
+										} muiTheme={this.props.muiTheme} />
 								</Card.Body>
 							</div>
 						</Row>

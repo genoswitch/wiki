@@ -64,10 +64,6 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 									<Card.Subtitle>{this.props.member.title}</Card.Subtitle>
 								) : undefined}
 
-								{/* Display the person's description */}
-								<br />
-								{this.props.member.description}
-								<br />
 								{/* Important: make sure the key prop is set to avoid React displaying the wrong component instance! */}
 								<TeamBadges
 									key={`TeamBadges-${this.props.member.name}=$${this.props.member.tags}`}
@@ -82,6 +78,10 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 									})}
 									muiTheme={this.props.muiTheme}
 								/>
+
+								{/* Display the person's description */}
+								<br />
+								{this.props.member.description}
 							</Card.Body>
 						</div>
 					</Row>

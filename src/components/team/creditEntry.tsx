@@ -57,6 +57,14 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 	}
 
 	render() {
+		/**
+	 * There is a bug which manifests when using the filter system.
+	 * To reproduce, deselect all, then select year12, then staff.
+	 * All is well.
+	 * Then deselect year12 and the staff entries' teamBadgeEntries are set to what was previously in that position.
+	 * So in this case, they show y12.
+	 * However, this.props.tags is fine. So we can recreate that array here as a hacky fix.
+	 */
 		if (!this.state.isReady) {
 			return <div>Loading... </div>;
 		} else {

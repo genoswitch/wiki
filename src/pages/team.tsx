@@ -5,10 +5,11 @@ import { graphql, PageProps } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/teamMemberNode";
-import { createTheme, TextField, Theme, ThemeProvider } from "@mui/material";
+import { createTheme, SimplePaletteColorOptions, TextField, Theme, ThemeProvider } from "@mui/material";
 
 import { TeamTagColourNode } from "../types/teamTagColourNode";
 import TeamTag from "../types/teamTag";
+import ExtendablePalette from "../types/extendablePalette";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
@@ -39,7 +40,7 @@ export default class TeamPage extends React.PureComponent<
 	discoveredTags: TeamTag[] = [];
 
 	muiTheme: Theme | undefined = undefined;
-	muiPaletteJson: any = {};
+	muiPaletteOptions: ExtendablePalette = {};
 
 	componentDidMount(): void {
 		this.setState({ isReady: false });
@@ -120,15 +121,25 @@ export default class TeamPage extends React.PureComponent<
 	addTagToThemePalette(tag: TeamTag) {
 		// Check if the tag has already been added to the palette.
 		// In theory this should never be called when it's already added but it's good practice to check.
-		if (!this.muiPaletteJson[tag.paletteName]) {
+		if (!this.muiPaletteOptions[tag.paletteName]) {
 			// Tag has not been added to the palette
 
 			// Add the tag to the palette
 			// Provide every color token (light, main, dark, and contrastText) when using
-			this.muiPaletteJson[tag.paletteName] = { main: tag.colour, light: tag.colour, dark: tag.colour, contrastText: "rgba(255,255,255,1)" }
+			// Create a palette entry.
+			// As a custom colour, we must provide every color token.
+			// Reference: https://mui.com/material-ui/customization/palette/#adding-new-colors
+			const colourOptions: SimplePaletteColorOptions = {
+				main: tag.colour,
+				light: tag.colour,
+				dark: tag.colour,
+				contrastText: "rgba(255,255,255,1)"
+			}
+
+			this.muiPaletteOptions[tag.paletteName] = colourOptions;
 
 			// Recreate the palette
-			this.muiTheme = createTheme({ palette: this.muiPaletteJson })
+			this.muiTheme = createTheme({ palette: this.muiPaletteOptions })
 
 		}
 	}
@@ -137,7 +148,7 @@ export default class TeamPage extends React.PureComponent<
 		if (!this.state["isReady"]) {
 			return <div>Preparing...</div>;
 		} else {
-			console.log(this.muiPaletteJson)
+			console.log(this.muiPaletteOptions)
 			return (
 				<ThemeProvider theme={this.muiTheme!}>
 					{/**

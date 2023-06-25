@@ -22,15 +22,11 @@ interface CreditEntryState {
 export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntryState> {
 	assetBasePath: string;
 
-	teamBadgeEntries: TeamTag[];
-
 	constructor(props: CreditEntryArgs) {
 		super(props);
 
 		// Definitely assigned assetBasePath
 		this.assetBasePath = props.data.site?.siteMetadata?.assetBasePath!;
-
-		this.teamBadgeEntries = [];
 
 		this.state = {
 			isReady: false,
@@ -40,19 +36,6 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 	}
 
 	componentDidMount(): void {
-		// Iterate over the member's tags.
-		this.props.member.tags.forEach(tagName => {
-
-			// Use this.props.tags (TeamTag[]) to look up the TeamTag instance for this tag.
-			// This instance includes the tag colour.
-			// All in-use tags are registered in team.tsx.
-			// Therefore, we can notNull the find response.
-			const tag = this.props.tags.find(t => t.name == tagName)!
-
-			// Add the instance to an array of entries.
-			this.teamBadgeEntries.push(tag);
-		});
-
 		this.setState({ isReady: true });
 	}
 
@@ -97,7 +80,17 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 									<br />
 									{this.props.member.description}
 									<br />
-									<TeamBadges tags={this.teamBadgeEntries} muiTheme={this.props.muiTheme} />
+									<TeamBadges tags={
+										this.props.member.tags.map(tagName => {
+											// Use this.props.tags (TeamTag[]) to look up the TeamTag instance for this tag.
+											// This instance includes the tag colour.
+											// All in-use tags are registered in team.tsx.
+											// Therefore, we can notNull the find response.
+											const tag = this.props.tags.find(t => t.name == tagName)!
+
+											return tag;
+										})
+									} muiTheme={this.props.muiTheme} />
 								</Card.Body>
 							</div>
 						</Row>

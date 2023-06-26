@@ -19,9 +19,9 @@ import AddIcon from "@mui/icons-material/Add";
 import update from "immutability-helper";
 
 import { TeamTagColourNode } from "../types/graphql/teamTagColourNode";
-import TeamTag from "../types/teamTag";
+import TeamTag from "../types/team/teamTag";
 import ExtendablePalette from "../types/extendablePalette";
-import { FilterChip, FilterChipEntry } from "../types/filterChip";
+import { FilterChip, FilterChipEntry } from "../types/team/filterChip";
 
 import capitalizeWords from "../capitalizeWords";
 import teamEntryFilter from "../filters/teamEntryFilter";

@@ -6,8 +6,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/teamMemberNode";
 import {
+	Button,
 	Chip,
 	createTheme,
+	Menu,
+	MenuItem,
 	SimplePaletteColorOptions,
 	TextField,
 	Theme,
@@ -31,6 +34,36 @@ interface TeamPageState {
 	isReady: boolean;
 	searchQuery: string;
 	filterChip: FilterChip;
+}
+
+type TeamPageFilterMenuProps = {
+	elements: React.JSX.Element[]
+}
+
+const TeamPageFilterMenu = (props: TeamPageFilterMenuProps) => {
+	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+	const open = Boolean(anchorEl);
+	const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+		setAnchorEl(event.currentTarget);
+	};
+	const handleClose = () => {
+		setAnchorEl(null);
+	};
+
+	return <>
+		<Button
+			id="chip-filter-menu-button"
+			aria-controls={open ? 'chip-filter-menu' : undefined}
+			aria-haspopup="true"
+			aria-expanded={open ? 'true' : undefined}
+			onClick={handleClick}
+		>
+			Filters
+		</Button>
+		<Menu id="chip-filter-menu" anchorEl={anchorEl} open={open} onClose={handleClose} >
+			{props.elements}
+		</Menu>
+	</>
 }
 
 // Use React.PureComponent for TS types on this.props <https://github.com/gatsbyjs/gatsby/issues/8431#issue-362717669>
@@ -210,38 +243,20 @@ export default class TeamPage extends React.PureComponent<
 							variant="outlined"
 							onChange={event => this.setState({ searchQuery: event.target.value })}
 						/>
-						{/**
-						 * Filter chips
-						 */}
-						{this.state.filterChip.map(entry => {
-							if (entry.enabled) {
-								return (
-									<span style={{ paddingLeft: 16 }}>
-										<Chip
-											onClick={(event: any) => this.handleChipClick(event, entry)}
-											label={capitalizeWords(entry.tag.name)}
-											color={entry.tag.paletteName}
-											size="small"
-											sx={{ fontWeight: "bold" }}
-										/>
-									</span>
-								);
-							} else {
-								return (
-									<span style={{ paddingLeft: 16 }}>
-										<Chip
-											variant="outlined"
-											deleteIcon={<AddIcon />}
-											onClick={(event: any) => this.handleChipClick(event, entry)}
-											label={capitalizeWords(entry.tag.name)}
-											color={entry.tag.paletteName}
-											size="small"
-											sx={{ fontWeight: "bold" }}
-										/>
-									</span>
-								);
-							}
-						})}
+						<TeamPageFilterMenu elements={this.state.filterChip.map(entry => {
+							// Filter chips
+							return (<MenuItem>
+								<Chip
+									variant={entry.enabled ? "filled" : "outlined"}
+									deleteIcon={entry.enabled ? <></> : <AddIcon />}
+									onClick={(event: any) => this.handleChipClick(event, entry)}
+									label={capitalizeWords(entry.tag.name)}
+									color={entry.tag.paletteName}
+									size="small"
+									sx={{ fontWeight: "bold" }}
+								/>
+							</MenuItem>)
+						})} />
 					</div>
 					{teamEntryFilter(this.entries, this.state.searchQuery, this.state.filterChip)}
 				</ThemeProvider>

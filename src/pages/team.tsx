@@ -212,20 +212,24 @@ export default class TeamPage extends React.PureComponent<
 							variant="outlined"
 							onChange={event => this.setState({ searchQuery: event.target.value })}
 						/>
-						<FilterMenu elements={this.state.filterChip.map(entry => {
-							// Filter chips
-							return (<MenuItem>
-								<Chip
-									variant={entry.enabled ? "filled" : "outlined"}
-									deleteIcon={entry.enabled ? <></> : <AddIcon />}
-									onClick={(event: any) => this.handleChipClick(event, entry)}
-									label={capitalizeWords(entry.tag.name)}
-									color={entry.tag.paletteName}
-									size="small"
-									sx={{ fontWeight: "bold" }}
-								/>
-							</MenuItem>)
-						})} />
+						<FilterMenu
+							elements={this.state.filterChip.map(entry => {
+								// Filter chips
+								return (
+									<MenuItem>
+										<Chip
+											variant={entry.enabled ? "filled" : "outlined"}
+											deleteIcon={entry.enabled ? <></> : <AddIcon />}
+											onClick={(event: any) => this.handleChipClick(event, entry)}
+											label={capitalizeWords(entry.tag.name)}
+											color={entry.tag.paletteName}
+											size="small"
+											sx={{ fontWeight: "bold" }}
+										/>
+									</MenuItem>
+								);
+							})}
+						/>
 					</div>
 					{teamEntryFilter(this.entries, this.state.searchQuery, this.state.filterChip)}
 				</ThemeProvider>

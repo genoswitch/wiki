@@ -216,11 +216,11 @@ export default class TeamPage extends React.PureComponent<
 							elements={this.state.filterChip.map(entry => {
 								// Filter chips
 								return (
-									<MenuItem>
+									// onClick is on the MenuItem otherwis it only triggers when the chip itself is clicked.
+									<MenuItem onClick={(event: any) => this.handleChipClick(event, entry)}>
 										<Chip
 											variant={entry.enabled ? "filled" : "outlined"}
 											deleteIcon={entry.enabled ? <></> : <AddIcon />}
-											onClick={(event: any) => this.handleChipClick(event, entry)}
 											label={capitalizeWords(entry.tag.name)}
 											color={entry.tag.paletteName}
 											size="small"

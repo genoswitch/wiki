@@ -1,5 +1,5 @@
 import { CreditEntry } from "../components/team/creditEntry";
-import { FilterChip } from "../types/filterChip";
+import { FilterChip } from "../types/team/filterChip";
 
 const teamEntryFilter = (
 	entries: React.JSX.Element[],

@@ -4,10 +4,11 @@ import { graphql, PageProps } from "gatsby";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
-import { TeamMemberNode } from "../types/teamMemberNode";
+import { TeamMemberNode } from "../types/graphql/teamMemberNode";
 import {
 	Chip,
 	createTheme,
+	MenuItem,
 	SimplePaletteColorOptions,
 	TextField,
 	Theme,
@@ -17,13 +18,14 @@ import AddIcon from "@mui/icons-material/Add";
 
 import update from "immutability-helper";
 
-import { TeamTagColourNode } from "../types/teamTagColourNode";
-import TeamTag from "../types/teamTag";
+import { TeamTagColourNode } from "../types/graphql/teamTagColourNode";
+import TeamTag from "../types/team/teamTag";
 import ExtendablePalette from "../types/extendablePalette";
-import { FilterChip, FilterChipEntry } from "../types/filterChip";
+import { FilterChip, FilterChipEntry } from "../types/team/filterChip";
 
 import capitalizeWords from "../capitalizeWords";
 import teamEntryFilter from "../filters/teamEntryFilter";
+import FilterMenu from "../components/team/filterMenu";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
@@ -210,38 +212,24 @@ export default class TeamPage extends React.PureComponent<
 							variant="outlined"
 							onChange={event => this.setState({ searchQuery: event.target.value })}
 						/>
-						{/**
-						 * Filter chips
-						 */}
-						{this.state.filterChip.map(entry => {
-							if (entry.enabled) {
+						<FilterMenu
+							elements={this.state.filterChip.map(entry => {
+								// Filter chips
 								return (
-									<span style={{ paddingLeft: 16 }}>
+									<MenuItem>
 										<Chip
+											variant={entry.enabled ? "filled" : "outlined"}
+											deleteIcon={entry.enabled ? <></> : <AddIcon />}
 											onClick={(event: any) => this.handleChipClick(event, entry)}
 											label={capitalizeWords(entry.tag.name)}
 											color={entry.tag.paletteName}
 											size="small"
 											sx={{ fontWeight: "bold" }}
 										/>
-									</span>
+									</MenuItem>
 								);
-							} else {
-								return (
-									<span style={{ paddingLeft: 16 }}>
-										<Chip
-											variant="outlined"
-											deleteIcon={<AddIcon />}
-											onClick={(event: any) => this.handleChipClick(event, entry)}
-											label={capitalizeWords(entry.tag.name)}
-											color={entry.tag.paletteName}
-											size="small"
-											sx={{ fontWeight: "bold" }}
-										/>
-									</span>
-								);
-							}
-						})}
+							})}
+						/>
 					</div>
 					{teamEntryFilter(this.entries, this.state.searchQuery, this.state.filterChip)}
 				</ThemeProvider>

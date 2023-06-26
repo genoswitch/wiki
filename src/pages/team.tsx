@@ -4,7 +4,7 @@ import { graphql, PageProps } from "gatsby";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
-import { TeamMemberNode } from "../types/teamMemberNode";
+import { TeamMemberNode } from "../types/graphql/teamMemberNode";
 import {
 	Chip,
 	createTheme,
@@ -18,7 +18,7 @@ import AddIcon from "@mui/icons-material/Add";
 
 import update from "immutability-helper";
 
-import { TeamTagColourNode } from "../types/teamTagColourNode";
+import { TeamTagColourNode } from "../types/graphql/teamTagColourNode";
 import TeamTag from "../types/teamTag";
 import ExtendablePalette from "../types/extendablePalette";
 import { FilterChip, FilterChipEntry } from "../types/filterChip";

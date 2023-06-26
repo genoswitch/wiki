@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Modal from "react-bootstrap/Modal";
 
 import { TeamBadges } from "./teamBadges";
-import { TeamMemberNode } from "../../types/teamMemberNode";
+import { TeamMemberNode } from "../../types/graphql/teamMemberNode";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import TeamTag from "../../types/teamTag";

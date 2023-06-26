@@ -6,8 +6,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/graphql/teamMemberNode";
 import {
+	Checkbox,
 	Chip,
 	createTheme,
+	Divider,
+	FormControlLabel,
+	FormGroup,
 	MenuItem,
 	SimplePaletteColorOptions,
 	TextField,
@@ -33,6 +37,7 @@ interface TeamPageState {
 	isReady: boolean;
 	searchQuery: string;
 	filterChip: FilterChip;
+	shouldIncludeTagsInSearch: boolean;
 }
 
 // Use React.PureComponent for TS types on this.props <https://github.com/gatsbyjs/gatsby/issues/8431#issue-362717669>
@@ -47,6 +52,7 @@ export default class TeamPage extends React.PureComponent<
 			isReady: false,
 			searchQuery: "",
 			filterChip: [],
+			shouldIncludeTagsInSearch: true
 		};
 	}
 
@@ -59,6 +65,8 @@ export default class TeamPage extends React.PureComponent<
 
 	muiTheme: Theme | undefined = undefined;
 	muiPaletteOptions: ExtendablePalette = {};
+
+	shouldIncludeTagsInSearch: boolean;
 
 	componentDidMount(): void {
 		this.setState({ isReady: false });
@@ -194,6 +202,13 @@ export default class TeamPage extends React.PureComponent<
 		});
 	}
 
+	handleShouldIncTagsChange(event: React.ChangeEvent<HTMLInputElement>) {
+		console.log(this.shouldIncludeTagsInSearch)
+		this.setState({
+			shouldIncludeTagsInSearch: event.target.checked
+		})
+	}
+
 	render(): React.ReactNode {
 		if (!this.state["isReady"]) {
 			return <div>Preparing...</div>;
@@ -230,8 +245,10 @@ export default class TeamPage extends React.PureComponent<
 								);
 							})}
 						/>
+						{/** Should be enclosed in FormGroup but that makes a newline. Shhh! */}
+						<FormControlLabel control={<Checkbox defaultChecked onChange={(event: React.ChangeEvent<HTMLInputElement>) => this.handleShouldIncTagsChange(event)} />} label="Include tags in search?" />
 					</div>
-					{teamEntryFilter(this.entries, this.state.searchQuery, this.state.filterChip)}
+					{teamEntryFilter(this.entries, this.state.searchQuery, this.state.filterChip, this.state.shouldIncludeTagsInSearch)}
 				</ThemeProvider>
 			);
 		}

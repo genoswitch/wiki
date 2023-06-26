@@ -31,6 +31,8 @@ const Logo = (props: LogoProps) => {
             {/** 
              * GENOSWITCH logo 
              * 
+             * color: style prop does not work on SVGs normally.
+             * 
              * CSS Filter generator used to generate the filter for hex code #77d9dd (light blue)
              * https://codepen.io/sosuke/pen/Pjoqqp, https://stackoverflow.com/a/53336754
              */}
@@ -76,7 +78,7 @@ const NavBar = () => {
                 <Toolbar>
                     {/** Small Display: Drawer Button */}
                     <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle} sx={{ mr: 2, display: { sm: "none" } }}>
-                        <MenuIcon />
+                        <MenuIcon htmlColor="#77d9dd" />
                     </IconButton>
 
                     {/** Large Display: Left of screen (filled except for btns) */}

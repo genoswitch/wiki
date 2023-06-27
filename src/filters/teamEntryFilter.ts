@@ -4,13 +4,20 @@ import { FilterChip } from "../types/team/filterChip";
 const teamEntryFilter = (
 	entries: React.JSX.Element[],
 	searchQuery: string,
-	filterChip: FilterChip
+	filterChip: FilterChip,
+	shouldIncludeTagsInSearch: boolean
 ) => {
 	return entries.filter(entry => {
 		// Cast entry (React.JSX.Element to CreditEntry)
 		const entryCast = entry as unknown as CreditEntry;
 
-		return searchFilter(entryCast, searchQuery) && chipFilter(entryCast, filterChip);
+		return (
+			searchFilter(entryCast, searchQuery) &&
+			// If we are not including tags in the search, return true instead of the chipFilter query
+			// Since we are using an &&, the return statement will not return true unless both filters return true
+			// Therefore, returning true for this filter is like it never existed
+			(shouldIncludeTagsInSearch ? chipFilter(entryCast, filterChip) : true)
+		);
 	});
 };
 

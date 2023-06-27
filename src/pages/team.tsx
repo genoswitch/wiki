@@ -29,6 +29,7 @@ import { FilterChip, FilterChipEntry } from "../types/team/filterChip";
 
 import capitalizeWords from "../capitalizeWords";
 import teamEntryFilter from "../filters/teamEntryFilter";
+import Navbar from "../components/navbar";
 import FilterMenu from "../components/team/filterMenu";
 
 // TypeScript type def for the component state
@@ -216,6 +217,7 @@ export default class TeamPage extends React.PureComponent<
 			console.log(this.muiPaletteOptions);
 			return (
 				<ThemeProvider theme={this.muiTheme!}>
+					<Navbar />
 					{/**
 					 * Search bar
 					 * To match the entries, we pad the top and left of the containing div by 16px.

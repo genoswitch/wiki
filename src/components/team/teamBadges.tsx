@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import TeamTag from "../../types/teamTag";
+import TeamTag from "../../types/team/teamTag";
 import { Chip, Theme } from "@mui/material";
 import capitalizeWords from "../../capitalizeWords";
 

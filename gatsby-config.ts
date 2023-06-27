@@ -25,6 +25,13 @@ const config: GatsbyConfig = {
 			},
 		},
 		{
+			resolve: "gatsby-source-filesystem",
+			options: {
+				name: "mdxPages",
+				path: "./pages/mdx/",
+			},
+		},
+		{
 			resolve: "gatsby-plugin-remote-images",
 			options: {
 				nodeType: "TeamMemberYaml",
@@ -37,6 +44,7 @@ const config: GatsbyConfig = {
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`, // Needed for dynamic images
 		`gatsby-plugin-no-sourcemaps`,
+		`gatsby-plugin-mdx`,
 	],
 };
 

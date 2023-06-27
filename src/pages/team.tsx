@@ -4,10 +4,15 @@ import { graphql, PageProps } from "gatsby";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
-import { TeamMemberNode } from "../types/teamMemberNode";
+import { TeamMemberNode } from "../types/graphql/teamMemberNode";
 import {
+	Checkbox,
 	Chip,
 	createTheme,
+	Divider,
+	FormControlLabel,
+	FormGroup,
+	MenuItem,
 	SimplePaletteColorOptions,
 	TextField,
 	Theme,
@@ -17,13 +22,15 @@ import AddIcon from "@mui/icons-material/Add";
 
 import update from "immutability-helper";
 
-import { TeamTagColourNode } from "../types/teamTagColourNode";
-import TeamTag from "../types/teamTag";
+import { TeamTagColourNode } from "../types/graphql/teamTagColourNode";
+import TeamTag from "../types/team/teamTag";
 import ExtendablePalette from "../types/extendablePalette";
-import { FilterChip, FilterChipEntry } from "../types/filterChip";
+import { FilterChip, FilterChipEntry } from "../types/team/filterChip";
 
 import capitalizeWords from "../capitalizeWords";
 import teamEntryFilter from "../filters/teamEntryFilter";
+import Navbar from "../components/navbar";
+import FilterMenu from "../components/team/filterMenu";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
@@ -31,6 +38,7 @@ interface TeamPageState {
 	isReady: boolean;
 	searchQuery: string;
 	filterChip: FilterChip;
+	shouldIncludeTagsInSearch: boolean;
 }
 
 // Use React.PureComponent for TS types on this.props <https://github.com/gatsbyjs/gatsby/issues/8431#issue-362717669>
@@ -45,6 +53,7 @@ export default class TeamPage extends React.PureComponent<
 			isReady: false,
 			searchQuery: "",
 			filterChip: [],
+			shouldIncludeTagsInSearch: true,
 		};
 	}
 
@@ -57,6 +66,8 @@ export default class TeamPage extends React.PureComponent<
 
 	muiTheme: Theme | undefined = undefined;
 	muiPaletteOptions: ExtendablePalette = {};
+
+	shouldIncludeTagsInSearch: boolean;
 
 	componentDidMount(): void {
 		this.setState({ isReady: false });
@@ -192,6 +203,13 @@ export default class TeamPage extends React.PureComponent<
 		});
 	}
 
+	handleShouldIncTagsChange(event: React.ChangeEvent<HTMLInputElement>) {
+		console.log(this.shouldIncludeTagsInSearch);
+		this.setState({
+			shouldIncludeTagsInSearch: event.target.checked,
+		});
+	}
+
 	render(): React.ReactNode {
 		if (!this.state["isReady"]) {
 			return <div>Preparing...</div>;
@@ -199,6 +217,7 @@ export default class TeamPage extends React.PureComponent<
 			console.log(this.muiPaletteOptions);
 			return (
 				<ThemeProvider theme={this.muiTheme!}>
+					<Navbar />
 					{/**
 					 * Search bar
 					 * To match the entries, we pad the top and left of the containing div by 16px.
@@ -210,40 +229,43 @@ export default class TeamPage extends React.PureComponent<
 							variant="outlined"
 							onChange={event => this.setState({ searchQuery: event.target.value })}
 						/>
-						{/**
-						 * Filter chips
-						 */}
-						{this.state.filterChip.map(entry => {
-							if (entry.enabled) {
+						<FilterMenu
+							elements={this.state.filterChip.map(entry => {
+								// Filter chips
 								return (
-									<span style={{ paddingLeft: 16 }}>
+									// onClick is on the MenuItem otherwis it only triggers when the chip itself is clicked.
+									<MenuItem onClick={(event: any) => this.handleChipClick(event, entry)}>
 										<Chip
-											onClick={(event: any) => this.handleChipClick(event, entry)}
+											variant={entry.enabled ? "filled" : "outlined"}
+											deleteIcon={entry.enabled ? <></> : <AddIcon />}
 											label={capitalizeWords(entry.tag.name)}
 											color={entry.tag.paletteName}
 											size="small"
 											sx={{ fontWeight: "bold" }}
 										/>
-									</span>
+									</MenuItem>
 								);
-							} else {
-								return (
-									<span style={{ paddingLeft: 16 }}>
-										<Chip
-											variant="outlined"
-											deleteIcon={<AddIcon />}
-											onClick={(event: any) => this.handleChipClick(event, entry)}
-											label={capitalizeWords(entry.tag.name)}
-											color={entry.tag.paletteName}
-											size="small"
-											sx={{ fontWeight: "bold" }}
-										/>
-									</span>
-								);
+							})}
+						/>
+						{/** Should be enclosed in FormGroup but that makes a newline. Shhh! */}
+						<FormControlLabel
+							control={
+								<Checkbox
+									defaultChecked
+									onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+										this.handleShouldIncTagsChange(event)
+									}
+								/>
 							}
-						})}
+							label="Include tags in search?"
+						/>
 					</div>
-					{teamEntryFilter(this.entries, this.state.searchQuery, this.state.filterChip)}
+					{teamEntryFilter(
+						this.entries,
+						this.state.searchQuery,
+						this.state.filterChip,
+						this.state.shouldIncludeTagsInSearch
+					)}
 				</ThemeProvider>
 			);
 		}

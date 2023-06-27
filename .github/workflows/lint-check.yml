@@ -1,10 +1,13 @@
-name: Lint
+name: Lint (Check)
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   lint:
-    name: Lint (Prettier)
+    name: Prettier
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -14,7 +17,7 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Install dependencies
-        run: npm ci --no-scripts
+        run: npm i prettier --no-scripts
 
       - name: Run prettier
         run: npx prettier -c .

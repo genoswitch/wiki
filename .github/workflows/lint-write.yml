@@ -1,0 +1,35 @@
+name: Lint (Write)
+
+on:
+  pull_request:
+
+jobs:
+  prettier:
+    permissions:
+      contents: write
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          # Make sure the actual branch is checked out when running on pull requests
+          ref: ${{ github.head_ref }}
+          # This is important to fetch the changes to the previous commit
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+
+      - name: Install dependencies
+        run: npm i prettier --no-scripts
+
+      - name: Run prettier
+        run: npx prettier -w .
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "(lint): Run prettier against ${{ github.sha }}"
+          branch: ${{ github.head_ref }}
+          commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com> # instead of the default being the author of the triggering commit.

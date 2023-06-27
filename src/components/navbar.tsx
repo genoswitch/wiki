@@ -35,6 +35,10 @@ const entries: PageEntry[] = [
 		name: "Team",
 		link: "team",
 	},
+	{
+		name: "Team Description",
+		link: "description",
+	},
 ];
 
 type LogoProps = {

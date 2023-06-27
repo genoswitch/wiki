@@ -32,3 +32,4 @@ jobs:
         with:
           commit_message: "(lint): Run prettier against ${{ github.sha }}"
           branch: ${{ github.head_ref }}
+          commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com> # instead of the default being the author of the triggering commit.

@@ -1,4 +1,4 @@
-name: Lint
+name: Lint (Write)
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ jobs:
   prettier:
     permissions:
       contents: write
-    name: Prettier (write)
+    name: Prettier
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

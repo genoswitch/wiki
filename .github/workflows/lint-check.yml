@@ -1,4 +1,4 @@
-name: Lint
+name: Lint (Check)
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   lint:
-    name: Prettier (check)
+    name: Prettier
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

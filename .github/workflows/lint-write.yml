@@ -18,9 +18,17 @@ jobs:
           # This is important to fetch the changes to the previous commit
           fetch-depth: 0
 
-      - name: Prettify code
-        uses: creyD/prettier_action@v4.3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+
+      - name: Install dependencies
+        run: npm ci --no-scripts
+
+      - name: Run prettier
+        run: npx prettier -w .
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          only_changed: True
           commit_message: "(lint): Run prettier against ${{ github.sha }}"
-          prettier_options: "--write ."
+          branch: ${{ github.head_ref }}

@@ -52,7 +52,7 @@ export default class TeamPage extends React.PureComponent<
 			isReady: false,
 			searchQuery: "",
 			filterChip: [],
-			shouldIncludeTagsInSearch: true
+			shouldIncludeTagsInSearch: true,
 		};
 	}
 
@@ -203,10 +203,10 @@ export default class TeamPage extends React.PureComponent<
 	}
 
 	handleShouldIncTagsChange(event: React.ChangeEvent<HTMLInputElement>) {
-		console.log(this.shouldIncludeTagsInSearch)
+		console.log(this.shouldIncludeTagsInSearch);
 		this.setState({
-			shouldIncludeTagsInSearch: event.target.checked
-		})
+			shouldIncludeTagsInSearch: event.target.checked,
+		});
 	}
 
 	render(): React.ReactNode {
@@ -246,9 +246,24 @@ export default class TeamPage extends React.PureComponent<
 							})}
 						/>
 						{/** Should be enclosed in FormGroup but that makes a newline. Shhh! */}
-						<FormControlLabel control={<Checkbox defaultChecked onChange={(event: React.ChangeEvent<HTMLInputElement>) => this.handleShouldIncTagsChange(event)} />} label="Include tags in search?" />
+						<FormControlLabel
+							control={
+								<Checkbox
+									defaultChecked
+									onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+										this.handleShouldIncTagsChange(event)
+									}
+								/>
+							}
+							label="Include tags in search?"
+						/>
 					</div>
-					{teamEntryFilter(this.entries, this.state.searchQuery, this.state.filterChip, this.state.shouldIncludeTagsInSearch)}
+					{teamEntryFilter(
+						this.entries,
+						this.state.searchQuery,
+						this.state.filterChip,
+						this.state.shouldIncludeTagsInSearch
+					)}
 				</ThemeProvider>
 			);
 		}

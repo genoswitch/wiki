@@ -67,8 +67,6 @@ export default class TeamPage extends React.PureComponent<
 	muiTheme: Theme | undefined = undefined;
 	muiPaletteOptions: ExtendablePalette = {};
 
-	shouldIncludeTagsInSearch: boolean;
-
 	componentDidMount(): void {
 		this.setState({ isReady: false });
 
@@ -204,7 +202,6 @@ export default class TeamPage extends React.PureComponent<
 	}
 
 	handleShouldIncTagsChange(event: React.ChangeEvent<HTMLInputElement>) {
-		console.log(this.shouldIncludeTagsInSearch);
 		this.setState({
 			shouldIncludeTagsInSearch: event.target.checked,
 		});

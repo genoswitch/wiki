@@ -4,3 +4,6 @@ public
 
 # package.json, package-lock.json
 package*.json
+
+# Auto-generated
+src/gatsby-types.d.ts

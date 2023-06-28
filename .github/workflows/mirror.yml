@@ -1,6 +1,15 @@
 name: Mirror
 
-on: ["push", "delete"]
+# Dependabot PRs do not have the same access to secrets.
+on:
+  push:
+    branches:
+      - "**"
+      - "!dependabot/**"
+  delete:
+    branches:
+      - "**"
+      - "!dependabot/**"
 
 jobs:
   igem-gitlab:

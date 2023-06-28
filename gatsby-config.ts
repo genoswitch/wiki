@@ -33,7 +33,8 @@ const config: GatsbyConfig = {
 				nodeType: "TeamMemberYaml",
 				imagePath: "picturePath",
 				name: "dynamicImage",
-				prepareUrl: (url: string) => `${config.siteMetadata.assetBasePath}${url}`,
+				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
+				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
 			},
 		},
 		`gatsby-plugin-image`,

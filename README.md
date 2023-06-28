@@ -1,5 +1,7 @@
 # Team City-of-London-UK 2023 Wiki
 
+## Preface
+
 This repository **MUST** contain all coding assets to generate your team's wiki (HTML, CSS, JavaScript, TypeScript, Python, etc).
 
 Images, photos, icons and fonts **MUST** be stored on `static.igem.wiki` using [uploads.igem.org](https://uploads.igem.org), and Videos **must** be embedded from [iGEM Video Universe](https://video.igem.org).
@@ -8,16 +10,31 @@ For up-to-date requirements, resources, help and guidance, visit [competition.ig
 
 ## Getting started
 
-You should probably only edit the files inside folders `static`, `wiki` and `wiki > pages`.
+This Wiki is built using [TypeScript](https://typescriptlang.org/), [React](https://react.dev/), and [Gatsby](https://gatsbyjs.com).
 
-1. Open the Web IDE
-1. Make the changes on the files you wish:
-   - For the menu, change the file [menu.html](wiki/menu.html)
-   - For the layout, change the file [layout.html](wiki/layout.html)
-   - For the pages, change the corresponding file in the foler [pages](wiki/pages)
-1. Review the changes you made
-1. Once you are done, save the changes by **committing** them to the _main branch_ of the repository
-1. An automated script will build, test and deploy your wiki, which should take less than 30 seconds.
+1. Install [Node.js](https://nodejs.org/en/download)
+
+2. Install [Git](https://git-scm.com/downloads)
+
+3. Clone (download) the repository
+
+   `git clone https://2023.igem.wiki/city-of-london-uk/`
+
+   or
+
+   `git clone https://github.com/genoswitch/wiki`
+
+4. `cd` into the wiki directory
+
+5. Install dependencies with `npm i --no-scripts`
+
+6. Done! You can preview your changes in real time by running `npm start`.
+
+### Making changes
+
+> More information about branches in Git can be found [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches).
+
+Once you are done, save the changes by **committing** them to a new branch of the repository.
 
 ## About this Template
 

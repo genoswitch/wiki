@@ -31,6 +31,7 @@ import capitalizeWords from "../capitalizeWords";
 import teamEntryFilter from "../filters/teamEntryFilter";
 import Navbar from "../components/navbar";
 import FilterMenu from "../components/team/filterMenu";
+import LoadingPage from "../components/loadingPage";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
@@ -209,7 +210,7 @@ export default class TeamPage extends React.PureComponent<
 
 	render(): React.ReactNode {
 		if (!this.state["isReady"]) {
-			return <div>Preparing...</div>;
+			return (<LoadingPage />)
 		} else {
 			console.log(this.muiPaletteOptions);
 			return (

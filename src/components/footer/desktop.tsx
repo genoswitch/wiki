@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import * as React from "react";
 import SchoolLogos from "./components/schoolLogos";
+import { SponsorNode } from "../../types/graphql/sponsorNode";
 
 export const query = graphql`
     query FooterData {
@@ -38,7 +39,7 @@ const DesktopFooter = () => {
                     </Grid>
                     <Grid item xs={6}>
                         <Grid container spacing={2} sx={{ justifyContent: "right" }}>
-                            {data.allSponsorYaml.nodes.map(node => {
+                            {data.allSponsorYaml.nodes.map((node: SponsorNode) => {
                                 return (
                                     <Grid xs={2} sx={{ display: "flex", alignItems: "center" }}>
                                         <img style={{ maxWidth: "100%", maxHeight: "100%" }} src={assetPath + node.logoPath} />

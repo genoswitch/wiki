@@ -1,4 +1,4 @@
-import { Grid, Link, Paper, Typography } from "@mui/material";
+import { Grid, Paper } from "@mui/material";
 
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -7,6 +7,7 @@ import * as React from "react";
 import SchoolLogos from "./components/schoolLogos";
 import SponsorLogos from "./components/sponsorLogos";
 import SourceAndSha from "./components/sourceAndSha";
+import Copyright from "./components/copyright";
 
 export const query = graphql`
     query FooterData {
@@ -42,7 +43,7 @@ const DesktopFooter = () => {
                         {/** Left: Source code */}
                         <SourceAndSha longSha={longSha} shortSha={shortSha} />
                         <Grid item xs={12}>
-                            <Typography>© 2023 - Content on this site is licensed under a <Link underline="hover" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license.</Link></Typography>
+                            <Copyright />
                         </Grid>
                     </Grid>
 

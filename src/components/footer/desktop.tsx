@@ -9,31 +9,18 @@ export const query = graphql`
     query FooterData {
         site {
             siteMetadata {
-            sha
-            assetBasePath
+                sha
+                assetBasePath
+            }
+        }
+        allSponsorYaml {
+            nodes {
+                name
+                logoPath
+            }
         }
     }
-}
 `;
-
-
-const sponsors = [
-    {
-        name: "Hennigan",
-        url: "https://static.igem.wiki/teams/4642/wiki/icon.png",
-    },
-    {
-        name: "John Carpenter Club",
-        url: "https://static.igem.wiki/teams/4642/wiki/logos/john-carpenter-club-transparent.png"
-    },
-    {
-        name: "Roger Counter Foundation",
-        url: "https://static.igem.wiki/teams/4642/wiki/logos/roger-counter-foundation-transparent.png",
-    }, {
-        name: "Barbers Livery Company",
-        url: "https://static.igem.wiki/teams/4642/wiki/logos/barbers-company-barber-surgeons-crest.png",
-    }
-]
 
 const DesktopFooter = () => {
     const data = useStaticQuery(query);
@@ -51,10 +38,10 @@ const DesktopFooter = () => {
                     </Grid>
                     <Grid item xs={6}>
                         <Grid container spacing={2} sx={{ justifyContent: "right" }}>
-                            {sponsors.map(sponsor => {
+                            {data.allSponsorYaml.nodes.map(node => {
                                 return (
                                     <Grid xs={2} sx={{ display: "flex", alignItems: "center" }}>
-                                        <img style={{ maxWidth: "100%", maxHeight: "100%" }} src={sponsor.url} />
+                                        <img style={{ maxWidth: "100%", maxHeight: "100%" }} src={assetPath + node.logoPath} />
                                     </Grid>
                                 )
                             })}

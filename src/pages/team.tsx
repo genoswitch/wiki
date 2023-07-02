@@ -210,7 +210,7 @@ export default class TeamPage extends React.PureComponent<
 
 	render(): React.ReactNode {
 		if (!this.state["isReady"]) {
-			return (<LoadingPage />)
+			return <LoadingPage />;
 		} else {
 			console.log(this.muiPaletteOptions);
 			return (

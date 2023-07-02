@@ -1,11 +1,12 @@
-import { Button, Grid, Link, Paper, Typography } from "@mui/material";
+import { Grid, Link, Paper, Typography } from "@mui/material";
 
 import { graphql, useStaticQuery } from "gatsby";
 
 import * as React from "react";
+
 import SchoolLogos from "./components/schoolLogos";
-import { SponsorNode } from "../../types/graphql/sponsorNode";
 import SponsorLogos from "./components/sponsorLogos";
+import SourceAndSha from "./components/sourceAndSha";
 
 export const query = graphql`
     query FooterData {
@@ -39,12 +40,7 @@ const DesktopFooter = () => {
                     {/** Left side */}
                     <Grid container item xs={6}>
                         {/** Left: Source code */}
-                        <Grid item xs={12} display="flex" alignItems="end">
-                            {/** Source Code Button */}
-                            <Button variant="contained" target="_blank" href="https://gitlab.igem.org/2023/city-of-london-uk">Source Code</Button>
-                            {/** SHA Text / Button */}
-                            <Typography sx={{ paddingLeft: 2, color: "white" }}>(SHA: <Button variant="text" target="_blank" href={`https://gitlab.igem.org/2023/city-of-london-uk/-/commit/${longSha}`}>{shortSha}</Button>)</Typography>
-                        </Grid>
+                        <SourceAndSha longSha={longSha} shortSha={shortSha} />
                         <Grid item xs={12}>
                             <Typography>© 2023 - Content on this site is licensed under a <Link underline="hover" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license.</Link></Typography>
                         </Grid>

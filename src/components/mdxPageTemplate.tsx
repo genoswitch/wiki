@@ -1,6 +1,7 @@
 import * as React from "react";
 import NavBar from "./navbar";
 import { Container } from "@mui/material";
+import Footer from "./footer";
 
 // Define a custom type so TypeScript understands what is being passed to the function
 // Without a type, the "any" type is implicitly set.
@@ -15,6 +16,7 @@ const MdxPageTemplate = ({ children }: MdxPageTemplatePropTypes) => {
 			<NavBar />
 			<br />
 			<Container>{children}</Container>
+			<Footer />
 		</>
 	);
 };

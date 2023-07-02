@@ -49,9 +49,9 @@ const DesktopFooter = () => {
 
                     {/** Right side */}
                     <Grid container xs={6}>
-                        <SponsorLogos nodes={data.allSponsorYaml.nodes} assetPath={assetPath} />
+                        <SponsorLogos containerSx={{ justifyContent: "flex-end" }} elementSx={{ display: "flex", alignItems: "center" }} size={2} nodes={data.allSponsorYaml.nodes} assetPath={assetPath} />
                         <Grid item container sx={{ justifyContent: "flex-end" }}>
-                            <SchoolLogos assetPath={assetPath} />
+                            <SchoolLogos size={3} assetPath={assetPath} />
                         </Grid>
                     </Grid>
 

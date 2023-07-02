@@ -6,14 +6,17 @@ import { SponsorNode } from "../../../types/graphql/sponsorNode";
 type SponsorLogoProps = {
     nodes: SponsorNode[];
     assetPath: string
+    containerSx: object
+    elementSx: object
+    size: number
 }
 
-const SponsorLogos = ({ nodes, assetPath }: SponsorLogoProps) => {
+const SponsorLogos = ({ nodes, assetPath, containerSx, elementSx, size }: SponsorLogoProps) => {
     return (
-        <Grid item container spacing={2} sx={{ justifyContent: "flex-end" }}>
+        <Grid item container spacing={2} sx={containerSx}>
             {nodes.map(node => {
                 return (
-                    <Grid item xs={2} sx={{ display: "flex", alignItems: "center" }}>
+                    <Grid item xs={size} sx={elementSx}>
                         <img style={{ maxWidth: "100%", maxHeight: "100%" }} src={assetPath + node.logoPath} />
                     </Grid>
                 )

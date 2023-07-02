@@ -3,6 +3,7 @@ import { Button, Grid, Paper, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 
 import * as React from "react";
+import SchoolLogos from "./components/schoolLogos";
 
 export const query = graphql`
     query FooterData {
@@ -66,12 +67,7 @@ const DesktopFooter = () => {
                         <Typography sx={{ paddingLeft: 2, color: "white" }}>(SHA: <Button variant="text" target="_blank" href={`https://gitlab.igem.org/2023/city-of-london-uk/-/commit/${longSha}`}>{shortSha}</Button>)</Typography>
                     </Grid>
 
-                    <Grid item xs={2}>
-                        <img style={{ maxWidth: "100%", maxHeight: "100%" }} src={assetPath + "logos/clsg-transparent.png"} />
-                    </Grid>
-                    <Grid item xs={2}>
-                        <img style={{ maxWidth: "100%", maxHeight: "100%" }} src={assetPath + "logos/clsb-transparent.png"} />
-                    </Grid>
+                    <SchoolLogos assetPath={assetPath} />
                 </Grid>
             </Paper >
         </>

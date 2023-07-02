@@ -45,7 +45,7 @@ const DesktopFooter = () => {
                             <Typography sx={{ paddingLeft: 2, color: "white" }}>(SHA: <Button variant="text" target="_blank" href={`https://gitlab.igem.org/2023/city-of-london-uk/-/commit/${longSha}`}>{shortSha}</Button>)</Typography>
                         </Grid>
                         <Grid item xs={12}>
-                            <Typography>© 2023 - Content on this site is licensed under a <Link underline="hover" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license.</Link></Typography>
+                            <Typography>© 2023 - Content on this site is licensed under a <Link underline="hover" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license.</Link></Typography>
                         </Grid>
                     </Grid>
 

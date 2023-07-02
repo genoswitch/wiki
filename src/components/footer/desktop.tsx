@@ -31,24 +31,24 @@ const DesktopFooter = () => {
 
     return (
         <>
-            <Paper sx={{ backgroundColor: "#0a1628", color: "white", padding: 3 }}>
+            <Paper sx={{ backgroundColor: "#0a1628", color: "white" }}>
                 {/** 12 columns (default) */}
                 <Grid container spacing={2}>
                     <Grid item xs={6}>
                         TOP LEFT
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid container xs={6}>
                         <Grid container spacing={2} sx={{ justifyContent: "right" }}>
                             {data.allSponsorYaml.nodes.map((node: SponsorNode) => {
                                 return (
-                                    <Grid xs={2} sx={{ display: "flex", alignItems: "center" }}>
+                                    <Grid item xs={2} sx={{ display: "flex", alignItems: "center" }}>
                                         <img style={{ maxWidth: "100%", maxHeight: "100%" }} src={assetPath + node.logoPath} />
                                     </Grid>
                                 )
                             })}
                         </Grid>
                     </Grid>
-                    <Grid xs={8} display="flex" alignItems="end">
+                    <Grid item xs={8} display="flex" alignItems="end">
                         {/** Source Code Button */}
                         <Button variant="contained" target="_blank" href="https://gitlab.igem.org/2023/city-of-london-uk">Source Code</Button>
                         {/** SHA Text / Button */}

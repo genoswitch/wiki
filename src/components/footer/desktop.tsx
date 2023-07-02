@@ -1,4 +1,4 @@
-import { Button, Grid, Paper, Typography } from "@mui/material";
+import { Button, Grid, Link, Paper, Typography } from "@mui/material";
 
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -32,13 +32,26 @@ const DesktopFooter = () => {
     return (
         <>
             <Paper sx={{ backgroundColor: "#0a1628", color: "white" }}>
-                {/** 12 columns (default) */}
+                {/** Root grid. Size: 12 columns (default) */}
                 <Grid container spacing={2}>
-                    <Grid item xs={6}>
-                        TOP LEFT
+
+                    {/** Left side */}
+                    <Grid container item xs={6}>
+                        {/** Left: Source code */}
+                        <Grid item xs={12} display="flex" alignItems="end">
+                            {/** Source Code Button */}
+                            <Button variant="contained" target="_blank" href="https://gitlab.igem.org/2023/city-of-london-uk">Source Code</Button>
+                            {/** SHA Text / Button */}
+                            <Typography sx={{ paddingLeft: 2, color: "white" }}>(SHA: <Button variant="text" target="_blank" href={`https://gitlab.igem.org/2023/city-of-london-uk/-/commit/${longSha}`}>{shortSha}</Button>)</Typography>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Typography>© 2023 - Content on this site is licensed under a <Link underline="hover" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license.</Link></Typography>
+                        </Grid>
                     </Grid>
+
+                    {/** Right side */}
                     <Grid container xs={6}>
-                        <Grid container spacing={2} sx={{ justifyContent: "right" }}>
+                        <Grid item container spacing={2} sx={{ justifyContent: "right" }}>
                             {data.allSponsorYaml.nodes.map((node: SponsorNode) => {
                                 return (
                                     <Grid item xs={2} sx={{ display: "flex", alignItems: "center" }}>
@@ -47,15 +60,11 @@ const DesktopFooter = () => {
                                 )
                             })}
                         </Grid>
-                    </Grid>
-                    <Grid item xs={8} display="flex" alignItems="end">
-                        {/** Source Code Button */}
-                        <Button variant="contained" target="_blank" href="https://gitlab.igem.org/2023/city-of-london-uk">Source Code</Button>
-                        {/** SHA Text / Button */}
-                        <Typography sx={{ paddingLeft: 2, color: "white" }}>(SHA: <Button variant="text" target="_blank" href={`https://gitlab.igem.org/2023/city-of-london-uk/-/commit/${longSha}`}>{shortSha}</Button>)</Typography>
+                        <Grid item container sx={{ justifyContent: "flex-end" }}>
+                            <SchoolLogos assetPath={assetPath} />
+                        </Grid>
                     </Grid>
 
-                    <SchoolLogos assetPath={assetPath} />
                 </Grid>
             </Paper >
         </>

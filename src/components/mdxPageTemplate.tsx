@@ -2,6 +2,19 @@ import * as React from "react";
 import NavBar from "./navbar";
 import { Container } from "@mui/material";
 import Footer from "./footer";
+import { graphql, useStaticQuery } from "gatsby";
+
+// GraphQL query containing fragments (sub-queries) for the footer
+export const query = graphql`
+	query MdxPageData {
+		site {
+			...FooterSiteFragment
+		}
+		allSponsorYaml {
+			...FooterSponsorYamlFragment
+		}
+	}
+`
 
 // Define a custom type so TypeScript understands what is being passed to the function
 // Without a type, the "any" type is implicitly set.
@@ -11,12 +24,13 @@ type MdxPageTemplatePropTypes = {
 };
 
 const MdxPageTemplate = ({ children }: MdxPageTemplatePropTypes) => {
+	const data = useStaticQuery(query);
 	return (
 		<>
 			<NavBar />
 			<br />
 			<Container>{children}</Container>
-			<Footer />
+			<Footer data={data} />
 		</>
 	);
 };

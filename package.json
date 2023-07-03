@@ -33,6 +33,7 @@
     "@types/node": "^20.3.2",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@types/webpack-stats-plugin": "^0.3.2",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-mdx": "^5.11.0",
     "gatsby-plugin-no-sourcemaps": "^5.11.0",
@@ -42,6 +43,7 @@
     "gatsby-transformer-sharp": "^5.11.0",
     "gatsby-transformer-yaml": "^5.11.0",
     "prettier": "^2.8.8",
-    "typescript": "^5.1.5"
+    "typescript": "^5.1.5",
+    "webpack-stats-plugin": "^1.1.3"
   }
 }

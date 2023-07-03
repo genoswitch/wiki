@@ -1,6 +1,5 @@
 import * as React from "react";
 
-
 import { Grid, Paper } from "@mui/material";
 
 import SponsorLogos from "./components/sponsorLogos";

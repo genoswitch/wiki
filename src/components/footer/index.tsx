@@ -6,7 +6,6 @@ import Widths from "../../widths";
 import DesktopFooter from "./desktop";
 import MobileFooter from "./mobile";
 
-
 import { graphql } from "gatsby";
 
 export const query = graphql`
@@ -28,8 +27,8 @@ export const query = graphql`
 `;
 
 type FooterProps = {
-	data: Queries.Query
-}
+	data: Queries.Query;
+};
 
 const Footer = ({ data }: FooterProps) => {
 	const { width } = useWindowDimensions();

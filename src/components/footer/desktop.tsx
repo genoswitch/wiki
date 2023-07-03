@@ -7,7 +7,6 @@ import SponsorLogos from "./components/sponsorLogos";
 import SourceAndSha from "./components/sourceAndSha";
 import Copyright from "./components/copyright";
 
-
 const DesktopFooter = ({ data }) => {
 	const assetPath = data.site.siteMetadata.assetBasePath;
 	const longSha = data.site.siteMetadata.sha;

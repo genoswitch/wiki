@@ -14,7 +14,7 @@ export const query = graphql`
 			...FooterSponsorYamlFragment
 		}
 	}
-`
+`;
 
 // Define a custom type so TypeScript understands what is being passed to the function
 // Without a type, the "any" type is implicitly set.

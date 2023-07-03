@@ -7,3 +7,4 @@ package*.json
 
 # Auto-generated
 src/gatsby-types.d.ts
+webpack-stats.json

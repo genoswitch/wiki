@@ -1,6 +1,5 @@
 import * as React from "react";
 
-import { graphql, useStaticQuery } from "gatsby";
 
 import { Grid, Paper } from "@mui/material";
 
@@ -9,25 +8,7 @@ import SchoolLogos from "./components/schoolLogos";
 import SourceAndSha from "./components/sourceAndSha";
 import Copyright from "./components/copyright";
 
-export const query = graphql`
-	query FooterData {
-		site {
-			siteMetadata {
-				sha
-				assetBasePath
-			}
-		}
-		allSponsorYaml {
-			nodes {
-				name
-				logoPath
-			}
-		}
-	}
-`;
-
-const MobileFooter = () => {
-	const data = useStaticQuery(query);
+const MobileFooter = ({ data }) => {
 	const assetPath = data.site.siteMetadata.assetBasePath;
 	const longSha = data.site.siteMetadata.sha;
 	const shortSha = longSha.substring(0, 8);

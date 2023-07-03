@@ -40,7 +40,7 @@ const MobileFooter = () => {
 					{/** Desktop: Top left (nothing yet) */}
 
 					{/** School Logos */}
-					<SchoolLogos size={6} assetPath={assetPath} />
+					<SchoolLogos containerSx={{}} size={6} assetPath={assetPath} />
 
 					{/** Sponsors */}
 					<SponsorLogos

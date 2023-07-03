@@ -41,6 +41,16 @@ const config: GatsbyConfig = {
 				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
 			},
 		},
+		{
+			resolve: "gatsby-plugin-remote-images",
+			options: {
+				nodeType: "SponsorYaml",
+				imagePath: "logoPath",
+				name: "dynamicImage",
+				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
+				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
+			},
+		},
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`, // Needed for dynamic images

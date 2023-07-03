@@ -23,7 +23,11 @@ const SponsorLogos = ({ nodes, containerSx, elementSx, size }: SponsorLogoProps)
 				return (
 					<Grid item key={`sponsorGrid-${node.name}`} xs={size} sx={elementSx}>
 						<a href={node.url!} target="_blank">
-							<GatsbyImage image={image} style={{ maxWidth: "100%", maxHeight: "100%" }} alt={`${node.name} Logo`} />
+							<GatsbyImage
+								image={image}
+								style={{ maxWidth: "100%", maxHeight: "100%" }}
+								alt={`${node.name} Logo`}
+							/>
 						</a>
 					</Grid>
 				);

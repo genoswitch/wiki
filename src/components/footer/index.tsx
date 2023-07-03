@@ -14,6 +14,7 @@ export const query = graphql`
 	fragment FooterSponsorYamlFragment on SponsorYamlConnection {
 		nodes {
 			name
+			url
 			# static, higher res (original) image
 			#logoPath
 			# gatsby-plugin-image (using logoPath)

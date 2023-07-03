@@ -34,7 +34,7 @@ const MobileFooter = () => {
 
 	return (
 		<>
-			<Paper sx={{ backgroundColor: "#0a1628", color: "white" }}>
+			<Paper square sx={{ backgroundColor: "#0a1628", color: "white" }}>
 				{/** Root grid. Size: 12 columns (default) */}
 				<Grid container spacing={2}>
 					{/** Desktop: Top left (nothing yet) */}

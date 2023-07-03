@@ -10,52 +10,56 @@ import SourceAndSha from "./components/sourceAndSha";
 import Copyright from "./components/copyright";
 
 export const query = graphql`
-    query FooterData {
-        site {
-            siteMetadata {
-                sha
-                assetBasePath
-            }
-        }
-        allSponsorYaml {
-            nodes {
-                name
-                logoPath
-            }
-        }
-    }
+	query FooterData {
+		site {
+			siteMetadata {
+				sha
+				assetBasePath
+			}
+		}
+		allSponsorYaml {
+			nodes {
+				name
+				logoPath
+			}
+		}
+	}
 `;
 
-
 const MobileFooter = () => {
-    const data = useStaticQuery(query);
-    const assetPath = data.site.siteMetadata.assetBasePath;
-    const longSha = data.site.siteMetadata.sha;
-    const shortSha = longSha.substring(0, 8);
+	const data = useStaticQuery(query);
+	const assetPath = data.site.siteMetadata.assetBasePath;
+	const longSha = data.site.siteMetadata.sha;
+	const shortSha = longSha.substring(0, 8);
 
-    return (
-        <>
-            <Paper sx={{ backgroundColor: "#0a1628", color: "white" }}>
-                {/** Root grid. Size: 12 columns (default) */}
-                <Grid container spacing={2}>
+	return (
+		<>
+			<Paper sx={{ backgroundColor: "#0a1628", color: "white" }}>
+				{/** Root grid. Size: 12 columns (default) */}
+				<Grid container spacing={2}>
+					{/** Desktop: Top left (nothing yet) */}
 
-                    {/** Desktop: Top left (nothing yet) */}
+					{/** Sponsors */}
+					<SponsorLogos
+						containerSx={{}}
+						elementSx={{ display: "flex", alignItems: "center" }}
+						size={4}
+						nodes={data.allSponsorYaml.nodes}
+						assetPath={assetPath}
+					/>
 
-                    {/** Sponsors */}
-                    <SponsorLogos containerSx={{}} elementSx={{ display: "flex", alignItems: "center" }} size={4} nodes={data.allSponsorYaml.nodes} assetPath={assetPath} />
+					{/** School Logos */}
+					<SchoolLogos size={6} assetPath={assetPath} />
 
-                    {/** School Logos */}
-                    <SchoolLogos size={6} assetPath={assetPath} />
+					{/** Source code button and SHA */}
+					<SourceAndSha longSha={longSha} shortSha={shortSha} />
 
-                    {/** Source code button and SHA */}
-                    <SourceAndSha longSha={longSha} shortSha={shortSha} />
-
-                    {/** Copyright */}
-                    <Copyright />
-                </Grid>
-            </Paper>
-        </>
-    )
-}
+					{/** Copyright */}
+					<Copyright />
+				</Grid>
+			</Paper>
+		</>
+	);
+};
 
 export default MobileFooter;

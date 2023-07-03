@@ -39,6 +39,9 @@ const MobileFooter = () => {
 				<Grid container spacing={2}>
 					{/** Desktop: Top left (nothing yet) */}
 
+					{/** School Logos */}
+					<SchoolLogos size={6} assetPath={assetPath} />
+
 					{/** Sponsors */}
 					<SponsorLogos
 						containerSx={{}}
@@ -47,9 +50,6 @@ const MobileFooter = () => {
 						nodes={data.allSponsorYaml.nodes}
 						assetPath={assetPath}
 					/>
-
-					{/** School Logos */}
-					<SchoolLogos size={6} assetPath={assetPath} />
 
 					{/** Source code button and SHA */}
 					<SourceAndSha longSha={longSha} shortSha={shortSha} />

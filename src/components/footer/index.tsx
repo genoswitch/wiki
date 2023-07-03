@@ -12,7 +12,6 @@ const Footer = () => {
 		<>
 			{/** iGEM 2022 Vilnius Lithuania: Use widths to determine which footer to display. */}
 			{width && width >= Widths.MD ? <DesktopFooter /> : <MobileFooter />}
-			Footer end.
 		</>
 	);
 };

@@ -32,6 +32,7 @@ import teamEntryFilter from "../filters/teamEntryFilter";
 import Navbar from "../components/navbar";
 import FilterMenu from "../components/team/filterMenu";
 import LoadingPage from "../components/loadingPage";
+import Footer from "../components/footer";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
@@ -264,6 +265,7 @@ export default class TeamPage extends React.PureComponent<
 						this.state.filterChip,
 						this.state.shouldIncludeTagsInSearch
 					)}
+					<Footer data={this.data} />
 				</ThemeProvider>
 			);
 		}
@@ -310,6 +312,10 @@ export const query = graphql`
 			siteMetadata {
 				assetBasePath
 			}
+			...FooterSiteFragment
+		}
+		allSponsorYaml {
+			...FooterSponsorYamlFragment
 		}
 	}
 `;

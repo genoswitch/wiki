@@ -8,6 +8,8 @@ jobs:
   build:
     name: Test Build
     runs-on: ubuntu-latest
+    permissions:
+      checks: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -27,3 +29,26 @@ jobs:
           webpackStatsFile: ./webpack-stats.json
           key: ${{ secrets.RELATIVE_CI_KEY }}
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Zip up the public directory
+        run: cd public && zip -r ../site.zip ./
+
+      - name: Upload zipped site as an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: site.zip
+
+      - name: Determine the size of the zip file
+        id: determineSize
+        # Save to GITHUB_OUTPUT
+        run: echo "SIZE=$(du -sh site.zip | cut -f1)" >> $GITHUB_OUTPUT
+
+      - name: Create a neutral check with the zipped size
+        uses: LouisBrunner/checks-action@v1.6.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: "Build Size"
+          conclusion: neutral
+          output: |
+            {"title":"${{ steps.determineSize.outputs.SIZE }} (of 5M)","summary":"${{ steps.determineSize.outputs.SIZE }} (of 5M)"}

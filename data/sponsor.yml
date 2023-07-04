@@ -1,3 +1,7 @@
+- name: Integrated DNA Technologies
+  logoPath: logos/idt-dna-transparent.png
+  url: https://eu.idtdna.com/pages
+
 - name: John Carpenter Club
   logoPath: logos/john-carpenter-club-transparent.png
   url: https://www.jcc.org.uk/

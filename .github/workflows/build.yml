@@ -49,4 +49,4 @@ jobs:
           name: "Build Size"
           conclusion: neutral
           output: |
-            {"title":"${{ steps.determineSize.outputs.SIZE }} (of 5M)"}
+            {"title":"${{ steps.determineSize.outputs.SIZE }} (of 5M)","summary":"${{ steps.determineSize.outputs.SIZE }} (of 5M)"}

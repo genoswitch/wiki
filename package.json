@@ -43,7 +43,7 @@
     "gatsby-transformer-sharp": "^5.11.0",
     "gatsby-transformer-yaml": "^5.11.0",
     "prettier": "^2.8.8",
-    "typescript": "^5.1.5",
+    "typescript": "^5.1.6",
     "webpack-stats-plugin": "^1.1.3"
   }
 }

@@ -3,15 +3,10 @@ import { withPrefix } from "gatsby";
 
 import {
 	AppBar,
-	Container,
-	Menu,
 	Toolbar,
 	Box,
-	MenuItem,
-	Typography,
 	Button,
 	IconButton,
-	Divider,
 	List,
 	CssBaseline,
 	Drawer,

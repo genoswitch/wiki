@@ -73,7 +73,7 @@ const Logo = (props: LogoProps) => {
 const AnimatedLogo = (props: LogoProps) => {
 	/**
 	 * Transparent Animated WebP
-	 * 
+	 *
 	 * See: https://github.com/genoswitch/wiki-assets/tree/main/intermediates/logo-animation
 	 * 		https://developer.chrome.com/blog/alpha-transparency-in-chrome-video/
 	 */

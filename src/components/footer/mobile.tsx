@@ -3,7 +3,7 @@ import * as React from "react";
 import { Grid, Paper } from "@mui/material";
 
 import SponsorLogos from "./components/sponsorLogos";
-import SchoolLogos from "./components/schoolLogos";
+import ProminentLogos from "./components/prominentLogos";
 import SourceAndSha from "./components/sourceAndSha";
 import Copyright from "./components/copyright";
 
@@ -20,7 +20,12 @@ const MobileFooter = ({ data }) => {
 					{/** Desktop: Top left (nothing yet) */}
 
 					{/** School Logos */}
-					<SchoolLogos containerSx={{}} size={6} assetPath={assetPath} />
+					<ProminentLogos
+						containerSx={{}}
+						size={6}
+						assetPath={assetPath}
+						nodes={data.allProminentLogoYaml.nodes}
+					/>
 
 					{/** Sponsors */}
 					<SponsorLogos

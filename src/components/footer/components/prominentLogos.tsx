@@ -4,14 +4,14 @@ import { Grid } from "@mui/material";
 import { ProminentLogoNode } from "../../../types/graphql/prominentLogoNode";
 import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
 
-type SchoolLogoProps = {
+type ProminentLogoProps = {
 	nodes: ProminentLogoNode[];
 	assetPath: string;
 	size: number;
 	containerSx: object;
 };
 
-const SchoolLogos = ({ nodes, assetPath, size, containerSx }: SchoolLogoProps) => {
+const ProminentLogos = ({ nodes, assetPath, size, containerSx }: ProminentLogoProps) => {
 	return (
 		<Grid item container spacing={0} sx={containerSx}>
 			{nodes.map(node => {
@@ -37,4 +37,4 @@ const SchoolLogos = ({ nodes, assetPath, size, containerSx }: SchoolLogoProps) =
 	);
 };
 
-export default SchoolLogos;
+export default ProminentLogos;

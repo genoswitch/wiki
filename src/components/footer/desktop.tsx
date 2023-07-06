@@ -2,7 +2,7 @@ import { Grid, Paper } from "@mui/material";
 
 import * as React from "react";
 
-import SchoolLogos from "./components/schoolLogos";
+import ProminentLogos from "./components/prominentLogos";
 import SponsorLogos from "./components/sponsorLogos";
 import SourceAndSha from "./components/sourceAndSha";
 import Copyright from "./components/copyright";
@@ -29,7 +29,7 @@ const DesktopFooter = ({ data }) => {
 					{/** Right side */}
 					<Grid container xs={6}>
 						{/** Top Right: School Logos */}
-						<SchoolLogos
+						<ProminentLogos
 							containerSx={{ justifyContent: "flex-end" }}
 							size={3}
 							assetPath={assetPath}

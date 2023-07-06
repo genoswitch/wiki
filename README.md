@@ -1,6 +1,6 @@
 # Team City-of-London-UK 2023 Wiki
 
-![Gitlab pipeline status (self-managed)](https://img.shields.io/gitlab/pipeline-status/2023%2Fcity-of-london-uk?gitlab_url=https%3A%2F%2Fgitlab.igem.org%2F&label=deploy%20(iGEM%20GitLab))
+![Gitlab pipeline status (self-managed)](<https://img.shields.io/gitlab/pipeline-status/2023%2Fcity-of-london-uk?gitlab_url=https%3A%2F%2Fgitlab.igem.org%2F&label=deploy%20(iGEM%20GitLab)>)
 ![RelativeCI Bundle Size](https://badges.relative-ci.com/badges/ohuRKjkV82qKkHi81r9e?branch=main)
 
 ## Preface

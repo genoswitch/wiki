@@ -92,7 +92,7 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 					closeAfterTransition
 				>
 					<DialogTitle>
-						{this.props.member.title}
+						{this.props.member.name}
 					</DialogTitle>
 					<DialogContent>
 						<div>

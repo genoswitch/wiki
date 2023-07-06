@@ -34,6 +34,29 @@ export const query = graphql`
 		}
 	}
 
+	fragment FooterProminentLogoYamlFragment on ProminentLogoYamlConnection {
+		nodes {
+			name
+			url
+			# static, higher res (original) image
+			#logoPath
+			# gatsby-plugin-image (using logoPath)
+			dynamicImage {
+				childImageSharp {
+					gatsbyImageData(
+						# Set by height, width props.
+						#layout: FIXED
+						width: 376
+						# No placeholder image (team page has blurred placeholders)
+						placeholder: NONE
+						# WebP only.
+						formats: [WEBP]
+					)
+				}
+			}
+		}
+	}
+
 	fragment FooterSiteFragment on Site {
 		siteMetadata {
 			sha

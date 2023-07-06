@@ -319,5 +319,8 @@ export const query = graphql`
 		allSponsorYaml {
 			...FooterSponsorYamlFragment
 		}
+		allProminentLogoYaml {
+			...FooterProminentLogoYamlFragment
+		}
 	}
 `;

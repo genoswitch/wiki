@@ -33,6 +33,7 @@ const DesktopFooter = ({ data }) => {
 							containerSx={{ justifyContent: "flex-end" }}
 							size={3}
 							assetPath={assetPath}
+							nodes={data.allProminentLogoYaml.nodes}
 						/>
 
 						{/** Bottom Right: Sponsor Logos */}

@@ -20,7 +20,7 @@ const MobileFooter = ({ data }) => {
 					{/** Desktop: Top left (nothing yet) */}
 
 					{/** School Logos */}
-					<SchoolLogos containerSx={{}} size={6} assetPath={assetPath} />
+					<SchoolLogos containerSx={{}} size={6} assetPath={assetPath} nodes={data.allProminentLogoYaml.nodes} />
 
 					{/** Sponsors */}
 					<SponsorLogos

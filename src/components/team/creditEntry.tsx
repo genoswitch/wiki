@@ -1,15 +1,12 @@
 import * as React from "react";
 
-import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
-import Modal from "react-bootstrap/Modal";
-
 import { TeamBadges } from "./teamBadges";
 import { TeamMemberNode } from "../../types/graphql/teamMemberNode";
 import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
 
 import TeamTag from "../../types/team/teamTag";
-import { Theme } from "@mui/material";
+import { Card, Theme, Typography } from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2/Grid2";
 
 type CreditEntryArgs = {
 	member: TeamMemberNode;
@@ -52,55 +49,44 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 		const image = getImage(this.props.member.dynamicImage! as unknown as ImageDataLike)!;
 		return (
 			<div style={{ padding: 16 }}>
-				<Card>
-					<Row>
-						<div className="col-md-4" onClick={() => this.setState({ showModal: true })}>
-							{/*<Card.Img src={this.assetBasePath + this.props.member.picturePath} />*/}
-							<GatsbyImage image={image} alt={`${this.props.member.name}'s picture.`} />
-						</div>
-						<div className="col-md-8">
-							<Card.Body>
-								<Card.Title>{this.props.member.name}</Card.Title>
-								{/* If this person has a title, display it under their name. Otherwise, don't display anything there. */}
-								{this.props.member.title ? (
-									<Card.Subtitle>{this.props.member.title}</Card.Subtitle>
-								) : undefined}
+				<Card raised>
+					<Grid container spacing={2}>
+						<Grid xs={4}>
+							<div onClick={() => this.setState({ showModal: true })}>
+								{/*<Card.Img src={this.assetBasePath + this.props.member.picturePath} />*/}
+								<GatsbyImage image={image} alt={`${this.props.member.name}'s picture.`} />
+							</div>
+						</Grid>
+						<Grid xs={8} style={{ paddingTop: 16 }}>
+							<Typography variant="h5">{this.props.member.name}</Typography>
 
-								{/* Important: make sure the key prop is set to avoid React displaying the wrong component instance! */}
-								<TeamBadges
-									key={`TeamBadges-${this.props.member.name}=$${this.props.member.tags}`}
-									tags={this.props.member.tags.map(tagName => {
-										// Use this.props.tags (TeamTag[]) to look up the TeamTag instance for this tag.
-										// This instance includes the tag colour.
-										// All in-use tags are registered in team.tsx.
-										// Therefore, we can notNull the find response.
-										const tag = this.props.tags.find(t => t.name == tagName)!;
+							{/* If this person has a title, display it under their name. Otherwise, don't display anything there. */}
+							{this.props.member.title ? (
+								<Typography variant="h6">{this.props.member.title}</Typography>
+							) : undefined}
 
-										return tag;
-									})}
-									muiTheme={this.props.muiTheme}
-								/>
+							{/* Important: make sure the key prop is set to avoid React displaying the wrong component instance! */}
+							<TeamBadges
+								key={`TeamBadges-${this.props.member.name}=$${this.props.member.tags}`}
+								tags={this.props.member.tags.map(tagName => {
+									// Use this.props.tags (TeamTag[]) to look up the TeamTag instance for this tag.
+									// This instance includes the tag colour.
+									// All in-use tags are registered in team.tsx.
+									// Therefore, we can notNull the find response.
+									const tag = this.props.tags.find(t => t.name == tagName)!;
 
-								{/* Display the person's description */}
-								<br />
-								{this.props.member.description}
-							</Card.Body>
-						</div>
-					</Row>
+									return tag;
+								})}
+								muiTheme={this.props.muiTheme}
+							/>
+
+							{/* Display the person's description */}
+							<br />
+							{this.props.member.description}
+						</Grid>
+					</Grid>
+
 				</Card>
-				{/** Modal when clicking on the image for a higher res version. */}
-				<Modal show={this.state.showModal} onHide={() => this.setState({ showModal: false })}>
-					<Modal.Header closeButton>
-						<Modal.Title>{this.props.member.title}</Modal.Title>
-					</Modal.Header>
-					<Modal.Body>
-						{this.state.modalIsReady ? (
-							<Card.Img src={this.assetBasePath + this.props.member.picturePath} />
-						) : (
-							<div>Loading...</div>
-						)}
-					</Modal.Body>
-				</Modal>
 			</div>
 		);
 	}

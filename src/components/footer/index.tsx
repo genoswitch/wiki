@@ -43,7 +43,6 @@ export const query = graphql`
 	}
 `;
 
-
 const Footer = ({ data }: FooterProps) => {
 	const { width } = useWindowDimensions();
 	return (

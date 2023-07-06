@@ -49,9 +49,9 @@ const DesktopFooter = ({ data }: FooterProps) => {
 							/**
 							 * TypeScript believes that Queries.SponsorYaml[]
 							 * and SponsorNode[] do not (sufficiently) overlap.
-							 * 
+							 *
 							 * (SponsorNode is based on SponsorYaml.)
-							 * 
+							 *
 							 * Therefore, we must cast to unknown first before
 							 * casting to SponsorNode.
 							 */

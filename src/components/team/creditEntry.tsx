@@ -5,7 +5,7 @@ import { TeamMemberNode } from "../../types/graphql/teamMemberNode";
 import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
 
 import TeamTag from "../../types/team/teamTag";
-import { Card, Theme, Typography } from "@mui/material";
+import { Card, Dialog, DialogContent, DialogTitle, Theme, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 
 type CreditEntryArgs = {
@@ -85,8 +85,24 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 							{this.props.member.description}
 						</Grid>
 					</Grid>
-
 				</Card>
+				<Dialog
+					open={this.state.showModal}
+					onClose={() => this.setState({ showModal: false })}
+					closeAfterTransition
+				>
+					<DialogTitle>
+						{this.props.member.title}
+					</DialogTitle>
+					<DialogContent>
+						<div>
+							{this.state.modalIsReady ? (
+								<img style={{ maxHeight: "100%", maxWidth: "100%" }} src={this.assetBasePath + this.props.member.picturePath} />
+							) : (
+								<div>Loading...</div>
+							)}</div>
+					</DialogContent>
+				</Dialog>
 			</div>
 		);
 	}

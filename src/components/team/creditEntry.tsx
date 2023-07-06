@@ -86,6 +86,7 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 						</Grid>
 					</Grid>
 				</Card>
+				{/** MUI Dialog is more flexible than MUI Modal. */}
 				<Dialog
 					open={this.state.showModal}
 					onClose={() => this.setState({ showModal: false })}

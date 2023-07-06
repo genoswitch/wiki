@@ -29,9 +29,7 @@ const ProminentLogos = ({ nodes, assetPath, size, containerSx }: ProminentLogoPr
 							/>
 						</a>
 					</Grid>
-				)
-
-
+				);
 			})}
 		</Grid>
 	);

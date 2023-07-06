@@ -2,7 +2,6 @@ import * as React from "react";
 
 import { graphql, PageProps } from "gatsby";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/graphql/teamMemberNode";
 import {

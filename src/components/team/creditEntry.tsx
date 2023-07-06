@@ -5,7 +5,15 @@ import { TeamMemberNode } from "../../types/graphql/teamMemberNode";
 import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
 
 import TeamTag from "../../types/team/teamTag";
-import { Card, CircularProgress, Dialog, DialogContent, DialogTitle, Theme, Typography } from "@mui/material";
+import {
+	Card,
+	CircularProgress,
+	Dialog,
+	DialogContent,
+	DialogTitle,
+	Theme,
+	Typography,
+} from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 
 type CreditEntryArgs = {
@@ -92,18 +100,20 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 					onClose={() => this.setState({ showModal: false })}
 					closeAfterTransition
 				>
-					<DialogTitle>
-						{this.props.member.name}
-					</DialogTitle>
+					<DialogTitle>{this.props.member.name}</DialogTitle>
 					<DialogContent>
 						<div>
 							{this.state.modalIsReady ? (
-								<img style={{ maxHeight: "100%", maxWidth: "100%" }} src={this.assetBasePath + this.props.member.picturePath} />
+								<img
+									style={{ maxHeight: "100%", maxWidth: "100%" }}
+									src={this.assetBasePath + this.props.member.picturePath}
+								/>
 							) : (
 								<div style={{ display: "flex", justifyContent: "center" }}>
 									<CircularProgress />
 								</div>
-							)}</div>
+							)}
+						</div>
 					</DialogContent>
 				</Dialog>
 			</div>

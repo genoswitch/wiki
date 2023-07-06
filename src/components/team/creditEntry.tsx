@@ -51,13 +51,13 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 			<div style={{ padding: 16 }}>
 				<Card raised>
 					<Grid container spacing={0}>
-						<Grid sx={12} md={4}>
+						<Grid xs={12} md={4}>
 							<div onClick={() => this.setState({ showModal: true })}>
 								{/*<Card.Img src={this.assetBasePath + this.props.member.picturePath} />*/}
 								<GatsbyImage image={image} alt={`${this.props.member.name}'s picture.`} />
 							</div>
 						</Grid>
-						<Grid sx={12} md={8} style={{ padding: 16 }}>
+						<Grid xs={12} md={8} style={{ padding: 16 }}>
 							<Typography variant="h5">{this.props.member.name}</Typography>
 
 							{/* If this person has a title, display it under their name. Otherwise, don't display anything there. */}

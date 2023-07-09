@@ -20,7 +20,7 @@ const ProminentLogos = ({ nodes, assetPath, size, containerSx }: ProminentLogoPr
 				const image = getImage(node.dynamicImage! as unknown as ImageDataLike)!;
 
 				return (
-					<Grid item xs={size}>
+					<Grid item xs={size} key={`ProminentLogo-${node.name}`}>
 						<a href={node.url!} target="_blank">
 							<GatsbyImage
 								image={image}

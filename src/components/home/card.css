@@ -1,0 +1,10 @@
+.card {
+    width: 100%;
+    flex: 1;
+    margin-top: 10%;
+    padding: 5%;
+    filter: drop-shadow(18px 18px 12px #000);
+    background-color: #0a1628 !important;
+    border:none !important;
+    color: white !important;
+}

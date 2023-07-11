@@ -8,6 +8,7 @@ import MobileFooter from "./mobile";
 
 import { graphql } from "gatsby";
 import { FooterProps } from "./types/footerProps";
+import { CircularProgress } from "@mui/material";
 
 export const query = graphql`
 	# Split into fragments that can be added to other pages' queries.
@@ -67,13 +68,23 @@ export const query = graphql`
 `;
 
 const Footer = ({ data }: FooterProps) => {
-	const { width } = useWindowDimensions();
-	return (
-		<>
-			{/** iGEM 2022 Vilnius Lithuania: Use widths to determine which footer to display. */}
-			{width && width >= Widths.MD ? <DesktopFooter data={data} /> : <MobileFooter data={data} />}
-		</>
-	);
+	const dimensions = useWindowDimensions();
+
+	if (!dimensions.width) {
+		// dimensions.width not set, return a fallback
+		return (
+			<div style={{ display: "flex", justifyContent: "center" }}>
+				<CircularProgress />
+			</div>
+		)
+	} else {
+		return (
+			<>
+				{/** iGEM 2022 Vilnius Lithuania: Use widths to determine which footer to display. */}
+				{dimensions.width && dimensions.width >= Widths.MD ? <DesktopFooter data={data} /> : <MobileFooter data={data} />}
+			</>
+		)
+	}
 };
 
 export default Footer;

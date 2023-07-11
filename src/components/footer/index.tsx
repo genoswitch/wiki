@@ -76,14 +76,18 @@ const Footer = ({ data }: FooterProps) => {
 			<div style={{ display: "flex", justifyContent: "center" }}>
 				<CircularProgress />
 			</div>
-		)
+		);
 	} else {
 		return (
 			<>
 				{/** iGEM 2022 Vilnius Lithuania: Use widths to determine which footer to display. */}
-				{dimensions.width && dimensions.width >= Widths.MD ? <DesktopFooter data={data} /> : <MobileFooter data={data} />}
+				{dimensions.width && dimensions.width >= Widths.MD ? (
+					<DesktopFooter data={data} />
+				) : (
+					<MobileFooter data={data} />
+				)}
 			</>
-		)
+		);
 	}
 };
 

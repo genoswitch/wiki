@@ -2,7 +2,6 @@ import * as React from "react";
 
 import { graphql, PageProps } from "gatsby";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/graphql/teamMemberNode";
 import {
@@ -32,6 +31,7 @@ import teamEntryFilter from "../filters/teamEntryFilter";
 import Navbar from "../components/navbar";
 import FilterMenu from "../components/team/filterMenu";
 import LoadingPage from "../components/loadingPage";
+import Footer from "../components/footer";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
@@ -264,6 +264,7 @@ export default class TeamPage extends React.PureComponent<
 						this.state.filterChip,
 						this.state.shouldIncludeTagsInSearch
 					)}
+					<Footer data={this.data} />
 				</ThemeProvider>
 			);
 		}
@@ -295,6 +296,9 @@ export const query = graphql`
 							width: 800 # 800x(~1200)
 							placeholder: BLURRED
 							formats: [AUTO, WEBP, PNG]
+							outputPixelDensities: [0.25] # Generate 0.25x and 1x.
+							# 1x is always created (see below)
+							# https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#customizing-the-default-options:~:text=and%20will%20always%20include%20a%201x%20image.
 						)
 					}
 				}
@@ -310,6 +314,13 @@ export const query = graphql`
 			siteMetadata {
 				assetBasePath
 			}
+			...FooterSiteFragment
+		}
+		allSponsorYaml {
+			...FooterSponsorYamlFragment
+		}
+		allProminentLogoYaml {
+			...FooterProminentLogoYamlFragment
 		}
 	}
 `;

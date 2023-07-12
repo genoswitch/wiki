@@ -3,21 +3,17 @@ import { withPrefix } from "gatsby";
 
 import {
 	AppBar,
-	Container,
-	Menu,
 	Toolbar,
 	Box,
-	MenuItem,
-	Typography,
 	Button,
 	IconButton,
-	Divider,
 	List,
 	CssBaseline,
 	Drawer,
 	ListItem,
 	ListItemText,
 	ListItemButton,
+	CardMedia,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -69,6 +65,22 @@ const Logo = (props: LogoProps) => {
 	);
 };
 
+const AnimatedLogo = (props: LogoProps) => {
+	/**
+	 * Transparent Animated WebP
+	 *
+	 * See: https://github.com/genoswitch/wiki-assets/tree/main/intermediates/logo-animation
+	 * 		https://developer.chrome.com/blog/alpha-transparency-in-chrome-video/
+	 */
+	return (
+		<CardMedia
+			sx={{ maxWidth: 250, ...props.style }}
+			component="img"
+			src="https://static.igem.wiki/teams/4642/wiki/logos/project/light-blue-animated.webp"
+		/>
+	);
+};
+
 type DrawerProps = {
 	handleDrawerToggle: Function;
 };
@@ -117,7 +129,7 @@ const NavBar = () => {
 					{/** Large Display: Left of screen (filled except for btns) */}
 					{/** JC: changed display: {xs: 'none' to 'block' } so it displays on xs screens. */}
 					<Box sx={{ flexGrow: 1, display: { xs: "block", sm: "block" } }}>
-						<Logo />
+						<AnimatedLogo />
 					</Box>
 
 					{/** Large Display: Buttons */}

@@ -1,9 +1,13 @@
 import type { GatsbyConfig } from "gatsby";
 
+import childProcess from "child_process";
+
 const config: GatsbyConfig = {
 	siteMetadata: {
 		siteUrl: process.env.SITE_URL || "https://2023.igem.wiki/city-of-london-uk/",
 		assetBasePath: process.env.ASSET_BASE_PATH || "https://static.igem.wiki/teams/4642/wiki/",
+		// Use the git cli to get the latest commit hash.
+		sha: childProcess.execSync("git rev-parse --verify HEAD").toString().trim(),
 	},
 	pathPrefix: process.env.PATH_PREFIX || "/city-of-london-uk",
 	// More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
@@ -32,6 +36,26 @@ const config: GatsbyConfig = {
 			options: {
 				nodeType: "TeamMemberYaml",
 				imagePath: "picturePath",
+				name: "dynamicImage",
+				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
+				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
+			},
+		},
+		{
+			resolve: "gatsby-plugin-remote-images",
+			options: {
+				nodeType: "SponsorYaml",
+				imagePath: "logoPath",
+				name: "dynamicImage",
+				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
+				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
+			},
+		},
+		{
+			resolve: "gatsby-plugin-remote-images",
+			options: {
+				nodeType: "ProminentLogoYaml",
+				imagePath: "logoPath",
 				name: "dynamicImage",
 				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
 				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,

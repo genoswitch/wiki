@@ -7,100 +7,15 @@ import {
 	Box,
 	Button,
 	IconButton,
-	List,
 	CssBaseline,
 	Drawer,
-	ListItem,
-	ListItemText,
-	ListItemButton,
-	CardMedia,
 } from "@mui/material";
+
 import MenuIcon from "@mui/icons-material/Menu";
+import AnimatedLogo from "./components/animatedLogo";
+import DrawerContents from "./components/drawerContents";
+import { PageEntry, entries } from "./entries";
 
-type PageEntry = {
-	name: string;
-	link: string;
-};
-
-const entries: PageEntry[] = [
-	{
-		name: "Home",
-		link: "",
-	},
-	{
-		name: "Team",
-		link: "team",
-	},
-	{
-		name: "Team Description",
-		link: "description",
-	},
-];
-
-type LogoProps = {
-	style?: object;
-};
-
-const Logo = (props: LogoProps) => {
-	return (
-		<>
-			{/**
-			 * GENOSWITCH logo
-			 *
-			 * color: style prop does not work on SVGs normally.
-			 *
-			 * CSS Filter generator used to generate the filter for hex code #77d9dd (light blue)
-			 * https://codepen.io/sosuke/pen/Pjoqqp, https://stackoverflow.com/a/53336754
-			 */}
-			<img
-				style={{
-					maxWidth: 250,
-					...props.style,
-					filter:
-						"invert(92%) sepia(65%) saturate(1099%) hue-rotate(157deg) brightness(92%) contrast(87%)",
-				}}
-				src={"https://static.igem.wiki/teams/4642/wiki/logos/project/black.svg"}
-			/>
-		</>
-	);
-};
-
-const AnimatedLogo = (props: LogoProps) => {
-	/**
-	 * Transparent Animated WebP
-	 *
-	 * See: https://github.com/genoswitch/wiki-assets/tree/main/intermediates/logo-animation
-	 * 		https://developer.chrome.com/blog/alpha-transparency-in-chrome-video/
-	 */
-	return (
-		<CardMedia
-			sx={{ maxWidth: 250, ...props.style }}
-			component="img"
-			src="https://static.igem.wiki/teams/4642/wiki/logos/project/light-blue-animated.webp"
-		/>
-	);
-};
-
-type DrawerProps = {
-	handleDrawerToggle: Function;
-};
-
-const DrawerContents = (props: DrawerProps) => {
-	return (
-		<Box onClick={props.handleDrawerToggle} sx={{ textAlign: "center" }}>
-			<Logo style={{ padding: 16 }} />
-			<List>
-				{entries.map((entry: PageEntry) => (
-					<ListItem key={entry.name} disablePadding>
-						<ListItemButton sx={{ textAlign: "center" }} href={withPrefix(entry.link)}>
-							<ListItemText primary={entry.name} />
-						</ListItemButton>
-					</ListItem>
-				))}
-			</List>
-		</Box>
-	);
-};
 
 const drawerWidth = 240;
 

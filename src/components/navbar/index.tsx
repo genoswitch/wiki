@@ -1,21 +1,12 @@
 import * as React from "react";
 import { withPrefix } from "gatsby";
 
-import {
-	AppBar,
-	Toolbar,
-	Box,
-	Button,
-	IconButton,
-	CssBaseline,
-	Drawer,
-} from "@mui/material";
+import { AppBar, Toolbar, Box, Button, IconButton, CssBaseline, Drawer } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import AnimatedLogo from "./components/animatedLogo";
 import DrawerContents from "./components/drawerContents";
 import { PageEntry, entries } from "./entries";
-
 
 const drawerWidth = 240;
 

@@ -1,5 +1,5 @@
 type LogoProps = {
-    style?: object;
+	style?: object;
 };
 
 export default LogoProps;

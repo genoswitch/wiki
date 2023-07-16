@@ -43,7 +43,7 @@ interface TeamPageState {
 }
 
 // Use React.PureComponent for TS types on this.props <https://github.com/gatsbyjs/gatsby/issues/8431#issue-362717669>
-export default class TeamPage extends React.PureComponent<
+export default class TeamPage extends React.Component<
 	PageProps<Queries.TeamPageDataQuery>,
 	TeamPageState
 > {
@@ -206,6 +206,29 @@ export default class TeamPage extends React.PureComponent<
 		this.setState({
 			shouldIncludeTagsInSearch: event.target.checked,
 		});
+	}
+
+
+	componentDidUpdate() {
+		if (this.state.filterChip.findIndex((e) => e.enabled) == -1) {
+			const newData = this.state.filterChip;
+
+			for (let i = 0; i < newData.length; i++) {
+				newData[i].enabled = true;
+			}
+
+			if (newData.findIndex((e) => !e.enabled) == -1) {
+				// No match found, everything is enabled.
+				// Update the state.
+
+				this.setState({ filterChip: newData });
+
+			} else {
+				// We set everything to enabled in the for loop but something is still disabled!
+				throw new Error("Found disabled chip at after re-enabling all. Is something wrong in the for loop?")
+			}
+
+		}
 	}
 
 	render(): React.ReactNode {

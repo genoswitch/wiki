@@ -37,6 +37,22 @@ const searchFilter = (entry: CreditEntry, searchQuery: string) => {
 
 // TODO: if more than one chip is selected, results are correct but teambadges are not.
 const chipFilter = (entry: CreditEntry, filterChip: FilterChip) => {
+	//#region Check if all filterChips are disabled (starting state)
+
+	// Create a variable to keep track if any chips are enabled
+	let isAnyEnabled = false;
+
+	// Iterate over each chip
+	filterChip.forEach(chip => {
+		// If the chip is enabled an isAnyEnabled has not already been set to true, set it to true.
+		if (chip.enabled && !isAnyEnabled) isAnyEnabled = true;
+	});
+
+	// If there are no chips enabled (isAnyEnabled will remain false), return true to include this item in the result.
+	if (!isAnyEnabled) return true;
+
+	//#endregion
+
 	let isIncluded = false;
 
 	const enabledTags = filterChip

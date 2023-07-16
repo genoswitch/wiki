@@ -103,7 +103,7 @@ export default class TeamPage extends React.PureComponent<
 		this.discoveredTags.forEach(tag => {
 			this.state.filterChip.push({
 				tag,
-				enabled: true,
+				enabled: false,
 			});
 		});
 

@@ -33,6 +33,7 @@
     "@types/react-dom": "^18.2.7",
     "@types/webpack-stats-plugin": "^0.3.2",
     "gatsby-plugin-image": "^3.11.0",
+    "gatsby-plugin-manifest": "^5.11.0",
     "gatsby-plugin-mdx": "^5.11.0",
     "gatsby-plugin-no-sourcemaps": "^5.11.0",
     "gatsby-plugin-remote-images": "^3.6.6",

@@ -61,6 +61,21 @@ const config: GatsbyConfig = {
 				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
 			},
 		},
+		{
+			resolve: "gatsby-plugin-manifest",
+			options: {
+				name: "Genoswitch (City of London UK)",
+				short_name: "Genoswitch",
+				start_url: "/",
+
+				// GENOSWITCH Dark Blue
+				background_color: "#0a1628",
+				theme_color: "#0a1628",
+
+				display: "standalone",
+				icon: "src/images/logo-light-blue-square-filled-nopadding.svg",
+			},
+		},
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`, // Needed for dynamic images

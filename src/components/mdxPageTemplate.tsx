@@ -4,6 +4,8 @@ import { Container } from "@mui/material";
 import Footer from "./footer";
 import { graphql, useStaticQuery } from "gatsby";
 
+import { Head as BaseHead } from "./head";
+
 // GraphQL query containing fragments (sub-queries) for the footer
 export const query = graphql`
 	query MdxPageData {
@@ -39,3 +41,10 @@ const MdxPageTemplate = ({ children }: MdxPageTemplatePropTypes) => {
 };
 
 export default MdxPageTemplate;
+
+export const Head = (data: any) => (
+	<BaseHead
+		title={data.pageContext.frontmatter.name}
+		description={data.pageContext.frontmatter.description}
+	/>
+);

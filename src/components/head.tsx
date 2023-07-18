@@ -2,25 +2,25 @@ import * as React from "react";
 import SEO from "./seo";
 
 type HeadProps = {
-    children?: React.JSX.Element;
-    title?: string;
-    description?: string;
+	children?: React.JSX.Element;
+	title?: string;
+	description?: string;
 };
 
 export const Head = ({ children, title, description }: HeadProps) => {
-    let computedTitle = "Genoswitch";
-    if (title) {
-        computedTitle = `${title} | ${computedTitle}`;
-    }
+	let computedTitle = "Genoswitch";
+	if (title) {
+		computedTitle = `${title} | ${computedTitle}`;
+	}
 
-    let computedDescription = "City of London School iGEM 2023 Wiki";
-    if (description) {
-        computedDescription = description;
-    }
+	let computedDescription = "City of London School iGEM 2023 Wiki";
+	if (description) {
+		computedDescription = description;
+	}
 
-    return (
-        <SEO title={computedTitle} description={computedDescription}>
-            {children}
-        </SEO>
-    );
+	return (
+		<SEO title={computedTitle} description={computedDescription}>
+			{children}
+		</SEO>
+	);
 };

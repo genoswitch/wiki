@@ -15,6 +15,8 @@ const config: GatsbyConfig = {
 	// Learn more at: https://gatsby.dev/graphql-typegen
 	graphqlTypegen: true,
 	plugins: [
+		// Drop in support for preact.
+		`gatsby-plugin-preact`,
 		{
 			resolve: "gatsby-transformer-yaml",
 		},

@@ -44,6 +44,13 @@ const config: GatsbyConfig = {
 			},
 		},
 		{
+			resolve: "gatsby-source-filesystem",
+			options: {
+				name: "tsxPages",
+				path: "./src/pages/",
+			},
+		},
+		{
 			resolve: "gatsby-plugin-remote-images",
 			options: {
 				nodeType: "TeamMemberYaml",
@@ -88,6 +95,79 @@ const config: GatsbyConfig = {
 				icon: "src/images/logo-light-blue-square-filled-nopadding.svg",
 			},
 		},
+		{
+			resolve: "gatsby-plugin-sitemap",
+			options: {
+				query: `{
+					site {
+            			siteMetadata {
+              				siteUrl
+            			}
+          			}
+					allSitePage {
+    					nodes {
+      						path
+      						component
+    					}
+  					}
+					allFile(filter: {sourceInstanceName: {regex: "/(tsxPage)|(mdxPage)/"}}) {
+    					nodes {
+      						fields {
+        						gitLogLatestDate
+      						}
+      						absolutePath
+   						}
+  					}
+				}`,
+				resolvePages: ({ allSitePage: { nodes: allPages }, allFile: { nodes: allFiles } }) => {
+					//debugger;
+
+					// allSitePage.nodes[x].component returns "{path-to-tsx}" for .tsx pages or
+					// "{path-to-tsx}?__contentFilePath={path-to-mdx} for other pages (such as MDX.)"
+
+					type Page = {
+						component: string;
+						path: string;
+					};
+
+					// Iterate over each site page
+					return allPages.map((page: Page) => {
+						let filename: string;
+						if (page.component.includes("__contentFilePath")) {
+							// This page is not a tsx page.
+
+							// Determine the file path from the component paht
+							filename = page.component.split("__contentFilePath=")[1];
+						} else {
+							// This page is a tsx page.
+							filename = page.component;
+						}
+
+						const file = allFiles.find(file => file.absolutePath.includes(filename));
+
+						if (file) {
+							// Match found.
+							page.lastmod = file.fields.gitLogLatestDate;
+						}
+
+						return page;
+					});
+				},
+				serialize: page => {
+					if (page.lastmod) {
+						return {
+							url: page.path,
+							lastmod: page.lastmod,
+						};
+					} else {
+						return {
+							url: page.path,
+						};
+					}
+				},
+			},
+		},
+		`@colliercz/gatsby-transformer-gitinfo`,
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`, // Needed for dynamic images

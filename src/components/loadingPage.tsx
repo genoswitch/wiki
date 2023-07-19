@@ -5,7 +5,7 @@ import NavBar from "./navbar";
 import { CircularProgress, Container } from "@mui/material";
 
 export default class LoadingPage extends React.Component {
-	render(): React.ReactNode {
+	render(): React.JSX.Element {
 		return (
 			<>
 				<NavBar />

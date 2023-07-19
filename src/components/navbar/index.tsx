@@ -1,5 +1,5 @@
 import * as React from "react";
-import { withPrefix } from "gatsby";
+import { navigate } from "gatsby";
 
 import { AppBar, Toolbar, Box, Button, IconButton, CssBaseline, Drawer } from "@mui/material";
 
@@ -41,7 +41,15 @@ const NavBar = () => {
 					{/** Large Display: Buttons */}
 					<Box sx={{ display: { xs: "none", sm: "block" } }}>
 						{entries.map((entry: PageEntry) => (
-							<Button key={entry.name} sx={{ color: "#77d9dd" }} href={withPrefix(entry.link)}>
+							<Button
+								key={entry.name}
+								sx={{ color: "#77d9dd" }}
+								onClick={() => {
+									// gatsby-link navigate (for SPAs)
+									// https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-link/#how-to-use-the-navigate-helper-function
+									navigate(entry.link);
+								}}
+							>
 								{" "}
 								{/** fff appears to be shorthand for ffffff */}
 								{entry.name}

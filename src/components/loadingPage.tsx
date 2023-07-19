@@ -2,7 +2,7 @@ import * as React from "react";
 
 import NavBar from "./navbar";
 
-import { CircularProgress, Container, CssBaseline, Grid } from "@mui/material";
+import { CircularProgress, Container } from "@mui/material";
 
 export default class LoadingPage extends React.Component {
 	render(): React.ReactNode {

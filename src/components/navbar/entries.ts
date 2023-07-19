@@ -6,14 +6,14 @@ export type PageEntry = {
 export const entries: PageEntry[] = [
 	{
 		name: "Home",
-		link: "",
+		link: "/",
 	},
 	{
 		name: "Team",
-		link: "team",
+		link: "/team",
 	},
 	{
 		name: "Team Description",
-		link: "description",
+		link: "/description",
 	},
 ];

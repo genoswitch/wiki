@@ -1,4 +1,4 @@
-import type { GatsbyConfig } from "gatsby";
+import type { GatsbyConfig, PluginRef } from "gatsby";
 
 import childProcess from "child_process";
 
@@ -15,6 +15,18 @@ const config: GatsbyConfig = {
 	// Learn more at: https://gatsby.dev/graphql-typegen
 	graphqlTypegen: true,
 	plugins: [
+		// Include src/debug-pages only when using `gatsby develop`, not when using `gatsby build`
+		// Source: https://github.com/gatsbyjs/gatsby/issues/17831#issuecomment-535176906
+		...(process.env.NODE_ENV == "development"
+			? [
+					{
+						resolve: "gatsby-plugin-page-creator",
+						options: {
+							path: `${__dirname}/src/debug-pages`,
+						},
+					},
+			  ]
+			: []),
 		{
 			resolve: "gatsby-transformer-yaml",
 		},

@@ -8,7 +8,7 @@ type HeadProps = {
 };
 
 export const Head = ({ children, title, description }: HeadProps) => {
-	let computedTitle = "Genoswitch";
+	let computedTitle = "Genoswitch (City of London UK)";
 	if (title) {
 		computedTitle = `${title} | ${computedTitle}`;
 	}

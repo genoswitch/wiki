@@ -27,7 +27,7 @@
     "preact-render-to-string": "^5.2.6"
   },
   "devDependencies": {
-    "@colliercz/gatsby-transformer-gitinfo": "^1.4.0",
+    "@colliercz/gatsby-transformer-gitinfo": "genoswitch/gatsby-transformer-gitinfo",
     "@mdx-js/react": "^2.3.0",
     "@types/node": "^20.4.2",
     "@types/webpack-stats-plugin": "^0.3.2",

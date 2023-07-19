@@ -2,6 +2,9 @@ import type { GatsbyConfig, PluginRef } from "gatsby";
 
 import childProcess from "child_process";
 
+import ResolvePagesParams from "./src/types/gatsby-config/resolvePagesParams";
+import Page from "./src/types/gatsby-config/page";
+
 const config: GatsbyConfig = {
 	siteMetadata: {
 		siteUrl: process.env.SITE_URL || "https://2023.igem.wiki/city-of-london-uk/",
@@ -119,51 +122,52 @@ const config: GatsbyConfig = {
    						}
   					}
 				}`,
-				resolvePages: ({ allSitePage: { nodes: allPages }, allFile: { nodes: allFiles } }) => {
-					//debugger;
-
+				// Use allFiles to embed last modified information in to each page node.
+				resolvePages: ({
+					allSitePage: { nodes: allPages },
+					allFile: { nodes: allFiles },
+				}: ResolvePagesParams) => {
 					// allSitePage.nodes[x].component returns "{path-to-tsx}" for .tsx pages or
 					// "{path-to-tsx}?__contentFilePath={path-to-mdx} for other pages (such as MDX.)"
 
-					type Page = {
-						component: string;
-						path: string;
-					};
-
 					// Iterate over each site page
-					return allPages.map((page: Page) => {
+					return allPages.map(page => {
 						let filename: string;
+
+						// Determine which kind of page this is.
 						if (page.component.includes("__contentFilePath")) {
 							// This page is not a tsx page.
+							// The filename can be extracted from page.component
 
-							// Determine the file path from the component paht
+							// Determine the file path from the component file path
 							filename = page.component.split("__contentFilePath=")[1];
 						} else {
 							// This page is a tsx page.
+							// The filename is in page.component
 							filename = page.component;
 						}
 
+						// Find the corresponding file node using the filename
 						const file = allFiles.find(file => file.absolutePath.includes(filename));
 
+						// Check if a matching file was found
 						if (file) {
 							// Match found.
+							// Set page lastmod to the git log latest date from the file node.
 							page.lastmod = file.fields.gitLogLatestDate;
 						}
 
+						// Return the page element.
 						return page;
 					});
 				},
-				serialize: page => {
-					if (page.lastmod) {
-						return {
-							url: page.path,
-							lastmod: page.lastmod,
-						};
-					} else {
-						return {
-							url: page.path,
-						};
-					}
+				// Serialize a page node to the format gatsby-plugin-sitemap expects
+				serialize: (page: Page) => {
+					return {
+						url: page.path,
+						// If lastmod is present (is optional), return it.
+						lastmod: page.lastmod,
+					};
 				},
 			},
 		},

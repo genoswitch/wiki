@@ -31,6 +31,7 @@
     "@mdx-js/react": "^2.3.0",
     "@types/node": "^20.4.5",
     "@types/webpack-stats-plugin": "^0.3.2",
+    "gatsby-plugin-canonical-urls": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
     "gatsby-plugin-mdx": "^5.11.0",

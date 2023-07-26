@@ -171,6 +171,13 @@ const config: GatsbyConfig = {
 				},
 			},
 		},
+		{
+			resolve: `gatsby-plugin-canonical-urls`,
+			options: {
+				// Works in production using `gatsby build --prefix-paths`
+				siteUrl: `https://2023.igem.wiki/city-of-london-uk/`,
+			},
+		},
 		`@colliercz/gatsby-transformer-gitinfo`,
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,

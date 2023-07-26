@@ -171,20 +171,6 @@ const config: GatsbyConfig = {
 				},
 			},
 		},
-		// #region Hacky workaround for proper canonical tags on pages served under a subfolder (such as on the wiki)
-		// gatsby-plugin-canonical-urls does not support serving from a subfolder (such as /city-of-london-uk/)
-		// https://github.com/gatsbyjs/gatsby/blob/e6e2fb4fddd1f076531b01ea2bd6fe4f43655f8c/packages/gatsby-plugin-canonical-urls/src/gatsby-ssr.js#L10
-		{
-			resolve: "gatsby-plugin-react-helmet",
-		},
-		{
-			resolve: "gatsby-plugin-react-helmet-canonical-urls",
-			options: {
-				// No leading slash, added by the plugin (eg. root is / so subfolder would become subfolder/, team -> subfolder/team/)
-				siteUrl: process.env.SITE_URL || "https://2023.igem.wiki/city-of-london-uk",
-			},
-		},
-		// #endregion
 		`@colliercz/gatsby-transformer-gitinfo`,
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,

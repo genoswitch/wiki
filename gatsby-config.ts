@@ -187,6 +187,17 @@ const config: GatsbyConfig = {
 		`gatsby-transformer-sharp`, // Needed for dynamic images
 		`gatsby-plugin-no-sourcemaps`,
 		`gatsby-plugin-mdx`,
+		// Include gatsby-plugin-offline last so that previously defined
+		// plugin's outputs (eg. gatsby-plugin-manifest) are included in the service worker.
+		{
+			resolve: "gatsby-plugin-offline",
+			options: {
+				workboxConfig: {
+					// https://www.gatsbyjs.com/plugins/gatsby-plugin-offline/#using-with-gatsby-plugin-manifest
+					globPatterns: ["**/icon-path*"],
+				},
+			},
+		},
 	],
 };
 

@@ -96,6 +96,9 @@ const config: GatsbyConfig = {
 
 				display: "standalone",
 				icon: "src/images/logo-light-blue-square-filled-nopadding.svg",
+
+				// https://www.gatsbyjs.com/plugins/gatsby-plugin-offline/#using-with-gatsby-plugin-manifest
+				cache_busting_mode: "none",
 			},
 		},
 		{

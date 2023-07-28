@@ -7,6 +7,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AnimatedLogo from "./components/animatedLogo";
 import DrawerContents from "./components/drawerContents";
 import NavigationEntry from "./types/navigationEntry";
+import DesktopButtonEntry from "./components/desktopButtonEntry";
+import DesktopButtonDropdown from "./components/desktopButtonDropdown";
 
 const drawerWidth = 240;
 
@@ -16,6 +18,10 @@ export const query = graphql`
     nodes {
       name
       slug
+	  entries {
+		name
+		slug
+	  }
     }
   }
 	}
@@ -63,21 +69,18 @@ const NavBar = ({ entries }: NavBarProps) => {
 
 					{/** Large Display: Buttons */}
 					<Box sx={{ display: { xs: "none", sm: "block" } }}>
-						{entries.map((entry: NavigationEntry) => (
-							<Button
-								key={entry.name}
-								sx={{ color: "#77d9dd" }}
-								onClick={() => {
-									// gatsby-link navigate (for SPAs)
-									// https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-link/#how-to-use-the-navigate-helper-function
-									navigate(entry.slug);
-								}}
-							>
-								{" "}
-								{/** fff appears to be shorthand for ffffff */}
-								{entry.name}
-							</Button>
-						))}
+						{entries.map((entry: NavigationEntry) => {
+							if (entry.name && entry.slug && !entry.entries) {
+								// Single entry
+								return <DesktopButtonEntry entry={entry} />
+							} else if (entry.name && !entry.slug && entry.entries) {
+								// Multiple entries (a dropdown must be shown).
+								return <DesktopButtonDropdown entry={entry} />
+							} else {
+								console.error(`Invalid navigation entry '${entry.name}'`)
+							}
+
+						})}
 					</Box>
 				</Toolbar>
 			</AppBar>

@@ -35,7 +35,7 @@ const DesktopButtonDropdown = ({ entry }: DesktopButtonDropdownProps) => {
             <Menu anchorEl={anchorEl} open={open} handleClose={handleClose} MenuListProps={{
                 'aria-labelledby': 'basic-button',
             }}>
-                {entry.entries.map(entry => (<MenuItem><DesktopButtonEntry entry={entry} /></MenuItem>))}
+                {entry.entries.map(entry => (<DesktopButtonEntry onClick={handleClose} type={"MenuItem"} entry={entry} />))}
 
             </Menu>
         </>

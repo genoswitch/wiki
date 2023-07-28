@@ -72,7 +72,7 @@ const NavBar = ({ entries }: NavBarProps) => {
 						{entries.map((entry: NavigationEntry) => {
 							if (entry.name && entry.slug && !entry.entries) {
 								// Single entry
-								return <DesktopButtonEntry entry={entry} />
+								return <DesktopButtonEntry type={"Button"} entry={entry} />
 							} else if (entry.name && !entry.slug && entry.entries) {
 								// Multiple entries (a dropdown must be shown).
 								return <DesktopButtonDropdown entry={entry} />

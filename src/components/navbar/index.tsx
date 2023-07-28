@@ -15,21 +15,21 @@ const drawerWidth = 240;
 export const query = graphql`
 	query NavBarData {
 		allNavigationYaml {
-    nodes {
-      name
-      slug
-	  entries {
-		name
-		slug
-	  }
-    }
-  }
+			nodes {
+				name
+				slug
+				entries {
+					name
+					slug
+				}
+			}
+		}
 	}
-`
+`;
 
 type NavBarProps = {
-	entries?: NavigationEntry[]
-}
+	entries?: NavigationEntry[];
+};
 
 const NavBar = ({ entries }: NavBarProps) => {
 	// If entries was not passed as a prop, fetch the data ourselves.
@@ -72,14 +72,13 @@ const NavBar = ({ entries }: NavBarProps) => {
 						{entries.map((entry: NavigationEntry) => {
 							if (entry.name && entry.slug && !entry.entries) {
 								// Single entry
-								return <DesktopButtonEntry type={"Button"} entry={entry} />
+								return <DesktopButtonEntry type={"Button"} entry={entry} />;
 							} else if (entry.name && !entry.slug && entry.entries) {
 								// Multiple entries (a dropdown must be shown).
-								return <DesktopButtonDropdown entry={entry} />
+								return <DesktopButtonDropdown entry={entry} />;
 							} else {
-								console.error(`Invalid navigation entry '${entry.name}'`)
+								console.error(`Invalid navigation entry '${entry.name}'`);
 							}
-
 						})}
 					</Box>
 				</Toolbar>

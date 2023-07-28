@@ -5,10 +5,12 @@
   slug: /
 
 - name: Team
-  slug: /team/
+  entries:
+    - name: Meet the Team
+      slug: /team/
 
-- name: Team Description
-  slug: /description/
+    - name: Team Description
+      slug: /description/
 
 - name: Attributions
   slug: /attributions/

@@ -39,15 +39,17 @@ const DesktopButtonDropdown = ({ entry }: DesktopButtonDropdownProps) => {
 
     return (
         <ThemeProvider theme={theme}>
-            <Button aria-controls={open ? 'basic-menu' : undefined}
+            <Button id={`desktopButtonDropdown-${entry.name}-button`}
+                aria-controls={open ? `desktopButtonDropdown-${entry.name}-menu` : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}>
+                onClick={handleClick}
+            >
                 {entry.name}
             </Button>
 
-            <Menu anchorEl={anchorEl} open={open} handleClose={handleClose} MenuListProps={{
-                'aria-labelledby': 'basic-button',
+            <Menu id={`desktopButtonDropdown-${entry.name}-menu`} anchorEl={anchorEl} open={open} handleClose={handleClose} MenuListProps={{
+                'aria-labelledby': `desktopButtonDropdown-${entry.name}-button`,
             }}>
                 {entry.entries.map(entry => (<DesktopButtonEntry onClick={handleClose} type={"MenuItem"} entry={entry} />))}
 

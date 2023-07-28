@@ -11,7 +11,7 @@ export const AttributionFrame = () => {
     useAttributionFrameSizeListener();
     return (
         <iframe
-            style={{ width: "100%" }}
+            style={{ width: "100%", border: 0, padding: 8 }}
             id="igem-attribution-form"
             src="https://attributions.igem.org?team=City-of-London-UK&year=2023"
         />

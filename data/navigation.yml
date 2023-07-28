@@ -1,0 +1,14 @@
+# Navbar entries
+# Place in the order you want them to be displayed.
+
+- name: Home
+  slug: /
+
+- name: Team
+  slug: /team/
+
+- name: Team Description
+  slug: /description/
+
+- name: Attributions
+  slug: /attributions/

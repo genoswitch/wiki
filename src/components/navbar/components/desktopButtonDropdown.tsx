@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Button, Menu, MenuItem } from "@mui/material";
+import { Button, Menu, MenuItem, ThemeProvider, createTheme } from "@mui/material";
 
 import NavigationEntry from "../types/navigationEntry";
 import { navigate } from "gatsby";
@@ -23,8 +23,22 @@ const DesktopButtonDropdown = ({ entry }: DesktopButtonDropdownProps) => {
         setAnchorEl(null);
     };
 
+    // Create the theme to change the background color of the Paper in the menu
+    const theme = createTheme({
+        components: {
+            MuiMenu: {
+                styleOverrides: {
+                    paper: {
+                        // CSS
+                        backgroundColor: "#0a1628"
+                    }
+                }
+            }
+        }
+    })
+
     return (
-        <>
+        <ThemeProvider theme={theme}>
             <Button aria-controls={open ? 'basic-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
@@ -38,7 +52,7 @@ const DesktopButtonDropdown = ({ entry }: DesktopButtonDropdownProps) => {
                 {entry.entries.map(entry => (<DesktopButtonEntry onClick={handleClose} type={"MenuItem"} entry={entry} />))}
 
             </Menu>
-        </>
+        </ThemeProvider>
     )
 
 

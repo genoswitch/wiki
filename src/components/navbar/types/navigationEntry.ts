@@ -1,6 +1,7 @@
 type NavigationEntry = {
 	name: string;
-	slug: string;
+	slug?: string;
+	entries: NavigationEntry[];
 };
 
 export default NavigationEntry;

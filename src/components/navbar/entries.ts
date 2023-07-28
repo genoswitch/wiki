@@ -16,4 +16,8 @@ export const entries: PageEntry[] = [
 		name: "Team Description",
 		link: "/description",
 	},
+	{
+		name: "Attributions",
+		link: "/attributions",
+	},
 ];

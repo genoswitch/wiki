@@ -44,6 +44,7 @@ const DesktopButtonDropdown = ({ entry }: DesktopButtonDropdownProps) => {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
+                sx={{ color: "#77d9dd" }}
             >
                 {entry.name}
             </Button>

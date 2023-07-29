@@ -4,15 +4,15 @@ import { ListItem, ListItemButton, ListItemText } from "@mui/material";
 import { withPrefix } from "gatsby";
 
 type MobileButtonEntryProps = {
-    entry: NavigationEntry;
-}
+	entry: NavigationEntry;
+};
 
 const MobileButtonEntry = ({ entry }: MobileButtonEntryProps) => (
-    <ListItem key={entry.name} disablePadding>
-        <ListItemButton href={withPrefix(entry.slug!)}>
-            <ListItemText primary={entry.name} />
-        </ListItemButton>
-    </ListItem>
-)
+	<ListItem key={entry.name} disablePadding>
+		<ListItemButton href={withPrefix(entry.slug!)}>
+			<ListItemText primary={entry.name} />
+		</ListItemButton>
+	</ListItem>
+);
 
 export default MobileButtonEntry;

@@ -17,16 +17,15 @@ const DrawerContents = (props: DrawerProps) => {
 				{props.entries.map(entry => {
 					if (entry.name && entry.slug && !entry.entries) {
 						// Single entry
-						return <MobileButtonEntry entry={entry} />
+						return <MobileButtonEntry entry={entry} />;
 					} else if (entry.name && !entry.slug && entry.entries) {
-						return <MobileButtonDropdown entry={entry} />
+						return <MobileButtonDropdown entry={entry} />;
 					} else {
-						console.error(`Invalid mobile navigation entry '${entry.name}'`)
+						console.error(`Invalid mobile navigation entry '${entry.name}'`);
 					}
-
 				})}
 			</List>
-		</Box >
+		</Box>
 	);
 };
 

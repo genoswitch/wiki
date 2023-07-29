@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { Button, MenuItem } from "@mui/material";
 
-import NavigationEntry from "../types/navigationEntry";
+import NavigationEntry from "../../types/navigationEntry";
 import { navigate } from "gatsby";
 
 type DesktopButtonEntryProps = {

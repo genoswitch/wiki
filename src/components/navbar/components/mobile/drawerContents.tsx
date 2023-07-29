@@ -1,10 +1,8 @@
 import * as React from "react";
 
-import { withPrefix } from "gatsby";
+import { Box, List } from "@mui/material";
 
-import { Box, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
-
-import DrawerProps from "../types/drawerProps";
+import DrawerProps from "../../types/drawerProps";
 import Logo from "./logo";
 import MobileButtonEntry from "./mobileButtonEntry";
 import MobileButtonDropdown from "./mobileButtonDropdown";

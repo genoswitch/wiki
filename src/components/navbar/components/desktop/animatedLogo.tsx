@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { CardMedia } from "@mui/material";
 
-import LogoProps from "../types/logoProps";
+import LogoProps from "../../types/logoProps";
 
 const AnimatedLogo = (props: LogoProps) => {
 	/**

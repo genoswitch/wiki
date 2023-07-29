@@ -1,5 +1,5 @@
 import * as React from "react";
-import NavigationEntry from "../types/navigationEntry";
+import NavigationEntry from "../../types/navigationEntry";
 import { Collapse, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import { withPrefix } from "gatsby";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";

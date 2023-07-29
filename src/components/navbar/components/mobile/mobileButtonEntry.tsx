@@ -1,5 +1,5 @@
 import * as React from "react";
-import NavigationEntry from "../types/navigationEntry";
+import NavigationEntry from "../../types/navigationEntry";
 import { ListItem, ListItemButton, ListItemText } from "@mui/material";
 import { withPrefix } from "gatsby";
 

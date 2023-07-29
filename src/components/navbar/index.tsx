@@ -4,11 +4,11 @@ import { graphql, navigate, useStaticQuery } from "gatsby";
 import { AppBar, Toolbar, Box, Button, IconButton, CssBaseline, Drawer } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
-import AnimatedLogo from "./components/animatedLogo";
-import DrawerContents from "./components/drawerContents";
+import AnimatedLogo from "./components/desktop/animatedLogo";
+import DrawerContents from "./components/mobile/drawerContents";
 import NavigationEntry from "./types/navigationEntry";
-import DesktopButtonEntry from "./components/desktopButtonEntry";
-import DesktopButtonDropdown from "./components/desktopButtonDropdown";
+import DesktopButtonEntry from "./components/desktop/desktopButtonEntry";
+import DesktopButtonDropdown from "./components/desktop/desktopButtonDropdown";
 
 const drawerWidth = 240;
 

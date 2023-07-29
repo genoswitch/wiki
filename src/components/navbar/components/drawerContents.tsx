@@ -19,7 +19,9 @@ const DrawerContents = (props: DrawerProps) => {
 						// Single entry
 						return <MobileButtonEntry entry={entry} />;
 					} else if (entry.name && !entry.slug && entry.entries) {
-						return <MobileButtonDropdown entry={entry} />;
+						return (
+							<MobileButtonDropdown entry={entry} handleDrawerToggle={props.handleDrawerToggle} />
+						);
 					} else {
 						console.error(`Invalid mobile navigation entry '${entry.name}'`);
 					}

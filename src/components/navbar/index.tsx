@@ -1,7 +1,7 @@
 import * as React from "react";
-import { graphql, navigate, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
-import { AppBar, Toolbar, Box, Button, IconButton, CssBaseline, Drawer } from "@mui/material";
+import { AppBar, Toolbar, Box, IconButton, CssBaseline, Drawer } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import AnimatedLogo from "./components/desktop/animatedLogo";

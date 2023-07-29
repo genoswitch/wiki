@@ -1,9 +1,8 @@
 import * as React from "react";
 
-import { Button, Menu, MenuItem, ThemeProvider, createTheme } from "@mui/material";
+import { Button, Menu, ThemeProvider, createTheme } from "@mui/material";
 
 import NavigationEntry from "../../types/navigationEntry";
-import { navigate } from "gatsby";
 import DesktopButtonEntry from "./desktopButtonEntry";
 
 type DesktopButtonDropdownProps = {

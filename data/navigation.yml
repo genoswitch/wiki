@@ -4,13 +4,15 @@
 - name: Home
   slug: /
 
-- name: Team
+- name: Project
   entries:
-    - name: Meet the Team
-      slug: /team/
-
-    - name: Team Description
+    - name: Description
       slug: /description/
 
-- name: Attributions
-  slug: /attributions/
+- name: Team
+  entries:
+    - name: Attributions
+      slug: /attributions/
+
+    - name: Meet the Team
+      slug: /team/

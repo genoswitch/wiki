@@ -1,16 +1,45 @@
 import * as React from "react";
-import { navigate } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
-import { AppBar, Toolbar, Box, Button, IconButton, CssBaseline, Drawer } from "@mui/material";
+import { AppBar, Toolbar, Box, IconButton, CssBaseline, Drawer } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
-import AnimatedLogo from "./components/animatedLogo";
-import DrawerContents from "./components/drawerContents";
-import { PageEntry, entries } from "./entries";
+import AnimatedLogo from "./components/desktop/animatedLogo";
+import DrawerContents from "./components/mobile/drawerContents";
+import NavigationEntry from "./types/navigationEntry";
+import DesktopButtonEntry from "./components/desktop/desktopButtonEntry";
+import DesktopButtonDropdown from "./components/desktop/desktopButtonDropdown";
 
 const drawerWidth = 240;
 
-const NavBar = () => {
+export const query = graphql`
+	query NavBarData {
+		allNavigationYaml {
+			nodes {
+				name
+				slug
+				entries {
+					name
+					slug
+				}
+			}
+		}
+	}
+`;
+
+type NavBarProps = {
+	entries?: NavigationEntry[];
+};
+
+const NavBar = ({ entries }: NavBarProps) => {
+	// If entries was not passed as a prop, fetch the data ourselves.
+	// This allows the parent prop to pass in as part of a single larger query if needed.
+	if (!entries) {
+		const data: Queries.NavBarDataQuery = useStaticQuery(query);
+		console.log(data);
+		entries = data.allNavigationYaml.nodes as NavigationEntry[];
+	}
+
 	const [mobileOpen, setMobileOpen] = React.useState(false);
 	const handleDrawerToggle = () => {
 		setMobileOpen(prevState => !prevState);
@@ -40,21 +69,17 @@ const NavBar = () => {
 
 					{/** Large Display: Buttons */}
 					<Box sx={{ display: { xs: "none", sm: "block" } }}>
-						{entries.map((entry: PageEntry) => (
-							<Button
-								key={entry.name}
-								sx={{ color: "#77d9dd" }}
-								onClick={() => {
-									// gatsby-link navigate (for SPAs)
-									// https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-link/#how-to-use-the-navigate-helper-function
-									navigate(entry.link);
-								}}
-							>
-								{" "}
-								{/** fff appears to be shorthand for ffffff */}
-								{entry.name}
-							</Button>
-						))}
+						{entries.map((entry: NavigationEntry) => {
+							if (entry.name && entry.slug && !entry.entries) {
+								// Single entry
+								return <DesktopButtonEntry type={"Button"} entry={entry} />;
+							} else if (entry.name && !entry.slug && entry.entries) {
+								// Multiple entries (a dropdown must be shown).
+								return <DesktopButtonDropdown entry={entry} />;
+							} else {
+								console.error(`Invalid navigation entry '${entry.name}'`);
+							}
+						})}
 					</Box>
 				</Toolbar>
 			</AppBar>
@@ -82,7 +107,7 @@ const NavBar = () => {
 					}}
 				>
 					{/** Drawer contents component (to make the code cleaner)*/}
-					<DrawerContents handleDrawerToggle={handleDrawerToggle} />
+					<DrawerContents entries={entries} handleDrawerToggle={handleDrawerToggle} />
 				</Drawer>
 			</Box>
 		</Box>

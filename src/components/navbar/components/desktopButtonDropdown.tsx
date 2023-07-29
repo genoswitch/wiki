@@ -53,7 +53,7 @@ const DesktopButtonDropdown = ({ entry }: DesktopButtonDropdownProps) => {
 				id={`desktopButtonDropdown-${entry.name}-menu`}
 				anchorEl={anchorEl}
 				open={open}
-				handleClose={handleClose}
+				onClose={handleClose}
 				MenuListProps={{
 					"aria-labelledby": `desktopButtonDropdown-${entry.name}-button`,
 				}}

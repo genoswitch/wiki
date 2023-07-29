@@ -18,7 +18,7 @@ const MobileButtonDropdown = ({ entry }: MobileButtonDropdownProps) => {
     return (
         <>
             <ListItem key={entry.name} disablePadding>
-                <ListItemButton sx={{ textAlign: "center" }} onClick={handleClick}>
+                <ListItemButton onClick={handleClick}>
                     <ListItemText primary={entry.name} />
                     {open ? <ExpandLess /> : <ExpandMore />}
                 </ListItemButton>
@@ -28,7 +28,7 @@ const MobileButtonDropdown = ({ entry }: MobileButtonDropdownProps) => {
                 <List component="div" disablePadding>
                     {entry.entries.map(subEntry => (
                         <ListItem key={subEntry.name} disablePadding>
-                            <ListItemButton sx={{ textAlign: "center" }} href={withPrefix(subEntry.slug!)}>
+                            <ListItemButton sx={{ paddingLeft: 4 }} href={withPrefix(subEntry.slug!)}>
                                 <ListItemText primary={subEntry.name} />
                             </ListItemButton>
                         </ListItem>

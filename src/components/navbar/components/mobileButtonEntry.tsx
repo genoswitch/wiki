@@ -9,7 +9,7 @@ type MobileButtonEntryProps = {
 
 const MobileButtonEntry = ({ entry }: MobileButtonEntryProps) => (
     <ListItem key={entry.name} disablePadding>
-        <ListItemButton sx={{ textAlign: "center" }} href={withPrefix(entry.slug!)}>
+        <ListItemButton href={withPrefix(entry.slug!)}>
             <ListItemText primary={entry.name} />
         </ListItemButton>
     </ListItem>

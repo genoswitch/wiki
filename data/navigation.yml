@@ -11,8 +11,8 @@
 
 - name: Team
   entries:
+    - name: Our Team
+      slug: /team/
+
     - name: Attributions
       slug: /attributions/
-
-    - name: Meet the Team
-      slug: /team/

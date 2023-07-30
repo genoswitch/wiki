@@ -36,7 +36,7 @@ const MobileFooter = ({ data }: FooterProps) => {
 					<SponsorLogos
 						containerSx={{}}
 						elementSx={{ display: "flex", alignItems: "center" }}
-						size={4}
+						size={3} // Size 3 (12 for a row) means we can fit 4 items on a row.
 						/**
 						 * TypeScript believes that Queries.SponsorYaml[]
 						 * and SponsorNode[] do not (sufficiently) overlap.

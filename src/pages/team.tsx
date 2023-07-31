@@ -33,6 +33,8 @@ import FilterMenu from "../components/team/filterMenu";
 import LoadingPage from "../components/loadingPage";
 import Footer from "../components/footer";
 
+import { Head as BaseHead } from "../components/head";
+
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
 interface TeamPageState {
@@ -324,3 +326,7 @@ export const query = graphql`
 		}
 	}
 `;
+
+export const Head = () => (
+	<BaseHead title="Our Team" description="Meet the team behind Genoswitch!" />
+);

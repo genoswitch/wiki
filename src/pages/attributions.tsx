@@ -7,6 +7,8 @@ import Footer from "../components/footer";
 import { AttributionFrame } from "../components/attributionFrame";
 import LoadingPage from "../components/loadingPage";
 
+import { Head as BaseHead } from "../components/head";
+
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
 interface AttributionsPageState {
@@ -65,3 +67,10 @@ export const query = graphql`
 		}
 	}
 `;
+
+export const Head = () => (
+	<BaseHead
+		title="Attributions"
+		description="View the roles each member played in the project, as well as external contributors."
+	/>
+);

@@ -1,10 +1,19 @@
 import * as React from "react";
 import NavBar from "./navbar";
+
 import { Container } from "@mui/material";
+import { MDXProvider } from "@mdx-js/react";
+
 import Footer from "./footer";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Head as BaseHead } from "./head";
+import ReferenceProvider from "./referenceProvider";
+
+import Reference from "./reference";
+
+// https://v3.gatsbyjs.com/docs/mdx/importing-and-using-components/#make-components-available-globally-as-shortcodes
+const shortcodes = { Reference };
 
 // GraphQL query containing fragments (sub-queries) for the footer
 export const query = graphql`
@@ -25,17 +34,25 @@ export const query = graphql`
 // Without a type, the "any" type is implicitly set.
 // With a defined type, we can get autocomplete and whatnot from our IDE as well.
 type MdxPageTemplatePropTypes = {
+	pageContext: Queries.Mdx;
 	children: React.JSX.Element[];
 };
 
-const MdxPageTemplate = ({ children }: MdxPageTemplatePropTypes) => {
-	const data = useStaticQuery(query);
+const MdxPageTemplate = ({ pageContext, children }: MdxPageTemplatePropTypes) => {
+	const data2 = useStaticQuery(query);
 	return (
 		<>
 			<NavBar />
 			<br />
-			<Container>{children}</Container>
-			<Footer data={data} />
+			<Container>
+				<MDXProvider components={shortcodes}>{children}</MDXProvider>
+				{pageContext.frontmatter!.references ? (
+					<ReferenceProvider references={pageContext.frontmatter?.references} />
+				) : (
+					"no references found."
+				)}
+			</Container>
+			<Footer data={data2} />
 		</>
 	);
 };

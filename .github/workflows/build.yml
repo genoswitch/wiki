@@ -9,7 +9,8 @@ jobs:
     name: Test Build
     runs-on: ubuntu-latest
     permissions:
-      checks: write
+      checks: write # Create checks for commits
+      pull-requests: write # Add comments to PRs
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -52,3 +53,23 @@ jobs:
           conclusion: neutral
           output: |
             {"title":"${{ steps.determineSize.outputs.SIZE }} (of 5M)","summary":"${{ steps.determineSize.outputs.SIZE }} (of 5M)"}
+
+      - name: Upload to netlify (if a PR build)
+        if: github.event_name == 'pull_request'
+        uses: nwtgck/actions-netlify@v2.0
+        with:
+          publish-dir: ./public
+          production-deploy: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: ${{ github.event.pull_request.title }})
+          enable-pull-request-comment: true
+          enable-commit-comment: false
+          enable-commit-status: true
+          overwrites-pull-request-comment: true
+          # replicate deploy preview prefix
+          alias: deploy-preview-${{ github.event.pull_request.number }}
+          enable-github-deployment: false # seems to not be a valid option? (not in schema?)
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1

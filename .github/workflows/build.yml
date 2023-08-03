@@ -65,8 +65,8 @@ jobs:
           enable-commit-comment: false
           enable-commit-status: true
           overwrites-pull-request-comment: true
-          # replicate deploy preview prefix (ish)
-          alias: deploy-preview-pr-${{ github.event.pull_request.number }}
+          # replicate deploy preview prefix
+          alias: deploy-preview-${{ github.event.pull_request.number }}
           enable-github-deployment: false # seems to not be a valid option? (not in schema?)
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

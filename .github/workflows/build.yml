@@ -9,7 +9,8 @@ jobs:
     name: Test Build
     runs-on: ubuntu-latest
     permissions:
-      checks: write
+      checks: write # Create checks for commits
+      pull-requests: write # Add comments to PRs
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3

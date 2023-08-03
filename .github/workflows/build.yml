@@ -52,3 +52,19 @@ jobs:
           conclusion: neutral
           output: |
             {"title":"${{ steps.determineSize.outputs.SIZE }} (of 5M)","summary":"${{ steps.determineSize.outputs.SIZE }} (of 5M)"}
+
+      - name: Upload to netlify (if a PR build)
+        if: github.event_name == 'pull_request'
+        uses: nwtgck/actions-netlify@v2.0
+        with:
+          publish-dir: ./public
+          production-deploy: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: ${{ github.event.pull_request.title }})
+          enable-pull-request-comment: true
+          enable-commit-comment: false
+          enable-commit-status: true
+          overwrites-pull-request-comment: true
+          # replicate deploy preview prefix (ish)
+          alias: deploy-preview-pr-${{ github.event.pull_request.number }}
+          enable-github-deployment: false

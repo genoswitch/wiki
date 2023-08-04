@@ -39,7 +39,6 @@ export default class AttributionsPage extends React.PureComponent<
 	render(): React.ReactNode {
 		// The first render call is called before the graphQL query returns, so we need a loading state.
 
-		console.log("RENDER");
 		if (!this.state.isReady) {
 			return <LoadingPage />;
 		} else {

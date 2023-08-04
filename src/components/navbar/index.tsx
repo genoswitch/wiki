@@ -36,7 +36,6 @@ const NavBar = ({ entries }: NavBarProps) => {
 	// This allows the parent prop to pass in as part of a single larger query if needed.
 	if (!entries) {
 		const data: Queries.NavBarDataQuery = useStaticQuery(query);
-		console.log(data);
 		entries = data.allNavigationYaml.nodes as NavigationEntry[];
 	}
 

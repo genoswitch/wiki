@@ -27,7 +27,7 @@ const ReferenceProvider = ({ references }: ReferenceProviderProps) => {
 						return (
 							<span id={`ref_note-${ref?.number}`}>
 								{ref?.number}. <a href={`#ref_${ref?.number}`}>^</a> {ref?.author}, "{ref?.title}",{" "}
-								<i>{ref?.journal}</i>, {ref?.published_date}, Available:{" "}
+								<i>{ref?.journal}</i>{ref?.volume ? `, ${ref.volume}` : ""}, {ref?.published_date}, Available:{" "}
 								<a
 									target="_blank"
 									href={`https://doi.org/${ref?.doi}`}

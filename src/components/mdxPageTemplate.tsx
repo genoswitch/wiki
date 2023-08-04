@@ -48,9 +48,7 @@ const MdxPageTemplate = ({ pageContext, children }: MdxPageTemplatePropTypes) =>
 				<MDXProvider components={shortcodes}>{children}</MDXProvider>
 				{pageContext.frontmatter!.references ? (
 					<ReferenceProvider references={pageContext.frontmatter?.references} />
-				) : (
-					"no references found."
-				)}
+				) : undefined}
 			</Container>
 			<Footer data={data2} />
 		</>

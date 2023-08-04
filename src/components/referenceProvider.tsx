@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { Divider } from "@mui/material";
+
 type ReferenceProviderProps = {
 	references: readonly Queries.Maybe<Queries.MdxFrontmatterReferences>[] | undefined;
 };
@@ -10,6 +12,7 @@ const ReferenceProvider = ({ references }: ReferenceProviderProps) => {
 	} else {
 		return (
 			<>
+				<Divider variant="middle" />
 				<h4>References</h4>
 				{references.map((ref: Queries.Maybe<Queries.MdxFrontmatterReferences>) => {
 					// 1. ref number, author, title, doi

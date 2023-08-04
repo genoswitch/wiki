@@ -9,6 +9,9 @@
     - name: Description
       slug: /description/
 
+- name: Hardware
+  slug: /hardware/
+
 - name: Team
   entries:
     - name: Our Team

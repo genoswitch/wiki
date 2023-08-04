@@ -36,7 +36,7 @@ export default class AttributionsPage extends React.PureComponent<
 		this.setState({ isReady: true });
 	}
 
-	render(): React.ReactNode {
+	render(): React.JSX.Element {
 		// The first render call is called before the graphQL query returns, so we need a loading state.
 
 		if (!this.state.isReady) {

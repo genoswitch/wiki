@@ -210,7 +210,7 @@ export default class TeamPage extends React.PureComponent<
 		});
 	}
 
-	render(): React.ReactNode {
+	render(): React.JSX.Element {
 		if (!this.state["isReady"]) {
 			return <LoadingPage />;
 		} else {

@@ -1,7 +1,7 @@
 import * as React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, navigate, useStaticQuery } from "gatsby";
 
-import { AppBar, Toolbar, Box, IconButton, CssBaseline, Drawer } from "@mui/material";
+import { AppBar, Toolbar, Box, IconButton, CssBaseline, Drawer, Button } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import AnimatedLogo from "./components/desktop/animatedLogo";
@@ -44,6 +44,10 @@ const NavBar = ({ entries }: NavBarProps) => {
 		setMobileOpen(prevState => !prevState);
 	};
 
+	const handleAnimatedBtnClick = () => {
+		navigate("/");
+	}
+
 	return (
 		<Box sx={{ display: "flex" }}>
 			<CssBaseline />
@@ -63,7 +67,9 @@ const NavBar = ({ entries }: NavBarProps) => {
 					{/** Large Display: Left of screen (filled except for btns) */}
 					{/** JC: changed display: {xs: 'none' to 'block' } so it displays on xs screens. */}
 					<Box sx={{ flexGrow: 1, display: { xs: "block", sm: "block" } }}>
-						<AnimatedLogo />
+						<Button onClick={handleAnimatedBtnClick}>
+							<AnimatedLogo />
+						</Button>
 					</Box>
 
 					{/** Large Display: Buttons */}

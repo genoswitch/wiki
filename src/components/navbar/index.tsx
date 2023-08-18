@@ -46,7 +46,7 @@ const NavBar = ({ entries }: NavBarProps) => {
 
 	const handleAnimatedBtnClick = () => {
 		navigate("/");
-	}
+	};
 
 	return (
 		<Box sx={{ display: "flex" }}>

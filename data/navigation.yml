@@ -9,8 +9,22 @@
     - name: Description
       slug: /description/
 
+    - name: Contribution
+      slug: /contribution/
+
 - name: Hardware
-  slug: /hardware/
+  entries:
+    - name: Hardware
+      slug: /hardware/
+
+    - name: Engineering
+      slug: /engineering/
+
+- name: Human Practices
+  slug: /human-practices/
+
+- name: Software
+  slug: /software/
 
 - name: Team
   entries:

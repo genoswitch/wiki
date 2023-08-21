@@ -12,6 +12,12 @@
     - name: Contribution
       slug: /contribution/
 
+    - name: Project Videos
+      slug: /videos/
+
+- name: Biology
+  slug: /biology/
+
 - name: Hardware
   entries:
     - name: Hardware
@@ -22,6 +28,9 @@
 
 - name: Human Practices
   slug: /human-practices/
+
+- name: Modelling
+  slug: /modelling/
 
 - name: Software
   slug: /software/

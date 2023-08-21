@@ -4,7 +4,7 @@
 - name: Home
   slug: /
 
-- name: About the Project
+- name: Project
   entries:
     - name: Description
       slug: /description/

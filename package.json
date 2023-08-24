@@ -21,7 +21,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.5",
-    "gatsby": "^5.9.1",
+    "gatsby": "^5.12.1",
     "immutability-helper": "^3.1.1",
     "preact": "^10.17.0",
     "preact-render-to-string": "^5.2.6"

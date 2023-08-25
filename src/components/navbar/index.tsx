@@ -59,21 +59,21 @@ const NavBar = ({ entries }: NavBarProps) => {
 						aria-label="open drawer"
 						edge="start"
 						onClick={handleDrawerToggle}
-						sx={{ mr: 2, display: { sm: "none" } }}
+						sx={{ mr: 2, display: { lg: "none" } }}
 					>
 						<MenuIcon htmlColor="#77d9dd" />
 					</IconButton>
 
 					{/** Large Display: Left of screen (filled except for btns) */}
 					{/** JC: changed display: {xs: 'none' to 'block' } so it displays on xs screens. */}
-					<Box sx={{ flexGrow: 1, display: { xs: "block", sm: "block" } }}>
+					<Box sx={{ flexGrow: 1, display: { xs: "block", lg: "block" } }}>
 						<Button onClick={handleAnimatedBtnClick}>
 							<AnimatedLogo />
 						</Button>
 					</Box>
 
 					{/** Large Display: Buttons */}
-					<Box sx={{ display: { xs: "none", sm: "block" } }}>
+					<Box sx={{ display: { xs: "none", lg: "block" } }}>
 						{entries.map((entry: NavigationEntry) => {
 							if (entry.name && entry.slug && !entry.entries) {
 								// Single entry
@@ -99,7 +99,7 @@ const NavBar = ({ entries }: NavBarProps) => {
 						keepMounted: true, // Better open performance on mobile.
 					}}
 					sx={{
-						display: { xs: "block", sm: "none" },
+						display: { xs: "block", lg: "none" },
 						"& .MuiDrawer-paper": {
 							// Styles for the paper component inside Drawer
 							// color is the text color

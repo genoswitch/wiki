@@ -40,7 +40,7 @@
     "gatsby-plugin-remote-images": "^3.6.6",
     "gatsby-plugin-sharp": "^5.12.0",
     "gatsby-plugin-sitemap": "^6.12.0",
-    "gatsby-source-filesystem": "^5.11.0",
+    "gatsby-source-filesystem": "^5.12.0",
     "gatsby-transformer-sharp": "^5.12.0",
     "gatsby-transformer-yaml": "^5.11.0",
     "prettier": "^3.0.2",

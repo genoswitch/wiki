@@ -55,13 +55,13 @@ A dialog box will open with a list of all currently active branches. Click the *
 
 ![Branch dialog](./.github/resources/branch-dialog.png)
 
-Then type in the name of your new branch (we recommend something like `(yourname)/(what you're working on)`, for example `james/team-page` and press Enter to confirm. You are now on the next branch.
+Then type in the name of your new branch (we recommend something like `(yourname)/(what you're working on)`, for example `james/team-page`) and press Enter to confirm. You are now on the next branch.
 
 You can now start making your edits/changes!
 
 ### Saving your changes
 
-When you have made your edits, click the source control button.
+When you have made your edits, click the source control button **on the top left of the screen**. This will open the source control sidebar on the left of the screen.
 
 ![Source Control Button](./.github/resources/source-control.png)
 
@@ -71,6 +71,11 @@ Then ensure all of your changes are **staged** by clicking the + sign to the rig
 
 Next, write a descriptive message in the message box. You will notice that the **Sync Changes** button will change to a **commit** button. Click the button to commit your changes.
 
-Finally, we need to **push** your changes. You may have noticed tthat the sync changes button now says "_publish branch_". Click the button again to publish your new branch.
+Finally, we need to **push** your changes.
+
+If you have changes to commit, the button will either say **Publish Branch** or **Sync Changes** (with a number). Ti sync / publish your branch. Click the button.
+
+If you are prompted for a remote to use click **origin**.
+If you are prompted to create a fork, please create one.
 
 > More information about branches in Git can be found [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches).

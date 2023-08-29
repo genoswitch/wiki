@@ -9,12 +9,24 @@
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// 8000: gatsby develop
-	// 3000: npx serve
-	"forwardPorts": [8000, 3000]
+	"forwardPorts": [8000, 3000],
+	"portsAttributes": {
+		"8000": {
+			// npm run develop-codespaces
+			"label": "Hot Reloading"
+		},
+		"3000": {
+			"label": "Static Site Serving"
+		}
+	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+	"postCreateCommand": "npm ci --no-scripts",
+
+	// Run a project when the container starts
+	// https://code.visualstudio.com/remote/advancedcontainers/start-processes#_video-run-npm-start-whenever-the-container-is-started
+	// nohup to stop the process from being killed after 15m.
+	"postStartCommand": "nohup bash -c 'npm run develop-codespaces &'"
 
 	// Configure tool-specific properties.
 	// "customizations": {},

@@ -31,7 +31,17 @@ const config: GatsbyConfig = {
 			  ]
 			: []),
 		{
-			resolve: "gatsby-transformer-yaml",
+			// Allow for markdown (transformed to HTML) inside of yml values
+			// Usage: markdown in team descriptions.
+			resolve: "gatsby-transformer-yaml-full",
+			options: {
+				plugins: [
+					{
+						resolve: "gatsby-yaml-full-markdown",
+						//options: {},
+					},
+				],
+			},
 		},
 		{
 			resolve: "gatsby-source-filesystem",

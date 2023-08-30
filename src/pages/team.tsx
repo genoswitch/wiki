@@ -288,9 +288,9 @@ export const query = graphql`
 				title
 				description
 				descriptionMd {
-        			plain
+					plain
 					html
-      			}
+				}
 				tags
 				position
 				# static, higher res image (used in the modal)

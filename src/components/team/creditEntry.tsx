@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 
-import HtmlReactParser from "html-react-parser"
+import HtmlReactParser from "html-react-parser";
 
 type CreditEntryArgs = {
 	member: TeamMemberNode;
@@ -92,7 +92,8 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 
 							{/* Display the person's description */}
 							<br />
-							{this.props.member.description || HtmlReactParser(this.props.member.descriptionMd?.html!)}
+							{this.props.member.description ||
+								HtmlReactParser(this.props.member.descriptionMd?.html!)}
 						</Grid>
 					</Grid>
 				</Card>

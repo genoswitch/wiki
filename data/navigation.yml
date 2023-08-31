@@ -16,7 +16,12 @@
       slug: /videos/
 
 - name: Biology
-  slug: /biology/
+  entries:
+    - name: Biology
+      slug: /biology/
+
+    - name: Biology Lab Work
+      slug: /biology/lab-work
 
 - name: Hardware
   entries:

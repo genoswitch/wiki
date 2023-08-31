@@ -23,6 +23,15 @@
     - name: Biology Lab Work
       slug: /biology/lab-work
 
+    - name: Biology Safety
+      slug: /biology/safety
+
+    - name: Biology Protocols
+      slug: /biology/protocols
+
+    - name: Biology Results
+      slug: /biology/results
+
 - name: Hardware
   entries:
     - name: Hardware

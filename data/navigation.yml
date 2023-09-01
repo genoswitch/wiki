@@ -23,13 +23,13 @@
     - name: Lab Work
       slug: /biology/lab-work
 
-    - name: Safety
+    - name: Lab Safety
       slug: /biology/safety
 
-    - name: Protocols
+    - name: Lab Protocols
       slug: /biology/protocols
 
-    - name: Results
+    - name: Lab Results
       slug: /biology/results
 
 - name: Hardware

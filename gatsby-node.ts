@@ -27,6 +27,8 @@ const createTypeFromFile = (actions: Actions, filename: string) => {
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
 	createTypeFromFile(actions, "./src/graphql/teamMember.gql");
 	createTypeFromFile(actions, "./src/graphql/teamColour.gql");
+	createTypeFromFile(actions, "./src/graphql/sequencesAnnotations.gql");
+	createTypeFromFile(actions, "./src/graphql/sequences.gql");
 };
 
 export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions, reporter }) => {

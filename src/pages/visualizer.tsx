@@ -9,6 +9,7 @@ import LoadingPage from "../components/loadingPage";
 import NavBar from "../components/navbar";
 import { SequencesNode } from "../types/graphql/sequencesNode";
 import Footer from "../components/footer";
+import Visualizer from "../components/visualizer";
 
 type SelectOnChangeTarget = (EventTarget & {
     value: number;
@@ -75,6 +76,8 @@ export default class VisualizerPage extends React.Component<PageProps<Queries.Vi
                             </Select>
                         </FormControl>
                     </div >
+                    {/** Only show if sequenceIndex is set */}
+                    {this.state.sequenceIndex != undefined ? <Visualizer sequence={this.sequences[this.state.sequenceIndex]} fastas={this.data.fasta.nodes} /> : undefined}
                     <Footer data={this.data} />
                 </>
             )

@@ -20,16 +20,16 @@
     - name: Biology
       slug: /biology/
 
-    - name: Biology Lab Work
+    - name: Lab Work
       slug: /biology/lab-work
 
-    - name: Biology Safety
+    - name: Safety
       slug: /biology/safety
 
-    - name: Biology Protocols
+    - name: Protocols
       slug: /biology/protocols
 
-    - name: Biology Results
+    - name: Results
       slug: /biology/results
 
 - name: Hardware

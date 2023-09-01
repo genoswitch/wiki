@@ -16,7 +16,21 @@
       slug: /videos/
 
 - name: Biology
-  slug: /biology/
+  entries:
+    - name: Biology
+      slug: /biology/
+
+    - name: Lab Work
+      slug: /biology/lab-work/
+
+    - name: Lab Safety
+      slug: /biology/safety/
+
+    - name: Lab Protocols
+      slug: /biology/protocols/
+
+    - name: Lab Results
+      slug: /biology/results/
 
 - name: Hardware
   entries:

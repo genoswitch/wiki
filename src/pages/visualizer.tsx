@@ -37,7 +37,7 @@ export default class VisualizerPage extends React.Component<PageProps<Queries.Vi
     data!: Queries.VisualizerPageDataQuery;
 
     sequenceDefinitions: SequenceDefinitionNode[];
-    sequences: Queries.geneticSequence[];
+    sequences: Queries.GeneticSequence[];
 
     componentDidMount(): void {
         // Set this.data to the result of the query
@@ -46,7 +46,7 @@ export default class VisualizerPage extends React.Component<PageProps<Queries.Vi
         //this.data.fasta.nodes
         this.sequenceDefinitions = this.data.sequences.nodes as SequenceDefinitionNode[];
 
-        this.sequences = this.data.allGeneticSequence.nodes as Queries.geneticSequence[];
+        this.sequences = this.data.allGeneticSequence.nodes as Queries.GeneticSequence[];
 
         this.setState({ isReady: true });
     }

@@ -8,11 +8,11 @@ import { SequenceDefinitionNode } from "../types/graphql/sequenceDefintionNode";
 
 interface VisualizerProps {
     sequenceDefinition: SequenceDefinitionNode;
-    sequences: Queries.geneticSequence[];
+    sequences: Queries.GeneticSequence[];
 }
 
 interface VisualizerState {
-    seq: Queries.geneticSequence | undefined;
+    seq: Queries.GeneticSequence | undefined;
 }
 
 export default class Visualizer extends React.Component<VisualizerProps, VisualizerState> {

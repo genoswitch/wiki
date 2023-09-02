@@ -12,7 +12,7 @@ cache:
 pages:
   stage: build
   script:
-    - npm install
+    - yarn install
     - npm run clean
     # Pass --prefix-paths to gatsby build
     - npm run build -- --prefix-paths

@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Install dependencies
-        run: npm ci --no-scripts
+        run: yarn install
 
       - name: Build site
         run: npm run build

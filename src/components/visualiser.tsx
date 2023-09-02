@@ -8,17 +8,17 @@ import { SeqViz } from "seqviz";
 
 import { SequenceDefinitionNode } from "../types/graphql/sequenceDefintionNode";
 
-interface VisualizerProps {
+interface VisualiserProps {
 	sequenceDefinition: SequenceDefinitionNode;
 	sequences: Queries.GeneticSequence[];
 }
 
-interface VisualizerState {
+interface VisualiserState {
 	seq: Queries.GeneticSequence | undefined;
 }
 
-export default class Visualizer extends React.Component<VisualizerProps, VisualizerState> {
-	constructor(props: VisualizerProps) {
+export default class Visualiser extends React.Component<VisualiserProps, VisualiserState> {
+	constructor(props: VisualiserProps) {
 		super(props);
 
 		this.state = {

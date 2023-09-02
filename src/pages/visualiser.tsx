@@ -8,23 +8,23 @@ import LoadingPage from "../components/loadingPage";
 import NavBar from "../components/navbar";
 import { SequenceDefinitionNode } from "../types/graphql/sequenceDefintionNode";
 import Footer from "../components/footer";
-import Visualizer from "../components/visualizer";
+import Visualiser from "../components/visualiser";
 
 type SelectOnChangeTarget = EventTarget & {
 	value: number;
 	name: string;
 };
 
-interface VisualzierPageState {
+interface VisualiserPageState {
 	isReady: boolean;
 	sequenceIndex: number | undefined;
 }
 
-export default class VisualizerPage extends React.Component<
-	PageProps<Queries.VisualizerPageDataQuery>,
-	VisualzierPageState
+export default class VisualiserPage extends React.Component<
+	PageProps<Queries.VisualiserPageDataQuery>,
+	VisualiserPageState
 > {
-	constructor(props: PageProps<Queries.VisualizerPageDataQuery>) {
+	constructor(props: PageProps<Queries.VisualiserPageDataQuery>) {
 		super(props);
 
 		this.state = {
@@ -36,7 +36,7 @@ export default class VisualizerPage extends React.Component<
 		this.sequences = [];
 	}
 
-	data!: Queries.VisualizerPageDataQuery;
+	data!: Queries.VisualiserPageDataQuery;
 
 	sequenceDefinitions: SequenceDefinitionNode[];
 	sequences: Queries.GeneticSequence[];
@@ -100,7 +100,7 @@ export default class VisualizerPage extends React.Component<
 					</div>
 					{/** Only show if sequenceIndex is set */}
 					{this.state.sequenceIndex != undefined ? (
-						<Visualizer
+						<Visualiser
 							sequenceDefinition={this.sequenceDefinitions[this.state.sequenceIndex]}
 							sequences={this.sequences}
 						/>
@@ -113,7 +113,7 @@ export default class VisualizerPage extends React.Component<
 }
 
 export const query = graphql`
-	query VisualizerPageData {
+	query VisualiserPageData {
 		sequences: allSequencesYaml {
 			nodes {
 				name

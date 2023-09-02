@@ -143,5 +143,8 @@ export const query = graphql`
 		allProminentLogoYaml {
 			...FooterProminentLogoYamlFragment
 		}
+		allPreviousYearsYaml {
+			...FooterPreviousYearsYamlFragment
+		}
 	}
 `;

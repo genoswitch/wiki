@@ -2,20 +2,17 @@ import * as React from "react";
 
 import { CircularProgress } from "@mui/material";
 
-import seqparse, { Seq } from "seqparse";
 import { SeqViz } from "seqviz";
 
-
 import { SequenceDefinitionNode } from "../types/graphql/sequenceDefintionNode";
-import { FastaFile } from "../types/graphql/fastaFile";
 
 interface VisualizerProps {
-    sequence: SequenceDefinitionNode;
-    fastas: FastaFile[];
+    sequenceDefinition: SequenceDefinitionNode;
+    sequences: Queries.geneticSequence[];
 }
 
 interface VisualizerState {
-    seq: Seq | undefined;
+    seq: Queries.geneticSequence | undefined;
 }
 
 export default class Visualizer extends React.Component<VisualizerProps, VisualizerState> {
@@ -28,17 +25,11 @@ export default class Visualizer extends React.Component<VisualizerProps, Visuali
     }
     async componentDidMount(): Promise<void> {
         // Find the matching fasta file for the sequence.
-
-        const match = this.props.fastas.find((f => f.name == this.props.sequence.fastaFilename))
+        const match = this.props.sequences.find(seq => seq.parent!.name == this.props.sequenceDefinition.fastaFilename)
+        //const match = this.props.fastas.find((f => f.name == this.props.sequence.fastaFilename))
         if (match) {
             // Load the file.
-            const res = await fetch(match.publicURL!)
-            if (res.status == 200) {
-                const seq = await seqparse(await res.text());
-                console.log(seq.name);
-
-                this.setState({ seq: seq });
-            }
+            this.setState({ seq: match });
         }
     }
 
@@ -47,7 +38,7 @@ export default class Visualizer extends React.Component<VisualizerProps, Visuali
             return <CircularProgress />
         } else {
             return (<div style={{ height: "100vh" }}>
-                <SeqViz name={this.state.seq.name} seq={this.state.seq.seq} annotations={this.state.seq.annotations} />
+                <SeqViz name={this.state.seq.name!} seq={this.state.seq.seq!} annotations={this.state.seq.annotations!} />
             </div>)
         }
     }

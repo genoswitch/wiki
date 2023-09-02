@@ -31,11 +31,13 @@ export default class VisualizerPage extends React.Component<PageProps<Queries.Vi
         }
 
         this.sequenceDefinitions = [];
+        this.sequences = [];
     }
 
     data!: Queries.VisualizerPageDataQuery;
 
     sequenceDefinitions: SequenceDefinitionNode[];
+    sequences: Queries.geneticSequence[];
 
     componentDidMount(): void {
         // Set this.data to the result of the query
@@ -43,6 +45,8 @@ export default class VisualizerPage extends React.Component<PageProps<Queries.Vi
 
         //this.data.fasta.nodes
         this.sequenceDefinitions = this.data.sequences.nodes as SequenceDefinitionNode[];
+
+        this.sequences = this.data.allGeneticSequence.nodes as Queries.geneticSequence[];
 
         this.setState({ isReady: true });
     }
@@ -77,7 +81,7 @@ export default class VisualizerPage extends React.Component<PageProps<Queries.Vi
                         </FormControl>
                     </div >
                     {/** Only show if sequenceIndex is set */}
-                    {this.state.sequenceIndex != undefined ? <Visualizer sequence={this.sequences[this.state.sequenceIndex]} fastas={this.data.fasta.nodes} /> : undefined}
+                    {this.state.sequenceIndex != undefined ? <Visualizer sequenceDefinition={this.sequenceDefinitions[this.state.sequenceIndex]} sequences={this.sequences} /> : undefined}
                     <Footer data={this.data} />
                 </>
             )
@@ -99,15 +103,22 @@ export const query = graphql`
                     color
                 }
             }
-        }  
-        fasta: allFile(
-            filter: {extension: {eq: "fasta"}, relativeDirectory: {eq: "sequences"}}
-        ) {
-            nodes {
-                name
-                publicURL
-            }
         }
+		# Custom plugin to parse genetic sequences (gb, fasta)
+		allGeneticSequence {
+			nodes {
+				seq
+				type
+				name
+				parent {
+					id
+					# Cast to file
+					... on File {
+						name
+					}
+				}
+			}
+		}
         # Footer data
 		site {
 			siteMetadata {

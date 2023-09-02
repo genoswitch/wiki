@@ -8,12 +8,12 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "develop-codespaces": "gatsby develop -H 0.0.0.0",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "develop": "yarn gatsby develop",
+    "develop-codespaces": "yarn gatsby develop -H 0.0.0.0",
+    "start": "yarn gatsby develop",
+    "build": "yarn gatsby build",
+    "serve": "yarn gatsby serve",
+    "clean": "yarn gatsby clean",
     "typecheck": "tsc --noEmit",
     "lint": "prettier -w ."
   },
@@ -28,6 +28,8 @@
     "immutability-helper": "^3.1.1",
     "preact": "^10.17.1",
     "preact-render-to-string": "^5.2.6",
+    "react": "npm:@preact/compat@^17.1.2",
+    "react-dom": "npm:@preact/compat@^17.1.2",
     "seqparse": "^0.2.1"
   },
   "devDependencies": {
@@ -35,6 +37,7 @@
     "@mdx-js/react": "^2.3.0",
     "@types/node": "^20.5.8",
     "@types/webpack-stats-plugin": "^0.3.2",
+    "gatsby-cli": "^5.12.0",
     "gatsby-plugin-canonical-urls": "^5.12.0",
     "gatsby-plugin-image": "^3.12.0",
     "gatsby-plugin-manifest": "^5.12.0",

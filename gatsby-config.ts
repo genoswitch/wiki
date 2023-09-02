@@ -188,12 +188,29 @@ const config: GatsbyConfig = {
 				siteUrl: `https://2023.igem.wiki/city-of-london-uk/`,
 			},
 		},
+		// Self hosted fonts for SeqViz
+		// External content (such as Google Fonts) not allowed as per iGEM rules
+		{
+			resolve: "gatsby-plugin-webfonts",
+			options: {
+				fonts: {
+					google: [
+						{
+							family: "Roboto Mono",
+							variants: ["300", "400", "500"],
+							strategy: "selfHosted",
+						},
+					],
+				},
+			},
+		},
 		`@colliercz/gatsby-transformer-gitinfo`,
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`, // Needed for dynamic images
 		`gatsby-plugin-no-sourcemaps`,
 		`gatsby-plugin-mdx`,
+		`gatsby-transformer-genetic-sequences`, // Custom plugin to parse gb, fasta files.
 	],
 };
 

@@ -1,0 +1,99 @@
+LOCUS       T7_/_THS_145-199a-125b_ 1974 bp ds-DNA     circular     25-FEB-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+     misc_feature    1..22
+                     /label="Prefix"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    23..40
+                     /label="T7 Promoter"
+                     /ApEinfo_revcolor="#85dae9"
+                     /ApEinfo_fwdcolor="#85dae9"
+     misc_feature    41..51
+                     /label="145-5p Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    41..174
+                     /label="Gen4 Toehold Switch 145-199a-125b"
+                     /ApEinfo_revcolor="#faac61"
+                     /ApEinfo_fwdcolor="#faac61"
+     misc_feature    52..57
+                     /label="Anti-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    58..69
+                     /label="199a Binding Site"
+                     /ApEinfo_revcolor="#84b0dc"
+                     /ApEinfo_fwdcolor="#84b0dc"
+     misc_feature    70..75
+                     /label="Anti-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    76..86
+                     /label="125b Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    99..106
+                     /label="RBS"
+                     /ApEinfo_revcolor="#b1ff67"
+                     /ApEinfo_fwdcolor="#b1ff67"
+     misc_feature    112..114
+                     /label="START"
+                     /ApEinfo_revcolor="#75c6a9"
+                     /ApEinfo_fwdcolor="#75c6a9"
+     CDS             112..1824
+                     /label="90 - 1801"
+                     /ApEinfo_revcolor="#84b0dc"
+                     /ApEinfo_fwdcolor="#84b0dc"
+                     /translation="MSLRPKKSAHCFFRTWRQRKSEDAKNIKKGPAPFYPLEDGTAGEQLHKAMKRYALVPGTIAFTDAHIEVDITYAEYFEMSVRLAEAMKRYGLNTNHRIVVCSENSLQFFMPVLGALFIGVAVAPANDIYNERELLNSMGISQPTVVFVSKKGLQKILNVQKKLPIIQKIIIMDSKTDYQGFQSMYTFVTSHLPPGFNEYDFVPESFDRDKTIALIMNSSGSTGLPKGVALPHRTACVRFSHARDPIFGNQIIPDTAILSVVPFHHGFGMFTTLGYLICGFRVVLMYRFEEELFLRSLQDYKIQSALLVPTLFSFFAKSTLIDKYDLSNLHEIASGGAPLSKEVGEAVAKRFHLPGIRQGYGLTETTSAILITPEGDDKPGAVGKVVPFFEAKVVDLDTGKTLGVNQRGELCVRGPMIMSGYVNNPEATNALIDKDGWLHSGDIAYWDEDEHFFIVDRLKSLIKYKGYQVAPAELESILLQHPNIFDAGVAGLPDDDAGELPAAVVVLEHGKTMTEKEIVDYVASQVTTAKKLRGGVVFVDEVPKGLTGKLDARKIREILIKAKKGGKIAV*"
+     misc_feature    151..174
+                     /label="Linker"
+                     /ApEinfo_revcolor="#ff9ccd"
+                     /ApEinfo_fwdcolor="#ff9ccd"
+     misc_feature    175..1824
+                     /label="Firefly Luciferase"
+                     /ApEinfo_revcolor="#ffef86"
+                     /ApEinfo_fwdcolor="#ffef86"
+     misc_feature    1825..1953
+                     /label="Double Terminator (BBa_B0015)"
+                     /ApEinfo_revcolor="#f6989d"
+                     /ApEinfo_fwdcolor="#f6989d"
+     misc_feature    1954..1974
+                     /label="Suffix"
+                     /ApEinfo_revcolor="#d59687"
+                     /ApEinfo_fwdcolor="#d59687"
+ORIGIN
+        1 GAATTCGCGG CCGCTTCTAG AGTAATACGA CTCACTATAG AGGGATTCCT GAAAAAACAA
+       61 TGTGCAGACT TTTTTGGTCT CAGGGAGGAT TTAGAAAAAG AGGAGACTAA AATGTCCCTG
+      121 AGACCAAAAA AGTCTGCACA TTGTTTTTTC AGAACCTGGC GGCAGCGCAA AAGTgaagac
+      181 gccaaaaaca taaagaaagg cccggcgcca ttctatccgc tggaagatgg aaccgctgga
+      241 gagcaactgc ataaggctat gaagagatac gccctggttc ctggaacaat tgcttttaca
+      301 gatgcacata tcgaggtgga catcacttac gctgagtact tcgaaatgtc cgttcggttg
+      361 gcagaagcta tgaaacgata tgggctgaat acaaatcaca gaatcgtcgt atgcagtgaa
+      421 aactctcttc aattctttat gccggtgttg ggcgcgttat ttatcggagt tgcagttgcg
+      481 cccgcgaacg acatttataa tgaacgtgaa ttgctcaaca gtatgggcat ttcgcagcct
+      541 accgtggtgt tcgtttccaa aaaggggttg caaaaaattt tgaacgtgca aaaaaagctc
+      601 ccaatcatcc aaaaaattat tatcatggat tctaaaacgg attaccaggg atttcagtcg
+      661 atgtacacgt tcgtcacatc tcatctacct cccggtttta atgaatacga ttttgtgcca
+      721 gagtccttcg atagggacaa gacaattgca ctgatcatga actcctctgg atctactggt
+      781 ctgcctaaag gtgtcgctct gcctcataga actgcctgcg tgagattctc gcatgccaga
+      841 gatcctattt ttggcaatca aatcattccg gatactgcga ttttaagtgt tgttccattc
+      901 catcacggtt ttggaatgtt tactacactc ggatatttga tatgtggatt tcgagtcgtc
+      961 ttaatgtata gatttgaaga agagctgttt ctgaggagcc ttcaggatta caagattcaa
+     1021 agtgcgctgc tggtgccaac cctattctcc ttcttcgcca aaagcactct gattgacaaa
+     1081 tacgatttat ctaatttaca cgaaattgct tctggtggcg ctcccctctc taaggaagtc
+     1141 ggggaagcgg ttgccaagag gttccatctg ccaggtatca ggcaaggata tgggctcact
+     1201 gagactacat cagctattct gattacaccc gagggggatg ataaaccggg cgcggtcggt
+     1261 aaagttgttc cattttttga agcgaaggtt gtggatctgg ataccgggaa aacgctgggc
+     1321 gttaatcaaa gaggcgaact gtgtgtgaga ggtcctatga ttatgtccgg ttatgtaaac
+     1381 aatccggaag cgaccaacgc cttgattgac aaggatggat ggctacattc tggagacata
+     1441 gcttactggg acgaagacga acacttcttc atcgttgacc gcctgaagtc tctgattaag
+     1501 tacaaaggct atcaggtggc tcccgctgaa ttggaatcca tcttgctcca acaccccaac
+     1561 atcttcgacg caggtgtcgc aggtcttccc gacgatgacg ccggtgaact tcccgccgcc
+     1621 gttgttgttt tggagcacgg aaagacgatg acggaaaaag agatcgtgga ttacgtcgcc
+     1681 agtcaagtaa caaccgcgaa aaagttgcgc ggaggagttg tgtttgtgga cgaagtaccg
+     1741 aaaggtctta ccggaaaact cgacgcaaga aaaatcagag agatcctcat aaaggccaag
+     1801 aagggcggaa agatcgccgt gtaaCCAGGC ATCAAATAAA ACGAAAGGCT CAGTCGAAAG
+     1861 ACTGGGCCTT TCGTTTTATC TGTTGTTTGT CGGTGAACGC TCTCTACTAG AGTCACACTG
+     1921 GCTCACCTTC GGGTGGGCCT TTCTGCGTTT ATATACTAGT AGCGGCCGCT GCAG
+//

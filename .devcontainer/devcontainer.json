@@ -21,7 +21,7 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm ci --no-scripts",
+	"postCreateCommand": "yarn install",
 
 	// Run a project when the container starts
 	// https://code.visualstudio.com/remote/advancedcontainers/start-processes#_video-run-npm-start-whenever-the-container-is-started

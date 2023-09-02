@@ -194,6 +194,7 @@ const config: GatsbyConfig = {
 		`gatsby-transformer-sharp`, // Needed for dynamic images
 		`gatsby-plugin-no-sourcemaps`,
 		`gatsby-plugin-mdx`,
+		`gatsby-transformer-genetic-sequences`, // Custom plugin to parse gb, fasta files.
 	],
 };
 

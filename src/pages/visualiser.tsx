@@ -10,6 +10,8 @@ import { SequenceDefinitionNode } from "../types/graphql/sequenceDefintionNode";
 import Footer from "../components/footer";
 import Visualiser from "../components/visualiser";
 
+import { Head as BaseHead } from "../components/head";
+
 type SelectOnChangeTarget = EventTarget & {
 	value: number;
 	name: string;
@@ -162,3 +164,10 @@ export const query = graphql`
 		}
 	}
 `;
+
+export const Head = () => (
+	<BaseHead
+		title="Part Visualiser"
+		description="Easily visualise the parts (and composites) used or created by GENOSWITCH."
+	/>
+);

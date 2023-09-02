@@ -57,14 +57,16 @@ export default class VisualiserPage extends React.Component<
 		if (this.props.location.search.includes("?sequence=")) {
 			// Find the entry corresponding to the filename in the query string.
 
-			const filename = this.props.location.search.split("?sequence=")[1]
+			const filename = this.props.location.search.split("?sequence=")[1];
 
 			const match = this.sequenceDefinitions.find(seq => seq.filename == filename);
 
 			if (match) {
-				this.setState({ sequenceIndex: this.sequenceDefinitions.indexOf(match) })
+				this.setState({ sequenceIndex: this.sequenceDefinitions.indexOf(match) });
 			} else {
-				console.warn("Query string used but no matching file found!. Acting as if no query string was passed.")
+				console.warn(
+					"Query string used but no matching file found!. Acting as if no query string was passed."
+				);
 			}
 		}
 	}

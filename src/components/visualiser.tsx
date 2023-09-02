@@ -35,7 +35,7 @@ export default class Visualiser extends React.Component<VisualiserProps, Visuali
 			// Load the file.
 			this.setState({ seq: match });
 
-			navigate(`?sequence=${encodeURIComponent(match.filename || "unknown")}`)
+			navigate(`?sequence=${encodeURIComponent(match.filename || "unknown")}`);
 		}
 	}
 

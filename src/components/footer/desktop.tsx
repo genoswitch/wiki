@@ -9,6 +9,7 @@ import Copyright from "./components/copyright";
 
 import { FooterProps } from "./types/footerProps";
 import { SponsorNode } from "../../types/graphql/sponsorNode";
+import PreviousYears from "./components/previousYears";
 
 // We are using the type Queries.Query in which everything is an optional.
 // Unfortunately that means we have to notNull everything
@@ -26,6 +27,7 @@ const DesktopFooter = ({ data }: FooterProps) => {
 					{/** Left side */}
 					<Grid container item xs={6}>
 						{/** Left: Source code */}
+						<PreviousYears xs={4} nodes={data.allPreviousYearsYaml.nodes} />
 						<SourceAndSha longSha={longSha} shortSha={shortSha} />
 						<Grid item xs={12}>
 							<Copyright />

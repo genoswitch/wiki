@@ -23,7 +23,7 @@
     "@mui/icons-material": "^5.14.7",
     "@mui/material": "^5.14.7",
     "gatsby": "^5.12.3",
-    "html-react-parser": "^4.2.1",
+    "html-react-parser": "^4.2.2",
     "immutability-helper": "^3.1.1",
     "preact": "^10.17.1",
     "preact-render-to-string": "^5.2.6"

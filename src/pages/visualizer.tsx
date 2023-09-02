@@ -7,7 +7,7 @@ import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@m
 
 import LoadingPage from "../components/loadingPage";
 import NavBar from "../components/navbar";
-import { SequencesNode } from "../types/graphql/sequencesNode";
+import { SequenceDefinitionNode } from "../types/graphql/sequenceDefintionNode";
 import Footer from "../components/footer";
 import Visualizer from "../components/visualizer";
 
@@ -30,19 +30,19 @@ export default class VisualizerPage extends React.Component<PageProps<Queries.Vi
             sequenceIndex: undefined
         }
 
-        this.sequences = [];
+        this.sequenceDefinitions = [];
     }
 
     data!: Queries.VisualizerPageDataQuery;
 
-    sequences: SequencesNode[];
+    sequenceDefinitions: SequenceDefinitionNode[];
 
     componentDidMount(): void {
         // Set this.data to the result of the query
         this.data = this.props.pageResources.json.data;
 
         //this.data.fasta.nodes
-        this.sequences = this.data.sequences.nodes as SequencesNode[];
+        this.sequenceDefinitions = this.data.sequences.nodes as SequenceDefinitionNode[];
 
         this.setState({ isReady: true });
     }
@@ -51,7 +51,7 @@ export default class VisualizerPage extends React.Component<PageProps<Queries.Vi
         if (!this.state.isReady) {
             return <LoadingPage />
         } else {
-            let selection: SequencesNode | undefined = undefined;
+            let selection: SequenceDefinitionNode | undefined = undefined;
             return (
                 <>
                     <NavBar />

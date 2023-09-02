@@ -6,11 +6,11 @@ import seqparse, { Seq } from "seqparse";
 import { SeqViz } from "seqviz";
 
 
-import { SequencesNode } from "../types/graphql/sequencesNode";
+import { SequenceDefinitionNode } from "../types/graphql/sequenceDefintionNode";
 import { FastaFile } from "../types/graphql/fastaFile";
 
 interface VisualizerProps {
-    sequence: SequencesNode;
+    sequence: SequenceDefinitionNode;
     fastas: FastaFile[];
 }
 

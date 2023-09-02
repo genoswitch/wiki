@@ -25,7 +25,7 @@ export default class Visualizer extends React.Component<VisualizerProps, Visuali
     }
     async componentDidMount(): Promise<void> {
         // Find the matching fasta file for the sequence.
-        const match = this.props.sequences.find(seq => seq.parent!.name == this.props.sequenceDefinition.fastaFilename)
+        const match = this.props.sequences.find(seq => seq.filename == this.props.sequenceDefinition.filename)
         //const match = this.props.fastas.find((f => f.name == this.props.sequence.fastaFilename))
         if (match) {
             // Load the file.

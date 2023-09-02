@@ -74,8 +74,8 @@ export default class VisualizerPage extends React.Component<PageProps<Queries.Vi
                                     });
                                 }}
                             >
-                                {this.sequences.map(sequence =>
-                                    (<MenuItem value={this.sequences.indexOf(sequence)}>{sequence.name}</MenuItem>)
+                                {this.sequenceDefinitions.map(sequenceDefinition =>
+                                    (<MenuItem value={this.sequenceDefinitions.indexOf(sequenceDefinition)}>{sequenceDefinition.name}</MenuItem>)
                                 )}
                             </Select>
                         </FormControl>
@@ -94,7 +94,7 @@ export const query = graphql`
         sequences: allSequencesYaml {
             nodes {
                 name
-                fastaFilename
+                filename
                 annotations {
                     name
                     start
@@ -110,13 +110,15 @@ export const query = graphql`
 				seq
 				type
 				name
-				parent {
-					id
-					# Cast to file
-					... on File {
-						name
-					}
-				}
+                filename
+				annotations {
+                    type
+                    start
+                    name
+                    end
+                    direction
+                    color
+                }
 			}
 		}
         # Footer data

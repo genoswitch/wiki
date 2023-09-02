@@ -8,7 +8,7 @@
 type SequencesYaml implements Node @dontInfer {
 	# Non-nullable fields
 	name: String!
-	fastaFilename: String!
+	filename: String!
 
 	# Nullable (optional) fields
 	annotations: [SequencesYamlAnnotations]

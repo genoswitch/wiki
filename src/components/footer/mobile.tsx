@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Grid, Paper } from "@mui/material";
+import { Divider, Grid, Paper } from "@mui/material";
 
 import SponsorLogos from "./components/sponsorLogos";
 import ProminentLogos from "./components/prominentLogos";
@@ -8,6 +8,7 @@ import SourceAndSha from "./components/sourceAndSha";
 import Copyright from "./components/copyright";
 import { FooterProps } from "./types/footerProps";
 import { SponsorNode } from "../../types/graphql/sponsorNode";
+import PreviousYears from "./components/previousYears";
 
 // We are using the type Queries.Query in which everything is an optional.
 // Unfortunately that means we have to notNull everything
@@ -49,6 +50,10 @@ const MobileFooter = ({ data }: FooterProps) => {
 						nodes={data!.allSponsorYaml!.nodes! as unknown as SponsorNode[]}
 						assetPath={assetPath}
 					/>
+
+					<div style={{ paddingTop: 16 }}>
+						<PreviousYears xs={6} nodes={data.allPreviousYearsYaml.nodes} />
+					</div>
 
 					{/** Source code button and SHA */}
 					<SourceAndSha longSha={longSha} shortSha={shortSha} />

@@ -4,3 +4,12 @@ public
 src/gatsby-types.d.ts
 webpack-stats.json
 *.out
+
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

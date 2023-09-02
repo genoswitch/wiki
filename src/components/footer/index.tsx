@@ -65,6 +65,14 @@ export const query = graphql`
 			assetBasePath
 		}
 	}
+
+	fragment FooterPreviousYearsYamlFragment on PreviousYearsYamlConnection {
+		nodes {
+			year
+			name
+			link
+		}
+	}
 `;
 
 const Footer = ({ data }: FooterProps) => {

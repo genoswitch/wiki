@@ -32,6 +32,9 @@
     - name: Lab Results
       slug: /biology/results/
 
+    - name: Part Visualiser
+      slug: /visualiser/
+
 - name: Hardware
   entries:
     - name: Hardware

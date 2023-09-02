@@ -39,8 +39,9 @@ export default class Visualizer extends React.Component<VisualizerProps, Visuali
 		if (!this.state.seq) {
 			return <CircularProgress />;
 		} else {
+			// TODO: Attempts to make this use flexbox result in a height of 0.
 			return (
-				<div style={{ height: "100vh" }}>
+				<div style={{ height: "75vh" }}>
 					<SeqViz
 						name={this.state.seq.name!}
 						seq={this.state.seq.seq!}

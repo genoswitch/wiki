@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { navigate } from "gatsby";
+
 import { CircularProgress } from "@mui/material";
 
 import { SeqViz } from "seqviz";
@@ -32,6 +34,8 @@ export default class Visualizer extends React.Component<VisualizerProps, Visuali
 		if (match) {
 			// Load the file.
 			this.setState({ seq: match });
+
+			navigate(`?sequence=${encodeURIComponent(match.filename || "unknown")}`)
 		}
 	}
 

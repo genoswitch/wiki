@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { graphql, PageProps } from "gatsby";
 
-import { Button, FormControl, InputLabel, Menu, MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { Button, Menu } from "@mui/material";
 
 import LoadingPage from "../components/loadingPage";
 import NavBar from "../components/navbar";
@@ -13,6 +13,7 @@ import Visualiser from "../components/visualiser";
 import { Head as BaseHead } from "../components/head";
 import { SequenceTag } from "../types/sequenceTag";
 import { NestedMenuItem } from "mui-nested-menu";
+import VisualiserFilteredMenuItems from "../components/visualiserFilteredMenuItems";
 
 type SelectOnChangeTarget = EventTarget & {
 	value: number;
@@ -35,7 +36,7 @@ export default class VisualiserPage extends React.Component<
 		this.state = {
 			isReady: false,
 			sequenceIndex: undefined,
-			anchorEl: undefined
+			anchorEl: null,
 		};
 
 		this.sequenceDefinitions = [];
@@ -85,32 +86,36 @@ export default class VisualiserPage extends React.Component<
 		} else {
 			const handleBtnClick = (e: MouseEvent) => this.setState({ anchorEl: e.currentTarget });
 			// e: mouseEvent
-			const handleClose = (e: any) => { console.log(e.target.value); this.setState({ anchorEl: null }); }
-			const isOpen = Boolean(this.state.anchorEl)
+			const handleClose = (e: MouseEvent) => {
+				const target = e.target as SelectOnChangeTarget;
+
+				this.setState({
+					sequenceIndex: target.value,
+					anchorEl: null
+				});
+			};
+			const isOpen = Boolean(this.state.anchorEl);
 			return (
 				<>
 					<NavBar />
 					<br />
 					<div style={{ padding: "25px" }}>
-						<Button variant="contained" onClick={handleBtnClick}>Sequence</Button>
+						<Button variant="contained" onClick={handleBtnClick}>
+							Sequence
+						</Button>
 						<Menu anchorEl={this.state.anchorEl as Element} open={isOpen} onClose={handleClose}>
 							{this.sequenceTags.map(tag => (
 								<NestedMenuItem label={tag.name} parentMenuOpen={isOpen}>
 									{/** If tag.subtags is present, map it. */}
-									{tag.subtags ? tag.subtags.map(subTag => (
-										// Only going in one level for now
-										<NestedMenuItem label={subTag.name} parentMenuOpen={isOpen}>
-											{this.sequenceDefinitions.filter(x => x.tag == subTag.tag).map(sequenceDefinition => (
-												<MenuItem value={this.sequenceDefinitions.indexOf(sequenceDefinition)} onClick={handleClose}>
-													{sequenceDefinition.name}
-												</MenuItem>
-											))}
-										</NestedMenuItem>
-									)) : this.sequenceDefinitions.filter(x => x.tag == tag.tag).map(sequenceDefinition => (
-										<MenuItem value={this.sequenceDefinitions.indexOf(sequenceDefinition)} onClick={handleClose}>
-											{sequenceDefinition.name}
-										</MenuItem>
-									))}
+									{tag.subtags
+										? tag.subtags.map(subTag => (
+											// Only going in one level for now
+											<NestedMenuItem label={subTag.name} parentMenuOpen={isOpen}>
+												<VisualiserFilteredMenuItems sequenceDefinitions={this.sequenceDefinitions} tag={subTag} onClick={handleClose} />
+											</NestedMenuItem>
+										))
+										:
+										<VisualiserFilteredMenuItems sequenceDefinitions={this.sequenceDefinitions} tag={tag} onClick={handleClose} />}
 								</NestedMenuItem>
 							))}
 						</Menu>

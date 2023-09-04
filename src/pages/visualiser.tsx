@@ -91,7 +91,7 @@ export default class VisualiserPage extends React.Component<
 
 				this.setState({
 					sequenceIndex: target.value,
-					anchorEl: null
+					anchorEl: null,
 				});
 			};
 			const isOpen = Boolean(this.state.anchorEl);
@@ -107,15 +107,24 @@ export default class VisualiserPage extends React.Component<
 							{this.sequenceTags.map(tag => (
 								<NestedMenuItem label={tag.name} parentMenuOpen={isOpen}>
 									{/** If tag.subtags is present, map it. */}
-									{tag.subtags
-										? tag.subtags.map(subTag => (
+									{tag.subtags ? (
+										tag.subtags.map(subTag => (
 											// Only going in one level for now
 											<NestedMenuItem label={subTag.name} parentMenuOpen={isOpen}>
-												<VisualiserFilteredMenuItems sequenceDefinitions={this.sequenceDefinitions} tag={subTag} onClick={handleClose} />
+												<VisualiserFilteredMenuItems
+													sequenceDefinitions={this.sequenceDefinitions}
+													tag={subTag}
+													onClick={handleClose}
+												/>
 											</NestedMenuItem>
 										))
-										:
-										<VisualiserFilteredMenuItems sequenceDefinitions={this.sequenceDefinitions} tag={tag} onClick={handleClose} />}
+									) : (
+										<VisualiserFilteredMenuItems
+											sequenceDefinitions={this.sequenceDefinitions}
+											tag={tag}
+											onClick={handleClose}
+										/>
+									)}
 								</NestedMenuItem>
 							))}
 						</Menu>

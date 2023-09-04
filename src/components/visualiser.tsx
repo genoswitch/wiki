@@ -4,7 +4,7 @@ import { navigate } from "gatsby";
 
 import { CircularProgress } from "@mui/material";
 
-// We have added a feature to SeqViz (3.9.1+) to allow for 
+// We have added a feature to SeqViz (3.9.1+) to allow for
 // loading fonts locally instead of via Google Fonts
 // https://github.com/Lattice-Automation/seqviz/pull/226
 import { SeqViz } from "seqviz";

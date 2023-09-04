@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { graphql, PageProps } from "gatsby";
 
-import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { Button, FormControl, InputLabel, Menu, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 
 import LoadingPage from "../components/loadingPage";
 import NavBar from "../components/navbar";
@@ -11,6 +11,8 @@ import Footer from "../components/footer";
 import Visualiser from "../components/visualiser";
 
 import { Head as BaseHead } from "../components/head";
+import { SequenceTag } from "../types/sequenceTag";
+import { NestedMenuItem } from "mui-nested-menu";
 
 type SelectOnChangeTarget = EventTarget & {
 	value: number;
@@ -20,6 +22,7 @@ type SelectOnChangeTarget = EventTarget & {
 interface VisualiserPageState {
 	isReady: boolean;
 	sequenceIndex: number | undefined;
+	anchorEl: EventTarget | null;
 }
 
 export default class VisualiserPage extends React.Component<
@@ -32,16 +35,19 @@ export default class VisualiserPage extends React.Component<
 		this.state = {
 			isReady: false,
 			sequenceIndex: undefined,
+			anchorEl: undefined
 		};
 
 		this.sequenceDefinitions = [];
 		this.sequences = [];
+		this.sequenceTags = [];
 	}
 
 	data!: Queries.VisualiserPageDataQuery;
 
 	sequenceDefinitions: SequenceDefinitionNode[];
 	sequences: Queries.GeneticSequence[];
+	sequenceTags: SequenceTag[];
 
 	componentDidMount(): void {
 		// Set this.data to the result of the query
@@ -51,6 +57,8 @@ export default class VisualiserPage extends React.Component<
 		this.sequenceDefinitions = this.data.sequences.nodes as SequenceDefinitionNode[];
 
 		this.sequences = this.data.allGeneticSequence.nodes as Queries.GeneticSequence[];
+
+		this.sequenceTags = this.data.allSequenceTagsYaml.nodes as unknown as SequenceTag[];
 
 		this.setState({ isReady: true });
 
@@ -75,32 +83,37 @@ export default class VisualiserPage extends React.Component<
 		if (!this.state.isReady) {
 			return <LoadingPage />;
 		} else {
-			let selection: SequenceDefinitionNode | undefined = undefined;
+			const handleBtnClick = (e: MouseEvent) => this.setState({ anchorEl: e.currentTarget });
+			// e: mouseEvent
+			const handleClose = (e: any) => { console.log(e.target.value); this.setState({ anchorEl: null }); }
+			const isOpen = Boolean(this.state.anchorEl)
 			return (
 				<>
 					<NavBar />
 					<br />
 					<div style={{ padding: "25px" }}>
-						<FormControl variant="standard" style={{ width: "200px" }}>
-							<InputLabel id="viz-select-label">Sequence</InputLabel>
-							<Select
-								labelId="viz-select-label"
-								id="viz-select"
-								value={this.state.sequenceIndex || undefined}
-								onChange={(event: SelectChangeEvent<number>) => {
-									const target = event.target as SelectOnChangeTarget;
-									this.setState({
-										sequenceIndex: target.value,
-									});
-								}}
-							>
-								{this.sequenceDefinitions.map(sequenceDefinition => (
-									<MenuItem value={this.sequenceDefinitions.indexOf(sequenceDefinition)}>
-										{sequenceDefinition.name}
-									</MenuItem>
-								))}
-							</Select>
-						</FormControl>
+						<Button variant="contained" onClick={handleBtnClick}>Sequence</Button>
+						<Menu anchorEl={this.state.anchorEl as Element} open={isOpen} onClose={handleClose}>
+							{this.sequenceTags.map(tag => (
+								<NestedMenuItem label={tag.name} parentMenuOpen={isOpen}>
+									{/** If tag.subtags is present, map it. */}
+									{tag.subtags ? tag.subtags.map(subTag => (
+										// Only going in one level for now
+										<NestedMenuItem label={subTag.name} parentMenuOpen={isOpen}>
+											{this.sequenceDefinitions.filter(x => x.tag == subTag.tag).map(sequenceDefinition => (
+												<MenuItem value={this.sequenceDefinitions.indexOf(sequenceDefinition)} onClick={handleClose}>
+													{sequenceDefinition.name}
+												</MenuItem>
+											))}
+										</NestedMenuItem>
+									)) : this.sequenceDefinitions.filter(x => x.tag == tag.tag).map(sequenceDefinition => (
+										<MenuItem value={this.sequenceDefinitions.indexOf(sequenceDefinition)} onClick={handleClose}>
+											{sequenceDefinition.name}
+										</MenuItem>
+									))}
+								</NestedMenuItem>
+							))}
+						</Menu>
 					</div>
 					{/** Only show if sequenceIndex is set */}
 					{this.state.sequenceIndex != undefined ? (
@@ -122,6 +135,7 @@ export const query = graphql`
 			nodes {
 				name
 				filename
+				tag
 				annotations {
 					name
 					start
@@ -146,6 +160,16 @@ export const query = graphql`
 					direction
 					color
 				}
+			}
+		}
+		allSequenceTagsYaml {
+			nodes {
+				name
+				subtags {
+					name
+					tag
+				}
+				tag
 			}
 		}
 		# Footer data

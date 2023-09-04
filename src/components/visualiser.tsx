@@ -4,9 +4,10 @@ import { navigate } from "gatsby";
 
 import { CircularProgress } from "@mui/material";
 
-// Fork of SeqViz allowing for fonts from sources other than Google Fonts
-// https://github.com/genoswitch/seqviz
-import { SeqViz } from "@genoswitch/seqviz";
+// We have added a feature to SeqViz (3.9.1+) to allow for 
+// loading fonts locally instead of via Google Fonts
+// https://github.com/Lattice-Automation/seqviz/pull/226
+import { SeqViz } from "seqviz";
 
 import { SequenceDefinitionNode } from "../types/graphql/sequenceDefintionNode";
 
@@ -53,7 +54,7 @@ export default class Visualiser extends React.Component<VisualiserProps, Visuali
 						seq={this.state.seq.seq!}
 						annotations={this.state.seq.annotations!}
 						// Don't load fonts from external sources
-						useExternalFonts={false}
+						disableExternalFonts={true}
 					/>
 				</div>
 			);

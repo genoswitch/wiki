@@ -20,7 +20,6 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@genoswitch/seqviz": "3.9.0-3",
     "@mui/icons-material": "^5.14.7",
     "@mui/material": "^5.14.7",
     "gatsby": "^5.12.3",
@@ -28,7 +27,8 @@
     "immutability-helper": "^3.1.1",
     "preact": "^10.17.1",
     "preact-render-to-string": "^5.2.6",
-    "seqparse": "^0.2.1"
+    "seqparse": "^0.2.1",
+    "seqviz": "^3.9.1"
   },
   "devDependencies": {
     "@colliercz/gatsby-transformer-gitinfo": "genoswitch/gatsby-transformer-gitinfo",

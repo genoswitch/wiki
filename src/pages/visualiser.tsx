@@ -96,7 +96,7 @@ export default class VisualiserPage extends React.Component<
 					<div style={{ padding: "25px" }}>
 						<Menu>
 							<MenuHandler>
-								<Button>Sequence</Button>
+								<Button>Choose a Sequence...</Button>
 							</MenuHandler>
 							<MenuList>
 								{/** Create a sub-menu for each tag */}

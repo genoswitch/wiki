@@ -1,0 +1,94 @@
+LOCUS       T7_/_Gen4_320b-320a-464 1131 bp ds-DNA     circular     03-SEP-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+     misc_feature    1..18
+                     /label="T7 Promoter"
+                     /ApEinfo_revcolor="#85dae9"
+                     /ApEinfo_fwdcolor="#85dae9"
+     misc_feature    19..33
+                     /label="320b Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    19..157
+                     /label="Gen4 Toehold Switch 320b-320a-4640"
+                     /ApEinfo_revcolor="#faac61"
+                     /ApEinfo_fwdcolor="#faac61"
+     misc_feature    34..39
+                     /label="Anit-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    40..47
+                     /label="320a-5p Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    48..53
+                     /label="Anti-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    54..69
+                     /label="4640-5p Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    85..92
+                     /label="RBS"
+                     /ApEinfo_revcolor="#b1ff67"
+                     /ApEinfo_fwdcolor="#b1ff67"
+     misc_feature    98..100
+                     /label="START"
+                     /ApEinfo_revcolor="#75c6a9"
+                     /ApEinfo_fwdcolor="#75c6a9"
+     CDS             98..874
+                     /label="120-896"
+                     /ApEinfo_revcolor="#84b0dc"
+                     /ApEinfo_fwdcolor="#84b0dc"
+                     /translation="MGWSTRAPPSRPPNLAAAQKVSKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTLKFICTTGKLPVPWPTLVTTLTWGVQCFARYPDHMKQHDFFKSAMPEGYVQERTIFFKDDGNYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNAISDNVYITADKQKNGIKANFKIRHNIEDGSVQLADHYQQNTPIGDGPVLLPDNHYLSTQSKLSKDPNEKRDHMVLLEFVTAAGITLGMDELYK*"
+     misc_feature    134..157
+                     /label="Linker"
+                     /ApEinfo_revcolor="#ff9ccd"
+                     /ApEinfo_fwdcolor="#ff9ccd"
+     CDS             158..874
+                     /label="mCerulean"
+                     /ApEinfo_revcolor="#85dae9"
+                     /ApEinfo_fwdcolor="#85dae9"
+                     /note="codon_start: 1 note: mammalian codon-optimized product: enhanced monomeric variant of CFP (Rizzo et al., 2004) transl_table: 1 translation: M,V,SKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTLKFICTTGKLPVPWPTLVTTLTWGVQCFARYPDHMKQHDFFKSAMPEGYVQERTIFFKDDGNYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNAISDNVYITADKQKNGIKANFKIRHNIEDGSVQLADHYQQNTPIGDGPVLLPDNHYLSTQSKLSKDPNEKRDHMVLLEFVTAAGITLGMDELYK*"
+     misc_feature    875..1003
+                     /label="Double Terminator (BBa_B0015)"
+                     /ApEinfo_revcolor="#f6989d"
+                     /ApEinfo_fwdcolor="#f6989d"
+     misc_feature    1004..1021
+                     /label="T7 Promoter"
+                     /ApEinfo_revcolor="#85dae9"
+                     /ApEinfo_fwdcolor="#85dae9"
+     misc_feature    1022..1054
+                     /label="4640 Overhang*"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    1022..1097
+                     /label="Anti-miRNA"
+                     /ApEinfo_revcolor="#ffef86"
+                     /ApEinfo_fwdcolor="#ffef86"
+     misc_feature    1098..1131
+                     /label="Terminator (BBa_B1002)"
+                     /ApEinfo_revcolor="#f6989d"
+                     /ApEinfo_fwdcolor="#f6989d"
+ORIGIN
+        1 TAATACGACT CACTATAGTT TTCGACCCAA CTCGGGGGGC CGGGAAGGGG GGGCCCTCGT
+       61 CGACCACCCG GATTTGCAAA AAAAAGAGGA GAGTAAAATG GGGTGGTCGA CGAGGGCCCC
+      121 CCCTTCCCGG CCCCCCAACC TGGCGGCAGC GCAAAAGGTG AGCAAGGGCG AGGAGCTGTT
+      181 CACCGGGGTG GTGCCCATCC TGGTCGAGCT GGACGGCGAC GTAAACGGCC ACAAGTTCAG
+      241 CGTGTCCGGC GAGGGCGAGG GCGATGCCAC CTACGGCAAG CTGACCCTGA AGTTCATCTG
+      301 CACCACCGGC AAGCTGCCCG TGCCCTGGCC CACCCTCGTG ACCACCCTGA CCTGGGGCGT
+      361 GCAGTGCTTC GCCCGCTACC CCGACCACAT GAAGCAGCAC GACTTCTTCA AGTCCGCCAT
+      421 GCCCGAAGGC TACGTCCAGG AGCGCACCAT CTTCTTCAAG GACGACGGCA ACTACAAGAC
+      481 CCGCGCCGAG GTGAAGTTCG AGGGCGACAC CCTGGTGAAC CGCATCGAGC TGAAGGGCAT
+      541 CGACTTCAAG GAGGACGGCA ACATCCTGGG GCACAAGCTG GAGTACAACG CCATCAGCGA
+      601 CAACGTCTAT ATCACCGCCG ACAAGCAGAA GAACGGCATC AAGGCCAACT TCAAGATCCG
+      661 CCACAACATC GAGGACGGCA GCGTGCAGCT CGCCGACCAC TACCAGCAGA ACACCCCCAT
+      721 CGGCGACGGC CCCGTGCTGC TGCCCGACAA CCACTACCTG AGCACCCAGT CCAAGCTGAG
+      781 CAAAGACCCC AACGAGAAGC GCGATCACAT GGTCCTGCTG GAGTTCGTGA CCGCCGCCGG
+      841 GATCACTCTC GGCATGGACG AGCTGTACAA GTAACCAGGC ATCAAATAAA ACGAAAGGCT
+      901 CAGTCGAAAG ACTGGGCCTT TCGTTTTATC TGTTGTTTGT CGGTGAACGC TCTCTACTAG
+      961 AGTCACACTG GCTCACCTTC GGGTGGGCCT TTCTGCGTTT ATATAATACG ACTCACTATA
+     1021 GCTCTTTCCT CTCTCCTTCT TTTCTCTCCC TCTTCCCACC AGCTGCCCCC CCGAAGGGCC
+     1081 CCCCCCACCC AGCTTTTCGC AAAAAACCCC GCTTCGGCGG GGTTTTTTCG C
+//

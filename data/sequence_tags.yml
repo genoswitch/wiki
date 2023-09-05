@@ -6,3 +6,9 @@
   subtags:
     - tag: probes_pcos
       name: PCOS
+
+- tag: toeholdSwitches
+  name: Toehold Switches
+  subtags:
+    - tag: toeholdSwitches_pcos
+      name: PCOS (GFP)

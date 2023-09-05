@@ -89,7 +89,6 @@ export default class VisualiserPage extends React.Component<
 					sequenceIndex: target.value,
 				});
 			};
-			console.log(`Sequence Index: ${this.state.sequenceIndex}`)
 			return (
 				<>
 					<NavBar />

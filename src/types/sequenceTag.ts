@@ -1,5 +1,5 @@
 export type SequenceTag = {
-	name: String;
-	tag: String;
+	name: string;
+	tag: string;
 	subtags: SequenceTag[];
 };

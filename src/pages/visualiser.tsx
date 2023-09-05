@@ -136,14 +136,13 @@ export default class VisualiserPage extends React.Component<
 														</MenuList>
 													</Menu>
 												))
-											) : (
-												// Tag has no sub-tags, map each entry with this tag
-												<VisualiserFilteredMenuItems
-													sequenceDefinitions={this.sequenceDefinitions}
-													tag={tag}
-													onClick={handleClose}
-												/>
-											)}
+											) : undefined}
+											{/** Map each entry with this tag **/}
+											<VisualiserFilteredMenuItems
+												sequenceDefinitions={this.sequenceDefinitions}
+												tag={tag}
+												onClick={handleClose}
+											/>
 										</MenuList>
 									</Menu>
 								))}

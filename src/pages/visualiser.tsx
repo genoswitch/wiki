@@ -23,7 +23,6 @@ type SelectOnChangeTarget = EventTarget & {
 interface VisualiserPageState {
 	isReady: boolean;
 	sequenceIndex: number | undefined;
-	anchorEl: EventTarget | null;
 }
 
 export default class VisualiserPage extends React.Component<
@@ -36,7 +35,6 @@ export default class VisualiserPage extends React.Component<
 		this.state = {
 			isReady: false,
 			sequenceIndex: undefined,
-			anchorEl: null,
 		};
 
 		this.sequenceDefinitions = [];
@@ -66,7 +64,8 @@ export default class VisualiserPage extends React.Component<
 		if (this.props.location.search.includes("?sequence=")) {
 			// Find the entry corresponding to the filename in the query string.
 
-			const filename = this.props.location.search.split("?sequence=")[1];
+			// Decode the URI component (%20 -> space)
+			const filename = decodeURIComponent(this.props.location.search.split("?sequence=")[1]);
 
 			const match = this.sequenceDefinitions.find(seq => seq.filename == filename);
 
@@ -84,17 +83,13 @@ export default class VisualiserPage extends React.Component<
 		if (!this.state.isReady) {
 			return <LoadingPage />;
 		} else {
-			const handleBtnClick = (e: MouseEvent) => this.setState({ anchorEl: e.currentTarget });
-			// e: mouseEvent
-			const handleClose = (e: MouseEvent) => {
+			const handleClick = (e: MouseEvent) => {
 				const target = e.target as SelectOnChangeTarget;
-
 				this.setState({
 					sequenceIndex: target.value,
-					anchorEl: null,
 				});
 			};
-			const isOpen = Boolean(this.state.anchorEl);
+			console.log(`Sequence Index: ${this.state.sequenceIndex}`)
 			return (
 				<>
 					<NavBar />
@@ -119,29 +114,29 @@ export default class VisualiserPage extends React.Component<
 											 */}
 											{tag.subtags
 												? // Tag has sub-tags, create a sub-menu for each sub-tag
-												  // and map each entry with those tags
-												  tag.subtags.map(subTag => (
-														// Only going one level deep for now
-														// (tag) -> (subtag) -> entry
-														<Menu placement="right-start" offset={15}>
-															<MenuHandler>
-																<MenuItem>{subTag.name}</MenuItem>
-															</MenuHandler>
-															<MenuList>
-																<VisualiserFilteredMenuItems
-																	sequenceDefinitions={this.sequenceDefinitions}
-																	tag={subTag}
-																	onClick={handleClose}
-																/>
-															</MenuList>
-														</Menu>
-												  ))
+												// and map each entry with those tags
+												tag.subtags.map(subTag => (
+													// Only going one level deep for now
+													// (tag) -> (subtag) -> entry
+													<Menu placement="right-start" offset={15}>
+														<MenuHandler>
+															<MenuItem>{subTag.name}</MenuItem>
+														</MenuHandler>
+														<MenuList>
+															<VisualiserFilteredMenuItems
+																sequenceDefinitions={this.sequenceDefinitions}
+																tag={subTag}
+																onClick={handleClick}
+															/>
+														</MenuList>
+													</Menu>
+												))
 												: undefined}
 											{/** Map each entry with this tag **/}
 											<VisualiserFilteredMenuItems
 												sequenceDefinitions={this.sequenceDefinitions}
 												tag={tag}
-												onClick={handleClose}
+												onClick={handleClick}
 											/>
 										</MenuList>
 									</Menu>

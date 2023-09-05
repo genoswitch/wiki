@@ -2,7 +2,8 @@ import * as React from "react";
 
 import { graphql, PageProps } from "gatsby";
 
-import { Button, Menu } from "@mui/material";
+import { Menu, MenuHandler, MenuList, MenuItem, Button } from "@material-tailwind/react";
+import "../styles/tailwindcss-global.css";
 
 import LoadingPage from "../components/loadingPage";
 import NavBar from "../components/navbar";
@@ -12,7 +13,6 @@ import Visualiser from "../components/visualiser";
 
 import { Head as BaseHead } from "../components/head";
 import { SequenceTag } from "../types/sequenceTag";
-import { NestedMenuItem } from "mui-nested-menu";
 import VisualiserFilteredMenuItems from "../components/visualiserFilteredMenuItems";
 
 type SelectOnChangeTarget = EventTarget & {
@@ -100,33 +100,54 @@ export default class VisualiserPage extends React.Component<
 					<NavBar />
 					<br />
 					<div style={{ padding: "25px" }}>
-						<Button variant="contained" onClick={handleBtnClick}>
-							Sequence
-						</Button>
-						<Menu anchorEl={this.state.anchorEl as Element} open={isOpen} onClose={handleClose}>
-							{this.sequenceTags.map(tag => (
-								<NestedMenuItem label={tag.name} parentMenuOpen={isOpen}>
-									{/** If tag.subtags is present, map it. */}
-									{tag.subtags ? (
-										tag.subtags.map(subTag => (
-											// Only going in one level for now
-											<NestedMenuItem label={subTag.name} parentMenuOpen={isOpen}>
+						<Menu>
+							<MenuHandler>
+								<Button>Sequence</Button>
+							</MenuHandler>
+							<MenuList>
+								{/** Create a sub-menu for each tag */}
+								{this.sequenceTags.map(tag => (
+									<Menu placement="right-start" offset={15}>
+										<MenuHandler>
+											<MenuItem>{tag.name}</MenuItem>
+										</MenuHandler>
+										<MenuList>
+											{/**
+											 * If tag.subtags is present, map it.
+											 * Otherwise, use VisualiserFilteredMenuItems
+											 * to create a list of menu items.
+											 */}
+											{tag.subtags ? (
+												// Tag has sub-tags, create a sub-menu for each sub-tag
+												// and map each entry with those tags
+												tag.subtags.map(subTag => (
+													// Only going one level deep for now
+													// (tag) -> (subtag) -> entry
+													<Menu placement="right-start" offset={15}>
+														<MenuHandler>
+															<MenuItem>{subTag.name}</MenuItem>
+														</MenuHandler>
+														<MenuList>
+															<VisualiserFilteredMenuItems
+																sequenceDefinitions={this.sequenceDefinitions}
+																tag={subTag}
+																onClick={handleClose}
+															/>
+														</MenuList>
+													</Menu>
+												))
+											) : (
+												// Tag has no sub-tags, map each entry with this tag
 												<VisualiserFilteredMenuItems
 													sequenceDefinitions={this.sequenceDefinitions}
-													tag={subTag}
+													tag={tag}
 													onClick={handleClose}
 												/>
-											</NestedMenuItem>
-										))
-									) : (
-										<VisualiserFilteredMenuItems
-											sequenceDefinitions={this.sequenceDefinitions}
-											tag={tag}
-											onClick={handleClose}
-										/>
-									)}
-								</NestedMenuItem>
-							))}
+											)}
+										</MenuList>
+									</Menu>
+								))}
+							</MenuList>
 						</Menu>
 					</div>
 					{/** Only show if sequenceIndex is set */}

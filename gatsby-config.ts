@@ -211,6 +211,7 @@ const config: GatsbyConfig = {
 		`gatsby-plugin-no-sourcemaps`,
 		`gatsby-plugin-mdx`,
 		`gatsby-transformer-genetic-sequences`, // Custom plugin to parse gb, fasta files.
+		`gatsby-plugin-postcss`, // for TailwindCSS for nested menu on src/pages/visualiser.tsx
 	],
 };
 

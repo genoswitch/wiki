@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { MenuItem } from "@mui/material";
+import { MenuItem } from "@material-tailwind/react";
 
 import { SequenceDefinitionNode } from "../types/graphql/sequenceDefintionNode";
 import { SequenceTag } from "../types/sequenceTag";

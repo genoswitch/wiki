@@ -2,17 +2,24 @@ image: node:latest
 
 # This folder is cached between builds
 # https://docs.gitlab.com/ce/ci/yaml/README.html#cache
+# https://docs.gitlab.com/ee/ci/caching/#cache-nodejs-dependencies
 cache:
+  key: $CI_COMMIT_REF_SLUG
   paths:
+    # https://docs.gitlab.com/ee/ci/caching/#cache-nodejs-dependencies
+    - .npm/
+    # existing
     - node_modules/
     # Enables git-lab CI caching. Both .cache and public must be cached, otherwise builds will fail.
     - .cache/
     - public/
 
+before_script:
+  - npm ci --cache .npm --prefer-offline
+
 pages:
   stage: build
   script:
-    - npm install --verbose
     - npm run clean
     # Pass --prefix-paths to gatsby build
     - npm run build -- --prefix-paths

@@ -7,19 +7,21 @@ cache:
   key: $CI_COMMIT_REF_SLUG
   paths:
     # https://docs.gitlab.com/ee/ci/caching/#cache-nodejs-dependencies
-    - .npm/
-    # existing
-    - node_modules/
-    # Enables git-lab CI caching. Both .cache and public must be cached, otherwise builds will fail.
+    # https://pnpm.io/continuous-integration#gitlab-ci
+    - .pnpm-store
+    # (gatsby): Enables git-lab CI caching. Both .cache and public must be cached, otherwise builds will fail.
     - .cache/
     - public/
 
-before_script:
-  - npm ci --cache .npm --prefer-offline
+  before_script:
+    - corepack enable
+    - corepack prepare pnpm@latest --activate
+    - pnpm config set store-dir .pnpm-store
 
 pages:
   stage: build
   script:
+    - pnpm install
     - npm run clean
     # Pass --prefix-paths to gatsby build
     - npm run build -- --prefix-paths

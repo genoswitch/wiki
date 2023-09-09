@@ -8,6 +8,7 @@
     "gatsby"
   ],
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "develop": "gatsby develop",
     "develop-codespaces": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",

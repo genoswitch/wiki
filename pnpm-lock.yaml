@@ -41,7 +41,7 @@ dependencies:
 
 devDependencies:
   '@colliercz/gatsby-transformer-gitinfo':
-    specifier: genoswitch/gatsby-transformer-gitinfo
+    specifier: github:genoswitch/gatsby-transformer-gitinfo
     version: github.com/genoswitch/gatsby-transformer-gitinfo/4ea806adf9e628286b5f3378f2d9e0f09478e58d(gatsby@5.12.4)
   '@mdx-js/react':
     specifier: ^2.3.0

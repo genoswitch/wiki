@@ -22,7 +22,6 @@ pages:
   stage: build
   script:
     - pnpm install
-    - npm run clean
     # Pass --prefix-paths to gatsby build
     - NODE_OPTIONS=--max-old-space-size=4096 npm run build -- --prefix-paths
   artifacts:

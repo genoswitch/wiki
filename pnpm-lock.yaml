@@ -11456,7 +11456,7 @@ packages:
     dev: true
 
   git/github.com+genoswitch/gatsby-transformer-gitinfo/4ea806adf9e628286b5f3378f2d9e0f09478e58d(gatsby@5.12.4):
-    resolution: {commit: 4ea806adf9e628286b5f3378f2d9e0f09478e58d, repo: git@github.com:genoswitch/gatsby-transformer-gitinfo.git, type: git}
+    resolution: {commit: 4ea806adf9e628286b5f3378f2d9e0f09478e58d, repo: https://github.com:genoswitch/gatsby-transformer-gitinfo.git, type: git}
     id: github.com/genoswitch/gatsby-transformer-gitinfo/4ea806adf9e628286b5f3378f2d9e0f09478e58d
     name: '@colliercz/gatsby-transformer-gitinfo'
     version: 1.4.0

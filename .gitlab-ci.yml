@@ -13,10 +13,10 @@ cache:
     - .cache/
     - public/
 
-  before_script:
-    - corepack enable
-    - corepack prepare pnpm@latest --activate
-    - pnpm config set store-dir .pnpm-store
+before_script:
+  - corepack enable
+  - corepack prepare pnpm@latest --activate
+  - pnpm config set store-dir .pnpm-store
 
 pages:
   stage: build

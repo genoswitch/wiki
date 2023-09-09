@@ -11,6 +11,7 @@ jobs:
     permissions:
       checks: write # Create checks for commits
       pull-requests: write # Add comments to PRs
+      contents: write # Push changes (to gh-pages)
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -80,3 +81,10 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
+
+      - name: Push to "gh-pages" (if push on main)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: public
+          target-folder: public

@@ -80,3 +80,26 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
+
+  build-docker:
+    name: Test Build (Docker)
+    runs-on: ubuntu-latest
+    container:
+      image: node:latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # https://github.com/actions/runner/issues/2033
+      # https://github.com/tehraninasab/conventions/commit/6f8edca9848902b1be24c74b90e53768cf2104fd
+      - name: Repository ownership fix (github actions)
+        run: git config --system --add safe.directory /__w/wiki/wiki
+
+      - name: Setup pnpm
+        run: corepack enable && corepack prepare pnpm@latest --activate
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build site
+        run: NODE_OPTIONS=--max-old-space-size=4096 npm run build -- --prefix-paths --verbose --no-color

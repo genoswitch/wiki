@@ -23,7 +23,7 @@ pages:
   script:
     - pnpm install
     # Pass --prefix-paths to gatsby build
-    - NODE_OPTIONS=--max-old-space-size=4096 npm run build -- --prefix-paths --verbose --no-color
+    - NODE_OPTIONS=--max-old-space-size=8196 npm run build -- --prefix-paths --verbose --no-color
   artifacts:
     paths:
       - public

@@ -81,7 +81,7 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
 
-  build-doccker:
+  build-docker:
     name: Test Build (Docker)
     runs-on: ubuntu-latest
     container:
@@ -102,4 +102,4 @@ jobs:
         run: pnpm install
 
       - name: Build site
-        run: npm run build
+        run: NODE_OPTIONS=--max-old-space-size=4096 npm run build -- --prefix-paths --verbose --no-color

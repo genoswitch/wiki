@@ -32,7 +32,7 @@
     "seqviz": "^3.9.1"
   },
   "devDependencies": {
-    "@colliercz/gatsby-transformer-gitinfo": "genoswitch/gatsby-transformer-gitinfo",
+    "@colliercz/gatsby-transformer-gitinfo": "github:genoswitch/gatsby-transformer-gitinfo",
     "@mdx-js/react": "^2.3.0",
     "@types/node": "^20.5.9",
     "@types/webpack-stats-plugin": "^0.3.2",

@@ -93,7 +93,7 @@ jobs:
       # https://github.com/actions/runner/issues/2033
       # https://github.com/tehraninasab/conventions/commit/6f8edca9848902b1be24c74b90e53768cf2104fd
       - name: Repository ownership fix (github actions)
-        uses: git config --system --add safe.directory /__w/wiki/wiki
+        run: git config --system --add safe.directory /__w/wiki/wiki
 
       - name: Setup pnpm
         run: corepack enable && corepack prepare pnpm@latest --activate

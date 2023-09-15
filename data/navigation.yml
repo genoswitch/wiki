@@ -1,8 +1,6 @@
 # Navbar entries
 # Place in the order you want them to be displayed.
 
-- name: Home
-  slug: /
 
 - name: Project
   entries:

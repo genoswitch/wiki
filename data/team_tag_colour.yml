@@ -36,4 +36,7 @@
 # Wiki colour has not been finalized yet
 
 - tag: videos
-  colour: FF7518
+  colour: EC5800
+
+- tag: staff
+  colour: 848884

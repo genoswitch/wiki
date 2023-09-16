@@ -40,9 +40,9 @@ dependencies:
     version: 3.9.1(react-dom@18.2.0)(react@18.2.0)
 
 devDependencies:
-  '@colliercz/gatsby-transformer-gitinfo':
-    specifier: github:genoswitch/gatsby-transformer-gitinfo
-    version: git/github.com+genoswitch/gatsby-transformer-gitinfo/4ea806adf9e628286b5f3378f2d9e0f09478e58d(gatsby@5.12.4)
+  '@genoswitch/gatsby-transformer-gitinfo':
+    specifier: 1.4.0-1
+    version: 1.4.0-1(gatsby@5.12.4)
   '@mdx-js/react':
     specifier: ^2.3.0
     version: 2.3.0(react@18.2.0)
@@ -1374,6 +1374,13 @@ packages:
     dependencies:
       regenerator-runtime: 0.14.0
 
+  /@babel/runtime@7.22.15:
+    resolution: {integrity: sha512-T0O+aa+4w0u06iNmapipJXMV4HoUir03hpx3/YqXXhu9xim3w+dVphjFWl1OH8NbZHw5Lbm9k45drDkgq2VNNA==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.14.0
+    dev: true
+
   /@babel/template@7.22.5:
     resolution: {integrity: sha512-X7yV7eiwAxdj9k94NEylvbVHLiVG1nvzCV2EAowhxLTwODV1jl9UzZ48leOC0sH7OnuHrIkllaBgneUykIcZaw==}
     engines: {node: '>=6.9.0'}
@@ -1610,6 +1617,19 @@ packages:
       ansi-html-community: 0.0.8
       html-entities: 2.3.3
       strip-ansi: 6.0.1
+
+  /@genoswitch/gatsby-transformer-gitinfo@1.4.0-1(gatsby@5.12.4):
+    resolution: {integrity: sha512-2gVU4KoBWBuku9SRSanCmoGJr3A0xkRQJHGn/rJWAfbvvyw1U/v3wKABvlidATO2d+cHqdXP36M1bEZb3dBgsQ==}
+    engines: {node: '>=8.0.0'}
+    peerDependencies:
+      gatsby: ^3.0.0 || ^4.0.0 || ^5.0.0
+    dependencies:
+      '@babel/runtime': 7.22.15
+      gatsby: 5.12.4(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      simple-git: 3.19.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@graphql-codegen/add@3.2.3(graphql@16.8.0):
     resolution: {integrity: sha512-sQOnWpMko4JLeykwyjFTxnhqjd/3NOG2OyMuvK76Wnnwh8DRrNf2VEs2kmSvLl7MndMlOj7Kh5U154dVcvhmKQ==}
@@ -11453,22 +11473,4 @@ packages:
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
-    dev: true
-
-  git/github.com+genoswitch/gatsby-transformer-gitinfo/4ea806adf9e628286b5f3378f2d9e0f09478e58d(gatsby@5.12.4):
-    resolution: {commit: 4ea806adf9e628286b5f3378f2d9e0f09478e58d, repo: https://github.com/genoswitch/gatsby-transformer-gitinfo.git, type: git}
-    id: github.com/genoswitch/gatsby-transformer-gitinfo/4ea806adf9e628286b5f3378f2d9e0f09478e58d
-    name: '@colliercz/gatsby-transformer-gitinfo'
-    version: 1.4.0
-    engines: {node: '>=8.0.0'}
-    prepare: true
-    requiresBuild: true
-    peerDependencies:
-      gatsby: ^3.0.0 || ^4.0.0 || ^5.0.0
-    dependencies:
-      '@babel/runtime': 7.22.11
-      gatsby: 5.12.4(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
-      simple-git: 3.19.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true

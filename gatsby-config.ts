@@ -204,7 +204,7 @@ const config: GatsbyConfig = {
 				},
 			},
 		},
-		`@colliercz/gatsby-transformer-gitinfo`,
+		`@genoswitch/gatsby-transformer-gitinfo`,
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`, // Needed for dynamic images

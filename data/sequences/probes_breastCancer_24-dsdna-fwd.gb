@@ -1,0 +1,6 @@
+LOCUS       24_dsDNA_FWD              26 bp ds-DNA     linear       13-JUN-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+ORIGIN
+        1 AAAAAAAAAC CAACATAATA CGACTC
+//

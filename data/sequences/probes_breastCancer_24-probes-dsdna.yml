@@ -1,0 +1,4 @@
+name: 24 Probes dsDNA
+filename: probes_breastCancer_24-probes-dsdna.gb
+# Primers not yet supported, tracked at
+# https://github.com/Lattice-Automation/seqviz/issues/232

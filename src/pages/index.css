@@ -5,7 +5,7 @@ body {
 .logo {
     width: 100%;
     height: auto;   
-    margin-top: 350px;
+    margin-top: 250px;
     margin-bottom: 350px;
 }
 
@@ -13,6 +13,8 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 3500px;
+    height: 4400px;
     width: 100%;
+    margin-bottom: 10px;
+    padding-bottom: 60px;
 }

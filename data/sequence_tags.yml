@@ -1,14 +1,9 @@
 - tag: multiplexed_regulation
   name: Multiplexed Regulation
 
-- tag: probes
-  name: Probes
-  subtags:
-    - tag: probes_pcos
-      name: PCOS
+- tag: probes_pcos
+  name: Probes - PCOS
 
-- tag: toeholdSwitches
-  name: Toehold Switches
+- tag: toeholdSwitches_pcos
+  name: Toehold Switches - PCOS (GFP)
   subtags:
-    - tag: toeholdSwitches_pcos
-      name: PCOS (GFP)

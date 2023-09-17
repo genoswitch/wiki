@@ -106,31 +106,6 @@ export default class VisualiserPage extends React.Component<
 											<MenuItem>{tag.name}</MenuItem>
 										</MenuHandler>
 										<MenuList>
-											{/**
-											 * If tag.subtags is present, map it.
-											 * Otherwise, use VisualiserFilteredMenuItems
-											 * to create a list of menu items.
-											 */}
-											{tag.subtags
-												? // Tag has sub-tags, create a sub-menu for each sub-tag
-												  // and map each entry with those tags
-												  tag.subtags.map(subTag => (
-														// Only going one level deep for now
-														// (tag) -> (subtag) -> entry
-														<Menu placement="right-start" offset={15}>
-															<MenuHandler>
-																<MenuItem>{subTag.name}</MenuItem>
-															</MenuHandler>
-															<MenuList>
-																<VisualiserFilteredMenuItems
-																	sequenceDefinitions={this.sequenceDefinitions}
-																	tag={subTag}
-																	onClick={handleClick}
-																/>
-															</MenuList>
-														</Menu>
-												  ))
-												: undefined}
 											{/** Map each entry with this tag **/}
 											<VisualiserFilteredMenuItems
 												sequenceDefinitions={this.sequenceDefinitions}
@@ -193,10 +168,10 @@ export const query = graphql`
 		allSequenceTagsYaml {
 			nodes {
 				name
-				subtags {
-					name
-					tag
-				}
+				#subtags {
+				#	name
+				#	tag
+				#}
 				tag
 			}
 		}

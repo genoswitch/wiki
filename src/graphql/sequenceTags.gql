@@ -9,5 +9,5 @@ type SequenceTags implements Node @dontInfer {
 	# Non-nullable fields
 	name: String!
 	tag: String!
-	subtags: [SequenceTags!]
+	#subtags: [SequenceTags!]
 }

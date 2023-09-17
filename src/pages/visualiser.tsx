@@ -2,7 +2,8 @@ import * as React from "react";
 
 import { graphql, PageProps } from "gatsby";
 
-import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { Menu, MenuHandler, MenuList, MenuItem, Button } from "@material-tailwind/react";
+import "../styles/tailwindcss-global.css";
 
 import LoadingPage from "../components/loadingPage";
 import NavBar from "../components/navbar";
@@ -11,6 +12,8 @@ import Footer from "../components/footer";
 import Visualiser from "../components/visualiser";
 
 import { Head as BaseHead } from "../components/head";
+import { SequenceTag } from "../types/sequenceTag";
+import VisualiserFilteredMenuItems from "../components/visualiserFilteredMenuItems";
 
 type SelectOnChangeTarget = EventTarget & {
 	value: number;
@@ -36,12 +39,14 @@ export default class VisualiserPage extends React.Component<
 
 		this.sequenceDefinitions = [];
 		this.sequences = [];
+		this.sequenceTags = [];
 	}
 
 	data!: Queries.VisualiserPageDataQuery;
 
 	sequenceDefinitions: SequenceDefinitionNode[];
 	sequences: Queries.GeneticSequence[];
+	sequenceTags: SequenceTag[];
 
 	componentDidMount(): void {
 		// Set this.data to the result of the query
@@ -52,12 +57,15 @@ export default class VisualiserPage extends React.Component<
 
 		this.sequences = this.data.allGeneticSequence.nodes as Queries.GeneticSequence[];
 
+		this.sequenceTags = this.data.allSequenceTagsYaml.nodes as unknown as SequenceTag[];
+
 		this.setState({ isReady: true });
 
 		if (this.props.location.search.includes("?sequence=")) {
 			// Find the entry corresponding to the filename in the query string.
 
-			const filename = this.props.location.search.split("?sequence=")[1];
+			// Decode the URI component (%20 -> space)
+			const filename = decodeURIComponent(this.props.location.search.split("?sequence=")[1]);
 
 			const match = this.sequenceDefinitions.find(seq => seq.filename == filename);
 
@@ -75,32 +83,40 @@ export default class VisualiserPage extends React.Component<
 		if (!this.state.isReady) {
 			return <LoadingPage />;
 		} else {
-			let selection: SequenceDefinitionNode | undefined = undefined;
+			const handleClick = (e: MouseEvent) => {
+				const target = e.target as SelectOnChangeTarget;
+				this.setState({
+					sequenceIndex: target.value,
+				});
+			};
 			return (
 				<>
 					<NavBar />
 					<br />
 					<div style={{ padding: "25px" }}>
-						<FormControl variant="standard" style={{ width: "200px" }}>
-							<InputLabel id="viz-select-label">Sequence</InputLabel>
-							<Select
-								labelId="viz-select-label"
-								id="viz-select"
-								value={this.state.sequenceIndex || undefined}
-								onChange={(event: SelectChangeEvent<number>) => {
-									const target = event.target as SelectOnChangeTarget;
-									this.setState({
-										sequenceIndex: target.value,
-									});
-								}}
-							>
-								{this.sequenceDefinitions.map(sequenceDefinition => (
-									<MenuItem value={this.sequenceDefinitions.indexOf(sequenceDefinition)}>
-										{sequenceDefinition.name}
-									</MenuItem>
+						<Menu>
+							<MenuHandler>
+								<Button>Choose a Sequence...</Button>
+							</MenuHandler>
+							<MenuList>
+								{/** Create a sub-menu for each tag */}
+								{this.sequenceTags.map(tag => (
+									<Menu placement="right-start" offset={15}>
+										<MenuHandler>
+											<MenuItem>{tag.name}</MenuItem>
+										</MenuHandler>
+										<MenuList>
+											{/** Map each entry with this tag **/}
+											<VisualiserFilteredMenuItems
+												sequenceDefinitions={this.sequenceDefinitions}
+												tag={tag}
+												onClick={handleClick}
+											/>
+										</MenuList>
+									</Menu>
 								))}
-							</Select>
-						</FormControl>
+							</MenuList>
+						</Menu>
 					</div>
 					{/** Only show if sequenceIndex is set */}
 					{this.state.sequenceIndex != undefined ? (
@@ -122,6 +138,7 @@ export const query = graphql`
 			nodes {
 				name
 				filename
+				tag
 				annotations {
 					name
 					start
@@ -146,6 +163,16 @@ export const query = graphql`
 					direction
 					color
 				}
+			}
+		}
+		allSequenceTagsYaml {
+			nodes {
+				name
+				#subtags {
+				#	name
+				#	tag
+				#}
+				tag
 			}
 		}
 		# Footer data

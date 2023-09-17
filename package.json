@@ -21,6 +21,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@material-tailwind/react": "^2.1.1",
     "@mui/icons-material": "^5.14.9",
     "@mui/material": "^5.14.9",
     "gatsby": "^5.12.4",
@@ -36,11 +37,13 @@
     "@mdx-js/react": "^2.3.0",
     "@types/node": "^20.6.2",
     "@types/webpack-stats-plugin": "^0.3.2",
+    "autoprefixer": "^10.4.15",
     "gatsby-plugin-canonical-urls": "^5.12.0",
     "gatsby-plugin-image": "^3.12.0",
     "gatsby-plugin-manifest": "^5.12.0",
     "gatsby-plugin-mdx": "^5.12.0",
     "gatsby-plugin-no-sourcemaps": "^5.12.0",
+    "gatsby-plugin-postcss": "^6.12.0",
     "gatsby-plugin-pnpm": "^1.2.10",
     "gatsby-plugin-preact": "^7.12.0",
     "gatsby-plugin-remote-images": "^3.6.6",
@@ -53,7 +56,9 @@
     "gatsby-transformer-yaml": "^5.12.0",
     "gatsby-transformer-yaml-full": "^5.0.0",
     "gatsby-yaml-full-markdown": "^5.0.1",
+    "postcss": "^8.4.29",
     "prettier": "^3.0.3",
+    "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2",
     "webpack-stats-plugin": "^1.1.3"
   }

@@ -28,13 +28,25 @@ export default class Visualiser extends React.Component<VisualiserProps, Visuali
 			seq: undefined,
 		};
 	}
+
+	// Run same code as componendDidUpdate
 	async componentDidMount(): Promise<void> {
+		await this.componentDidUpdate();
+	}
+
+	// TODO: this is somewhat sketch as it is run 2-3 times for an update.
+	// However it is very quick.
+	async componentDidUpdate(): Promise<void> {
 		// Find the matching fasta file for the sequence.
 		const match = this.props.sequences.find(
 			seq => seq.filename == this.props.sequenceDefinition.filename
 		);
+
 		//const match = this.props.fastas.find((f => f.name == this.props.sequence.fastaFilename))
-		if (match) {
+
+		// Check that match is different to avoid an infinite update loop
+		// Updates when state is called!
+		if (match && this.state.seq != match) {
 			// Load the file.
 			this.setState({ seq: match });
 

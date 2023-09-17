@@ -146,6 +146,10 @@ export const query = graphql`
 					direction
 					color
 				}
+				translations {
+					start
+					end
+				}
 			}
 		}
 		# Custom plugin to parse genetic sequences (gb, fasta)

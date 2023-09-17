@@ -1,17 +1,12 @@
-# Define (override the auto-generated) the type for SequencesYaml
+# Define (override the auto-generated) the type for SequencesYamlTranslations
 
 # Opt out of type inferrance using @dontInfer
 # (https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#opting-out-of-type-inference)
 # This means we must explicitly provide typedefs for each field.
 # The effect of this is that extra keys will be ignored by GraphQL.
 
-type SequencesYaml implements Node @dontInfer {
+type SequencesYamlTranslations implements Node @dontInfer {
 	# Non-nullable fields
-	name: String!
-	filename: String!
-	tag: String!
-
-	# Nullable (optional) fields
-	annotations: [SequencesYamlAnnotations]
-	translations: [SequencesYamlTranslations]
+	start: Int!
+	end: Int!
 }

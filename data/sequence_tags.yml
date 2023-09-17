@@ -3,3 +3,6 @@
 
 - tag: probes_breastCancer
   name: Probes - Breast Cancer
+
+- tag: probes_endometriosis
+  name: Probes - Endometriosis

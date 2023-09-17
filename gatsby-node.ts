@@ -29,6 +29,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
 	createTypeFromFile(actions, "./src/graphql/teamColour.gql");
 	createTypeFromFile(actions, "./src/graphql/previousYears.gql");
 	createTypeFromFile(actions, "./src/graphql/sequencesAnnotations.gql");
+	createTypeFromFile(actions, "./src/graphql/sequencesTranslations.gql");
 	createTypeFromFile(actions, "./src/graphql/sequences.gql");
 	createTypeFromFile(actions, "./src/graphql/sequenceTags.gql");
 };

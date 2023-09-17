@@ -65,6 +65,7 @@ export default class Visualiser extends React.Component<VisualiserProps, Visuali
 						name={this.state.seq.name!}
 						seq={this.state.seq.seq!}
 						annotations={this.state.seq.annotations!}
+						translations={this.props.sequenceDefinition.translations}
 						// Don't load fonts from external sources
 						disableExternalFonts={true}
 					/>

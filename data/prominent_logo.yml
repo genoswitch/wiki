@@ -1,0 +1,7 @@
+- name: City of London School for Girls
+  logoPath: logos/clsg-transparent.png
+  url: https://clsg.org.uk
+
+- name: City of London School for Boys
+  logoPath: logos/clsb-transparent.png
+  url: https://cityoflondonschool.org.uk

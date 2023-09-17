@@ -1,0 +1,6 @@
+LOCUS       1260a_dsDNA_REV           25 bp ds-DNA     linear       13-JUN-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+ORIGIN
+        1 GGGAGGAGGG AAAGAGGAAG GGGGA
+//

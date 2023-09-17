@@ -1,0 +1,65 @@
+// Source: https://www.gatsbyjs.com/docs/debugging-the-build-process/#vs-code-debugger-manual-config
+
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Linux - Gatsby develop",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceRoot}/node_modules/.bin/gatsby",
+			"args": ["develop"],
+			"env": {
+				"PARCEL_WORKERS": "0",
+				"GATSBY_CPU_COUNT": "1"
+			},
+			"runtimeArgs": ["--nolazy"],
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "Linux - Gatsby build",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceRoot}/node_modules/.bin/gatsby",
+			"args": ["build"],
+			"env": {
+				"PARCEL_WORKERS": "0",
+				"GATSBY_CPU_COUNT": "1"
+			},
+			"runtimeArgs": ["--nolazy"],
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "Windows - Gatsby develop",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceRoot}/node_modules/.bin/gatsby",
+			"windows": {
+				"program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby"
+			},
+			"args": ["develop"],
+			"env": {
+				"PARCEL_WORKERS": "0",
+				"GATSBY_CPU_COUNT": "1"
+			},
+			"runtimeArgs": ["--nolazy"],
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "Windows - Gatsby build",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceRoot}/node_modules/.bin/gatsby",
+			"windows": {
+				"program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby"
+			},
+			"args": ["build"],
+			"env": {
+				"PARCEL_WORKERS": "0",
+				"GATSBY_CPU_COUNT": "1"
+			},
+			"runtimeArgs": ["--nolazy"],
+			"console": "integratedTerminal"
+		}
+	]
+}

@@ -1,0 +1,36 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "Node.js & TypeScript",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [8000, 3000],
+	"portsAttributes": {
+		"8000": {
+			// npm run develop-codespaces
+			"label": "Hot Reloading"
+		},
+		"3000": {
+			"label": "Static Site Serving"
+		}
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "corepack enable && corepack prepare pnpm@latest --activate && pnpm install ",
+
+	// Run a project when the container starts
+	// https://code.visualstudio.com/remote/advancedcontainers/start-processes#_video-run-npm-start-whenever-the-container-is-started
+	// nohup to stop the process from being killed after 15m.
+	"postStartCommand": "nohup bash -c 'npm run develop-codespaces &'"
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

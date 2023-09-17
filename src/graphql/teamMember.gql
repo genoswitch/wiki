@@ -11,8 +11,16 @@ type TeamMemberYaml implements Node @dontInfer {
 	title: String!
 	picturePath: String!
 	tags: [String]!
-	description: String!
 
-	# Position is the only nullable (optional) field
+	# Nullable (optional) fields
+	# Either description or descriptionMd should be included.
+	description: String
+	descriptionMd: DescriptionMarkdown
 	position: Int
+}
+
+# TODO: Can this be split into it's own file?
+type DescriptionMarkdown implements Node {
+	html: String!
+	plain: String!
 }

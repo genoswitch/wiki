@@ -1,0 +1,15 @@
+# Define (override the auto-generated) the type for SequencesYamlAnnotations
+
+# Opt out of type inferrance using @dontInfer
+# (https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#opting-out-of-type-inference)
+# This means we must explicitly provide typedefs for each field.
+# The effect of this is that extra keys will be ignored by GraphQL.
+
+type SequencesYamlAnnotations implements Node @dontInfer {
+	# Non-nullable fields
+	name: String!
+	start: Int!
+	end: Int!
+	direction: Int! # TODO: 0 or 1
+	color: String! # TODO: are there fixed colors in SeqViz?
+}

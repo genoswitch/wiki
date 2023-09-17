@@ -1,81 +1,69 @@
 # Team City-of-London-UK 2023 Wiki
 
-![Gitlab pipeline status (self-managed)](<https://img.shields.io/gitlab/pipeline-status/2023%2Fcity-of-london-uk?gitlab_url=https%3A%2F%2Fgitlab.igem.org%2F&label=deploy%20(iGEM%20GitLab)>)
-![RelativeCI Bundle Size](https://badges.relative-ci.com/badges/ohuRKjkV82qKkHi81r9e?branch=main)
-
-## Preface
-
 This repository **MUST** contain all coding assets to generate your team's wiki (HTML, CSS, JavaScript, TypeScript, Python, etc).
 
 Images, photos, icons and fonts **MUST** be stored on `static.igem.wiki` using [uploads.igem.org](https://uploads.igem.org), and Videos **must** be embedded from [iGEM Video Universe](https://video.igem.org).
 
 For up-to-date requirements, resources, help and guidance, visit [competition.igem.org/deliverables/team-wiki](https://competition.igem.org/deliverables/team-wiki).
 
-## Getting started (if not using GitHub Codespaces)
+## Getting started
 
-This Wiki is built using [TypeScript](https://typescriptlang.org/), [React](https://react.dev/), and [Gatsby](https://gatsbyjs.com).
+You should probably only edit the files inside folders `static`, `wiki` and `wiki > pages`.
 
-1. Install [Node.js](https://nodejs.org/en/download)
+1. Open the Web IDE
+1. Make the changes on the files you wish:
+   - For the menu, change the file [menu.html](wiki/menu.html)
+   - For the layout, change the file [layout.html](wiki/layout.html)
+   - For the pages, change the corresponding file in the foler [pages](wiki/pages)
+1. Review the changes you made
+1. Once you are done, save the changes by **committing** them to the _main branch_ of the repository
+1. An automated script will build, test and deploy your wiki, which should take less than 30 seconds.
 
-2. Install [Git](https://git-scm.com/downloads)
+## About this Template
 
-3. Clone (download) the repository
+### Files
 
-   `git clone https://2023.igem.wiki/city-of-london-uk/`
+The static assets are in the `static` directory. The layout and templates are in the `wiki` directory, and the pages live in the `wiki > pages` directory. Unless you are an experienced and/or adventurous human, you probably shouldn't change other files.
 
-   or
+    |__ static/             -> static assets (CSS and JavaScript files only)
+    |__ wiki/               -> Main directory for the pages and layouts
+        |__ footer.html     -> Footer that will appear in all the pages
+        |__ layout.html     -> Main layout of your wiki. All the pages will follow its structure
+        |__ menu.html       -> Menu that will appear in all the pages
+        |__ pages/          -> Directory for all the pages
+            |__ *.html      -> Actual pages of your wiki
+    |__ .gitignore          -> Tells GitLab which files/directories should not be uploaded to the repository
+    |__ .gitlab-ci.yml      -> Automated flow for building, testing and deploying your website.
+    |__ LICENSE             -> License CC-by-4.0, all wikis are required to have this license - DO NOT MODIFY
+    |__ README.md           -> File containing the text you are reading right now
+    |__ app.py              -> Python code managing your wiki
+    |__ dependencies.txt    -> Software dependencies from the Python code
 
-   `git clone https://github.com/genoswitch/wiki`
+### Technologies
 
-4. `cd` into the wiki directory
+- [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/)
+- [Python](https://www.python.org): Programming language
+- [Flask](https://palletsprojects.com/p/flask/): Python framework
+- [Fronzen-Flask](https://pythonhosted.org/Frozen-Flask): Library that builds the wiki to be deployed as a static website
+- [Bootstrap](https://getbootstrap.com/docs/5.0/components): CSS and JS components used
 
-5. Install dependencies with `npm i --no-scripts`
+### Building locally (advanced users)
 
-6. Done! You can preview your changes in real time by running `npm start`.
+To work locally with this project, follow the steps below:
 
-## Getting started (using GitHub Codespaces)
+#### Install
 
-Welcome to your codespace! You may need to wait a few minutes while everything is set up.
+```bash
+git clone https://gitlab.igem.org/2023/city-of-london-uk.git
+cd city-of-london-uk
+python3 -m venv venv
+. venv/bin/activate # on Linux, MacOS; or
+. venv\Scripts\activate # on Windows
+pip install -r dependencies.txt
+```
 
-Your codespace allows you to access a development version of the site, containing any changes you make within the codespace. To access it, go to the **Ports** tab, find the **Hot Reloading** entry. There is a link under the **Local Address** column. Hold down Control and click to to access your development version of the wiki.
+#### Execute
 
-When you make a change, save the file, wait a few seconds and then refresh the wiki page. Your new change should now be visible.
-
-### Making changes
-
-Simple MDX pages are stored in /pages/mdx. Edits can be viewed in real-time.
-
-To set up your environment, we want to create a new branch. This allows you to make changes while allowing others to do the same.
-
-To create a branch, click the button labelled "main" in the bottom left of the screen.
-
-![Branch button](./.github/resources/branch-button.png)
-
-A dialog box will open with a list of all currently active branches. Click the **Create new branch...** button.
-
-![Branch dialog](./.github/resources/branch-dialog.png)
-
-Then type in the name of your new branch (we recommend something like `(yourname)/(what you're working on)`, for example `james/team-page`) and press Enter to confirm. You are now on the next branch.
-
-You can now start making your edits/changes!
-
-### Saving your changes
-
-When you have made your edits, click the source control button **on the top left of the screen**. This will open the source control sidebar on the left of the screen.
-
-![Source Control Button](./.github/resources/source-control.png)
-
-Then ensure all of your changes are **staged** by clicking the + sign to the right of _Changes_. This **stages** your changes, meaning that they will be included when you commit (add to) the repository.
-
-![Stage all changes sidebar](./.github/resources/stage-all-changes.png)
-
-Next, write a descriptive message in the message box. You will notice that the **Sync Changes** button will change to a **commit** button. Click the button to commit your changes.
-
-Finally, we need to **push** your changes.
-
-If you have changes to commit, the button will either say **Publish Branch** or **Sync Changes** (with a number). Ti sync / publish your branch. Click the button.
-
-If you are prompted for a remote to use click **origin**.
-If you are prompted to create a fork, please create one.
-
-> More information about branches in Git can be found [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches).
+```bash
+python app.py
+```

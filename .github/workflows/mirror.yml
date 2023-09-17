@@ -1,29 +1,10 @@
 name: Mirror
 
-# Dependabot PRs do not have the same access to secrets.
-on:
-  push:
-    branches:
-      - "**"
-      - "!dependabot/**"
-# Will trigger on a merge commit (push) so deleted branches will be synced on the next push to any matching branch.
-#  delete:
-#    branches:
-#      - "**"
-#      - "!dependabot/**"
+on: ["push", "delete"]
 
 jobs:
   igem-gitlab:
     name: iGEM GitLab
-
-    # If this job is running more than once on the same branch,
-    # cancel the older job.
-    # https://docs.github.com/en/actions/using-jobs/using-concurrency
-    # UPDATE: Some runs such as https://github.com/genoswitch/wiki/actions/runs/5665169353/job/15349559463
-    # are failing. Let's try to only use the workflow name as the concurrency group.
-    concurrency:
-      group: ${{ github.workflow }}
-      cancel-in-progress: true
 
     runs-on: ubuntu-latest
 

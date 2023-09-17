@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { graphql, PageProps } from "gatsby";
 
+import "bootstrap/dist/css/bootstrap.min.css";
 import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/graphql/teamMemberNode";
 import {
@@ -30,10 +31,6 @@ import capitalizeWords from "../capitalizeWords";
 import teamEntryFilter from "../filters/teamEntryFilter";
 import Navbar from "../components/navbar";
 import FilterMenu from "../components/team/filterMenu";
-import LoadingPage from "../components/loadingPage";
-import Footer from "../components/footer";
-
-import { Head as BaseHead } from "../components/head";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
@@ -70,6 +67,8 @@ export default class TeamPage extends React.PureComponent<
 	muiTheme: Theme | undefined = undefined;
 	muiPaletteOptions: ExtendablePalette = {};
 
+	shouldIncludeTagsInSearch: boolean;
+
 	componentDidMount(): void {
 		this.setState({ isReady: false });
 
@@ -105,7 +104,7 @@ export default class TeamPage extends React.PureComponent<
 		this.discoveredTags.forEach(tag => {
 			this.state.filterChip.push({
 				tag,
-				enabled: false,
+				enabled: true,
 			});
 		});
 
@@ -205,14 +204,15 @@ export default class TeamPage extends React.PureComponent<
 	}
 
 	handleShouldIncTagsChange(event: React.ChangeEvent<HTMLInputElement>) {
+		console.log(this.shouldIncludeTagsInSearch);
 		this.setState({
 			shouldIncludeTagsInSearch: event.target.checked,
 		});
 	}
 
-	render(): React.JSX.Element {
+	render(): React.ReactNode {
 		if (!this.state["isReady"]) {
-			return <LoadingPage />;
+			return <div>Preparing...</div>;
 		} else {
 			console.log(this.muiPaletteOptions);
 			return (
@@ -266,7 +266,6 @@ export default class TeamPage extends React.PureComponent<
 						this.state.filterChip,
 						this.state.shouldIncludeTagsInSearch
 					)}
-					<Footer data={this.data} />
 				</ThemeProvider>
 			);
 		}
@@ -287,10 +286,6 @@ export const query = graphql`
 				name
 				title
 				description
-				descriptionMd {
-					plain
-					html
-				}
 				tags
 				position
 				# static, higher res image (used in the modal)
@@ -302,9 +297,6 @@ export const query = graphql`
 							width: 800 # 800x(~1200)
 							placeholder: BLURRED
 							formats: [AUTO, WEBP, PNG]
-							outputPixelDensities: [0.25] # Generate 0.25x and 1x.
-							# 1x is always created (see below)
-							# https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#customizing-the-default-options:~:text=and%20will%20always%20include%20a%201x%20image.
 						)
 					}
 				}
@@ -320,20 +312,6 @@ export const query = graphql`
 			siteMetadata {
 				assetBasePath
 			}
-			...FooterSiteFragment
-		}
-		allSponsorYaml {
-			...FooterSponsorYamlFragment
-		}
-		allProminentLogoYaml {
-			...FooterProminentLogoYamlFragment
-		}
-		allPreviousYearsYaml {
-			...FooterPreviousYearsYamlFragment
 		}
 	}
 `;
-
-export const Head = () => (
-	<BaseHead title="Our Team" description="Meet the team behind Genoswitch!" />
-);

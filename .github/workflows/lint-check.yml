@@ -13,18 +13,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: latest
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
-        with:
-          cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm i prettier --no-scripts
 
       - name: Run prettier
         run: npx prettier -c .

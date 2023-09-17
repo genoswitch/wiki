@@ -2,5 +2,3 @@ node_modules/
 .cache/
 public
 src/gatsby-types.d.ts
-webpack-stats.json
-*.out

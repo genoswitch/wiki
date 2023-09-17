@@ -8,6 +8,7 @@
     "gatsby"
   ],
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "develop": "gatsby develop",
     "develop-codespaces": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
@@ -21,9 +22,9 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@material-tailwind/react": "^2.1.1",
-    "@mui/icons-material": "^5.14.7",
-    "@mui/material": "^5.14.7",
-    "gatsby": "^5.12.3",
+    "@mui/icons-material": "^5.14.9",
+    "@mui/material": "^5.14.9",
+    "gatsby": "^5.12.4",
     "html-react-parser": "^4.2.2",
     "immutability-helper": "^3.1.1",
     "preact": "^10.17.1",
@@ -32,9 +33,9 @@
     "seqviz": "^3.9.1"
   },
   "devDependencies": {
-    "@colliercz/gatsby-transformer-gitinfo": "genoswitch/gatsby-transformer-gitinfo",
+    "@genoswitch/gatsby-transformer-gitinfo": "1.4.0-1",
     "@mdx-js/react": "^2.3.0",
-    "@types/node": "^20.5.8",
+    "@types/node": "^20.6.2",
     "@types/webpack-stats-plugin": "^0.3.2",
     "autoprefixer": "^10.4.15",
     "gatsby-plugin-canonical-urls": "^5.12.0",
@@ -43,6 +44,7 @@
     "gatsby-plugin-mdx": "^5.12.0",
     "gatsby-plugin-no-sourcemaps": "^5.12.0",
     "gatsby-plugin-postcss": "^6.12.0",
+    "gatsby-plugin-pnpm": "^1.2.10",
     "gatsby-plugin-preact": "^7.12.0",
     "gatsby-plugin-remote-images": "^3.6.6",
     "gatsby-plugin-sharp": "^5.12.0",

@@ -5,6 +5,8 @@ public
 # package.json, package-lock.json
 package*.json
 
+pnpm-lock.yaml
+
 # Auto-generated
 src/gatsby-types.d.ts
 webpack-stats.json

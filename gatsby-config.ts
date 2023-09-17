@@ -204,13 +204,14 @@ const config: GatsbyConfig = {
 				},
 			},
 		},
-		`@colliercz/gatsby-transformer-gitinfo`,
+		`@genoswitch/gatsby-transformer-gitinfo`,
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`, // Needed for dynamic images
 		`gatsby-plugin-no-sourcemaps`,
 		`gatsby-plugin-mdx`,
 		`gatsby-transformer-genetic-sequences`, // Custom plugin to parse gb, fasta files.
+		`gatsby-plugin-pnpm`, // configure webpack for pnpm dependency resolution
 		`gatsby-plugin-postcss`, // for TailwindCSS for nested menu on src/pages/visualiser.tsx
 	],
 };

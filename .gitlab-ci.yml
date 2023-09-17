@@ -2,20 +2,28 @@ image: node:latest
 
 # This folder is cached between builds
 # https://docs.gitlab.com/ce/ci/yaml/README.html#cache
+# https://docs.gitlab.com/ee/ci/caching/#cache-nodejs-dependencies
 cache:
+  key: $CI_COMMIT_REF_SLUG
   paths:
-    - node_modules/
-    # Enables git-lab CI caching. Both .cache and public must be cached, otherwise builds will fail.
+    # https://docs.gitlab.com/ee/ci/caching/#cache-nodejs-dependencies
+    # https://pnpm.io/continuous-integration#gitlab-ci
+    - .pnpm-store
+    # (gatsby): Enables git-lab CI caching. Both .cache and public must be cached, otherwise builds will fail.
     - .cache/
     - public/
+
+before_script:
+  - corepack enable
+  - corepack prepare pnpm@latest --activate
+  - pnpm config set store-dir .pnpm-store
 
 pages:
   stage: build
   script:
-    - npm install
-    - npm run clean
+    - pnpm install
     # Pass --prefix-paths to gatsby build
-    - npm run build -- --prefix-paths
+    - NODE_OPTIONS=--max-old-space-size=4096 npm run build -- --prefix-paths --verbose --no-color
   artifacts:
     paths:
       - public

@@ -29,9 +29,14 @@
 - tag: modelling
   colour: 4567B0
 
-# Staff use default colour (black/000000)
-
 - tag: J6 / Year 12
   colour: 80471E
 # Wiki colour has not been finalized yet
 
+- tag: videos
+  colour: EC5800
+# Videos colour has not been finalized yet
+
+- tag: staff
+  colour: 848884
+# Staff colour has not been finalized yet

@@ -1,6 +1,9 @@
 import fs from "fs";
 
 import { Actions, GatsbyNode } from "gatsby";
+
+import { StatsWriterPlugin } from "webpack-stats-plugin";
+
 import { CreatePagesQueryResult } from "./src/types/graphql/createPagesQueryResult";
 
 // Import the page template
@@ -24,6 +27,10 @@ const createTypeFromFile = (actions: Actions, filename: string) => {
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
 	createTypeFromFile(actions, "./src/graphql/teamMember.gql");
 	createTypeFromFile(actions, "./src/graphql/teamColour.gql");
+	createTypeFromFile(actions, "./src/graphql/previousYears.gql");
+	createTypeFromFile(actions, "./src/graphql/sequencesAnnotations.gql");
+	createTypeFromFile(actions, "./src/graphql/sequences.gql");
+	createTypeFromFile(actions, "./src/graphql/sequenceTags.gql");
 };
 
 export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions, reporter }) => {
@@ -61,4 +68,32 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions,
 			component: `${MdxPageTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
 		});
 	});
+};
+
+export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({ stage, actions }) => {
+	if (stage == "build-javascript") {
+		actions.setWebpackConfig({
+			plugins: [
+				// RelativeCI: (bundle size analyzer) Add the stats writer plugin
+				// https://relative-ci.com/documentation/guides/webpack-stats/gatsby
+				new StatsWriterPlugin({
+					filename: "../webpack-stats.json",
+					stats: {
+						assets: true,
+						chunks: true,
+						modules: true,
+					},
+				}),
+			],
+			// https://preactjs.com/guide/v10/getting-started#aliasing-react-to-preact
+			resolve: {
+				alias: {
+					react: "preact/compat",
+					"react-dom/test-utils": "preact/test-utils",
+					"react-dom": "preact/compat", // Must be below test-utils
+					"react/jsx-runtime": "preact/jsx-runtime",
+				},
+			},
+		});
+	}
 };

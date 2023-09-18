@@ -1,0 +1,44 @@
+LOCUS       Gen4_373-21-24_Double_AN 138 bp ds-DNA     linear       03-SEP-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+     misc_feature    1..138
+                     /label="Gen4 Toehold Switch 373-21-24"
+                     /ApEinfo_revcolor="#faac61"
+                     /ApEinfo_fwdcolor="#faac61"
+     misc_feature    1..15
+                     /label="373-5p Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    16..21
+                     /label="Anti-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    22..29
+                     /label="21-3p Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    30..35
+                     /label="Anti-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    36..50
+                     /label="24-3p Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    66..73
+                     /label="RBS"
+                     /ApEinfo_revcolor="#b1ff67"
+                     /ApEinfo_fwdcolor="#b1ff67"
+     misc_feature    79..81
+                     /label="START"
+                     /ApEinfo_revcolor="#75c6a9"
+                     /ApEinfo_fwdcolor="#75c6a9"
+     misc_feature    115..138
+                     /label="Linker"
+                     /ApEinfo_revcolor="#ff9ccd"
+                     /ApEinfo_fwdcolor="#ff9ccd"
+ORIGIN
+        1 TGAGTTTTAC CCCCGTTTTT TTCAGCTACT TTTTTCAAGT CGTCCTTGTC GGATTTGCAA
+       61 AAAAAAGAGG AGAGTAAAAT GGACAAGGAC GACTTGAAAA AAGTAGCTGA AAAAAACAAC
+      121 CTGGCGGCAG CGCAAAAG
+//

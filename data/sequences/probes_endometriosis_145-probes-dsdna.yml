@@ -1,0 +1,5 @@
+name: 145 Probes dsDNA
+filename: probes_endometriosis_145-probes-dsdna.gb
+tag: probes_endometriosis
+# Primers not yet supported, tracked at
+# https://github.com/Lattice-Automation/seqviz/issues/232

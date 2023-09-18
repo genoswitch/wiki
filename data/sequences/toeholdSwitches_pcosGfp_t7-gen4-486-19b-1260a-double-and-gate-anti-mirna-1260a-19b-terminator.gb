@@ -1,0 +1,23 @@
+LOCUS       T7_/_Gen4_486-19b-1260a_ 111 bp ds-DNA     linear       10-SEP-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+     misc_feature    1..18
+                     /label="T7 Promoter"
+                     /ApEinfo_revcolor="#85dae9"
+                     /ApEinfo_fwdcolor="#85dae9"
+     misc_feature    19..51
+                     /label="1260a Overhang*"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    19..77
+                     /label="Anti-miRNA"
+                     /ApEinfo_revcolor="#ffef86"
+                     /ApEinfo_fwdcolor="#ffef86"
+     misc_feature    78..111
+                     /label="Terminator (BBa_B1002)"
+                     /ApEinfo_revcolor="#f6989d"
+                     /ApEinfo_fwdcolor="#f6989d"
+ORIGIN
+        1 TAATACGACT CACTATAGGG GAGGAGGGAA AGAGGAAGGG GGAGGGAAAA ATGGTGGCAG
+       61 AAAAAAGGAT TTGCACACGC AAAAAACCCC GCTTCGGCGG GGTTTTTTCG C
+//

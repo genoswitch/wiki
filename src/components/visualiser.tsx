@@ -59,10 +59,15 @@ export default class Visualiser extends React.Component<VisualiserProps, Visuali
 			return <CircularProgress />;
 		} else {
 			// TODO: Attempts to make this use flexbox result in a height of 0.
+			let name = this.state.seq.name!;
+			if (this.state.seq.name == "Unnamed") {
+				// No name set, fall back to props from yaml
+				name = this.props.sequenceDefinition.name!;
+			}
 			return (
 				<div style={{ height: "75vh" }}>
 					<SeqViz
-						name={this.state.seq.name!}
+						name={name}
 						seq={this.state.seq.seq!}
 						annotations={this.state.seq.annotations!}
 						translations={this.props.sequenceDefinition.translations}

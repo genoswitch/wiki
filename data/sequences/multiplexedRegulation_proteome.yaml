@@ -1,0 +1,12 @@
+name: Proteome
+filename: multiplexedRegulation_proteome.gb
+tag: multiplexedRegulation
+translations:
+  - start: 118 # benchling: 119
+    end: 895
+  - start: 974 # benchling: 975
+    end: 1742
+  - start: 1821 # benchling: 1822
+    end: 2598
+  - start: 2674 # benchling: 2675
+    end: 3445

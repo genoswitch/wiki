@@ -1,0 +1,76 @@
+LOCUS       T7_/_Gen4_373-21-24_Dou 1002 bp ds-DNA     circular     03-SEP-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+     misc_feature    1..18
+                     /label="T7 Promoter"
+                     /ApEinfo_revcolor="#85dae9"
+                     /ApEinfo_fwdcolor="#85dae9"
+     misc_feature    19..33
+                     /label="373-5p Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    19..156
+                     /label="Gen4 Toehold Switch 373-21-24"
+                     /ApEinfo_revcolor="#faac61"
+                     /ApEinfo_fwdcolor="#faac61"
+     misc_feature    34..39
+                     /label="Anti-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    40..47
+                     /label="21-3p Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    48..53
+                     /label="Anti-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    54..68
+                     /label="24-3p Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    84..91
+                     /label="RBS"
+                     /ApEinfo_revcolor="#b1ff67"
+                     /ApEinfo_fwdcolor="#b1ff67"
+     misc_feature    97..99
+                     /label="START"
+                     /ApEinfo_revcolor="#75c6a9"
+                     /ApEinfo_fwdcolor="#75c6a9"
+     CDS             97..873
+                     /label="97 - 873"
+                     /ApEinfo_revcolor="#84b0dc"
+                     /ApEinfo_fwdcolor="#84b0dc"
+                     /translation="MDKDDLKKVAEKNNLAAAQKVSKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTLKLICTTGKLPVPWPTLVTTLGYGLQCFARYPDHMKQHDFFKSAMPEGYVQERTIFFKDDGNYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNYNSHNVYITADKQKNGIKANFKIRHNIEDGGVQLADHYQQNTPIGDGPVLLPDNHYLSYQSALSKDPNEKRDHMVLLEFVTAAGITLGMDELYK*"
+     misc_feature    133..156
+                     /label="Linker"
+                     /ApEinfo_revcolor="#ff9ccd"
+                     /ApEinfo_fwdcolor="#ff9ccd"
+     CDS             157..873
+                     /label="Venus"
+                     /ApEinfo_revcolor="#b1ff67"
+                     /ApEinfo_fwdcolor="#b1ff67"
+                     /note="codon_start: 1 note: mammalian codon-optimized product: yellow fluorescent protein (YFP) with fast and efficient maturation (Nagai et al., 2002) transl_table: 1 translation: M,V,SKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTLKLICTTGKLPVPWPTLVTTLGYGLQCFARYPDHMKQHDFFKSAMPEGYVQERTIFFKDDGNYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNYNSHNVYITADKQKNGIKANFKIRHNIEDGGVQLADHYQQNTPIGDGPVLLPDNHYLSYQSALSKDPNEKRDHMVLLEFVTAAGITLGMDELYK*"
+     misc_feature    874..1002
+                     /label="Double Terminator (BBa_B0015)"
+                     /ApEinfo_revcolor="#f6989d"
+                     /ApEinfo_fwdcolor="#f6989d"
+ORIGIN
+        1 TAATACGACT CACTATAGTG AGTTTTACCC CCGTTTTTTT CAGCTACTTT TTTCAAGTCG
+       61 TCCTTGTCGG ATTTGCAAAA AAAAGAGGAG AGTAAAATGG ACAAGGACGA CTTGAAAAAA
+      121 GTAGCTGAAA AAAACAACCT GGCGGCAGCG CAAAAGGTGA GCAAGGGCGA GGAGCTGTTC
+      181 ACCGGGGTGG TGCCCATCCT GGTCGAGCTG GACGGCGACG TAAACGGCCA CAAGTTCAGC
+      241 GTGTCCGGCG AGGGCGAGGG CGATGCCACC TACGGCAAGC TGACCCTGAA GCTGATCTGC
+      301 ACCACCGGCA AGCTGCCCGT GCCCTGGCCC ACCCTCGTGA CCACCCTGGG CTACGGCCTG
+      361 CAGTGCTTCG CCCGCTACCC CGACCACATG AAGCAGCACG ACTTCTTCAA GTCCGCCATG
+      421 CCCGAAGGCT ACGTCCAGGA GCGCACCATC TTCTTCAAGG ACGACGGCAA CTACAAGACC
+      481 CGCGCCGAGG TGAAGTTCGA GGGCGACACC CTGGTGAACC GCATCGAGCT GAAGGGCATC
+      541 GACTTCAAGG AGGACGGCAA CATCCTGGGG CACAAGCTGG AGTACAACTA CAACAGCCAC
+      601 AACGTCTATA TCACCGCCGA CAAGCAGAAG AACGGCATCA AGGCCAACTT CAAGATCCGC
+      661 CACAACATCG AGGACGGCGG CGTGCAGCTC GCCGACCACT ACCAGCAGAA CACCCCCATC
+      721 GGCGACGGCC CCGTGCTGCT GCCCGACAAC CACTACCTGA GCTACCAGTC CGCCCTGAGC
+      781 AAAGACCCCA ACGAGAAGCG CGATCACATG GTCCTGCTGG AGTTCGTGAC CGCCGCCGGG
+      841 ATCACTCTCG GCATGGACGA GCTGTACAAG TAACCAGGCA TCAAATAAAA CGAAAGGCTC
+      901 AGTCGAAAGA CTGGGCCTTT CGTTTTATCT GTTGTTTGTC GGTGAACGCT CTCTACTAGA
+      961 GTCACACTGG CTCACCTTCG GGTGGGCCTT TCTGCGTTTA TA
+//

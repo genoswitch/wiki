@@ -1,0 +1,112 @@
+LOCUS       T7_/_Gen4_145-199a-125b 1221 bp ds-DNA     circular     10-SEP-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+     misc_feature    1..18
+                     /label="T7 Promoter"
+                     /ApEinfo_revcolor="#85dae9"
+                     /ApEinfo_fwdcolor="#85dae9"
+     misc_feature    19..29
+                     /label="145-5p Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    19..157
+                     /label="Gen4 Toehold Switch 145-199a-125b"
+                     /ApEinfo_revcolor="#faac61"
+                     /ApEinfo_fwdcolor="#faac61"
+     misc_feature    30..35
+                     /label="Anti-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    36..47
+                     /label="199a Binding Site"
+                     /ApEinfo_revcolor="#84b0dc"
+                     /ApEinfo_fwdcolor="#84b0dc"
+     misc_feature    48..53
+                     /label="Anti-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    54..64
+                     /label="125b Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    85..92
+                     /label="RBS"
+                     /ApEinfo_revcolor="#b1ff67"
+                     /ApEinfo_fwdcolor="#b1ff67"
+     misc_feature    98..100
+                     /label="START"
+                     /ApEinfo_revcolor="#75c6a9"
+                     /ApEinfo_fwdcolor="#75c6a9"
+     CDS             98..865
+                     /label="98 - 865"
+                     /ApEinfo_revcolor="#84b0dc"
+                     /ApEinfo_fwdcolor="#84b0dc"
+                     /translation="MPLRTLFFYTSKKNLAAAQKVSKGEEDNMAIIKEFMRFKVHMEGSVNGHEFEIEGEGEGRPYEGTQTAKLKVTKGGPLPFAWDILSPQFMYGSKAYVKHPADIPDYLKLSFPEGFKWERVMNFEDGGVVTVTQDSSLQDGEFIYKVKLRGTNFPSDGPVMQKKTMGWEASSERMYPEDGALKGEIKQRLKLKDGGHYDAEVKTTYKAKKPVQLPGAYNVNIKLDITSHNEDYTIVEQYERAEGRHSTGGMDELYK*"
+     misc_feature    134..157
+                     /label="Linker"
+                     /ApEinfo_revcolor="#ff9ccd"
+                     /ApEinfo_fwdcolor="#ff9ccd"
+     CDS             158..865
+                     /label="mCherry"
+                     /ApEinfo_revcolor="#ff0000"
+                     /ApEinfo_fwdcolor="#ff0000"
+                     /note="codon_start: 1 note: mammalian codon-optimized product: monomeric derivative of DsRed fluorescent protein (Shaner et al., 2004) transl_table: 1 translation: MVSKGEEDNMAIIKEFMRFKVHMEGSVNGHEFEIEGEGEGRPYEGTQTAKLKVTKGGPLPFAWDILSPQFMYGSKAYVKHPADIPDYLKLSFPEGFKWERVMNFEDGGVVTVTQDSSLQDGEFIYKVKLRGTNFPSDGPVMQKKTMGWEASSERMYPEDGALKGEIKQRLKLKDGGHYDAEVKTTYKAKKPVQLPGAYNVNIKLDITSHNEDYTIVEQYERAEGRHSTGGMDELYK*"
+     misc_feature    866..994
+                     /label="Double Terminator (BBa_B0015)"
+                     /ApEinfo_revcolor="#f6989d"
+                     /ApEinfo_fwdcolor="#f6989d"
+     misc_feature    995..1012
+                     /label="T7 Promoter"
+                     /ApEinfo_revcolor="#85dae9"
+                     /ApEinfo_fwdcolor="#85dae9"
+     misc_feature    1013..1045
+                     /label="125b Overhang*"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    1013..1073
+                     /label="Anti-miRNA"
+                     /ApEinfo_revcolor="#ffef86"
+                     /ApEinfo_fwdcolor="#ffef86"
+     misc_feature    1074..1107
+                     /label="Terminator (BBa_B1002)"
+                     /ApEinfo_revcolor="#f6989d"
+                     /ApEinfo_fwdcolor="#f6989d"
+     misc_feature    1108..1125
+                     /label="T7 Promoter"
+                     /ApEinfo_revcolor="#85dae9"
+                     /ApEinfo_fwdcolor="#85dae9"
+     misc_feature    1126..1187
+                     /label="Anti-miRNA"
+                     /ApEinfo_revcolor="#ffef86"
+                     /ApEinfo_fwdcolor="#ffef86"
+     misc_feature    1155..1187
+                     /label="145 Overhang"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    1188..1221
+                     /label="Terminator (BBa_B1002)"
+                     /ApEinfo_revcolor="#f6989d"
+                     /ApEinfo_fwdcolor="#f6989d"
+ORIGIN
+        1 TAATACGACT CACTATAGTC ACAAGTTAGG GTCTTGGTTA GACGTGTAAC CCCAAAGGGT
+       61 CCTTAGGGAG GATTTGCAAA AAAAAGAGGA GAGTAAAATG CCCCTAAGGA CCCTTTTTTT
+      121 TTACACGTCT AAAAAAAACC TGGCGGCAGC GCAAAAGGTG AGCAAGGGCG AGGAGGATAA
+      181 CATGGCCATC ATCAAGGAGT TCATGCGCTT CAAGGTGCAC ATGGAGGGCT CCGTGAACGG
+      241 CCACGAGTTC GAGATCGAGG GCGAGGGCGA GGGCCGCCCC TACGAGGGCA CCCAGACCGC
+      301 CAAGCTGAAG GTGACCAAGG GTGGCCCCCT GCCCTTCGCC TGGGACATCC TGTCCCCTCA
+      361 GTTCATGTAC GGCTCCAAGG CCTACGTGAA GCACCCCGCC GACATCCCCG ACTACTTGAA
+      421 GCTGTCCTTC CCCGAGGGCT TCAAGTGGGA GCGCGTGATG AACTTCGAGG ACGGCGGCGT
+      481 GGTGACCGTG ACCCAGGACT CCTCCCTGCA GGACGGCGAG TTCATCTACA AGGTGAAGCT
+      541 GCGCGGCACC AACTTCCCCT CCGACGGCCC CGTAATGCAG AAGAAGACCA TGGGCTGGGA
+      601 GGCCTCCTCC GAGCGGATGT ACCCCGAGGA CGGCGCCCTG AAGGGCGAGA TCAAGCAGAG
+      661 GCTGAAGCTG AAGGACGGCG GCCACTACGA CGCTGAGGTC AAGACCACCT ACAAGGCCAA
+      721 GAAGCCCGTG CAGCTGCCCG GCGCCTACAA CGTCAACATC AAGTTGGACA TCACCTCCCA
+      781 CAACGAGGAC TACACCATCG TGGAACAGTA CGAACGCGCC GAGGGCCGCC ACTCCACCGG
+      841 CGGCATGGAC GAGCTGTACA AGTAGCCAGG CATCAAATAA AACGAAAGGC TCAGTCGAAA
+      901 GACTGGGCCT TTCGTTTTAT CTGTTGTTTG TCGGTGAACG CTCTCTACTA GAGTCACACT
+      961 GGCTCACCTT CGGGTGGGCC TTTCTGCGTT TATATAATAC GACTCACTAT AGGAGAAAAA
+     1021 AAGGAGAAAG GAGGGGGGGG GGGGATCACA AGTTAGGGGG TTCAGACTAC TGTCGCAAAA
+     1081 AACCCCGCTT CGGCGGGGTT TTTTCGCTAA TACGACTCAC TATAGCACAT TGGTTAAAGA
+     1141 CCCCAGGAAT CCCTAGTGTG TTGTTGTGTT TTGGTTGTGT TTGTTGTCGC AAAAAACCCC
+     1201 GCTTCGGCGG GGTTTTTTCG C
+//

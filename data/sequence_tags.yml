@@ -15,3 +15,6 @@
 
 - tag: toeholdSwitches_ovarianCancerMCerulean
   name: Toehold Switches - Ovarian Cancer (mCerulean)
+
+- tag: toeholdSwitches_pcosGfp
+  name: Toehold Switches - PCOS (GFP)

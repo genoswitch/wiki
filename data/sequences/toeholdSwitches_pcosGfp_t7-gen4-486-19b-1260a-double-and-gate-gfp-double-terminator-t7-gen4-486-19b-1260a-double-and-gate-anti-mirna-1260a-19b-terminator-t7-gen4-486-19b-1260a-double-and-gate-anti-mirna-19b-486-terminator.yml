@@ -1,0 +1,6 @@
+name: T7 / Gen4 486-19b-1260a Double AND-Gate / GFP / Double Terminator / T7 / Gen4 486-19b-1260a Double AND-Gate Anti-miRNA 1260a-19b / Terminator / T7 / Gen4 486-19b-1260a Double AND-Gate Anti-miRNA 19b-486 / Terminator
+filename: toeholdSwitches_pcosGfp_t7-gen4-486-19b-1260a-double-and-gate-gfp-double-terminator-t7-gen4-486-19b-1260a-double-and-gate-anti-mirna-1260a-19b-terminator-t7-gen4-486-19b-1260a-double-and-gate-anti-mirna-19b-486-terminator.gb
+tag: toeholdSwitches_pcosGfp
+translations:
+  - start: 94 # benchling: 95
+    end: 865

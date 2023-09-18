@@ -1,0 +1,15 @@
+LOCUS       Gen4_145-199a-125b_Double 61 bp ds-DNA     circular     10-SEP-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+     misc_feature    1..61
+                     /label="Anti-miRNA"
+                     /ApEinfo_revcolor="#ffef86"
+                     /ApEinfo_fwdcolor="#ffef86"
+     misc_feature    1..33
+                     /label="125b Overhang*"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+ORIGIN
+        1 GAGAAAAAAA GGAGAAAGGA GGGGGGGGGG GGATCACAAG TTAGGGGGTT CAGACTACTG
+       61 T
+//

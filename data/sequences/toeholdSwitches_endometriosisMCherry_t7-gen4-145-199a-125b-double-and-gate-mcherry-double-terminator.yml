@@ -1,0 +1,6 @@
+name: T7 / Gen4 145-199a-125b Double AND-Gate / mCherry / Double Terminator
+filename: toeholdSwitches_endometriosisMCherry_t7-gen4-145-199a-125b-double-and-gate-mcherry-double-terminator.gb
+tag: toeholdSwitches_endometriosisMCherry
+translations:
+  - start: 97 # benchling: 98
+    end: 865

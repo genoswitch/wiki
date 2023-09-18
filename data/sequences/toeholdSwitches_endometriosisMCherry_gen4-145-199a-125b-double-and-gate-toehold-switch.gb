@@ -1,0 +1,44 @@
+LOCUS       Gen4_145-199a-125b_Doubl 139 bp ds-DNA     linear       02-SEP-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+     misc_feature    1..139
+                     /label="Gen4 Toehold Switch 145-199a-125b"
+                     /ApEinfo_revcolor="#faac61"
+                     /ApEinfo_fwdcolor="#faac61"
+     misc_feature    1..11
+                     /label="145-5p Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    12..17
+                     /label="Anti-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    18..29
+                     /label="199a Binding Site"
+                     /ApEinfo_revcolor="#84b0dc"
+                     /ApEinfo_fwdcolor="#84b0dc"
+     misc_feature    30..35
+                     /label="Anti-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    36..46
+                     /label="125b Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    67..74
+                     /label="RBS"
+                     /ApEinfo_revcolor="#b1ff67"
+                     /ApEinfo_fwdcolor="#b1ff67"
+     misc_feature    80..82
+                     /label="START"
+                     /ApEinfo_revcolor="#75c6a9"
+                     /ApEinfo_fwdcolor="#75c6a9"
+     misc_feature    116..139
+                     /label="Linker"
+                     /ApEinfo_revcolor="#ff9ccd"
+                     /ApEinfo_fwdcolor="#ff9ccd"
+ORIGIN
+        1 TCACAAGTTA GGGTCTTGGT TAGACGTGTA ACCCCAAAGG GTCCTTAGGG AGGATTTGCA
+       61 AAAAAAAGAG GAGAGTAAAA TGCCCCTAAG GACCCTTTTT TTTTACACGT CTAAAAAAAA
+      121 CCTGGCGGCA GCGCAAAAG
+//

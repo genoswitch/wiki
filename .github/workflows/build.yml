@@ -68,7 +68,7 @@ jobs:
           publish-dir: ./public
           production-deploy: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: ${{ github.event.pull_request.title }})
+          deploy-message: ${{ github.event.pull_request.title }}
           enable-pull-request-comment: true
           enable-commit-comment: false
           enable-commit-status: true
@@ -88,7 +88,7 @@ jobs:
           publish-dir: ./public
           production-deploy: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: ${{ github.event.head_commit.message }})
+          deploy-message: ${{ github.event.head_commit.message }}
           enable-commit-comment: false
           enable-commit-status: true
           enable-github-deployment: false # seems to not be a valid option? (not in schema?)

@@ -1,0 +1,6 @@
+name: T7 / Gen4 320b-320a-4640 Double AND-Gate / mCerulean / Double Terminator
+filename: toeholdSwitches_ovarianCancerMCerulean_t7-gen4-320b-320a-4640-double-and-gate-mcerulean-double-terminator.gb
+tag: toeholdSwitches_ovarianCancerMCerulean
+translations:
+  - start: 97 # benchling: 98
+    end: 874

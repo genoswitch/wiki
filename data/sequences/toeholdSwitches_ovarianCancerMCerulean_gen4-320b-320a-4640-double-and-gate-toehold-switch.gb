@@ -1,0 +1,44 @@
+LOCUS       Gen4_320b-320a-4640_Doub 139 bp ds-DNA     linear       03-SEP-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+     misc_feature    1..139
+                     /label="Gen4 Toehold Switch 320b-320a-4640"
+                     /ApEinfo_revcolor="#faac61"
+                     /ApEinfo_fwdcolor="#faac61"
+     misc_feature    1..15
+                     /label="320b Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    16..21
+                     /label="Anit-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    22..29
+                     /label="320a-5p Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    30..35
+                     /label="Anti-miRNA Binding Site"
+                     /ApEinfo_revcolor="#9eafd2"
+                     /ApEinfo_fwdcolor="#9eafd2"
+     misc_feature    36..51
+                     /label="4640-5p Binding Site"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    67..74
+                     /label="RBS"
+                     /ApEinfo_revcolor="#b1ff67"
+                     /ApEinfo_fwdcolor="#b1ff67"
+     misc_feature    80..82
+                     /label="START"
+                     /ApEinfo_revcolor="#75c6a9"
+                     /ApEinfo_fwdcolor="#75c6a9"
+     misc_feature    116..139
+                     /label="Linker"
+                     /ApEinfo_revcolor="#ff9ccd"
+                     /ApEinfo_fwdcolor="#ff9ccd"
+ORIGIN
+        1 TTTTCGACCC AACTCGGGGG GCCGGGAAGG GGGGGCCCTC GTCGACCACC CGGATTTGCA
+       61 AAAAAAAGAG GAGAGTAAAA TGGGGTGGTC GACGAGGGCC CCCCCTTCCC GGCCCCCCAA
+      121 CCTGGCGGCA GCGCAAAAG
+//

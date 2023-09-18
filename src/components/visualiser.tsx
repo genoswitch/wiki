@@ -62,7 +62,7 @@ export default class Visualiser extends React.Component<VisualiserProps, Visuali
 			let name = this.state.seq.name!;
 			if (this.state.seq.name == "Unnamed") {
 				// No name set, fall back to props from yaml
-				name = this.props.sequenceDefinition.name!
+				name = this.props.sequenceDefinition.name!;
 			}
 			return (
 				<div style={{ height: "75vh" }}>

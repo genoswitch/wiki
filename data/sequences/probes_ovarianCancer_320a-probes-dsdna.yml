@@ -1,0 +1,5 @@
+name: 320a Probes dsDNA
+filename: probes_ovarianCancer_320a-probes-dsdna.gb
+tag: probes_ovarianCancer
+# Primers not yet supported, tracked at
+# https://github.com/Lattice-Automation/seqviz/issues/232

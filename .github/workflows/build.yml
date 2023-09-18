@@ -61,7 +61,7 @@ jobs:
           output: |
             {"title":"${{ steps.determineSize.outputs.SIZE }} (of 5M)","summary":"${{ steps.determineSize.outputs.SIZE }} (of 5M)"}
 
-      - name: Upload to netlify (if a PR build)
+      - name: Upload to netlify (staging environment - deploy preview, if a PR build)
         if: github.event_name == 'pull_request'
         uses: nwtgck/actions-netlify@v2.0
         with:
@@ -75,6 +75,22 @@ jobs:
           overwrites-pull-request-comment: true
           # replicate deploy preview prefix
           alias: deploy-preview-${{ github.event.pull_request.number }}
+          enable-github-deployment: false # seems to not be a valid option? (not in schema?)
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
+
+      - name: Upload to netlify (staging environment, if a push on main)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: nwtgck/actions-netlify@v2.0
+        with:
+          publish-dir: ./public
+          production-deploy: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: ${{ github.event.push.title }})
+          enable-commit-comment: false
+          enable-commit-status: true
           enable-github-deployment: false # seems to not be a valid option? (not in schema?)
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

@@ -36,7 +36,7 @@
     "@genoswitch/gatsby-transformer-gitinfo": "1.4.0-1",
     "@mdx-js/react": "^2.3.0",
     "@types/node": "^20.6.3",
-    "@types/webpack-stats-plugin": "^0.3.2",
+    "@types/webpack-stats-plugin": "^0.3.3",
     "autoprefixer": "^10.4.16",
     "gatsby-plugin-canonical-urls": "^5.12.0",
     "gatsby-plugin-image": "^3.12.0",

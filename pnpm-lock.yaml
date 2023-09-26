@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^20.6.3
     version: 20.6.3
   '@types/webpack-stats-plugin':
-    specifier: ^0.3.2
-    version: 0.3.2
+    specifier: ^0.3.3
+    version: 0.3.3
   autoprefixer:
     specifier: ^10.4.16
     version: 10.4.16(postcss@8.4.30)
@@ -3200,8 +3200,8 @@ packages:
       source-map: 0.7.4
     dev: true
 
-  /@types/webpack-stats-plugin@0.3.2:
-    resolution: {integrity: sha512-wvIJrybgcuNZ+5sr99RAqr1FmC9tRjAyws7x3jPFHZxtyO+c5n/VbFZATKW5Wec3LOpEuLSFlfrmFF8TALAmwQ==}
+  /@types/webpack-stats-plugin@0.3.3:
+    resolution: {integrity: sha512-HKCwBMtjyddEa10i91NFfVgztttnvXtmcEjBsgwMfP8nbh8xzlS0suDN4hLtr4/i6RU8F8Ck39/LE3D68EvXAQ==}
     dependencies:
       '@types/webpack': 4.41.33
     dev: true

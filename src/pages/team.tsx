@@ -8,9 +8,7 @@ import {
 	Checkbox,
 	Chip,
 	createTheme,
-	Divider,
 	FormControlLabel,
-	FormGroup,
 	MenuItem,
 	SimplePaletteColorOptions,
 	TextField,
@@ -28,10 +26,9 @@ import { FilterChip, FilterChipEntry } from "../types/team/filterChip";
 
 import capitalizeWords from "../capitalizeWords";
 import teamEntryFilter from "../filters/teamEntryFilter";
-import Navbar from "../components/navbar";
+import HeaderFooterProvider from "../components/headerFooterProvider";
 import FilterMenu from "../components/team/filterMenu";
 import LoadingPage from "../components/loadingPage";
-import Footer from "../components/footer";
 
 import { Head as BaseHead } from "../components/head";
 
@@ -216,58 +213,58 @@ export default class TeamPage extends React.PureComponent<
 		} else {
 			console.log(this.muiPaletteOptions);
 			return (
-				<ThemeProvider theme={this.muiTheme!}>
-					<Navbar />
-					{/**
+				<HeaderFooterProvider data={this.data}>
+					<ThemeProvider theme={this.muiTheme!}>
+						{/**
 					 * Search bar
 					 * To match the entries, we pad the top and left of the containing div by 16px.
 					 */}
-					<div style={{ paddingTop: 16, paddingLeft: 16 }}>
-						<TextField
-							id="outlined-basic"
-							label="Search"
-							variant="outlined"
-							onChange={event => this.setState({ searchQuery: event.target.value })}
-						/>
-						<FilterMenu
-							elements={this.state.filterChip.map(entry => {
-								// Filter chips
-								return (
-									// onClick is on the MenuItem otherwis it only triggers when the chip itself is clicked.
-									<MenuItem onClick={(event: any) => this.handleChipClick(event, entry)}>
-										<Chip
-											variant={entry.enabled ? "filled" : "outlined"}
-											deleteIcon={entry.enabled ? <></> : <AddIcon />}
-											label={capitalizeWords(entry.tag.name)}
-											color={entry.tag.paletteName}
-											size="small"
-											sx={{ fontWeight: "bold" }}
-										/>
-									</MenuItem>
-								);
-							})}
-						/>
-						{/** Should be enclosed in FormGroup but that makes a newline. Shhh! */}
-						<FormControlLabel
-							control={
-								<Checkbox
-									defaultChecked
-									onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-										this.handleShouldIncTagsChange(event)
-									}
-								/>
-							}
-							label="Include tags in search?"
-						/>
-					</div>
-					{teamEntryFilter(
-						this.entries,
-						this.state.searchQuery,
-						this.state.filterChip,
-						this.state.shouldIncludeTagsInSearch
-					)}
-					<Footer data={this.data} />
-				</ThemeProvider>
+						<div style={{ paddingTop: 16, paddingLeft: 16 }}>
+							<TextField
+								id="outlined-basic"
+								label="Search"
+								variant="outlined"
+								onChange={event => this.setState({ searchQuery: event.target.value })}
+							/>
+							<FilterMenu
+								elements={this.state.filterChip.map(entry => {
+									// Filter chips
+									return (
+										// onClick is on the MenuItem otherwis it only triggers when the chip itself is clicked.
+										<MenuItem onClick={(event: any) => this.handleChipClick(event, entry)}>
+											<Chip
+												variant={entry.enabled ? "filled" : "outlined"}
+												deleteIcon={entry.enabled ? <></> : <AddIcon />}
+												label={capitalizeWords(entry.tag.name)}
+												color={entry.tag.paletteName}
+												size="small"
+												sx={{ fontWeight: "bold" }}
+											/>
+										</MenuItem>
+									);
+								})}
+							/>
+							{/** Should be enclosed in FormGroup but that makes a newline. Shhh! */}
+							<FormControlLabel
+								control={
+									<Checkbox
+										defaultChecked
+										onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+											this.handleShouldIncTagsChange(event)
+										}
+									/>
+								}
+								label="Include tags in search?"
+							/>
+						</div>
+						{teamEntryFilter(
+							this.entries,
+							this.state.searchQuery,
+							this.state.filterChip,
+							this.state.shouldIncludeTagsInSearch
+						)}
+					</ThemeProvider>
+				</HeaderFooterProvider>
 			);
 		}
 	}

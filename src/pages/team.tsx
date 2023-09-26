@@ -216,9 +216,9 @@ export default class TeamPage extends React.PureComponent<
 				<HeaderFooterProvider data={this.data}>
 					<ThemeProvider theme={this.muiTheme!}>
 						{/**
-					 * Search bar
-					 * To match the entries, we pad the top and left of the containing div by 16px.
-					 */}
+						 * Search bar
+						 * To match the entries, we pad the top and left of the containing div by 16px.
+						 */}
 						<div style={{ paddingTop: 16, paddingLeft: 16 }}>
 							<TextField
 								id="outlined-basic"

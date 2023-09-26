@@ -7,7 +7,6 @@ import { Head as BaseHead } from "../components/head";
 import HeaderFooterProvider from "../components/headerFooterProvider";
 import LoadingPage from "../components/loadingPage";
 
-
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
 interface AttributionsPageState {

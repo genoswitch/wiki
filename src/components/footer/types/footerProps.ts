@@ -6,5 +6,5 @@
  * However, this may break gatsby as it expects queries only in page files.
  */
 export type FooterProps = {
-	data: Queries.Query;
+	data?: Queries.FooterDataQuery;
 };

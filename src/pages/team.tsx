@@ -5,6 +5,8 @@ import { graphql, PageProps } from "gatsby";
 import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/graphql/teamMemberNode";
 import {
+	Card,
+	CardContent,
 	Checkbox,
 	Chip,
 	createTheme,
@@ -14,6 +16,7 @@ import {
 	TextField,
 	Theme,
 	ThemeProvider,
+	Typography,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
@@ -31,6 +34,7 @@ import FilterMenu from "../components/team/filterMenu";
 import LoadingPage from "../components/loadingPage";
 
 import { Head as BaseHead } from "../components/head";
+import { StaticImage } from "gatsby-plugin-image";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
@@ -215,6 +219,29 @@ export default class TeamPage extends React.PureComponent<
 			return (
 				<HeaderFooterProvider data={this.data}>
 					<ThemeProvider theme={this.muiTheme!}>
+						{/** Whole team pic card */}
+						<div style={{ padding: "16px" }}>
+							<Card>
+								{/** Copy options from GraphQL query at the end of team.tsx */}
+								<StaticImage
+									style={{ maxHeight: "75vh" }}
+									src="https://static.igem.wiki/teams/4642/wiki/pictures/webp-default/group.webp"
+									placeholder="blurred"
+									formats={["auto", "webp", "png"]}
+									outputPixelDensities={[0.25]}
+								/>
+
+								<CardContent>
+									<Typography gutterBottom variant="h5">
+										Our Team
+									</Typography>
+									<Typography variant="body2" color="text.secondary">
+										Lorum ipsum dolor sit amet.
+									</Typography>
+								</CardContent>
+							</Card>
+						</div>
+
 						{/**
 						 * Search bar
 						 * To match the entries, we pad the top and left of the containing div by 16px.

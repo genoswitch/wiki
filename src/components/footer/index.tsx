@@ -78,7 +78,6 @@ export const query = graphql`
 						outputPixelDensities: [0.25] # Generate 0.25x and 1x.
 						# 1x is always created (see below)
 						# https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#customizing-the-default-options:~:text=and%20will%20always%20include%20a%201x%20image.
-
 					)
 				}
 			}

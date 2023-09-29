@@ -227,9 +227,9 @@ export default class TeamPage extends React.PureComponent<
 									style={{ maxHeight: "75vh" }}
 									src="https://static.igem.wiki/teams/4642/wiki/pictures/webp-default/group.webp"
 									placeholder="blurred"
-									formats={["auto", "webp", "png"]}
+									formats={["webp"]}
 									width={2400}
-									outputPixelDensities={[0.25]}
+									outputPixelDensities={[0.25]} // 1x is always created, see below GraphQL query
 								/>
 
 								<CardContent>
@@ -326,7 +326,7 @@ export const query = graphql`
 						gatsbyImageData(
 							width: 800 # 800x(~1200)
 							placeholder: BLURRED
-							formats: [AUTO, WEBP, PNG]
+							formats: [WEBP]
 							outputPixelDensities: [0.25] # Generate 0.25x and 1x.
 							# 1x is always created (see below)
 							# https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#customizing-the-default-options:~:text=and%20will%20always%20include%20a%201x%20image.

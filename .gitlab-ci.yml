@@ -1,5 +1,9 @@
 image: node:latest
 
+variables:
+  FF_USE_FASTZIP: "true"
+  ARTIFACT_COMPRESSION_LEVEL: "slowest"
+
 # This folder is cached between builds
 # https://docs.gitlab.com/ce/ci/yaml/README.html#cache
 # https://docs.gitlab.com/ee/ci/caching/#cache-nodejs-dependencies

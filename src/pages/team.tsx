@@ -237,7 +237,14 @@ export default class TeamPage extends React.PureComponent<
 										Our Team
 									</Typography>
 									<Typography variant="body2" color="text.secondary">
-										Lorum ipsum dolor sit amet.
+										We are a team of thirty inquisitive, bright-minded secondary school students
+										working under the City of London Corporation at the sister schools of CLS and
+										CLSG. Combining students from both CLS and CLSG allows us to benefit from our
+										individual skill sets to discover solutions to prevalent issues in society
+										through genetic engineering. As this competition was originally designed for
+										universities, garnering entries from universities like Harvard, Oxford,
+										Imperial, Johns Hopkins and others, being the only UK high school and one of the
+										few secondary schools in the world competing in iGEM is really quite unique.
 									</Typography>
 								</CardContent>
 							</Card>

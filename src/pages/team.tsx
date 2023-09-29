@@ -228,6 +228,7 @@ export default class TeamPage extends React.PureComponent<
 									src="https://static.igem.wiki/teams/4642/wiki/pictures/webp-default/group.webp"
 									placeholder="blurred"
 									formats={["auto", "webp", "png"]}
+									width={2400}
 									outputPixelDensities={[0.25]}
 								/>
 

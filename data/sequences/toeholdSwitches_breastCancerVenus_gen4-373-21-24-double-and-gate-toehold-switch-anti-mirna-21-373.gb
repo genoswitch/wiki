@@ -1,0 +1,14 @@
+LOCUS       Gen4_373-21-24_Double_AND 60 bp ds-DNA     circular     10-SEP-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+     misc_feature    1..60
+                     /label="Anti-miRNA"
+                     /ApEinfo_revcolor="#ffef86"
+                     /ApEinfo_fwdcolor="#ffef86"
+     misc_feature    28..60
+                     /label="373 Overhang"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+ORIGIN
+        1 GATGGGCTGT AAAAAAGGGC GCTTTCCAGA AAAAAAAAAA AAAAAGGACG GAGAAAGAAG
+//

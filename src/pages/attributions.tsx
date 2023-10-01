@@ -2,12 +2,10 @@ import * as React from "react";
 
 import { graphql, PageProps } from "gatsby";
 
-import NavBar from "../components/navbar";
-import Footer from "../components/footer";
 import { AttributionFrame } from "../components/attributionFrame";
-import LoadingPage from "../components/loadingPage";
-
 import { Head as BaseHead } from "../components/head";
+import HeaderFooterProvider from "../components/headerFooterProvider";
+import LoadingPage from "../components/loadingPage";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
@@ -43,11 +41,9 @@ export default class AttributionsPage extends React.PureComponent<
 			return <LoadingPage />;
 		} else {
 			return (
-				<>
-					<NavBar />
+				<HeaderFooterProvider data={this.data}>
 					<AttributionFrame />
-					<Footer data={this.data} />
-				</>
+				</HeaderFooterProvider>
 			);
 		}
 	}

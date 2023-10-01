@@ -1,0 +1,5 @@
+name: 199a Probes dsDNA
+filename: probes_endometriosis_199a-probes-dsdna.gb
+tag: probes_endometriosis
+# Primers not yet supported, tracked at
+# https://github.com/Lattice-Automation/seqviz/issues/232

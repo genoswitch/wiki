@@ -6,11 +6,30 @@ import Widths from "../../widths";
 import DesktopFooter from "./desktop";
 import MobileFooter from "./mobile";
 
-import { graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import { FooterProps } from "./types/footerProps";
 import { CircularProgress } from "@mui/material";
 
 export const query = graphql`
+	# Query made by footer when data not passed
+	query FooterData {
+		site {
+			siteMetadata {
+				assetBasePath
+			}
+			...FooterSiteFragment
+		}
+		allSponsorYaml {
+			...FooterSponsorYamlFragment
+		}
+		allProminentLogoYaml {
+			...FooterProminentLogoYamlFragment
+		}
+		allPreviousYearsYaml {
+			...FooterPreviousYearsYamlFragment
+		}
+	}
+
 	# Split into fragments that can be added to other pages' queries.
 	# See team.tsx
 	fragment FooterSponsorYamlFragment on SponsorYamlConnection {
@@ -30,6 +49,9 @@ export const query = graphql`
 						placeholder: NONE
 						# WebP only.
 						formats: [WEBP]
+						outputPixelDensities: [0.25] # Generate 0.25x and 1x.
+						# 1x is always created (see below)
+						# https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#customizing-the-default-options:~:text=and%20will%20always%20include%20a%201x%20image.
 					)
 				}
 			}
@@ -53,6 +75,9 @@ export const query = graphql`
 						placeholder: NONE
 						# WebP only.
 						formats: [WEBP]
+						outputPixelDensities: [0.25] # Generate 0.25x and 1x.
+						# 1x is always created (see below)
+						# https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#customizing-the-default-options:~:text=and%20will%20always%20include%20a%201x%20image.
 					)
 				}
 			}
@@ -76,6 +101,11 @@ export const query = graphql`
 `;
 
 const Footer = ({ data }: FooterProps) => {
+	if (!data) {
+		// Data not passed, query it ourselves.
+		data = useStaticQuery(query);
+	}
+
 	const dimensions = useWindowDimensions();
 
 	if (!dimensions.width) {

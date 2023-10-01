@@ -1,0 +1,37 @@
+LOCUS       24_Probes_dsDNA           88 bp ds-DNA     linear       13-JUN-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+     primer          1..26
+                     /label="24 dsDNA FWD"
+                     /note="sequence: AAAAAAAAACCAACATAATACGACTC"
+                     /ApEinfo_revcolor="#75c6a9"
+                     /ApEinfo_fwdcolor="#75c6a9"
+     misc_feature    complement(1..44)
+                     /label="24 T7 Probe 1"
+                     /ApEinfo_revcolor="#b7e6d7"
+                     /ApEinfo_fwdcolor="#b7e6d7"
+     misc_feature    16..33
+                     /label="T7 Promoter"
+                     /ApEinfo_revcolor="#85dae9"
+                     /ApEinfo_fwdcolor="#85dae9"
+     misc_feature    34..55
+                     /label="miRNA-24-DNA"
+                     /ApEinfo_revcolor="#84b0dc"
+                     /ApEinfo_fwdcolor="#84b0dc"
+     misc_feature    complement(45..88)
+                     /label="24 T7 Probe 2"
+                     /ApEinfo_revcolor="#d59687"
+                     /ApEinfo_fwdcolor="#d59687"
+     misc_feature    56..88
+                     /label="Overhang"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     primer          complement(63..88)
+                     /label="24 dsDNA REV"
+                     /note="sequence: TCCCTCCCTTTCTCCCCTTTTTCCCC"
+                     /ApEinfo_revcolor="#75c6a9"
+                     /ApEinfo_fwdcolor="#75c6a9"
+ORIGIN
+        1 AAAAAAAAAC CAACATAATA CGACTCACTA TAGTGGCTCA GTTCAGCAGG AACAGTGAAG
+       61 AGGGGGAAAA AGGGGAGAAA GGGAGGGA
+//

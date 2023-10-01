@@ -1,16 +1,14 @@
 import * as React from "react";
-import NavBar from "./navbar";
 
 import { Container } from "@mui/material";
 import { MDXProvider } from "@mdx-js/react";
 
-import Footer from "./footer";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { Head as BaseHead } from "./head";
-import ReferenceProvider from "./referenceProvider";
-
+import HeaderFooterProvider from "./headerFooterProvider";
 import Reference from "./reference";
+import ReferenceProvider from "./referenceProvider";
 
 // https://v3.gatsbyjs.com/docs/mdx/importing-and-using-components/#make-components-available-globally-as-shortcodes
 const shortcodes = { Reference };
@@ -44,8 +42,7 @@ type MdxPageTemplatePropTypes = {
 const MdxPageTemplate = ({ pageContext, children }: MdxPageTemplatePropTypes) => {
 	const data2 = useStaticQuery(query);
 	return (
-		<>
-			<NavBar />
+		<HeaderFooterProvider data={data2}>
 			<br />
 			<Container>
 				<MDXProvider components={shortcodes}>{children}</MDXProvider>
@@ -53,8 +50,7 @@ const MdxPageTemplate = ({ pageContext, children }: MdxPageTemplatePropTypes) =>
 					<ReferenceProvider references={pageContext.frontmatter?.references} />
 				) : undefined}
 			</Container>
-			<Footer data={data2} />
-		</>
+		</HeaderFooterProvider>
 	);
 };
 

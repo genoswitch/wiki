@@ -1,0 +1,23 @@
+LOCUS       T7_/_Gen4_145-199a-125b_ 114 bp ds-DNA     circular     10-SEP-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+     misc_feature    1..18
+                     /label="T7 Promoter"
+                     /ApEinfo_revcolor="#85dae9"
+                     /ApEinfo_fwdcolor="#85dae9"
+     misc_feature    19..80
+                     /label="Anti-miRNA"
+                     /ApEinfo_revcolor="#ffef86"
+                     /ApEinfo_fwdcolor="#ffef86"
+     misc_feature    48..80
+                     /label="145 Overhang"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    81..114
+                     /label="Terminator (BBa_B1002)"
+                     /ApEinfo_revcolor="#f6989d"
+                     /ApEinfo_fwdcolor="#f6989d"
+ORIGIN
+        1 TAATACGACT CACTATAGCA CATTGGTTAA AGACCCCAGG AATCCCTAGT GTGTTGTTGT
+       61 GTTTTGGTTG TGTTTGTTGT CGCAAAAAAC CCCGCTTCGG CGGGGTTTTT TCGC
+//

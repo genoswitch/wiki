@@ -1,0 +1,6 @@
+LOCUS       320a_dsDNA_FWD            26 bp ds-DNA     linear       14-JUN-2023
+DEFINITION  .
+FEATURES             Location/Qualifiers
+ORIGIN
+        1 CCCCCTTCCC CCATTTAATA CGACTC
+//

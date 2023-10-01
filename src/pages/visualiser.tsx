@@ -5,10 +5,9 @@ import { graphql, PageProps } from "gatsby";
 import { Menu, MenuHandler, MenuList, MenuItem, Button } from "@material-tailwind/react";
 import "../styles/tailwindcss-global.css";
 
+import HeaderFooterProvider from "../components/headerFooterProvider";
 import LoadingPage from "../components/loadingPage";
-import NavBar from "../components/navbar";
 import { SequenceDefinitionNode } from "../types/graphql/sequenceDefintionNode";
-import Footer from "../components/footer";
 import Visualiser from "../components/visualiser";
 
 import { Head as BaseHead } from "../components/head";
@@ -90,8 +89,7 @@ export default class VisualiserPage extends React.Component<
 				});
 			};
 			return (
-				<>
-					<NavBar />
+				<HeaderFooterProvider data={this.data}>
 					<br />
 					<div style={{ padding: "25px" }}>
 						<Menu>
@@ -125,8 +123,7 @@ export default class VisualiserPage extends React.Component<
 							sequences={this.sequences}
 						/>
 					) : undefined}
-					<Footer data={this.data} />
-				</>
+				</HeaderFooterProvider>
 			);
 		}
 	}
@@ -145,6 +142,10 @@ export const query = graphql`
 					end
 					direction
 					color
+				}
+				translations {
+					start
+					end
 				}
 			}
 		}

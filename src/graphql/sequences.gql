@@ -13,4 +13,5 @@ type SequencesYaml implements Node @dontInfer {
 
 	# Nullable (optional) fields
 	annotations: [SequencesYamlAnnotations]
+	translations: [SequencesYamlTranslations]
 }

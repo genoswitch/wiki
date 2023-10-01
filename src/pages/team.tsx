@@ -5,17 +5,18 @@ import { graphql, PageProps } from "gatsby";
 import { CreditEntry } from "../components/team/creditEntry";
 import { TeamMemberNode } from "../types/graphql/teamMemberNode";
 import {
+	Card,
+	CardContent,
 	Checkbox,
 	Chip,
 	createTheme,
-	Divider,
 	FormControlLabel,
-	FormGroup,
 	MenuItem,
 	SimplePaletteColorOptions,
 	TextField,
 	Theme,
 	ThemeProvider,
+	Typography,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
@@ -28,12 +29,12 @@ import { FilterChip, FilterChipEntry } from "../types/team/filterChip";
 
 import capitalizeWords from "../capitalizeWords";
 import teamEntryFilter from "../filters/teamEntryFilter";
-import Navbar from "../components/navbar";
+import HeaderFooterProvider from "../components/headerFooterProvider";
 import FilterMenu from "../components/team/filterMenu";
 import LoadingPage from "../components/loadingPage";
-import Footer from "../components/footer";
 
 import { Head as BaseHead } from "../components/head";
+import { StaticImage } from "gatsby-plugin-image";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
@@ -216,58 +217,89 @@ export default class TeamPage extends React.PureComponent<
 		} else {
 			console.log(this.muiPaletteOptions);
 			return (
-				<ThemeProvider theme={this.muiTheme!}>
-					<Navbar />
-					{/**
-					 * Search bar
-					 * To match the entries, we pad the top and left of the containing div by 16px.
-					 */}
-					<div style={{ paddingTop: 16, paddingLeft: 16 }}>
-						<TextField
-							id="outlined-basic"
-							label="Search"
-							variant="outlined"
-							onChange={event => this.setState({ searchQuery: event.target.value })}
-						/>
-						<FilterMenu
-							elements={this.state.filterChip.map(entry => {
-								// Filter chips
-								return (
-									// onClick is on the MenuItem otherwis it only triggers when the chip itself is clicked.
-									<MenuItem onClick={(event: any) => this.handleChipClick(event, entry)}>
-										<Chip
-											variant={entry.enabled ? "filled" : "outlined"}
-											deleteIcon={entry.enabled ? <></> : <AddIcon />}
-											label={capitalizeWords(entry.tag.name)}
-											color={entry.tag.paletteName}
-											size="small"
-											sx={{ fontWeight: "bold" }}
-										/>
-									</MenuItem>
-								);
-							})}
-						/>
-						{/** Should be enclosed in FormGroup but that makes a newline. Shhh! */}
-						<FormControlLabel
-							control={
-								<Checkbox
-									defaultChecked
-									onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-										this.handleShouldIncTagsChange(event)
-									}
+				<HeaderFooterProvider data={this.data}>
+					<ThemeProvider theme={this.muiTheme!}>
+						{/** Whole team pic card */}
+						<div style={{ padding: "16px" }}>
+							<Card>
+								{/** Copy options from GraphQL query at the end of team.tsx */}
+								<StaticImage
+									style={{ maxHeight: "75vh" }}
+									src="https://static.igem.wiki/teams/4642/wiki/pictures/webp-default/group.webp"
+									placeholder="blurred"
+									formats={["webp"]}
+									width={2400}
+									outputPixelDensities={[0.25]} // 1x is always created, see below GraphQL query
 								/>
-							}
-							label="Include tags in search?"
-						/>
-					</div>
-					{teamEntryFilter(
-						this.entries,
-						this.state.searchQuery,
-						this.state.filterChip,
-						this.state.shouldIncludeTagsInSearch
-					)}
-					<Footer data={this.data} />
-				</ThemeProvider>
+
+								<CardContent>
+									<Typography gutterBottom variant="h5">
+										Our Team
+									</Typography>
+									<Typography variant="body2" color="text.secondary">
+										We are a team of thirty inquisitive, bright-minded secondary school students
+										working under the City of London Corporation at the sister schools of CLS and
+										CLSG. Combining students from both CLS and CLSG allows us to benefit from our
+										individual skill sets to discover solutions to prevalent issues in society
+										through genetic engineering. As this competition was originally designed for
+										universities, garnering entries from universities like Harvard, Oxford,
+										Imperial, Johns Hopkins and others, being the only UK high school and one of the
+										few secondary schools in the world competing in iGEM is really quite unique.
+									</Typography>
+								</CardContent>
+							</Card>
+						</div>
+
+						{/**
+						 * Search bar
+						 * To match the entries, we pad the top and left of the containing div by 16px.
+						 */}
+						<div style={{ paddingTop: 16, paddingLeft: 16 }}>
+							<TextField
+								id="outlined-basic"
+								label="Search"
+								variant="outlined"
+								onChange={event => this.setState({ searchQuery: event.target.value })}
+							/>
+							<FilterMenu
+								elements={this.state.filterChip.map(entry => {
+									// Filter chips
+									return (
+										// onClick is on the MenuItem otherwis it only triggers when the chip itself is clicked.
+										<MenuItem onClick={(event: any) => this.handleChipClick(event, entry)}>
+											<Chip
+												variant={entry.enabled ? "filled" : "outlined"}
+												deleteIcon={entry.enabled ? <></> : <AddIcon />}
+												label={capitalizeWords(entry.tag.name)}
+												color={entry.tag.paletteName}
+												size="small"
+												sx={{ fontWeight: "bold" }}
+											/>
+										</MenuItem>
+									);
+								})}
+							/>
+							{/** Should be enclosed in FormGroup but that makes a newline. Shhh! */}
+							<FormControlLabel
+								control={
+									<Checkbox
+										defaultChecked
+										onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+											this.handleShouldIncTagsChange(event)
+										}
+									/>
+								}
+								label="Include tags in search?"
+							/>
+						</div>
+						{teamEntryFilter(
+							this.entries,
+							this.state.searchQuery,
+							this.state.filterChip,
+							this.state.shouldIncludeTagsInSearch
+						)}
+					</ThemeProvider>
+				</HeaderFooterProvider>
 			);
 		}
 	}
@@ -301,7 +333,7 @@ export const query = graphql`
 						gatsbyImageData(
 							width: 800 # 800x(~1200)
 							placeholder: BLURRED
-							formats: [AUTO, WEBP, PNG]
+							formats: [WEBP]
 							outputPixelDensities: [0.25] # Generate 0.25x and 1x.
 							# 1x is always created (see below)
 							# https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#customizing-the-default-options:~:text=and%20will%20always%20include%20a%201x%20image.

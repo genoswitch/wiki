@@ -1,9 +1,20 @@
-- tag: multiplexed_regulation
+- tag: multiplexedRegulation
   name: Multiplexed Regulation
+
+- tag: probes_breastCancer
+  name: Probes - Breast Cancer
+
+- tag: probes_endometriosis
+  name: Probes - Endometriosis
 
 - tag: probes_pcos
   name: Probes - PCOS
 
-- tag: toeholdSwitches_pcos
+- tag: toeholdSwitches_breastCancerVenus
+  name: Toehold Switches - Breast Cancer (Venus)
+
+- tag: toeholdSwitches_ovarianCancerMCerulean
+  name: Toehold Switches - Ovarian Cancer (mCerulean)
+
+- tag: toeholdSwitches_pcosGfp
   name: Toehold Switches - PCOS (GFP)
-  subtags:

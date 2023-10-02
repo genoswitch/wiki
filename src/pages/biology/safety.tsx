@@ -140,6 +140,7 @@ export default class BiologySafety extends React.Component {
 			<HeaderFooterProvider>
 				<div style={{ padding: 16 }}>
 					<Typography variant="h3">Biology Safety</Typography>
+					<div style={{ padding: 8 }}></div>
 					<Typography variant="h4">General Laboratory Safety</Typography>
 					<ul>
 						<li>

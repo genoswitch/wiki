@@ -21,11 +21,16 @@ before_script:
 pages:
   stage: build
   script:
+    - apt update
+    - apt install -y --no-install-recommends rsync
     - pnpm install
     # Pass --prefix-paths to gatsby build
     - NODE_OPTIONS=--max-old-space-size=4096 npm run build -- --prefix-paths --verbose --no-color
+    - ./post-build-prod.sh
+    #- pnpm exec tsx post-build-upload.ts
   artifacts:
     paths:
-      - public
+      - app/public
+  publish: app/public
   only:
     - main

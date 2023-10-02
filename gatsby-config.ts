@@ -13,6 +13,8 @@ const config: GatsbyConfig = {
 		sha: childProcess.execSync("git rev-parse --verify HEAD").toString().trim(),
 	},
 	pathPrefix: process.env.PATH_PREFIX || "/city-of-london-uk",
+	assetPrefix:
+		process.env.ASSET_PREFIX || "https://static.igem.wiki/teams/4642/wiki/assets/v1/public",
 	// More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
 	// If you use VSCode you can also use the GraphQL plugin
 	// Learn more at: https://gatsby.dev/graphql-typegen
@@ -186,22 +188,6 @@ const config: GatsbyConfig = {
 			options: {
 				// Works in production using `gatsby build --prefix-paths`
 				siteUrl: `https://2023.igem.wiki/city-of-london-uk/`,
-			},
-		},
-		// Self hosted fonts for SeqViz
-		// External content (such as Google Fonts) not allowed as per iGEM rules
-		{
-			resolve: "gatsby-plugin-webfonts",
-			options: {
-				fonts: {
-					google: [
-						{
-							family: "Roboto Mono",
-							variants: ["300", "400", "500"],
-							strategy: "selfHosted",
-						},
-					],
-				},
 			},
 		},
 		`@genoswitch/gatsby-transformer-gitinfo`,

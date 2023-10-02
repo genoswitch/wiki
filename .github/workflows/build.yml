@@ -51,7 +51,7 @@ jobs:
           application_key: ${{ secrets.B2_APPLICATION_KEY }}
           bucket_name: ${{ secrets.B2_BUCKET_NAME }}
           file_path: ${{ github.sha }}.tgz
-          remote_path: wiki-builds/
+          remote_path: wiki-builds/${{ github.sha }}.tgz
 
       - name: Send bundle stats to RelativeCI
         uses: relative-ci/agent-action@v2

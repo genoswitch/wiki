@@ -34,6 +34,9 @@ jobs:
       - name: Upload static assets
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npx tsx src/post-build-upload.ts
+        env:
+          IGEM_USERNAME: ${{ secrets.IGEM_USERNAME }}
+          IGEM_PASSWORD: ${{ secrets.IGEM_PASSWORD }}
 
       - name: Send bundle stats to RelativeCI
         uses: relative-ci/agent-action@v2

@@ -21,22 +21,17 @@
 - name: Hardware
   picturePath: homepage/software.webp
   description: |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-    qui officia deserunt mollit anim id est laborum.
+    In Project Genoswitch, the Hardware team has mainly focused on creating effective extraction and testing tools that are cheap, efficient and easy to use.
+    Our primary method of extraction involves using magnetic nanoparticles and biotin-streptavidin in order to seperate miRNA from a medium, which can then be followed by RPA and miRPA for proper amplification.
+    In order to create a robust testing system, we designed a custom luminometer that improves upon the designs of previous City iGEM teams by using multiple LDRs to allow for the simultaneous detection of several toehold switches, as well as integrating WebUSB to allow for easier interfacing with client-side devices.
 
 - name: Human Practices
   picturePath: homepage/software.webp
   description: |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-    qui officia deserunt mollit anim id est laborum.
+    Using synthetic biology has great potential for a positive impact, however it can easily become irresponsible and not bring real benefits for society.
+    Human practices therefore hold the responsibility to think deeply and creatively about whether our project is truly beneficial. Through gathering input from professionals in the field such as gynaecologists and pioneers in the field of synthetic biology, we can ensure that our project design is informed and has a real impact.
+    Carrying out surveys provided us with information from the general public, helping us gauge how much is known about the treatment and symptoms of these diseases. All of our research means we can have a better view of the problem at hand and can create a product that is better suited to tackle it.
+    Human practices is not a specific activity, but we will aim to engage, educate, and inform the wider community of our intentions.
 
 - name: Modelling
   picturePath: homepage/software.webp

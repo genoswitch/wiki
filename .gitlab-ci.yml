@@ -31,5 +31,6 @@ pages:
   artifacts:
     paths:
       - app/public
+  publish: app/public
   only:
     - main

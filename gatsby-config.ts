@@ -2,6 +2,8 @@ import type { GatsbyConfig, PluginRef } from "gatsby";
 
 import childProcess from "child_process";
 
+import remarkToc from "remark-toc";
+
 import ResolvePagesParams from "./src/types/gatsby-config/resolvePagesParams";
 import Page from "./src/types/gatsby-config/page";
 
@@ -209,7 +211,14 @@ const config: GatsbyConfig = {
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`, // Needed for dynamic images
 		`gatsby-plugin-no-sourcemaps`,
-		`gatsby-plugin-mdx`,
+		{
+			resolve: `gatsby-plugin-mdx`,
+			options: {
+				mdxOptions: {
+					remarkPlugins: [[remarkToc, { heading: "contents", maxDepth: 1 }]],
+				},
+			},
+		},
 		`gatsby-transformer-genetic-sequences`, // Custom plugin to parse gb, fasta files.
 		`gatsby-plugin-pnpm`, // configure webpack for pnpm dependency resolution
 		`gatsby-plugin-postcss`, // for TailwindCSS for nested menu on src/pages/visualiser.tsx

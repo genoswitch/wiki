@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@genoswitch/gatsby-transformer-gitinfo": "1.4.0-1",
+    "@genoswitch/igem-upload-api": "^1.0.0",
     "@mdx-js/react": "^2.3.0",
     "@types/node": "^20.7.2",
     "@types/webpack-stats-plugin": "^0.3.3",
@@ -43,8 +44,8 @@
     "gatsby-plugin-manifest": "^5.12.0",
     "gatsby-plugin-mdx": "^5.12.0",
     "gatsby-plugin-no-sourcemaps": "^5.12.0",
-    "gatsby-plugin-postcss": "^6.12.0",
     "gatsby-plugin-pnpm": "^1.2.10",
+    "gatsby-plugin-postcss": "^6.12.0",
     "gatsby-plugin-preact": "^7.12.0",
     "gatsby-plugin-remote-images": "^3.6.6",
     "gatsby-plugin-sharp": "^5.12.0",
@@ -59,6 +60,7 @@
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "tailwindcss": "^3.3.3",
+    "tsx": "^3.13.0",
     "typescript": "^5.2.2",
     "webpack-stats-plugin": "^1.1.3"
   }

@@ -32,7 +32,7 @@ jobs:
         run: npm run build -- --prefix-paths --verbose --no-color
 
       - name: Split static assets
-        run: chmod +x /post-build-prod.sh && ./post-build-prod.sh
+        run: chmod +x ./post-build-prod.sh && ./post-build-prod.sh
 
       - name: Upload static assets
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

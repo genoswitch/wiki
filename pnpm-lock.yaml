@@ -47,8 +47,8 @@ devDependencies:
     specifier: 1.4.0-1
     version: 1.4.0-1(gatsby@5.12.5)
   '@genoswitch/igem-upload-api':
-    specifier: ^1.0.0
-    version: 1.0.0
+    specifier: ^1.0.1
+    version: 1.0.1
   '@mdx-js/react':
     specifier: ^2.3.0
     version: 2.3.0(react@18.2.0)
@@ -1889,8 +1889,8 @@ packages:
       - supports-color
     dev: true
 
-  /@genoswitch/igem-upload-api@1.0.0:
-    resolution: {integrity: sha512-ToAhLlmzJvoFyNzG4wj00eJwAyL7xrZxzBkGg171q9cqHexszUFWseeazT8Pus77IgLGnW3y0fnPxP1S7sdnpA==}
+  /@genoswitch/igem-upload-api@1.0.1:
+    resolution: {integrity: sha512-ItTmgdarsPtivk/h1ez8qlOto0l94jgHyHGGR8L2Zi0obZ0f3SlY3NN6MR6jhaKKOminiokGDnJreR6iVZ/g/A==}
     dependencies:
       axios: 1.5.0
       form-data: 4.0.0

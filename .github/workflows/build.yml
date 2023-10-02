@@ -35,14 +35,7 @@ jobs:
         run: chmod +x ./post-build-prod.sh && ./post-build-prod.sh
 
       - name: Create tgz of public
-        run: cd app/assets && tar czvf ${{ github.sha }}.tgz ./
-
-      - name: Upload static assets
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: npx tsx src/post-build-upload.ts
-        env:
-          IGEM_USERNAME: ${{ secrets.IGEM_USERNAME }}
-          IGEM_PASSWORD: ${{ secrets.IGEM_PASSWORD }}
+        run: cd app/public && tar czvf ../../${{ github.sha }}.tgz ./
 
       - uses: yamatt/backblaze-b2-upload-action@v6
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -50,8 +43,15 @@ jobs:
           key_id: ${{ secrets.B2_KEY_ID }}
           application_key: ${{ secrets.B2_APPLICATION_KEY }}
           bucket_name: ${{ secrets.B2_BUCKET_NAME }}
-          file_path: app/assets/${{ github.sha }}.tgz
-          remote_path: wiki-builds/
+          file_path: ${{ github.sha }}.tgz
+          remote_path: wiki-builds/${{ github.sha }}.tgz
+
+      - name: Upload static assets
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: npx tsx src/post-build-upload.ts
+        env:
+          IGEM_USERNAME: ${{ secrets.IGEM_USERNAME }}
+          IGEM_PASSWORD: ${{ secrets.IGEM_PASSWORD }}
 
       - name: Send bundle stats to RelativeCI
         uses: relative-ci/agent-action@v2

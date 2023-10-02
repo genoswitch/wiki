@@ -132,7 +132,7 @@ export default class BiologySafety extends React.Component {
 				"Avoid inhaling, avoid contact with skin and eyes. Wash hands and exposed areas after handling.",
 			infoSource:
 				"https://www.fishersci.com/content/dam/fishersci/en_US/documents/programs/education/regulatory-documents/sds/chemicals/chemicals-y/S25631.pdf",
-		},
+		}
 	];
 
 	render(): React.ReactNode {
@@ -140,8 +140,7 @@ export default class BiologySafety extends React.Component {
 			<HeaderFooterProvider>
 				<div style={{ padding: 16 }}>
 					<Typography variant="h3">Biology Safety</Typography>
-
-					<Typography variant="h4">Project Safety Assessment</Typography>
+					<Typography variant="h4">Laboratory Chemicals Safety Assessment</Typography>
 					<TableContainer component={Paper}>
 						<Table sx={{ minWidth: 650 }} aria-label="simple table">
 							<TableHead>

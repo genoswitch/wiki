@@ -35,7 +35,7 @@ jobs:
         run: chmod +x ./post-build-prod.sh && ./post-build-prod.sh
 
       - name: Create tgz of public
-        run: cd app/assets && tar czvf ${{ github.sha }}.tgz
+        run: cd app/assets && tar czvf ${{ github.sha }}.tgz ./
 
       - name: Upload static assets
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

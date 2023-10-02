@@ -8,57 +8,54 @@ slug: /biology
 
 Welcome to the genoswitch wiki! Our Biology page is a work-in-progress at the moment, but feel free to check out other pages using the navigation bar!
 
-import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import * as React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 
 function createData(Name of Hazard, Risks/Hazard, Safety Precautions, Source) {
-  return { Name of Hazard, Risks/Hazard, Safety Precautions, Source };
+return { Name of Hazard, Risks/Hazard, Safety Precautions, Source };
 }
 
 const rows = [
-  createData('Ampicillin', 'Irritating to eyes, respiratory system, and skin', 'Avoid personal contact and wear protective clothing when in use. Thoroughly clean containers', 'https://datasheets.scbt.com/sc-210812.pdf'),
-  createData('5M NaOH', 'Skin corrosion/irritation, serious eye damage, damage to respiratory system if fumes are inhaled.', 'Skin corrosion/irritation, serious eye damage, damage to respiratory system if fumes are inhaled.', 'http://www.labchem.com/tools/msds/msds/LC24450.pdf'),
-  createData('Eclair', 262, 16.0, 24,),
-  createData('Cupcake', 305, 3.7, 67,),
-  createData('Gingerbread', 356, 16.0, 49,),
+createData('Ampicillin', 'Irritating to eyes, respiratory system, and skin', 'Avoid personal contact and wear protective clothing when in use. Thoroughly clean containers', 'https://datasheets.scbt.com/sc-210812.pdf'),
+createData('5M NaOH', 'Skin corrosion/irritation, serious eye damage, damage to respiratory system if fumes are inhaled.', 'Skin corrosion/irritation, serious eye damage, damage to respiratory system if fumes are inhaled.', 'http://www.labchem.com/tools/msds/msds/LC24450.pdf'),
+createData('Eclair', 262, 16.0, 24,),
+createData('Cupcake', 305, 3.7, 67,),
+createData('Gingerbread', 356, 16.0, 49,),
 ];
 
 export default function BasicTable() {
-  return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
+	return (
+		<TableContainer component={Paper}>
+			<Table sx={{ minWidth: 650 }} aria-label="simple table">
+				<TableHead>
+					<TableRow>
+						<TableCell>Dessert (100g serving)</TableCell>
+						<TableCell align="right">Calories</TableCell>
+						<TableCell align="right">Fat&nbsp;(g)</TableCell>
+						<TableCell align="right">Carbs&nbsp;(g)</TableCell>
+						<TableCell align="right">Protein&nbsp;(g)</TableCell>
+					</TableRow>
+				</TableHead>
+				<TableBody>
+					{rows.map(row => (
+						<TableRow key={row.name} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+							<TableCell component="th" scope="row">
+								{row.name}
+							</TableCell>
+							<TableCell align="right">{row.calories}</TableCell>
+							<TableCell align="right">{row.fat}</TableCell>
+							<TableCell align="right">{row.carbs}</TableCell>
+							<TableCell align="right">{row.protein}</TableCell>
+						</TableRow>
+					))}
+				</TableBody>
+			</Table>
+		</TableContainer>
+	);
 }

@@ -20,7 +20,9 @@ import * as fs from "node:fs/promises";
 			const fullFilename = `${file.path}/${file.name}`;
 			console.log(fullFilename);
 
-			client!.uploadFile(4642, fullFilename, file.name, folder);
+			client!.uploadFile(4642, fullFilename, file.name, folder).catch(err => {
+				console.log("Error uploading: " + fullFilename);
+			});
 		}
 	}
 })();

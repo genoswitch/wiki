@@ -4,9 +4,10 @@ pages:
   stage: build
   script:
     - mkdir public
-    - cd public && wget https://b2-f000-cdn.jcx.ovh/file/genoswitch-us-west-pub/wiki-builds/$CI_COMMIT_SHA.tgz
-    - cd public && tar xzvf $CI_COMMIT_SHA.tgz
-    - cd public && rm $CI_COMMIT_SHA.tgz
+    - cd public
+    - wget https://b2-f000-cdn.jcx.ovh/file/genoswitch-us-west-pub/wiki-builds/$CI_COMMIT_SHA.tgz
+    - tar xzvf $CI_COMMIT_SHA.tgz
+    - rm $CI_COMMIT_SHA.tgz
   artifacts:
     paths:
       - public

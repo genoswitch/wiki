@@ -28,6 +28,6 @@ pages:
     #- pnpm exec tsx post-build-upload.ts
   artifacts:
     paths:
-      - public
+      - app/public
   only:
     - main

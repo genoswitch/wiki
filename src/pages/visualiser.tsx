@@ -14,6 +14,8 @@ import { Head as BaseHead } from "../components/head";
 import { SequenceTag } from "../types/sequenceTag";
 import VisualiserFilteredMenuItems from "../components/visualiserFilteredMenuItems";
 
+import "../fonts/robotoMono.css";
+
 type SelectOnChangeTarget = EventTarget & {
 	value: number;
 	name: string;

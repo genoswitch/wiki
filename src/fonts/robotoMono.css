@@ -1,0 +1,8 @@
+
+/* Self hosted fonts for SeqViz
+   External content (such as Google Fonts) not allowed as per iGEM rules */
+
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('https://static.igem.wiki/teams/4642/wiki/fonts/robotomono-variablefont-wght.ttf');
+}

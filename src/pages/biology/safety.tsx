@@ -141,14 +141,23 @@ export default class BiologySafety extends React.Component {
 				<div style={{ padding: 16 }}>
 					<Typography variant="h3">Biology Safety</Typography>
 					<Typography variant="h4">General Laboratory Safety</Typography>
-						<ul>
-							<li>Gloves were worn at all times throughout all procedures being disposed of responsibly on departure.</li>
-							<li>Lab coats were worn at all times and were clean, then returned to be washed following protocols.</li>
-							<li>Goggles were worn when handling chemicals or other equipment.</li>
-							<li>Long trousers were worn to protect legs.</li>
-							<li>Closed toe shoes worn when in the lab.</li>
-							<li>All belongings were left in a designated area and any necessary personal items were left on a designated bench which was not used for any protocols.</li>
-						</ul>
+					<ul>
+						<li>
+							Gloves were worn at all times throughout all procedures being disposed of responsibly
+							on departure.
+						</li>
+						<li>
+							Lab coats were worn at all times and were clean, then returned to be washed following
+							protocols.
+						</li>
+						<li>Goggles were worn when handling chemicals or other equipment.</li>
+						<li>Long trousers were worn to protect legs.</li>
+						<li>Closed toe shoes worn when in the lab.</li>
+						<li>
+							All belongings were left in a designated area and any necessary personal items were
+							left on a designated bench which was not used for any protocols.
+						</li>
+					</ul>
 					<div style={{ padding: 16 }}></div>
 					<Typography variant="h4">Laboratory Chemicals Safety Assessment</Typography>
 					<TableContainer component={Paper}>

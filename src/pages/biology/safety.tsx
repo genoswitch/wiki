@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import {
+	Container,
 	Paper,
 	Table,
 	TableBody,
@@ -138,10 +139,10 @@ export default class BiologySafety extends React.Component {
 	render(): React.ReactNode {
 		return (
 			<HeaderFooterProvider>
-				<div style={{ padding: 16 }}>
-					<Typography variant="h3">Biology Safety</Typography>
+				<Container>
+					<h1>Biology Safety</h1>
 					<div style={{ padding: 8 }}></div>
-					<Typography variant="h4">General Laboratory Safety</Typography>
+					<h2>General Laboratory Safety</h2>
 					<ul>
 						<li>
 							Gloves were worn at all times throughout all procedures being disposed of responsibly
@@ -160,7 +161,7 @@ export default class BiologySafety extends React.Component {
 						</li>
 					</ul>
 					<div style={{ padding: 16 }}></div>
-					<Typography variant="h4">Laboratory Chemicals Safety Assessment</Typography>
+					<h2>Laboratory Chemicals Safety Assessment</h2>
 					<TableContainer component={Paper}>
 						<Table sx={{ minWidth: 650 }} aria-label="simple table">
 							<TableHead>
@@ -191,7 +192,7 @@ export default class BiologySafety extends React.Component {
 							</TableBody>
 						</Table>
 					</TableContainer>
-				</div>
+				</Container>
 			</HeaderFooterProvider>
 		);
 	}

@@ -186,7 +186,11 @@ export default class BiologySafety extends React.Component {
 										<TableCell>{hazard.name}</TableCell>
 										<TableCell>{hazard.riskHazards}</TableCell>
 										<TableCell>{hazard.precautions}</TableCell>
-										<TableCell>{hazard.infoSource}</TableCell>
+										<TableCell>
+											<a href={hazard.infoSource} target={"_blank"}>
+												Source
+											</a>
+										</TableCell>
 									</TableRow>
 								))}
 							</TableBody>

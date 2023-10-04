@@ -9,14 +9,14 @@ import * as fs from "node:fs/promises";
 
 	const client = await Client.login(username, password);
 
-	const files: Dirent[] = await fs.readdir("./app/assets/", {
+	const files: Dirent[] = await fs.readdir("./static/", {
 		recursive: true,
 		withFileTypes: true,
 	});
 
 	for (const file of files) {
 		if (file.isFile() && !file.isDirectory()) {
-			const folder = file.path.split("app/")[1];
+			const folder = file.path.split("static/")[1];
 			const fullFilename = `${file.path}/${file.name}`;
 			console.log(fullFilename);
 

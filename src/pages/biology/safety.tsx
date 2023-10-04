@@ -145,18 +145,18 @@ export default class BiologySafety extends React.Component {
 					<h2>General Laboratory Safety</h2>
 					<ul>
 						<li>
-							Gloves were worn at all times throughout all procedures being disposed of responsibly
-							on departure.
+							Gloves were worn at all times throughout all procedures, and were disposed of
+							responsibly on departure.
 						</li>
 						<li>
-							Lab coats were worn at all times and were clean, then returned to be washed following
-							protocols.
+							Lab coats were worn at all times and were clean, and were all returned to be washed
+							following protocols.
 						</li>
 						<li>Goggles were worn when handling chemicals or other equipment.</li>
 						<li>Long trousers were worn to protect legs.</li>
 						<li>Closed toe shoes worn when in the lab.</li>
 						<li>
-							All belongings were left in a designated area and any necessary personal items were
+							All belongings were left in a designated area, and any necessary personal items were
 							left on a designated bench which was not used for any protocols.
 						</li>
 					</ul>

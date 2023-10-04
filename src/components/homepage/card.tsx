@@ -50,6 +50,8 @@ export default class HomepageCard extends React.Component<HomepageCardProps, {}>
 									maxHeight: "50vh",
 									objectFit: "cover",
 									maskImage: "linear-gradient(to bottom, black 15%, transparent 55%)",
+									// Required for chromium based browsers.
+									"-webkit-mask-image": "linear-gradient(to bottom, black 15%, transparent 55%)"
 								}}
 							/>
 							{/** TODO: Need better solution for padding cardContent, doesn't really work on smaller screens. */}

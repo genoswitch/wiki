@@ -9,18 +9,18 @@ import * as fs from "node:fs/promises";
 
 	const client = await Client.login(username, password);
 
-	const files: Dirent[] = await fs.readdir("./static/", {
+	const files: Dirent[] = await fs.readdir("./assets/", {
 		recursive: true,
 		withFileTypes: true,
 	});
 
 	for (const file of files) {
 		if (file.isFile() && !file.isDirectory()) {
-			const folder = file.path.split("static/")[1];
 			const fullFilename = `${file.path}/${file.name}`;
 			console.log(fullFilename);
+			console.log(file.path);
 
-			client!.uploadFile(4642, fullFilename, file.name, folder).catch(err => {
+			client!.uploadFile(4642, fullFilename, file.name, file.path).catch(err => {
 				console.log("Error uploading: " + fullFilename);
 			});
 		}

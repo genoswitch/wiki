@@ -20,6 +20,9 @@ dependencies:
   '@mui/material':
     specifier: ^5.14.11
     version: 5.14.11(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(react-dom@18.2.0)(react@18.2.0)
+  animate.css:
+    specifier: ^4.1.1
+    version: 4.1.1
   gatsby:
     specifier: ^5.12.5
     version: 5.12.5(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
@@ -3739,6 +3742,10 @@ packages:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
       uri-js: 4.4.1
+
+  /animate.css@4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
+    dev: false
 
   /anser@2.1.1:
     resolution: {integrity: sha512-nqLm4HxOTpeLOxcmB3QWmV5TcDFhW9y/fyQ+hivtDFcK4OQ+pQ5fzPnXHM1Mfcm0VkLtvVi1TCPr++Qy0Q/3EQ==}

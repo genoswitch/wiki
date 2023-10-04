@@ -24,6 +24,7 @@
     "@material-tailwind/react": "^2.1.1",
     "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.11",
+    "animate.css": "^4.1.1",
     "gatsby": "^5.12.5",
     "html-react-parser": "^4.2.2",
     "immutability-helper": "^3.1.1",

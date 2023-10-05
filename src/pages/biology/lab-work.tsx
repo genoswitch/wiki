@@ -122,7 +122,8 @@ export default class BiologyLabWork extends React.Component {
 									</li>
 							</ul>	
 				</Container>
-	</HeaderFooterProvider>
-		)					
+			</HeaderFooterProvider>
+		)
+	}				
 }
-export const Head = () => <BaseHead title="Biology Lab-Work" description="TBD"/>;
+export const Head = () => <BaseHead title="Biology Lab Work" description="TBD" />;

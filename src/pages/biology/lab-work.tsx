@@ -1,19 +1,9 @@
 import * as React from "react";
-import NavBar from "../components/navbar";
-import HomepageCard from "../components/homepage/card";
-import Footer from "../components/footer";
-import LoadingPage from "../components/loadingPage";
 
-// Unsure if following are optional:
-import { PageProps, graphql } from "gatsby";
-import { Container } from "@mui/material";
-// So we'll see
-
-	
 import HeaderFooterProvider from "../../components/headerFooterProvider";
 import { Head as BaseHead } from "../../components/head";	
 	
-export default class Biology-Lab-Work extends React.Component {	
+export default class Biology_Lab_Work extends React.Component {  	
 	
 	render(): React.ReactNode {
 		return (
@@ -125,11 +115,6 @@ export default class Biology-Lab-Work extends React.Component {
 								We used a new master mix with our DNA, with a different level of ATCG-ase to help with annealing.
 							</li>, <li>
 								Instead of GelRed, we used blue/orange loading dye.
-							</li>, </ul>
-							
-							
-							
-							
-	Export const Head = () => (
-	<BaseHead title="Biology Laboratory Notes" description="Read our notes from our time in the Laboratories!" />
-);
+							</li>, </ul>						
+
+export const Head = () => <BaseHead title="Biology Lab-Work" description="TBD" />

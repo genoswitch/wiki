@@ -87,8 +87,7 @@ export default class BiologyLabWork extends React.Component {
 					is then microwaved. Once cooled, the gel is poured into a tray with the comb and left to
 					set. Once this was completed, we conducted electrophoresis on our DNA at 100W for about 1
 					hour. Once finished, we were able to analyse our trays using UV light. You can find the
-					full protocol for electrophoresis and PCR in our Protocols page. // Biology Protocols Page
-					- Please add hyperlink to the Biology Protocols page (with text as above).
+					full protocol for electrophoresis and PCR in our Protocols page.
 					<div style={{ padding: 16 }}></div>
 					<h2>Tuesday 22nd August 2023</h2>
 					Unfortunately, our DNA had not amplified as expected, so we decided to redo the process

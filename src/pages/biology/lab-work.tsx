@@ -2,8 +2,9 @@ import * as React from "react";
 
 import HeaderFooterProvider from "../../components/headerFooterProvider";
 import { Head as BaseHead } from "../../components/head";	
-	
-export default class Biology_Lab_Work extends React.Component {  	
+import {Container} from "@mui/material";
+
+export default class BiologyLabWork extends React.Component {	
 	
 	render(): React.ReactNode {
 		return (
@@ -18,27 +19,29 @@ export default class Biology_Lab_Work extends React.Component {
 						This included safety briefing about disposal, gloves and coats, as well as some core skills such as pipetting.
 						We found that in ordering the E. coli, they were not competent cells, as we had planned to use, so we would have to accommodate the new protocols to prepare the E. coli for transformations.
 						During the day, we prepared the solutions needed to create competent bacteria from ours. This included:
-						<ul>, <li>
-								20g/L LB broth x2; 500ml water flask.
-							</li>, <li>
-								0.1 M CaCl2 solution (7.35 g of CaCl2·2H2O in 500 ml of H2O) in 500 ml Pyrex bottle.
-							</li>, <li>
-								0.1 M MgCl2 solution (10.165 g of MgCl2 ·6H2O in 500ml of H2O) in 500ml Pyrex bottle.
-							</li>, <li>
-								50% glycerol solution (100 ml of glycerol and 100 ml H2O) in 200 ml Pyrex bottle.
-							</li>, </ul>
+						<ul>
+							<li> 20g/L LB broth x2; 500ml water flask.
+								</li>
+							<li>0.1 M CaCl2 solution (7.35 g of CaCl2·2H2O in 500 ml of H2O) in 500 ml Pyrex bottle.
+								</li>
+							<li>0.1 M MgCl2 solution (10.165 g of MgCl2 ·6H2O in 500ml of H2O) in 500ml Pyrex bottle.
+								</li>
+							<li>50% glycerol solution (100 ml of glycerol and 100 ml H2O) in 200 ml Pyrex bottle.
+								</li>
+						</ul>
 						<b>All these solutions would then be autoclaved and stored at 4°C.</b>
 						
 						<div style={{ padding: 8 }}></div>
 					
 						We also produced stock solutions for our agar plates using:
-						<ul>, <li>
-							LB agar 2x 400ml in 500ml Pyrex bottle; 20g/L LB broth (8g) + 2% weight per volume agar (8g) in 400ml water.
-						</li>, <li>
-							20g/L LB broth, making 200ml
-						</li>, <li>
-							Ampicillin 100 mg/ml – 1g in 10ml of MilliQ water.
-						</li>, </ul>
+						<ul>
+							<li>LB agar 2x 400ml in 500ml Pyrex bottle; 20g/L LB broth (8g) + 2% weight per volume agar (8g) in 400ml water.
+								</li>
+							<li>20g/L LB broth, making 200ml
+								</li>
+							<li>Ampicillin 100 mg/ml – 1g in 10ml of MilliQ water.
+								</li>
+						</ul>
 						<b>These were closed with sponge and foil, labelled and autoclaved at 125°C for 15 minutes and stored at room temperature.</b>
 					
 						<div style={{ padding: 8 }}></div>
@@ -61,7 +64,6 @@ export default class Biology_Lab_Work extends React.Component {
 						This resulted in the second measurement being 0.585, which is within our working range (0.4-0.6).
 						Having obtained a good amount of bacteria, we left them on ice for 30 minutes before centrifuging them in the solutions we has prepared on Monday, turning them into competent bacteria.
 						You can find the process for this in our Protocols section.
-						// Biology Protocols Page - Please add hyperlink to the Biology Protocols page (with text as above).
 						Once prepared, 50μl of the cells were aliquoted into 1.5ml sterile microcentrifuge tubes and left in a -80°C freezer in the lab.
 						
 						<div style={{ padding: 16 }}></div>
@@ -73,15 +75,16 @@ export default class Biology_Lab_Work extends React.Component {
 						This is why we would recommend starting lab procedures as early as you can; this way, if you happen to encounter any issues, there is ample time to resolve them.
 						Today we started preparations for Polymerase Chain Reaction (PCR) procedures on our Toehold Switch sequences.
 						We created falcon tubes with:
-							<ul>, <li>
-								25μl GoTaq Master Mix 2x concentrated (using 20-200μl pipette)
-							</li>, <li>
-								10μl from template DNA (either mCherry or GFP)
-							</li>, <li>
-								5μl of each primer (FWD and REV)
-							</li>, <li>
-								5μl of nuclease free water
-							</li>, </ul>
+							<ul>
+								<li>25μl GoTaq Master Mix 2x concentrated (using 20-200μl pipette)
+									</li>
+								<li>10μl from template DNA (either mCherry or GFP)
+									</li>
+								<li>5μl of each primer (FWD and REV)
+									</li>
+								<li>5μl of nuclease free water
+									</li>
+							</ul>
 						This mix is then centrifuged to remove any air bubbles in the mixture and once finished, put through a thermocycler.
 						Whilst this is heated, we created our gel trays for electrophoresis at 1% agarose concentration along with 10μl GelRed nucleic acid.
 						This mix is then microwaved.
@@ -97,11 +100,12 @@ export default class Biology_Lab_Work extends React.Component {
 					<h2>Tuesday 22nd August 2023</h2>
 					
 						Unfortunately, our DNA had not amplified as expected, so we decided to redo the process from Monday with a few adjustments:
-							<ul>, <li>
-								PCR was redone, but at a higher annealing temperature (55°C compared to 52°C on Monday)
-							</li>, <li>
-								Our gel mix for electrophoresis was made at 2% agarose concentration.
-							</li>, </ul>
+							<ul>
+								<li>PCR was redone, but at a higher annealing temperature (55°C compared to 52°C on Monday)
+									</li>
+								<li>Our gel mix for electrophoresis was made at 2% agarose concentration.
+									</li>
+							</ul>
 							
 						<div style={{ padding: 16 }}></div>
 						
@@ -109,12 +113,16 @@ export default class Biology_Lab_Work extends React.Component {
 					
 						Today, we decided to redo electrophoresis again since the number of bands that came up on the gel ladder were not consistent with our expectations.
 						In addition, we slightly changed the protocol to help obtain better results:
-							<ul>, <li>
-								We further increased the annealing temperature to 57°C.
-							</li>, <li>
-								We used a new master mix with our DNA, with a different level of ATCG-ase to help with annealing.
-							</li>, <li>
-								Instead of GelRed, we used blue/orange loading dye.
-							</li>, </ul>						
-
-export const Head = () => <BaseHead title="Biology Lab-Work" description="TBD" />
+							<ul>
+								<li>We further increased the annealing temperature to 57°C.
+									</li>
+								<li>We used a new master mix with our DNA, with a different level of ATCG-ase to help with annealing.
+									</li>
+								<li>Instead of GelRed, we used blue/orange loading dye.
+									</li>
+							</ul>	
+				</Container>
+	</HeaderFooterProvider>
+		)					
+}
+export const Head = () => <BaseHead title="Biology Lab-Work" description="TBD"/>;

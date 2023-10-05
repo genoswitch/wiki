@@ -90,6 +90,11 @@ jobs:
   build-staging:
     name: Build Staging
     runs-on: ubuntu-latest
+    # If this job is running more than once on the same branch,
+    # cancel the older job. See mirror.yml for more details.
+    concurrency:
+      group: ${{ github.workflow }}-build-staging
+      cancel-in-progress: true
     permissions:
       pull-requests: write # Add comments to PRs
     steps:

@@ -8,9 +8,13 @@ jobs:
   build:
     name: Test Build
     runs-on: ubuntu-latest
+    # If this job is running more than once on the same branch,
+    # cancel the older job. See mirror.yml for more details.
+    concurrency:
+      group: ${{ github.workflow }}-build
+      cancel-in-progress: true
     permissions:
       checks: write # Create checks for commits
-      pull-requests: write # Add comments to PRs
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -87,7 +91,6 @@ jobs:
     name: Build Staging
     runs-on: ubuntu-latest
     permissions:
-      checks: write # Create checks for commits
       pull-requests: write # Add comments to PRs
     steps:
       - name: Checkout repository

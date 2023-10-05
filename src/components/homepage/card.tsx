@@ -1,4 +1,13 @@
-import { createTheme, Card, CardContent, ThemeProvider, Typography } from "@mui/material";
+import {
+	createTheme,
+	Card,
+	CardContent,
+	ThemeProvider,
+	Typography,
+	styled,
+	Theme,
+	Box,
+} from "@mui/material";
 import * as React from "react";
 import bioPhoto from "../../images/bioGang.png";
 
@@ -22,6 +31,19 @@ type HomepageCardProps = {
 	card: HomepageCardNode;
 };
 
+// Change size of card image depending on screen size
+const imageStyle = (theme: Theme) => ({
+	[theme.breakpoints.down("sm")]: {
+		img: {
+			minHeight: "50vh",
+		},
+	},
+	[theme.breakpoints.up("sm")]: {
+		img: {
+			maxHeight: "50vh",
+		},
+	},
+});
 export default class HomepageCard extends React.Component<HomepageCardProps, {}> {
 	render(): React.ReactNode {
 		// To make TS happy, use the notNull assertion for dynamicImage as well as getImage's return value.
@@ -41,19 +63,20 @@ export default class HomepageCard extends React.Component<HomepageCardProps, {}>
 					>
 						<Card style={{ position: "relative" }}>
 							{/** cardMedia */}
-							<GatsbyImage
-								alt={`$${this.props.card.name} header image`}
-								image={image}
-								style={{
-									position: "absolute",
-									width: "100%",
-									maxHeight: "50vh",
-									objectFit: "cover",
-									maskImage: "linear-gradient(to bottom, black 15%, transparent 55%)",
-									// Required for chromium based browsers.
-									"-webkit-mask-image": "linear-gradient(to bottom, black 15%, transparent 55%)",
-								}}
-							/>
+							<Box sx={imageStyle}>
+								<GatsbyImage
+									alt={`$${this.props.card.name} header image`}
+									image={image}
+									style={{
+										position: "absolute",
+										width: "100%",
+										objectFit: "cover",
+										maskImage: "linear-gradient(to bottom, black 15%, transparent 55%)",
+										// Required for chromium based browsers.
+										"-webkit-mask-image": "linear-gradient(to bottom, black 15%, transparent 55%)",
+									}}
+								/>
+							</Box>
 							{/** TODO: Need better solution for padding cardContent, doesn't really work on smaller screens. */}
 							<CardContent sx={{ paddingTop: "30vh" }}>
 								<Typography

@@ -14,8 +14,7 @@ export default class BiologyProtocolsPage extends React.Component {
 						In this section, you will find all the protocols that we used during our time in the
 						labs!
 					</b>
-					<div style={{ padding: 8 }}></div>
-					<h2>Stock solutions for creating competent bacteria</h2>
+					<h2 style={{ paddingTop: 8 }}>Stock solutions for creating competent bacteria</h2>
 					<ol>
 						<li>
 							{" "}
@@ -41,16 +40,14 @@ export default class BiologyProtocolsPage extends React.Component {
 							cup. Autoclave and store at 4°C.
 						</li>
 					</ol>
-					<div style={{ padding: 16 }}></div>
-					<h2>Antibiotic Stock Solutions</h2>
+					<h2 style={{ paddingTop: 16 }}>Antibiotic Stock Solutions</h2>
 					Ampicillin 100 mg/ml – 1g in 10ml of MilliQ water
 					<i>
 						The stock solutions is filtered through a 0.2 mm filter, aliquoted and stored at -20°C
 						until use.
 					</i>
 					<i>The final working concentration of all antibiotics is 1:1000 of the stock solution.</i>
-					<div style={{ padding: 16 }}></div>
-					<h2>Pouring agar Plates</h2>
+					<h2 style={{ paddingTop: 16 }}>Pouring agar Plates</h2>
 					<ol>
 						<li>Wipe down the bench to with 70% EtOH or bleach.</li>
 						<li>Remove foil cover from LB agar flask but leave sponge.</li>
@@ -70,8 +67,7 @@ export default class BiologyProtocolsPage extends React.Component {
 						</li>
 						<li>Store plates in plastic bags in fridge with name, date and contents.</li>
 					</ol>
-					<div style={{ padding: 16 }}></div>
-					<h2>Preparing Cells</h2>
+					<h2 style={{ paddingTop: 16 }}>Preparing Cells</h2>
 					<ul>
 						<li>XL1 Blue and DH5α E. coli cells are used for plasmid preparation</li>
 						<li>
@@ -90,8 +86,7 @@ export default class BiologyProtocolsPage extends React.Component {
 						</li>
 						<li>Wrap cells in a parafilm, and store at 4°C</li>
 					</ol>
-					<div style={{ padding: 16 }}></div>
-					<h2>Making Competent Cells</h2>
+					<h2 style={{ paddingTop: 16 }}>Making Competent Cells</h2>
 					<ol>
 						<li>
 							Pick a single colony of the cells from the LB agar plate into 10 ml of LB media
@@ -126,8 +121,7 @@ export default class BiologyProtocolsPage extends React.Component {
 							–80°C.
 						</li>
 					</ol>
-					<div style={{ padding: 16 }}></div>
-					<h2>E. coli transformation</h2>
+					<h2 style={{ paddingTop: 16 }}>E. coli Transformation</h2>
 					<ol>
 						<li>Take 50 µl of prepared E. coli competent cells and put on ice for 5 minutes.</li>
 						<li>Add 1µl of plasmid DNA and incubate on ice for 5 minutes.</li>
@@ -141,8 +135,7 @@ export default class BiologyProtocolsPage extends React.Component {
 							The next day, count cell colony, and wrap the plate in a parafilm, storing it at 4°C.
 						</li>
 					</ol>
-					<div style={{ padding: 16 }}></div>
-					<h2>Determination of bacterial optical density (OD) using the spectrophotometer</h2>
+					<h2 style={{ paddingTop: 16 }}>Determination of bacterial optical density (OD) using the spectrophotometer</h2>
 					These steps should be carried out under the flame, with sterile pipet tips to avoid
 					contamination of your sterile media stock, and also to protect your cultures from
 					contamination, in case they need to grow longer.
@@ -183,8 +176,7 @@ export default class BiologyProtocolsPage extends React.Component {
 						<li>When finished with the spec, turn the spectrophotometer off.</li>
 						<li>Clean up your bench with 70% ethanol.</li>
 					</ol>
-					<div style={{ padding: 16 }}></div>
-					<h2>Conducting Gel Electrophoresis</h2>
+					<h2 style={{ paddingTop: 16 }}>Conducting Gel Electrophoresis</h2>
 					<h3>Materials:</h3>
 					<ul>
 						<li>Gel box</li>
@@ -194,8 +186,7 @@ export default class BiologyProtocolsPage extends React.Component {
 						<li>100ml beaker</li>
 						<li>Distilled water</li>
 					</ul>
-					<div style={{ padding: 4 }}></div>
-					<h3>Preparing the Gel:</h3>
+					<h3 style={{ paddingTop: 4 }}>Preparing the Gel</h3>
 					<ol>
 						<li>
 							Prepare 300ml of the TAE buffer by dissolving 6ml of the 50X concentrated buffer in
@@ -209,8 +200,7 @@ export default class BiologyProtocolsPage extends React.Component {
 						<li>Pipette in 3µL of SYBR Safe dye and use the pipette tip to mix it around.</li>
 						<li>Mix 3µL of the DNA sample with 2µL of the loading dye.</li>
 					</ol>
-					<div style={{ padding: 4 }}></div>
-					<h3>Running the Gel:</h3>
+					<h3 style={{ paddingTop: 4 }}>Running the Gel</h3>
 					<ol>
 						<li>
 							Add enough 1X TAE to fill the reservoirs at both ends of the gel box and cover the
@@ -224,8 +214,7 @@ export default class BiologyProtocolsPage extends React.Component {
 							the ladder bands.
 						</li>
 					</ol>
-					<div style={{ padding: 4 }}></div>
-					<h3>Load Ladder in Left-Most Lane</h3>
+					<h3 style={{ paddingTop: 4 }}>Load Ladder in Left-Most Lane</h3>
 					<ol>
 						<li>Use 2 μL loading dye per 3 μL of sample.</li>
 						<li>Load samples from left to right.</li>
@@ -244,8 +233,7 @@ export default class BiologyProtocolsPage extends React.Component {
 							your gel is running properly.
 						</li>
 					</ol>
-					<div style={{ padding: 16 }}></div>
-					<h2>PCR Preparations</h2>
+					<h2 style={{ paddingTop: 16 }}>PCR Preparations</h2>
 					<b>Section will be uploaded shortly</b>
 				</Container>
 			</HeaderFooterProvider>

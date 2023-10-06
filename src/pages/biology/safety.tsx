@@ -140,6 +140,10 @@ export default class BiologySafety extends React.Component {
 		return (
 			<HeaderFooterProvider>
 				<Container>
+				As a high school team, we are not as used to working in laboratories as other teams, and
+					so throughout the process, we we have learnt so much about lab safety in general,
+					especially the heightened precautions when working in a university lab in comparison to a
+					school lab.
 					<h1>Biology Safety</h1>
 					<div style={{ padding: 8 }}></div>
 					<h2>General Laboratory Safety</h2>
@@ -160,24 +164,6 @@ export default class BiologySafety extends React.Component {
 							left on a designated bench which was not used for any protocols.
 						</li>
 					</ul>
-					<div style={{ padding: 16 }}></div>
-					<h2>Laboratory Safety in Practice</h2>
-					As a high school team, we are not as used to working in laboratories as other teams, and
-					so throughout the process, we we have learnt so much about lab safety in general,
-					especially the heightened precautions when working in a university lab in comparison to a
-					school lab.
-					<div style={{ padding: 12 }}></div>
-					<img src="https://static.igem.wiki/teams/4642/wiki/biology/safety/biology-safety-1.jpg" />
-					Despite a rocky start, with a dirty lab coat in tow we soon began to pick up the
-					requirements necessary to successfully adhere to correct lab protocol
-					<div style={{ padding: 12 }}></div>
-					<img src="https://static.igem.wiki/teams/4642/wiki/biology/safety/biology-safety-2.jpg" />
-					With quick learning being a strong point, we adapted rapidly to the new environment and a
-					freshly washed lab coat was soon donned.
-					<div style={{ padding: 12 }}></div>
-					<img src="https://static.igem.wiki/teams/4642/wiki/biology/safety/biology-safety-3.jpg" />
-					Further progression was made with some skillful glove application, all that remained
-					lacking was long trousers which was amended with our next trip to the lab.
 					<div style={{ padding: 16 }}></div>
 					<h2>Laboratory Chemicals Safety Assessment</h2>
 					<TableContainer component={Paper}>

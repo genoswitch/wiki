@@ -140,7 +140,7 @@ export default class BiologySafety extends React.Component {
 		return (
 			<HeaderFooterProvider>
 				<Container>
-				As a high school team, we are not as used to working in laboratories as other teams, and
+					As a high school team, we are not as used to working in laboratories as other teams, and
 					so throughout the process, we we have learnt so much about lab safety in general,
 					especially the heightened precautions when working in a university lab in comparison to a
 					school lab.

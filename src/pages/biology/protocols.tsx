@@ -194,7 +194,7 @@ export default class BiologyProtocols extends React.Component {
 						<li>100ml beaker</li>
 						<li>Distilled water</li>
 					</ul>
-					<div style={{ padding: 8 }}></div>
+					<div style={{ padding: 4 }}></div>
 					<h3>Preparing the Gel:</h3>
 					<ol>
 						<li>
@@ -209,7 +209,7 @@ export default class BiologyProtocols extends React.Component {
 						<li>Pipette in 3µL of SYBR Safe dye and use the pipette tip to mix it around.</li>
 						<li>Mix 3µL of the DNA sample with 2µL of the loading dye.</li>
 					</ol>
-					<div style={{ padding: 8 }}></div>
+					<div style={{ padding: 4 }}></div>
 					<h3>Running the Gel:</h3>
 					<ol>
 						<li>
@@ -224,7 +224,7 @@ export default class BiologyProtocols extends React.Component {
 							the ladder bands.
 						</li>
 					</ol>
-					<div style={{ padding: 8 }}></div>
+					<div style={{ padding: 4 }}></div>
 					<h3>Load Ladder in Left-Most Lane</h3>
 					<ol>
 						<li>Use 2 μL loading dye per 3 μL of sample.</li>

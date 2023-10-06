@@ -30,7 +30,9 @@ export default class BiologyLabWorkPage extends React.Component {
 							50% glycerol solution (100 ml of glycerol and 100 ml H2O) in 200 ml Pyrex bottle.
 						</li>
 					</ul>
-					<b style={{ paddingBottom: 8 }}>All these solutions would then be autoclaved and stored at 4°C.</b>
+					<b style={{ paddingBottom: 8 }}>
+						All these solutions would then be autoclaved and stored at 4°C.
+					</b>
 					We also produced stock solutions for our agar plates using:
 					<ul>
 						<li>
@@ -46,11 +48,11 @@ export default class BiologyLabWorkPage extends React.Component {
 					</b>
 					<div style={{ paddingBottom: 16 }}>
 						The stock solution is filtered through a 0.2 mm filter, aliquoted into 10 tips (1μ/ml
-						each) and stored at -20oC until use. The final working concentration of all antibiotics is
-						1:1000 of the stock solution (1000x ampicillin). With these solutions, we created our agar
-						plates and left them to cool and solidify. Our E. coli cells were also inoculated and left
-						overnight on agar plates to grow in preparation for making them competent. This was done
-						during the week, and we resumed work on Thursday.
+						each) and stored at -20oC until use. The final working concentration of all antibiotics
+						is 1:1000 of the stock solution (1000x ampicillin). With these solutions, we created our
+						agar plates and left them to cool and solidify. Our E. coli cells were also inoculated
+						and left overnight on agar plates to grow in preparation for making them competent. This
+						was done during the week, and we resumed work on Thursday.
 					</div>
 					<h2>Thursday 20th July 2023</h2>
 					We found that the DNA that we ordered was linear and did not have four random nucleotides
@@ -69,8 +71,8 @@ export default class BiologyLabWorkPage extends React.Component {
 						Protocols page
 					</a>
 					<div style={{ paddingBottom: 16 }}>
-						. Once prepared, 50μl of the cells were aliquoted into 1.5ml sterile microcentrifuge tubes
-						and left in a -80°C freezer in the lab.
+						. Once prepared, 50μl of the cells were aliquoted into 1.5ml sterile microcentrifuge
+						tubes and left in a -80°C freezer in the lab.
 					</div>
 					<h2>Monday 21st August 2023</h2>
 					Due to logistical issues regarding our orders and lab availability, not much was done in

@@ -171,8 +171,8 @@ export default class BiologyProtocolsPage extends React.Component {
 						</li>
 						<li>
 							If the OD is between 0.4 and 0.6, you may proceed with the induction protocol. If the
-							OD is lower, you will need to put your flask back on the shaker and allow the culture to
-							grow for longer.
+							OD is lower, you will need to put your flask back on the shaker and allow the culture
+							to grow for longer.
 						</li>
 						<li>Discard cuvette with blank and your sample safely.</li>
 						<li>When finished with the spec, turn the spectrophotometer off.</li>

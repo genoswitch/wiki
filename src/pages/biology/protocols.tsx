@@ -135,7 +135,9 @@ export default class BiologyProtocolsPage extends React.Component {
 							The next day, count cell colony, and wrap the plate in a parafilm, storing it at 4°C.
 						</li>
 					</ol>
-					<h2 style={{ paddingTop: 16 }}>Determination of bacterial optical density (OD) using the spectrophotometer</h2>
+					<h2 style={{ paddingTop: 16 }}>
+						Determination of bacterial optical density (OD) using the spectrophotometer
+					</h2>
 					These steps should be carried out under the flame, with sterile pipet tips to avoid
 					contamination of your sterile media stock, and also to protect your cultures from
 					contamination, in case they need to grow longer.

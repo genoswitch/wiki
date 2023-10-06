@@ -3,6 +3,7 @@ import * as React from "react";
 import HeaderFooterProvider from "../../components/headerFooterProvider";
 import { Head as BaseHead } from "../../components/head";
 import { Container } from "@mui/material";
+import { navigate } from "gatsby";
 
 export default class BiologyLabWork extends React.Component {
 	render(): React.ReactNode {
@@ -65,7 +66,7 @@ export default class BiologyLabWork extends React.Component {
 					resulted in the second measurement being 0.585, which is within our working range
 					(0.4-0.6). Having obtained a good amount of bacteria, we left them on ice for 30 minutes
 					before centrifuging them in the solutions we has prepared on Monday, turning them into
-					competent bacteria. You can find the process for this in our Protocols section. Once
+					competent bacteria. You can find the process for this in our <a href="#" onClick={() => navigate("/biology/protocols/")}>Protocols page</a>. Once
 					prepared, 50μl of the cells were aliquoted into 1.5ml sterile microcentrifuge tubes and
 					left in a -80°C freezer in the lab.
 					<div style={{ padding: 16 }}></div>
@@ -87,7 +88,7 @@ export default class BiologyLabWork extends React.Component {
 					is then microwaved. Once cooled, the gel is poured into a tray with the comb and left to
 					set. Once this was completed, we conducted electrophoresis on our DNA at 100W for about 1
 					hour. Once finished, we were able to analyse our trays using UV light. You can find the
-					full protocol for electrophoresis and PCR in our Protocols page.
+					full protocol for electrophoresis and PCR in our <a href="#" onClick={() => navigate("/biology/protocols/")}>Protocols page</a>.
 					<div style={{ padding: 16 }}></div>
 					<h2>Tuesday 22nd August 2023</h2>
 					Unfortunately, our DNA had not amplified as expected, so we decided to redo the process

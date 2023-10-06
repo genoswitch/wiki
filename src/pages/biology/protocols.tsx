@@ -4,7 +4,7 @@ import HeaderFooterProvider from "../../components/headerFooterProvider";
 import { Head as BaseHead } from "../../components/head";
 import { Container } from "@mui/material";
 
-export default class BiologyProtocols extends React.Component {
+export default class BiologyProtocolsPage extends React.Component {
 	render(): React.ReactNode {
 		return (
 			<HeaderFooterProvider>

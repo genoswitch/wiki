@@ -22,7 +22,7 @@ type Hazard = {
 	infoSource: string;
 };
 
-export default class BiologySafety extends React.Component {
+export default class BiologySafetyPage extends React.Component {
 	hazards: Hazard[] = [
 		{
 			name: "Ampicillin",
@@ -145,8 +145,7 @@ export default class BiologySafety extends React.Component {
 					so throughout the process, we we have learnt so much about lab safety in general,
 					especially the heightened precautions when working in a university lab in comparison to a
 					school lab.
-					<div style={{ padding: 8 }}></div>
-					<h2>General Laboratory Safety</h2>
+					<h2 style={{ paddingTop: 8 }}>General Laboratory Safety</h2>
 					<ul>
 						<li>
 							Gloves were worn at all times throughout all procedures, and were disposed of
@@ -164,8 +163,7 @@ export default class BiologySafety extends React.Component {
 							left on a designated bench which was not used for any protocols.
 						</li>
 					</ul>
-					<div style={{ padding: 16 }}></div>
-					<h2>Laboratory Chemicals Safety Assessment</h2>
+					<h2 style={{ paddingTop: 16 }}>Laboratory Chemicals Safety Assessment</h2>
 					<TableContainer component={Paper}>
 						<Table sx={{ minWidth: 650 }} aria-label="simple table">
 							<TableHead>

@@ -4,14 +4,13 @@ import HeaderFooterProvider from "../components/headerFooterProvider";
 import { Head as BaseHead } from "../components/head";
 import { Container } from "@mui/material";
 
-export default class HumanPractices extends React.Component {
+export default class HumanPracticesPage extends React.Component {
 	render(): React.ReactNode {
 		return (
 			<HeaderFooterProvider>
 				<Container>
 					<h1>Human Practices</h1>
-					<div style={{ padding: 8 }}></div>
-					<h2>Project Impact</h2>
+					<h2 style={{ paddingTop: 8 }}>Project Impact</h2>
 					We hope that our project can drastically decrease the time between symptoms arising, and a
 					diagnosis of diseases such as endometriosis, PCOS, ovarian cancer, and breast cancer, at a
 					fraction of the cost of current diagnostic methods. At present, many patients struggle to

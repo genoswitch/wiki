@@ -126,6 +126,75 @@ export default class BiologyProtocols extends React.Component {
 							–80°C.
 						</li>
 					</ol>
+					<div style={{ padding: 16 }}></div>
+					<h2>E. coli transformation</h2>
+					<ol>
+						<li>Take 50 µl of prepared E. coli competent cells and put on ice for 5 minutes.</li>
+						<li>Add 1µl of plasmid DNA and incubate on ice for 5 minutes.</li>
+						<li>Heat-shock for 1 min at 42°C.</li>
+						<li>Put on ice for 5 minutes.</li>
+						<li>Add 250 µl of room temperature SOC buffer.</li>
+						<li>Incubate for 1 hour at 37°C with shaking at 250 rpm.</li>
+						<li>Plate on one LB agar Petri dish with appropriate antibiotic.</li>
+						<li>Incubate at 37°C overnight.</li>
+						<li>The next day, count cell colony, and wrap the plate in a parafilm, storing it at 4°C.</li>
+					</ol>
+					<div style={{ padding: 16 }}></div>
+					<h2>Determination of bacterial optical density (OD) using the spectrophotometer</h2>
+					These steps should be carried out under the flame, with sterile pipet tips to avoid contamination of your sterile media stock, and also to protect your cultures from contamination, in case they need to grow longer.
+					<ol>
+						<li>Pipet 1 ml of your blank, sterile, uninoculated media – the same that is used for the bacterial growth, (LB) into a disposable polystyrene cuvette using sterile technique. Label the cuvette on the frosted portion at the top. Do not touch the lower part of the cuvette with your fingers, as it will interfere with the reading.</li>
+						<li>Using sterile technique, pipet 1ml of bacterial culture into a labelled cuvette. Replace the foam stopper (sponge) and foil, preparing the culture to go back into the incubator if it needs to grow longer</li>
+						<li>Take the cuvette to the spectrophotometer.</li>
+						<li>Switch on the spectrophotometer and wait for it to self-calibrate.</li>
+						<li>Check to make sure the wavelength is 600 nm. If it is not, click on the wavelength number (nm) and set it to 600 on the number pad window.</li>
+						<li>Put the cuvette into the cuvette holder, blank first. Close the lid.</li>
+						<li>On the spectrophotometers keypad, you will see the word “set ref”. With the cuvette holder in position, press “set ref”. This is giving the spec a baseline absorbance of the LB so it can subtract it from the reading of your bacterial samples.</li>
+						<li>Remove the blank cuvette and put your sample in the cuvette nest. Close the lid and record the OD.</li>
+						<li>If the OD is between 0.4 and 0.6, you may proceed with the induction protocol. If the OD is lower, you will need to put your flask back on the shaker and allow culture to grow longer.</li>
+						<li>Discard cuvette with blank and your sample safely.</li>
+						<li>When finished with the spec, turn the spectrophotometer off.</li>
+						<li>Clean up your bench with 70% ethanol.</li>
+					</ol>
+					<div style={{ padding: 16 }}></div>
+					<h2>Conducting Gel Electrophoresis</h2>
+						<h3>Materials:</h3>
+						<ul>
+							<li>Gel box</li>
+							<li>Gel Tray</li>
+							<li>Comb - 1% agarose in 1x TAE</li>
+							<li>SYBR Safe</li>
+							<li>100ml beaker</li>
+							<li>Distilled water</li>
+						</ul>
+						<div style={{ padding: 8 }}></div>
+						<h3>Preparing the Gel:</h3>
+						<ol>
+							<li>Prepare 300ml of the TAE buffer by dissolving 6ml of the 50X concentrated buffer in 294ml of distilled water.</li>
+							<li>Add 0.5g of agarose powder into 5ml of the diluted buffer and heat whilst stirring continually until clear.</li>
+							<li>Pour into the gel mould and add the comb with a required number of wells.</li>
+							<li>Pipette in 3µL of SYBR Safe dye and use the pipette tip to mix it around.</li>
+							<li>Mix 3µL of the DNA sample with 2µL of the loading dye.</li>
+						</ol>
+						<div style={{ padding: 8 }}></div>
+						<h3>Running the Gel:</h3>
+						<ol>
+							<li>Add enough 1X TAE to fill the reservoirs at both ends of the gel box and cover the surface of the gel - the gel should be immersed. You should use the remaining TAE buffer from 300ml.</li>
+							<li>Load 1μL prepared ladder (with dye and loading buffer). The concentration is 100μg/ml, i.e. there will be a total of 0.1µg = 100nanograms of ladder in the well. The mass of the ladder is important to know if you need to quantify your bands by comparison with the ladder bands.</li>
+						</ol>
+						<div style={{ padding: 8 }}></div>
+						<h3>Load Ladder in Left-Most Lane</h3>
+						<ol>
+							<li>Use 2 μL loading dye per 3 μL of sample.</li>
+							<li>Load samples from left to right.</li>
+							<li>Place the cover on the gel box such that your samples will run towards the positive, red electrode. Make sure that the cables from the cover are connected to the power supply correctly.</li>
+							<li>Turn on the power supply and run your gel at ~85 V for 80 minutes (voltage and time values can vary). Check regularly to see how far the dye has moved and stop the gel when the dye has moved approximately 80% of the distance.</li>
+							<li>Verify that bubbles are rising from the electrodes once you start your gel to ensure your gel is running properly.</li>
+						</ol>
+					<div style={{ padding: 16 }}></div>
+					<h2>PCR Preparations</h2>
+						<b>Section will be uploaded shortly</b>
+
 				</Container>
 			</HeaderFooterProvider>
 		);

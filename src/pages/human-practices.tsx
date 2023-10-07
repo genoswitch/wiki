@@ -13,7 +13,7 @@ export default class HumanPracticesPage extends React.Component {
 					<h2 style={{ paddingTop: 8 }}>Ethics (Title TBC)</h2>
 					When designing our project, we focused our efforts on making a test that would have a
 					strong social and scientific impact. It was important to us to create a tool that both
-					empowered women and helped healthcare professionals diagnose women's diseases. We are
+					empowered females and helped healthcare professionals diagnose these diseases. We are
 					using a cell-free system, meaning our test is safe, has very few possible complications
 					and is a process relatively familiar to the general public. Unlike the current invasive
 					procedures, our tool consists of a simple blood test, so it is much more accessible and
@@ -27,8 +27,8 @@ export default class HumanPracticesPage extends React.Component {
 					as GPs can ask patients to take the test immediately after identifying their symptoms. In
 					addition, we have made an effort to educate the public through iGEM sessions at school and
 					a social media outreach programme. We did this to make sure that our project didn't just
-					focus on diagnosis, but also worked to increase awareness about women's health issues and
-					how to spot symptoms early, so that women don’t need to be in the late stages of their
+					focus on diagnosis, but also worked to increase awareness about females' health issues and
+					how to spot symptoms early, so that females don;t need to be in the late stages of their
 					condition to notice it.
 					<h2 style={{ paddingTop: 8 }}>Ethics 3 (Title TBC)</h2>
 					Currently, the diagnostic processes for endometriosis, PCOS and breast and cervical
@@ -37,12 +37,12 @@ export default class HumanPracticesPage extends React.Component {
 					long process to rule out any other option, and then a surgical procedure to diagnose
 					definitively. Our tool would help reduce the time between a patient presenting their
 					symptoms and diagnosis, as it is accessible and easy-to-use, meaning it can be taken as
-					soon as the diseases are suspected. As well as this, women might be more likely to get
+					soon as the diseases are suspected. As well as this, females might be more likely to get
 					tested regularly because the test is much faster and only requires a simple blood test. As
 					part of our project, we would recommend introducing a screening programme similar to those
 					already in place for cervical and breast cancers, as they have been influential in saving
 					lives by catching diseases early. We would also endeavour to make this test a part of the
-					yearly health checks that women undergo after turning 40 (if we were to build a company
+					yearly health checks that females undergo after turning 40 (if we were to build a company
 					from this product). With our test, we would help more people get diagnosed in the earliest
 					stages, greatly reducing the damage the condition can inflict across the conditions. As
 					well as this, our test would reduce the burden on GPs and the NHS to screen for and
@@ -86,13 +86,13 @@ export default class HumanPracticesPage extends React.Component {
 					easily, and cost-effectively, ultimately decreasing the level of suffering of patients
 					awaiting a diagnosis.
 					<h2 style={{ paddingTop: 8 }}>Disease Profiles</h2>
-					<h3 style={{ paddingTop: 4 }}>Endometriosis</h3>
+					<h3 style={{ paddingTop: 2 }}>Endometriosis</h3>
 					<i>Average time until formal diagnosis after onset of symptoms: 7-9 years</i>
 					<h3 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h3>
 					Social:
 					<ul>
 						<li>
-							Normalisation of pain in women, symptoms disregarded as more severe menstrual symptoms
+							Normalisation of pain in females, symptoms disregarded as more severe menstrual symptoms
 							- which aren't usually addressed.
 						</li>
 						<li>Stigma surrounding periods and menstruation.</li>
@@ -107,7 +107,7 @@ export default class HumanPracticesPage extends React.Component {
 					</ul>
 					<h3 style={{ paddingTop: 4 }}>Groups predominantly affected:</h3>
 					<ul>
-						<li>30-40 year old women.</li>
+						<li>30-40 year old females.</li>
 						<li>Those who have not had children.</li>
 						<li>Those whose menstrual cycle usually lasts more than 7 days.</li>
 					</ul>
@@ -117,7 +117,7 @@ export default class HumanPracticesPage extends React.Component {
 							Pain in your lower tummy or back - pelvic pain – usually worse during your period.
 						</li>
 						<li>Period paid that stops you doing your normal activities.</li>
-						<li>pain during or after sex.</li>
+						<li>Pain during or after sex.</li>
 						<li>Pain when peeing or pooping during your period.</li>
 						<li>
 							Feeling sick, constipation, diarrhoea, or blood in your urine or faeces during your
@@ -134,6 +134,42 @@ export default class HumanPracticesPage extends React.Component {
 					made below the navel and a camera is inserted in the pelvis to check for pelvic
 					abnormalities. It is a highly invasive procedure that can cause infection, bleeding and
 					organ damage.
+
+					<h3 style={{ paddingTop: 6 }}>PCOS</h3>
+					<i>Average time until formal diagnosis after onset of symptoms: 2-3 years</i>
+					<h3 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h3>
+					Symptoms (such as heavy menstrual bleeding or irregular periods) could have a variety of potential causes:
+					<ul>
+						<li>Uterine fibroids</li>
+						<li>Polyps.</li>
+						<li>Bleeding disorders (haemophilia, etc.).</li>
+						<li>Certain medications.</li>
+						<li>Pelvic inflammatory disease.</li>
+					</ul>
+					<h3 style={{ paddingTop: 4 }}>Groups predominantly affected:</h3>
+					<ul>
+						<li>All females of reproductive age.</li>
+						<li>People with type 1, type 2 or gestational diabetes, hypertension, metabolic syndrome or dyslipidemia (or a family history of any of these)</li>
+					</ul>
+					<h3 style={{ paddingTop: 4 }}>Usual symptoms:</h3>
+					<ul>
+						<li>Irregular periods or no periods.</li>
+						<li>Difficulty getting pregnant as a result of irregular ovulation or no ovulation.</li>
+						<li>Excessive hair growth (hirsutism) usually on the face, chest, back or buttocks</li>
+						<li>Weight gain.</li>
+						<li>Thinning hair and hair loss.</li>
+						<li>Oily skin or acne.</li>
+					</ul>
+					<h3 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h3>
+					There is no single test for diagnosing PCOS. Patients will undergo an ultrasound (to look for a high
+					number of follicles in your ovary) and a blood test (testing for low FSH levels). 
+					<br/>
+					Patients must then meet 2 of 3 “official” criteria to be diagnosed:
+					<ul>
+						<li>Irregular or infrequent periods.</li>
+						<li>Blood tests show high levels of “male hormones” such as testosterone.</li>
+						<li>Scans showing polycystic ovaries.</li>
+					</ul>
 					<h2 style={{ paddingTop: 8 }}>External Outreach (Title TBC)</h2>
 				</Container>
 			</HeaderFooterProvider>

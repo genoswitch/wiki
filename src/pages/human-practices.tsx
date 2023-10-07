@@ -174,10 +174,11 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Blood tests show high levels of “male hormones” such as testosterone.</li>
 						<li>Scans showing polycystic ovaries.</li>
 					</ul>
-
-
 					<h3 style={{ paddingTop: 2 }}>Ovarian Cancer</h3>
-					<i>Average global time until formal diagnosis after onset of symptoms: 31 weeks, or 7.75 months.</i>
+					<i>
+						Average global time until formal diagnosis after onset of symptoms: 31 weeks, or 7.75
+						months.
+					</i>
 					<h3 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h3>
 					Social:
 					<ul>
@@ -190,11 +191,16 @@ export default class HumanPracticesPage extends React.Component {
 					<ul>
 						<li>Non-specific presentations.</li>
 						<li>No reliable screening tests to detect the disease in early stages.</li>
-						<li>Vague symptoms, which often undetected until it has spread to the pelvis and abdomen.</li>
+						<li>
+							Vague symptoms, which often undetected until it has spread to the pelvis and abdomen.
+						</li>
 					</ul>
 					<h3 style={{ paddingTop: 4 }}>Groups predominantly affected:</h3>
 					<ul>
-						<li>Those with a family history of breast, ovarian, endometrial or colorectal cancer (Those with BRCA1 and BRCA2 gene mutations).</li>
+						<li>
+							Those with a family history of breast, ovarian, endometrial or colorectal cancer
+							(Those with BRCA1 and BRCA2 gene mutations).
+						</li>
 						<li>Post-menopausal women.</li>
 						<li>Those of Ashkenazi descent.</li>
 						<li>Those who have not delivered children.</li>
@@ -212,9 +218,10 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Extreme fatigue.</li>
 						<li>Unexplained weight loss.</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h3>
-					A blood test and scans are done first, but other tests are needed to diagnose ovarian cancer.
-					Whilst Ultrasounds, CT scans, laparoscopies and laparotomies are commonly used, a biopsy is the only definitive way to diagnose ovarian cancer.
+					<h3 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h3>A blood test and scans are
+					done first, but other tests are needed to diagnose ovarian cancer. Whilst Ultrasounds, CT
+					scans, laparoscopies and laparotomies are commonly used, a biopsy is the only definitive
+					way to diagnose ovarian cancer.
 					<h2 style={{ paddingTop: 8 }}>External Outreach (Title TBC)</h2>
 				</Container>
 			</HeaderFooterProvider>

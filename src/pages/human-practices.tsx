@@ -88,7 +88,7 @@ export default class HumanPracticesPage extends React.Component {
 					<h2 style={{ paddingTop: 8 }}>Disease Profiles</h2>
 					<h3 style={{ paddingTop: 2 }}>Endometriosis</h3>
 					<i>Average time until formal diagnosis after onset of symptoms: 7-9 years.</i>
-					<h3 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h3>
+					<h4 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h4>
 					Social:
 					<ul>
 						<li>
@@ -105,13 +105,13 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Many different clinical presentations.</li>
 						<li>Uncertainty surrounding normal and abnormal pain in the female genitalia.</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Groups predominantly affected:</h3>
+					<h4 style={{ paddingTop: 4 }}>Groups predominantly affected:</h4>
 					<ul>
 						<li>30-40 year old females.</li>
 						<li>Those who have not had children.</li>
 						<li>Those whose menstrual cycle usually lasts more than 7 days.</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Usual symptoms:</h3>
+					<h4 style={{ paddingTop: 4 }}>Usual symptoms:</h4>
 					<ul>
 						<li>
 							Pain in your lower tummy or back - pelvic pain – usually worse during your period.
@@ -129,14 +129,14 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Pain in other areas of the body (bleeding and damage to organs).</li>
 						<li>Increased likelihood of infections.</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h3>
+					<h4 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h4>
 					There is only one definitive method: a laparoscopy. This is a surgery where a small cut is
 					made below the navel and a camera is inserted in the pelvis to check for pelvic
 					abnormalities. It is a highly invasive procedure that can cause infection, bleeding and
 					organ damage.
 					<h3 style={{ paddingTop: 6 }}>PCOS</h3>
 					<i>Average time until formal diagnosis after onset of symptoms: 2-3 years.</i>
-					<h3 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h3>
+					<h4 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h4>
 					Symptoms (such as heavy menstrual bleeding or irregular periods) could have a variety of
 					potential causes:
 					<ul>
@@ -146,7 +146,7 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Certain medications.</li>
 						<li>Pelvic inflammatory disease.</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Groups predominantly affected:</h3>
+					<h4 style={{ paddingTop: 4 }}>Groups predominantly affected:</h4>
 					<ul>
 						<li>All females of reproductive age.</li>
 						<li>
@@ -154,7 +154,7 @@ export default class HumanPracticesPage extends React.Component {
 							or dyslipidemia (or a family history of any of these)
 						</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Usual symptoms:</h3>
+					<h4 style={{ paddingTop: 4 }}>Usual symptoms:</h4>
 					<ul>
 						<li>Irregular periods or no periods.</li>
 						<li>Difficulty getting pregnant as a result of irregular ovulation or no ovulation.</li>
@@ -163,7 +163,7 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Thinning hair and hair loss.</li>
 						<li>Oily skin or acne.</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h3>
+					<h4 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h4>
 					There is no single test for diagnosing PCOS. Patients will undergo an ultrasound (to look
 					for a high number of follicles in your ovary) and a blood test (testing for low FSH
 					levels).
@@ -179,7 +179,7 @@ export default class HumanPracticesPage extends React.Component {
 						Average global time until formal diagnosis after onset of symptoms: 31 weeks, or 7.75
 						months.
 					</i>
-					<h3 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h3>
+					<h4 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h4>
 					Social:
 					<ul>
 						<li>Doctors not taking concerns seriously.</li>
@@ -195,7 +195,7 @@ export default class HumanPracticesPage extends React.Component {
 							Vague symptoms, which often undetected until it has spread to the pelvis and abdomen.
 						</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Groups predominantly affected:</h3>
+					<h4 style={{ paddingTop: 4 }}>Groups predominantly affected:</h4>
 					<ul>
 						<li>
 							Those with a family history of breast, ovarian, endometrial or colorectal cancer
@@ -206,7 +206,7 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Those who have not delivered children.</li>
 						<li>Those with endometriosis.</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Usual symptoms:</h3>
+					<h4 style={{ paddingTop: 4 }}>Usual symptoms:</h4>
 					<ul>
 						<li>Increased abdominal size/bloating that does not go away.</li>
 						<li>Difficulty eating.</li>
@@ -218,7 +218,7 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Extreme fatigue.</li>
 						<li>Unexplained weight loss.</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h3>A blood test and scans are
+					<h4 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h4>A blood test and scans are
 					done first, but other tests are needed to diagnose ovarian cancer. Whilst Ultrasounds, CT
 					scans, laparoscopies and laparotomies are commonly used, a biopsy is the only definitive
 					way to diagnose ovarian cancer.
@@ -227,7 +227,7 @@ export default class HumanPracticesPage extends React.Component {
 						Average time until formal diagnosis after onset of symptoms: 16 days for symptomatic
 						patients, up to 3 months otherwise.
 					</i>
-					<h3 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h3>
+					<h4 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h4>
 					Social:
 					<ul>
 						<li>
@@ -244,7 +244,7 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Low quality of health care.</li>
 						<li>Misdiagnosis and long waiting times.</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Groups predominantly affected:</h3>
+					<h4 style={{ paddingTop: 4 }}>Groups predominantly affected:</h4>
 					<ul>
 						<li>Females.</li>
 						<li>Females over the age of 50.</li>
@@ -259,7 +259,7 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Those who are overweight or obese.</li>
 						<li>Those with exposure to radiation.</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Usual symptoms:</h3>
+					<h4 style={{ paddingTop: 4 }}>Usual symptoms:</h4>
 					<ul>
 						<li>Breast Lumps.</li>
 						<li>Change in size or shape of one or both breasts.</li>
@@ -269,7 +269,7 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Change in appearance of nipple.</li>
 						<li>Rash, crusting, scaly or itchy skin on or around nipple.</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h3>A GP examination will be
+					<h4 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h4>A GP examination will be
 					followed by a referral to a specialist breast cancer clinic. A mammogram and/or ultrasound
 					is then used to further examine the lump(s). A sample of cells are then taken from the
 					breast in a biopsy and are tested to see if they are cancerous.

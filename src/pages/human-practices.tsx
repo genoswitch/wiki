@@ -11,7 +11,7 @@ export default class HumanPracticesPage extends React.Component {
 				<Container>
 					<h1>Human Practices</h1>
 					<h2 style={{ paddingTop: 8 }}>Ethics (Title TBC)</h2>
-					When designing our project, we focused our efforts on making a test that would have a strong social and scientific impact. It was important to us to create a tool that both empowered women and helped healthcare professionals diagnose women’s diseases. We are using a cell-free system, meaning our test is safe, has very few possible complications and is a process relatively familiar to the general public. Unlike the current invasive procedures, our tool consists of a simple blood test, so it is much more accessible and should be much less costly for the NHS. Due to the familiarity of a simple blood test, which many people will have had before, the test will have less anxiety associated with it compared to other diagnostic procedures such as a laparoscopy. Patients will still have to undergo the regular procedure after testing positive, but we believe that our test will greatly increase the number of people who are willing to get tested initially, as instead of going through a surgical procedure they can take a straightforward and easy lateral flow test. 
+					When designing our project, we focused our efforts on making a test that would have a strong social and scientific impact. It was important to us to create a tool that both empowered women and helped healthcare professionals diagnose women's diseases. We are using a cell-free system, meaning our test is safe, has very few possible complications and is a process relatively familiar to the general public. Unlike the current invasive procedures, our tool consists of a simple blood test, so it is much more accessible and should be much less costly for the NHS. Due to the familiarity of a simple blood test, which many people will have had before, the test will have less anxiety associated with it compared to other diagnostic procedures such as a laparoscopy. Patients will still have to undergo the regular procedure after testing positive, but we believe that our test will greatly increase the number of people who are willing to get tested initially, as instead of going through a surgical procedure they can take a straightforward and easy lateral flow test. 
 					As well as this, our diagnostic tool should decrease wait times for diagnosis, as GPs can ask patients to take the test immediately after identifying their symptoms. In addition, we have made an effort to educate the public through iGEM sessions at school and a social media outreach programme. We did this to make sure that our project didn't just focus on diagnosis, but also worked to increase awareness about women's health issues and how to spot symptoms early, so that women don’t need to be in the late stages of their condition to notice it.
 
 					<h2 style={{ paddingTop: 8 }}>Ethics 3 (Title TBC)</h2>
@@ -49,6 +49,44 @@ export default class HumanPracticesPage extends React.Component {
 					believe that by using our tool, a diagnosis of these diseases can occur more rapidly,
 					easily, and cost-effectively, ultimately decreasing the level of suffering of patients
 					awaiting a diagnosis.
+
+					<h2 style={{ paddingTop: 8 }}>Disease Profiles</h2>
+						<h3 style={{ paddingTop: 4 }}>Endometriosis</h3>
+							<i>Average time until formal diagnosis after onset of symptoms: 7-9 years</i>
+							<h3 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h3>
+								Social:
+								<ul>
+									<li>Normalisation of pain in women, symptoms disregarded as more severe menstrual symptoms - which aren't usually addressed.</li>
+									<li>Stigma surrounding periods and menstruation.</li>
+									<li>Lack of non-invasive means to diagnose the condition.</li>
+								</ul><br/>
+								Medical:
+								<ul>
+									<li>May not be painful, and so might not be flagged to doctors.</li>
+									<li>Many different clinical presentations.</li>
+									<li>Uncertainty surrounding normal and abnormal pain in the female genitalia.</li>
+								</ul>
+							<h3 style={{ paddingTop: 4 }}>Groups predominantly affected:</h3>
+								<ul>
+									<li>30-40 year old women.</li>
+									<li>Those who have not had children.</li>
+									<li>Those whose menstrual cycle usually lasts more than 7 days.</li>
+								</ul>
+							<h3 style={{ paddingTop: 4 }}>Usual symptoms:</h3>
+								<ul>
+
+
+
+
+
+
+									
+								</ul>
+
+
+
+
+
 
 
 					<h2 style={{ paddingTop: 8 }}>External Outreach (Title TBC)</h2>

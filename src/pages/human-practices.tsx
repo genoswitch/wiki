@@ -218,19 +218,22 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Extreme fatigue.</li>
 						<li>Unexplained weight loss.</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h3>
-					A blood test and scans are done first, but other tests are needed to diagnose ovarian cancer. Whilst Ultrasounds, CT
+					<h3 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h3>A blood test and scans are
+					done first, but other tests are needed to diagnose ovarian cancer. Whilst Ultrasounds, CT
 					scans, laparoscopies and laparotomies are commonly used, a biopsy is the only definitive
 					way to diagnose ovarian cancer.
-
-
-
 					<h3 style={{ paddingTop: 2 }}>Breast Cancer</h3>
-					<i>Average time until formal diagnosis after onset of symptoms: 16 days for symptomatic patients, up to 3 months otherwise.</i>
+					<i>
+						Average time until formal diagnosis after onset of symptoms: 16 days for symptomatic
+						patients, up to 3 months otherwise.
+					</i>
 					<h3 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h3>
 					Social:
 					<ul>
-						<li>Stigma surrounding cancer, as some people think that it is infectious or discriminate against those who are sick.</li>
+						<li>
+							Stigma surrounding cancer, as some people think that it is infectious or discriminate
+							against those who are sick.
+						</li>
 						<li>Access and cost of care.</li>
 						<li>Inadequate knowledge about breast cancer and its presentation.</li>
 					</ul>
@@ -247,7 +250,10 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Females over the age of 50.</li>
 						<li>Those with a family history of breast cancer or ovarian cancer.</li>
 						<li>Those with dense breast tissue.</li>
-						<li>Increased exposure to oestrogen (those who had periods at a young age or experienced menopause later than normal).</li>
+						<li>
+							Increased exposure to oestrogen (those who had periods at a young age or experienced
+							menopause later than normal).
+						</li>
 						<li>Not having children, or having children late in life.</li>
 						<li>Those taking the contraceptive pill.</li>
 						<li>Those who are overweight or obese.</li>
@@ -263,8 +269,10 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Change in appearance of nipple.</li>
 						<li>Rash, crusting, scaly or itchy skin on or around nipple.</li>
 					</ul>
-					<h3 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h3>
-					A GP examination will be followed by a referral to a specialist breast cancer clinic. A mammogram and/or ultrasound is then used to further examine the lump(s). A sample of cells are then taken from the breast in a biopsy and are tested to see if they are cancerous.
+					<h3 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h3>A GP examination will be
+					followed by a referral to a specialist breast cancer clinic. A mammogram and/or ultrasound
+					is then used to further examine the lump(s). A sample of cells are then taken from the
+					breast in a biopsy and are tested to see if they are cancerous.
 					<h2 style={{ paddingTop: 8 }}>External Outreach (Title TBC)</h2>
 				</Container>
 			</HeaderFooterProvider>

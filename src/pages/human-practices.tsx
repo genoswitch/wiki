@@ -14,8 +14,6 @@ export default class HumanPracticesPage extends React.Component {
 					When designing our project, we focused our efforts on making a test that would have a strong social and scientific impact. It was important to us to create a tool that both empowered women and helped healthcare professionals diagnose women’s diseases. We are using a cell-free system, meaning our test is safe, has very few possible complications and is a process relatively familiar to the general public. Unlike the current invasive procedures, our tool consists of a simple blood test, so it is much more accessible and should be much less costly for the NHS. Due to the familiarity of a simple blood test, which many people will have had before, the test will have less anxiety associated with it compared to other diagnostic procedures such as a laparoscopy. Patients will still have to undergo the regular procedure after testing positive, but we believe that our test will greatly increase the number of people who are willing to get tested initially, as instead of going through a surgical procedure they can take a straightforward and easy lateral flow test. 
 					As well as this, our diagnostic tool should decrease wait times for diagnosis, as GPs can ask patients to take the test immediately after identifying their symptoms. In addition, we have made an effort to educate the public through iGEM sessions at school and a social media outreach programme. We did this to make sure that our project didn't just focus on diagnosis, but also worked to increase awareness about women's health issues and how to spot symptoms early, so that women don’t need to be in the late stages of their condition to notice it.
 
-					<h2 style={{ paddingTop: 8 }}>Ethics 2 (Title TBC)</h2>
-
 					<h2 style={{ paddingTop: 8 }}>Ethics 3 (Title TBC)</h2>
 						Currently, the diagnostic processes for endometriosis, PCOS and breast and cervical cancers are mostly invasive and uncomfortable for patients. As there are no other options for diagnosis, when a GP suspects a patient has one of these conditions, they undergo a long process to rule out any other option, and then a surgical procedure to diagnose definitively. Our tool would help reduce the time between a patient presenting their symptoms and diagnosis, as it is accessible and easy-to-use, meaning it can be taken as soon as the diseases are suspected. As well as this, women might be more likely to get tested regularly because the test is much faster and only requires a simple blood test. As part of our project, we would recommend introducing a screening programme similar to those already in place for cervical and breast cancers, as they have been influential in saving lives by catching diseases early. We would also endeavour to make this test a part of the yearly health checks that women undergo after turning 40 (if we were to build a company from this product). With our test, we would help more people get diagnosed in the earliest stages, greatly reducing the damage the condition can inflict across the conditions.
 						As well as this, our test would reduce the burden on GPs and the NHS to screen for and diagnose these conditions, as our tool is more cost-effective and convenient than the full diagnostic tests, so GPs can be more certain in their decision to send patients for surgical procedures.
@@ -51,6 +49,9 @@ export default class HumanPracticesPage extends React.Component {
 					believe that by using our tool, a diagnosis of these diseases can occur more rapidly,
 					easily, and cost-effectively, ultimately decreasing the level of suffering of patients
 					awaiting a diagnosis.
+
+
+					<h2 style={{ paddingTop: 8 }}>External Outreach (Title TBC)</h2>
 				</Container>
 			</HeaderFooterProvider>
 		);

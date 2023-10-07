@@ -92,8 +92,8 @@ export default class HumanPracticesPage extends React.Component {
 					Social:
 					<ul>
 						<li>
-							Normalisation of pain in females, symptoms disregarded as more severe menstrual symptoms
-							- which aren't usually addressed.
+							Normalisation of pain in females, symptoms disregarded as more severe menstrual
+							symptoms - which aren't usually addressed.
 						</li>
 						<li>Stigma surrounding periods and menstruation.</li>
 						<li>Lack of non-invasive means to diagnose the condition.</li>
@@ -134,11 +134,11 @@ export default class HumanPracticesPage extends React.Component {
 					made below the navel and a camera is inserted in the pelvis to check for pelvic
 					abnormalities. It is a highly invasive procedure that can cause infection, bleeding and
 					organ damage.
-
 					<h3 style={{ paddingTop: 6 }}>PCOS</h3>
 					<i>Average time until formal diagnosis after onset of symptoms: 2-3 years</i>
 					<h3 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h3>
-					Symptoms (such as heavy menstrual bleeding or irregular periods) could have a variety of potential causes:
+					Symptoms (such as heavy menstrual bleeding or irregular periods) could have a variety of
+					potential causes:
 					<ul>
 						<li>Uterine fibroids</li>
 						<li>Polyps.</li>
@@ -149,7 +149,10 @@ export default class HumanPracticesPage extends React.Component {
 					<h3 style={{ paddingTop: 4 }}>Groups predominantly affected:</h3>
 					<ul>
 						<li>All females of reproductive age.</li>
-						<li>People with type 1, type 2 or gestational diabetes, hypertension, metabolic syndrome or dyslipidemia (or a family history of any of these)</li>
+						<li>
+							People with type 1, type 2 or gestational diabetes, hypertension, metabolic syndrome
+							or dyslipidemia (or a family history of any of these)
+						</li>
 					</ul>
 					<h3 style={{ paddingTop: 4 }}>Usual symptoms:</h3>
 					<ul>
@@ -161,9 +164,10 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Oily skin or acne.</li>
 					</ul>
 					<h3 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h3>
-					There is no single test for diagnosing PCOS. Patients will undergo an ultrasound (to look for a high
-					number of follicles in your ovary) and a blood test (testing for low FSH levels). 
-					<br/>
+					There is no single test for diagnosing PCOS. Patients will undergo an ultrasound (to look
+					for a high number of follicles in your ovary) and a blood test (testing for low FSH
+					levels).
+					<br />
 					Patients must then meet 2 of 3 “official” criteria to be diagnosed:
 					<ul>
 						<li>Irregular or infrequent periods.</li>

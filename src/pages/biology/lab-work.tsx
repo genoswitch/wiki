@@ -24,7 +24,7 @@ export default class BiologyLabWorkPage extends React.Component {
 							0.1 M CaCl₂ solution (7.35 g of CaCl₂·2H₂O in 500 ml of H₂O) in 500 ml Pyrex bottle.
 						</li>
 						<li>
-							0.1 M MgCl₂ solution (10.165 g of MgCl₂ ·6H₂O in 500ml of ₂O) in 500ml Pyrex bottle.
+							0.1 M MgCl₂ solution (10.165 g of MgCl₂ ·6H₂O in 500ml of H₂O) in 500ml Pyrex bottle.
 						</li>
 						<li>
 							50% glycerol solution (100 ml of glycerol and 100 ml H₂O) in 200 ml Pyrex bottle.

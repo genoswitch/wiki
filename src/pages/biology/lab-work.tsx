@@ -21,13 +21,13 @@ export default class BiologyLabWorkPage extends React.Component {
 					<ul>
 						<li> 20g/L LB broth x2; 500ml water flask.</li>
 						<li>
-							0.1 M CaCl2 solution (7.35 g of CaCl2·2H2O in 500 ml of H2O) in 500 ml Pyrex bottle.
+							0.1 M CaCl₂ solution (7.35 g of CaCl₂·2H₂O in 500 ml of H₂O) in 500 ml Pyrex bottle.
 						</li>
 						<li>
-							0.1 M MgCl2 solution (10.165 g of MgCl2 ·6H2O in 500ml of H2O) in 500ml Pyrex bottle.
+							0.1 M MgCl₂ solution (10.165 g of MgCl₂ ·6H₂O in 500ml of ₂O) in 500ml Pyrex bottle.
 						</li>
 						<li>
-							50% glycerol solution (100 ml of glycerol and 100 ml H2O) in 200 ml Pyrex bottle.
+							50% glycerol solution (100 ml of glycerol and 100 ml H₂O) in 200 ml Pyrex bottle.
 						</li>
 					</ul>
 					<b style={{ paddingBottom: 8 }}>
@@ -48,7 +48,7 @@ export default class BiologyLabWorkPage extends React.Component {
 					</b>
 					<div style={{ paddingBottom: 16 }}>
 						The stock solution is filtered through a 0.2 mm filter, aliquoted into 10 tips (1μ/ml
-						each) and stored at -20oC until use. The final working concentration of all antibiotics
+						each) and stored at -20°C until use. The final working concentration of all antibiotics
 						is 1:1000 of the stock solution (1000x ampicillin). With these solutions, we created our
 						agar plates and left them to cool and solidify. Our E. coli cells were also inoculated
 						and left overnight on agar plates to grow in preparation for making them competent. This

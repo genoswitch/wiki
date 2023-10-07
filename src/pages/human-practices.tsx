@@ -113,11 +113,16 @@ export default class HumanPracticesPage extends React.Component {
 					</ul>
 					<h3 style={{ paddingTop: 4 }}>Usual symptoms:</h3>
 					<ul>
-						<li>Pain in your lower tummy or back - pelvic pain – usually worse during your period.</li>
+						<li>
+							Pain in your lower tummy or back - pelvic pain – usually worse during your period.
+						</li>
 						<li>Period paid that stops you doing your normal activities.</li>
 						<li>pain during or after sex.</li>
 						<li>Pain when peeing or pooping during your period.</li>
-						<li>Feeling sick, constipation, diarrhoea, or blood in your urine or faeces during your period.</li>
+						<li>
+							Feeling sick, constipation, diarrhoea, or blood in your urine or faeces during your
+							period.
+						</li>
 						<li>Difficulty getting pregnant.</li>
 						<li>Very heavy bleeding.</li>
 						<li>Depression / low mood.</li>
@@ -125,7 +130,10 @@ export default class HumanPracticesPage extends React.Component {
 						<li>Increased likelihood of infections.</li>
 					</ul>
 					<h3 style={{ paddingTop: 4 }}>Current Diagnostic Method:</h3>
-						There is only one definitive method: a laparoscopy. This is a surgery where a small cut is made below the navel and a camera is inserted in the pelvis to check for pelvic abnormalities. It is a highly invasive procedure that can cause infection, bleeding and organ damage.
+					There is only one definitive method: a laparoscopy. This is a surgery where a small cut is
+					made below the navel and a camera is inserted in the pelvis to check for pelvic
+					abnormalities. It is a highly invasive procedure that can cause infection, bleeding and
+					organ damage.
 					<h2 style={{ paddingTop: 8 }}>External Outreach (Title TBC)</h2>
 				</Container>
 			</HeaderFooterProvider>

@@ -85,6 +85,58 @@ export default class HumanPracticesPage extends React.Component {
 					believe that by using our tool, a diagnosis of these diseases can occur more rapidly,
 					easily, and cost-effectively, ultimately decreasing the level of suffering of patients
 					awaiting a diagnosis.
+					<h2 style={{ paddingTop: 8 }}>Outreach/Survey</h2>
+					“What are the most pressing issues in women's healthcare today?”. This is one of the big
+					questions that the City of London iGEM team was tasked with answering when developing
+					Project Genoswitch. To find out more, we surveyed the wider community, asking a range of
+					questions which provided us with an insight into the importance of education of female
+					healthcare.
+					<br />
+					<img src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure1.webp" />
+					Interestingly, respondents ranked their awareness of women's health concerns at 5.51 out
+					of 10 on average. There was a range of 4 across age groups, as seen in Figure 1. However,
+					those between 50 and 60 had the highest average of 8 out of 10, and those aged between 19
+					and 25 had the lowest average of 4. When comparing responses between men and women, there
+					was an average difference of 0.71, which was much lower than expected. On average, women
+					rated their awareness of women's health concerns at 5.83/10, whereas men ranked their
+					awareness of women's health concerns at 5.12/10. This highlighted the general limited
+					access to female health education, and the impact this has on both men and women. As many
+					of the participants were of school age, we expected a significant number of people to be
+					receiving health information from their schools.
+					<br />
+					<img src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure2.webp" />
+					However, as seen in Figure 2, only 41.9% of respondents got any kind of information from
+					their schools, with many saying that the information they received was “surface level”,
+					“minimal", “focused on biology GCSE”, and not discussed outside of science lessons. The
+					internet was shown to be the second most popular place to find information, with 65.3% of
+					surveyors getting information from family and friends. Some participants identified that
+					it was due to the lack of direction towards trustworthy information online, as many used
+					social media but were unsure about the reliability of the content they saw. By asking
+					family and friends about the issues surrounding female healthcare, participants were able
+					to understand the impact it has on people they are close to, but many mentioned they did
+					not understand the bodily processes that occur when someone has a period, or what it means
+					to have PCOS. This lack of knowledge was reflected in the general inability to name
+					symptoms of common health problems in women, specifically endometriosis, PCOS, ovarian
+					cancer, and breast cancer.
+					<br />
+					<img src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure3.webp" />
+					As shown in Figure 3, the group who consistently had the largest proportion of people
+					unable to name any symptoms of these diseases were men. Overall, it can be seen that
+					participants struggled the most to name symptoms of ovarian cancer, with PCOS at a close
+					second.
+					<br />
+					<img src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure4.webp" />
+					To gain an understanding of what knowledge participants had of these diseases, they were
+					asked to name common symptoms of PCOS, endometriosis, ovarian cancer, and breast cancer.
+					The symptoms most frequently identified were 'lump', 'pain', and 'period', as shown in
+					Figure 4. Another shocking statistic was men only being able to name 7/10 common symptoms
+					between the 4 diseases mentioned. This once again showed us the importance of educating
+					people on these conditions, which have the propensity to impact 50% of the population. To
+					play our part in educating the community, we created short profiles summarising the main
+					symptoms, diagnostic methods and barriers to diagnosis of PCOS, endometriosis, ovarian
+					cancer, and breast cancer. Many of the respondents of the survey expressed a desire to
+					know more about these diseases. By creating these profiles, we are able to share brief and
+					useful information about an area of healthcare which many people are unaware of.
 					<h2 style={{ paddingTop: 8 }}>Disease Profiles</h2>
 					<h3 style={{ paddingTop: 2 }}>Endometriosis</h3>
 					<i>Average time until formal diagnosis after onset of symptoms: 7-9 years.</i>
@@ -274,6 +326,25 @@ export default class HumanPracticesPage extends React.Component {
 					is then used to further examine the lump(s). A sample of cells are then taken from the
 					breast in a biopsy and are tested to see if they are cancerous.
 					<h2 style={{ paddingTop: 8 }}>External Outreach (Title TBC)</h2>
+					As part of our education aims, we talked to a global children's online education company
+					called Macademia. Macademia aims to provide educational play through games, challenges and
+					engaging content for children from the ages of 2-18 years old through their two brands:
+					Azoomee (for kids up to 6 years old) and DaVinci (for grown ups and kids 7+). While their
+					content does not touch on women’s health, their expertise in children’s education can help
+					us determine how best to capture the interest of audiences of many ages. We spoke to the
+					founders of the company, Estelle and Douglas Lloyd, to gain insight on what content is
+					engaged with most by young audiences so that we could incorporate these ideas into
+					educational plans. Our conversations showed us that children tend to be more receptive to
+					games than the bombarding of information that school health education usually entails.
+					Having interactive games, videos and experiences means the information learnt will be
+					remembered for much longer periods of time, and is more likely to be absorbed. When
+					producing educational materials for schools to use, we would keep in mind what is most
+					likely to be engaging for children as learning about women’s health requires a lot of
+					information to be retained. We would also aim to make these resources a series of short
+					sessions that are presented to students over a long period of time - as our research
+					showed that many repeated sessions will cause the information to be stored in long-term
+					memory, while one long session may also lead to wavering interest over the length of the
+					session and information will not be remembered.
 				</Container>
 			</HeaderFooterProvider>
 		);

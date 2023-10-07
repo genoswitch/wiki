@@ -11,8 +11,6 @@ import LoadingPage from "../components/loadingPage";
 
 import { HomepageCardNode } from "../types/graphql/homepageCardNode";
 
-import "animate.css";
-
 interface HomepageState {
 	isReady: boolean;
 }
@@ -54,23 +52,10 @@ export default class Homepage extends React.Component<
 						style={{
 							width: "100%",
 							height: "auto",
-							maxHeight: "80vh",
-							marginTop: "50px",
-							marginBottom: "50px",
+							marginTop: "250px",
+							marginBottom: "350px",
 						}}
 					/>
-					<div style={{ display: "flex", justifyContent: "center" }}>
-						<img
-							src="https://static.igem.wiki/teams/4642/wiki/logos/team/logo-team-project-black.svg"
-							style={{
-								width: "50%",
-								filter:
-									"invert(99%) sepia(29%) saturate(4144%) hue-rotate(155deg) brightness(91%) contrast(90%)",
-								paddingBottom: "100px",
-							}}
-							class="animate__animated animate__fadeInLeftBig animate__delay-3s"
-						/>
-					</div>
 					<Container sx={{ width: "100vw" }}>
 						{this.cards.map(card => (
 							<div style={{ paddingBottom: "50px" }}>

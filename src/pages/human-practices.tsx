@@ -92,7 +92,7 @@ export default class HumanPracticesPage extends React.Component {
 					questions which provided us with an insight into the importance of education of female
 					healthcare.
 					<br />
-					<img src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure1.jpg" />
+					<img src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure1.webp" />
 					Interestingly, respondents ranked their awareness of women's health concerns at 5.51 out
 					of 10 on average. There was a range of 4 across age groups, as seen in Figure 1. However,
 					those between 50 and 60 had the highest average of 8 out of 10, and those aged between 19
@@ -104,7 +104,7 @@ export default class HumanPracticesPage extends React.Component {
 					of the participants were of school age, we expected a significant number of people to be
 					receiving health information from their schools.
 					<br />
-					<img src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure2.jpg" />
+					<img src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure2.webp" />
 					However, as seen in Figure 2, only 41.9% of respondents got any kind of information from
 					their schools, with many saying that the information they received was “surface level”,
 					“minimal", “focused on biology GCSE”, and not discussed outside of science lessons. The
@@ -119,13 +119,13 @@ export default class HumanPracticesPage extends React.Component {
 					symptoms of common health problems in women, specifically endometriosis, PCOS, ovarian
 					cancer, and breast cancer.
 					<br />
-					<img src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure3.jpg" />
+					<img src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure3.webp" />
 					As shown in Figure 3, the group who consistently had the largest proportion of people
 					unable to name any symptoms of these diseases were men. Overall, it can be seen that
 					participants struggled the most to name symptoms of ovarian cancer, with PCOS at a close
 					second.
 					<br />
-					<img src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure4.jpg" />
+					<img src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure4.webp" />
 					To gain an understanding of what knowledge participants had of these diseases, they were
 					asked to name common symptoms of PCOS, endometriosis, ovarian cancer, and breast cancer.
 					The symptoms most frequently identified were 'lump', 'pain', and 'period', as shown in

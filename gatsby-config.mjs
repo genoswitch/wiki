@@ -1,3 +1,8 @@
+// When using gatsby-config.ts, configuring gatsby-plugin-mdx
+// results in gatbsy ignoring the wholec config file
+// Workaround: switch to .js or .mjs.
+// Tracked at https://github.com/gatsbyjs/gatsby/issues/38603
+
 import { execSync } from "child_process";
 
 import path from "path";

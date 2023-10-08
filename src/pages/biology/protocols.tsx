@@ -247,7 +247,7 @@ export default class BiologyProtocolsPage extends React.Component {
 					<ul>
 						<li>Start with larger volume first, so that there is no liquid left in the pipette when inserting into pipette</li>
 						<li>Use centrifuge to get rid of air bubbles in the tubes</li>
-						<li>\>1kb of DNA use 1% agarose, and \<1kb DNA use \<1% agarose</li>
+						<li>{“>“}1kb of DNA use 1% agarose, and {“<“}1kb DNA use {“<“}1% agarose</li>
 					</ul>
 					<br/>
 					Set the thermocycler to A-test setting and temperatures for the denaturation, annealing and extension stages as: 95, 52, 72 respectively. Repeat 25-30x.

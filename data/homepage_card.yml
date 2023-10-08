@@ -1,12 +1,10 @@
 - name: Biology
   picturePath: homepage/biology-homepage.webp
   description: |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-    qui officia deserunt mollit anim id est laborum.
+    The project this year has focused on combating the antiquated tests currently in place for diseases linked to women’s health.
+    Our method involves multiplexed regulation which uses four stacked toehold switches, for the four diseases, which each test for three miRNA.
+    The switches incorporate genetic 'AND' gates, allowing for high specificity.
+    Uniquely, our project allows for the miRNA binding sites to be swapped meaning various diseases can be tested for, using the database we have compiled.
 
 - name: Software
   picturePath: homepage/software.webp

@@ -121,16 +121,16 @@ proteins is unfolded, decreasing the length of the stem and allowing for exposur
 thus allowing for translation.
 
 <h2 style={{ paddingTop: 8 }}>miRPA</h2>
-As described by project RIBOTOX, it is difficult to discriminate between leaky expression of toehold switches and <2.25M concentrations of miRNAs <u>ref16</u>.
+As described by project RIBOTOX, it is difficult to discriminate between leaky expression of toehold switches and "<"2.25M concentrations of miRNAs <u>ref16</u>.
 We therefore needed to amplify the miRNA. We have chosen to use miRPA, similarly to the RIBOTOX project.
 It is a single tube, isothermal alternative to PCR so both increases accessibility to groups with less access to thermocyclers and also is easier to perform amplification on miRNA than PCR.
 
 We therefore needed to amplify the miRNA. We have chosen to use miRPA, similarly to the RIBOTOX project. It is a single tube, isothermal alternative to PCR so both increases accessibility to groups with less access to thermocyclers and also is easier to perform amplification on miRNA than PCR.
 
-Two DNA probes, one with 5’ phosphorylation, bind to the miRNA, and are ligated together by DNA ligase.
+Two DNA probes, one with 5' phosphorylation, bind to the miRNA, and are ligated together by DNA ligase.
 Then, primers are added with DNA polymerase, and complementary strands to the ligated probes are synthesised.
 Then, RPA can take place: primers, associated with recombinase protein dislodge the strands, replicating them in a similar method to PCR but as no heat cycles are required to break up the strands, the process can take place isothermally.
 
-In order for the miRNA to be detected, we will need to use ‘asymmetric RPA’: an excess of forward primers are added (usually 5x the amount), so an excess of the strand that was originally miRNA form, so there is now ssDNA with the miRNA code in DNA.
+In order for the miRNA to be detected, we will need to use 'asymmetric RPA': an excess of forward primers are added (usually 5x the amount), so an excess of the strand that was originally miRNA form, so there is now ssDNA with the miRNA code in DNA.
 This can be detected by toehold switches.
-In order to design probes for miRPA, we can use NUPACK’s design functions in its API to find probes which can bind to the miRNAs, but have overhangs which do not bind within themselves, to ensure primers can easily anneal to them.
+In order to design probes for miRPA, we can use NUPACK's design functions in its API to find probes which can bind to the miRNAs, but have overhangs which do not bind within themselves, to ensure primers can easily anneal to them.

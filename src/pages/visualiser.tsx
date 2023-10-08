@@ -2,8 +2,8 @@ import * as React from "react";
 
 import { graphql, PageProps } from "gatsby";
 
-import { Menu, MenuHandler, MenuList, MenuItem, Button } from "@material-tailwind/react";
-import "../styles/tailwindcss-global.css";
+import { Button, Menu } from "@mui/material";
+import { NestedMenuItem } from 'mui-nested-menu';
 
 import HeaderFooterProvider from "../components/headerFooterProvider";
 import LoadingPage from "../components/loadingPage";
@@ -24,6 +24,7 @@ type SelectOnChangeTarget = EventTarget & {
 interface VisualiserPageState {
 	isReady: boolean;
 	sequenceIndex: number | undefined;
+	anchorEl: EventTarget | null;
 }
 
 export default class VisualiserPage extends React.Component<
@@ -36,6 +37,7 @@ export default class VisualiserPage extends React.Component<
 		this.state = {
 			isReady: false,
 			sequenceIndex: undefined,
+			anchorEl: null
 		};
 
 		this.sequenceDefinitions = [];
@@ -84,38 +86,38 @@ export default class VisualiserPage extends React.Component<
 		if (!this.state.isReady) {
 			return <LoadingPage />;
 		} else {
-			const handleClick = (e: MouseEvent) => {
-				const target = e.target as SelectOnChangeTarget;
+			const handleBtnClick = (event: MouseEvent) => this.setState({ anchorEl: event.currentTarget });
+
+			const handleClose = (event: MouseEvent) => {
+				const target = event.target as SelectOnChangeTarget;
+
 				this.setState({
 					sequenceIndex: target.value,
-				});
-			};
+					anchorEl: null
+				})
+			}
+
+			const isOpen = Boolean(this.state.anchorEl);
+
 			return (
 				<HeaderFooterProvider data={this.data}>
 					<br />
 					<div style={{ padding: "25px" }}>
-						<Menu>
-							<MenuHandler>
-								<Button>Choose a Sequence...</Button>
-							</MenuHandler>
-							<MenuList>
-								{/** Create a sub-menu for each tag */}
-								{this.sequenceTags.map(tag => (
-									<Menu placement="right-start" offset={15}>
-										<MenuHandler>
-											<MenuItem>{tag.name}</MenuItem>
-										</MenuHandler>
-										<MenuList>
-											{/** Map each entry with this tag **/}
-											<VisualiserFilteredMenuItems
-												sequenceDefinitions={this.sequenceDefinitions}
-												tag={tag}
-												onClick={handleClick}
-											/>
-										</MenuList>
-									</Menu>
-								))}
-							</MenuList>
+						<Button variant="contained" onClick={handleBtnClick}>
+							Choose a Sequence...
+						</Button>
+						<Menu anchorEl={this.state.anchorEl as Element} open={isOpen} onClose={handleClose}>
+							{/** Create a sub-menu for each tag */}
+							{this.sequenceTags.map(tag => (
+								<NestedMenuItem label={tag.name} parentMenuOpen={isOpen}>
+									{/** Map each entry with this tag **/}
+									<VisualiserFilteredMenuItems
+										sequenceDefinitions={this.sequenceDefinitions}
+										tag={tag}
+										onClick={handleClose}
+									/>
+								</NestedMenuItem>
+							))}
 						</Menu>
 					</div>
 					{/** Only show if sequenceIndex is set */}

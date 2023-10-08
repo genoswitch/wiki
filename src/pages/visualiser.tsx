@@ -3,7 +3,7 @@ import * as React from "react";
 import { graphql, PageProps } from "gatsby";
 
 import { Button, Menu } from "@mui/material";
-import { NestedMenuItem } from 'mui-nested-menu';
+import { NestedMenuItem } from "mui-nested-menu";
 
 import HeaderFooterProvider from "../components/headerFooterProvider";
 import LoadingPage from "../components/loadingPage";
@@ -37,7 +37,7 @@ export default class VisualiserPage extends React.Component<
 		this.state = {
 			isReady: false,
 			sequenceIndex: undefined,
-			anchorEl: null
+			anchorEl: null,
 		};
 
 		this.sequenceDefinitions = [];
@@ -86,16 +86,17 @@ export default class VisualiserPage extends React.Component<
 		if (!this.state.isReady) {
 			return <LoadingPage />;
 		} else {
-			const handleBtnClick = (event: MouseEvent) => this.setState({ anchorEl: event.currentTarget });
+			const handleBtnClick = (event: MouseEvent) =>
+				this.setState({ anchorEl: event.currentTarget });
 
 			const handleClose = (event: MouseEvent) => {
 				const target = event.target as SelectOnChangeTarget;
 
 				this.setState({
 					sequenceIndex: target.value,
-					anchorEl: null
-				})
-			}
+					anchorEl: null,
+				});
+			};
 
 			const isOpen = Boolean(this.state.anchorEl);
 

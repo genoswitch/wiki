@@ -109,7 +109,7 @@ const config = {
 				imagePath: "picturePath",
 				name: "dynamicImage",
 				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
-				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
+				prepareUrl: url => `${config.siteMetadata.assetBasePath}${url}`,
 			},
 		},
 		{

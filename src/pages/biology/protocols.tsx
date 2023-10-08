@@ -245,23 +245,45 @@ export default class BiologyProtocolsPage extends React.Component {
 					</ul>
 					<h3 style={{ paddingTop: 4 }}>Key Notes:</h3>
 					<ul>
-						<li>Start with larger volume first, so that there is no liquid left in the pipette when inserting into pipette</li>
+						<li>
+							Start with larger volume first, so that there is no liquid left in the pipette when
+							inserting into pipette
+						</li>
 						<li>Use centrifuge to get rid of air bubbles in the tubes</li>
-						<li>{'>'}1kb of DNA use 1% agarose, and {'<'}1kb DNA use {'<'}1% agarose</li>
+						<li>
+							{">"}1kb of DNA use 1% agarose, and {"<"}1kb DNA use {"<"}1% agarose
+						</li>
 					</ul>
-					<br/>
-					Set the thermocycler to A-test setting and temperatures for the denaturation, annealing and extension stages as: 95, 52, 72 respectively. Repeat 25-30x.
+					<br />
+					Set the thermocycler to A-test setting and temperatures for the denaturation, annealing
+					and extension stages as: 95, 52, 72 respectively. Repeat 25-30x.
 					<h3 style={{ paddingTop: 4 }}>Gel electrophoresis (+ prep of 1% agarose x2):</h3>
-					<ol>	
-						<li>Stir the gel and TAE buffer with avoiding getting the sediment up the side (10microL GelRed Nucleic acid into each 1% gel agarose)</li>
-						<li>Microwave until the gel powder dissolves into the buffer, avoid over microwaving (avoid lowering concentration)</li>
+					<ol>
+						<li>
+							Stir the gel and TAE buffer with avoiding getting the sediment up the side (10microL
+							GelRed Nucleic acid into each 1% gel agarose)
+						</li>
+						<li>
+							Microwave until the gel powder dissolves into the buffer, avoid over microwaving
+							(avoid lowering concentration)
+						</li>
 						<li>Pour into moulds once cooled and wait to set.</li>
-						<li>Remove tape and well mould and place into gel electrophoresis box, pouring buffer solution on top evenly on either side of mould.</li>
-						<li>Using pipette, take evenly distributed samples of DNA into each well and 1kb DNA ladder into the leftmost well.</li>
-						<li>Connect to the power supply (negative electrode by DNA and positive on other end of gel) and wait for DNA to fully separate.</li>
+						<li>
+							Remove tape and well mould and place into gel electrophoresis box, pouring buffer
+							solution on top evenly on either side of mould.
+						</li>
+						<li>
+							Using pipette, take evenly distributed samples of DNA into each well and 1kb DNA
+							ladder into the leftmost well.
+						</li>
+						<li>
+							Connect to the power supply (negative electrode by DNA and positive on other end of
+							gel) and wait for DNA to fully separate.
+						</li>
 					</ol>
 					<h3 style={{ paddingTop: 4 }}>Analysis of Results:</h3>
-					Place gel under blue light filter box to observe DNA separation without risk of damaging sample (no UV).
+					Place gel under blue light filter box to observe DNA separation without risk of damaging
+					sample (no UV).
 				</Container>
 			</HeaderFooterProvider>
 		);

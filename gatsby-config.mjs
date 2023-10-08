@@ -1,18 +1,20 @@
-import type { GatsbyConfig, PluginRef } from "gatsby";
+import { execSync } from "child_process";
 
-import childProcess from "child_process";
+import path from "path";
+import { fileURLToPath } from "url";
 
-import remarkToc from "remark-toc";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
-import ResolvePagesParams from "./src/types/gatsby-config/resolvePagesParams";
-import Page from "./src/types/gatsby-config/page";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const config: GatsbyConfig = {
+const config = {
 	siteMetadata: {
 		siteUrl: process.env.SITE_URL || "https://2023.igem.wiki/city-of-london-uk/",
 		assetBasePath: process.env.ASSET_BASE_PATH || "https://static.igem.wiki/teams/4642/wiki/",
 		// Use the git cli to get the latest commit hash.
-		sha: childProcess.execSync("git rev-parse --verify HEAD").toString().trim(),
+		sha: execSync("git rev-parse --verify HEAD").toString().trim(),
 	},
 	pathPrefix: process.env.PATH_PREFIX || "/city-of-london-uk",
 	// More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
@@ -72,7 +74,7 @@ const config: GatsbyConfig = {
 				imagePath: "picturePath",
 				name: "dynamicImage",
 				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
-				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
+				prepareUrl: url => `${config.siteMetadata.assetBasePath}${url}`,
 			},
 		},
 		{
@@ -82,7 +84,7 @@ const config: GatsbyConfig = {
 				imagePath: "logoPath",
 				name: "dynamicImage",
 				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
-				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
+				prepareUrl: url => `${config.siteMetadata.assetBasePath}${url}`,
 			},
 		},
 		{
@@ -92,7 +94,7 @@ const config: GatsbyConfig = {
 				imagePath: "logoPath",
 				name: "dynamicImage",
 				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
-				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
+				prepareUrl: url => `${config.siteMetadata.assetBasePath}${url}`,
 			},
 		},
 		{
@@ -135,16 +137,13 @@ const config: GatsbyConfig = {
   					}
 				}`,
 				// Use allFiles to embed last modified information in to each page node.
-				resolvePages: ({
-					allSitePage: { nodes: allPages },
-					allFile: { nodes: allFiles },
-				}: ResolvePagesParams) => {
+				resolvePages: ({ allSitePage: { nodes: allPages }, allFile: { nodes: allFiles } }) => {
 					// allSitePage.nodes[x].component returns "{path-to-tsx}" for .tsx pages or
 					// "{path-to-tsx}?__contentFilePath={path-to-mdx} for other pages (such as MDX.)"
 
 					// Iterate over each site page
 					return allPages.map(page => {
-						let filename: string;
+						let filename;
 
 						// Determine which kind of page this is.
 						if (page.component.includes("__contentFilePath")) {
@@ -174,7 +173,7 @@ const config: GatsbyConfig = {
 					});
 				},
 				// Serialize a page node to the format gatsby-plugin-sitemap expects
-				serialize: (page: Page) => {
+				serialize: page => {
 					return {
 						url: page.path,
 						// If lastmod is present (is optional), return it.
@@ -215,7 +214,8 @@ const config: GatsbyConfig = {
 			resolve: `gatsby-plugin-mdx`,
 			options: {
 				mdxOptions: {
-					remarkPlugins: [[remarkToc, { heading: "contents", maxDepth: 1 }]],
+					remarkPlugins: [remarkMath],
+					rehypePlugins: [[rehypeKatex, { strict: "ignore" }]],
 				},
 			},
 		},

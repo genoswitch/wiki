@@ -1,16 +1,25 @@
-import type { GatsbyConfig, PluginRef } from "gatsby";
+// When using gatsby-config.ts, configuring gatsby-plugin-mdx
+// results in gatbsy ignoring the wholec config file
+// Workaround: switch to .js or .mjs.
+// Tracked at https://github.com/gatsbyjs/gatsby/issues/38603
 
-import childProcess from "child_process";
+import { execSync } from "child_process";
 
-import ResolvePagesParams from "./src/types/gatsby-config/resolvePagesParams";
-import Page from "./src/types/gatsby-config/page";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const config: GatsbyConfig = {
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const config = {
 	siteMetadata: {
 		siteUrl: process.env.SITE_URL || "https://2023.igem.wiki/city-of-london-uk/",
 		assetBasePath: process.env.ASSET_BASE_PATH || "https://static.igem.wiki/teams/4642/wiki/",
 		// Use the git cli to get the latest commit hash.
-		sha: childProcess.execSync("git rev-parse --verify HEAD").toString().trim(),
+		sha: execSync("git rev-parse --verify HEAD").toString().trim(),
 	},
 	pathPrefix: process.env.PATH_PREFIX || "/city-of-london-uk",
 	// More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
@@ -70,7 +79,7 @@ const config: GatsbyConfig = {
 				imagePath: "picturePath",
 				name: "dynamicImage",
 				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
-				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
+				prepareUrl: url => `${config.siteMetadata.assetBasePath}${url}`,
 			},
 		},
 		{
@@ -80,7 +89,7 @@ const config: GatsbyConfig = {
 				imagePath: "logoPath",
 				name: "dynamicImage",
 				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
-				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
+				prepareUrl: url => `${config.siteMetadata.assetBasePath}${url}`,
 			},
 		},
 		{
@@ -90,7 +99,7 @@ const config: GatsbyConfig = {
 				imagePath: "logoPath",
 				name: "dynamicImage",
 				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
-				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
+				prepareUrl: url => `${config.siteMetadata.assetBasePath}${url}`,
 			},
 		},
 		{
@@ -100,7 +109,7 @@ const config: GatsbyConfig = {
 				imagePath: "picturePath",
 				name: "dynamicImage",
 				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
-				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
+				prepareUrl: url => `${config.siteMetadata.assetBasePath}${url}`,
 			},
 		},
 		{
@@ -143,16 +152,13 @@ const config: GatsbyConfig = {
   					}
 				}`,
 				// Use allFiles to embed last modified information in to each page node.
-				resolvePages: ({
-					allSitePage: { nodes: allPages },
-					allFile: { nodes: allFiles },
-				}: ResolvePagesParams) => {
+				resolvePages: ({ allSitePage: { nodes: allPages }, allFile: { nodes: allFiles } }) => {
 					// allSitePage.nodes[x].component returns "{path-to-tsx}" for .tsx pages or
 					// "{path-to-tsx}?__contentFilePath={path-to-mdx} for other pages (such as MDX.)"
 
 					// Iterate over each site page
 					return allPages.map(page => {
-						let filename: string;
+						let filename;
 
 						// Determine which kind of page this is.
 						if (page.component.includes("__contentFilePath")) {
@@ -182,7 +188,7 @@ const config: GatsbyConfig = {
 					});
 				},
 				// Serialize a page node to the format gatsby-plugin-sitemap expects
-				serialize: (page: Page) => {
+				serialize: page => {
 					return {
 						url: page.path,
 						// If lastmod is present (is optional), return it.
@@ -203,7 +209,15 @@ const config: GatsbyConfig = {
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`, // Needed for dynamic images
 		`gatsby-plugin-no-sourcemaps`,
-		`gatsby-plugin-mdx`,
+		{
+			resolve: `gatsby-plugin-mdx`,
+			options: {
+				mdxOptions: {
+					remarkPlugins: [remarkMath],
+					rehypePlugins: [[rehypeKatex, { strict: "ignore" }]],
+				},
+			},
+		},
 		`gatsby-transformer-genetic-sequences`, // Custom plugin to parse gb, fasta files.
 		`gatsby-plugin-pnpm`, // configure webpack for pnpm dependency resolution
 		`gatsby-plugin-postcss`, // for TailwindCSS for nested menu on src/pages/visualiser.tsx

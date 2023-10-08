@@ -26,7 +26,17 @@
 	// Run a project when the container starts
 	// https://code.visualstudio.com/remote/advancedcontainers/start-processes#_video-run-npm-start-whenever-the-container-is-started
 	// nohup to stop the process from being killed after 15m.
-	"postStartCommand": "nohup bash -c 'npm run develop-codespaces &'"
+	"postStartCommand": "nohup bash -c 'npm run develop-codespaces &'",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dsznajder.es7-react-js-snippets",
+				"dbaeumer.vscode-eslint",
+				"GraphQL.vscode-graphql",
+				"GraphQL.vscode-graphql-syntax"
+			]
+		}
+	}
 
 	// Configure tool-specific properties.
 	// "customizations": {},

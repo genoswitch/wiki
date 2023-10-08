@@ -32,6 +32,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
 	createTypeFromFile(actions, "./src/graphql/sequencesTranslations.gql");
 	createTypeFromFile(actions, "./src/graphql/sequences.gql");
 	createTypeFromFile(actions, "./src/graphql/sequenceTags.gql");
+	createTypeFromFile(actions, "./src/graphql/homepageCard.gql");
 };
 
 export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions, reporter }) => {
@@ -71,8 +72,32 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions,
 	});
 };
 
-export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({ stage, actions }) => {
+export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
+	stage,
+	actions,
+	getConfig,
+}) => {
 	if (stage == "build-javascript") {
+		const config = {
+			...getConfig(),
+			...{
+				output: {
+					...getConfig().output,
+					...{
+						filename: `[contenthash].js`,
+						// default is [name]-[contenthash] which creates component-- which is shortened to component by static.igem.wiki
+						// so we have to change it
+						chunkFilename: `chunk-[contenthash].js`,
+					},
+				},
+			},
+		};
+
+		// actions.setWebpackConfig does not apply to output
+		// so we replace the webpack config instead
+		// see https://github.com/gatsbyjs/gatsby/issues/9429#issuecomment-433407748
+		actions.replaceWebpackConfig(config);
+
 		actions.setWebpackConfig({
 			plugins: [
 				// RelativeCI: (bundle size analyzer) Add the stats writer plugin

@@ -103,6 +103,16 @@ const config = {
 			},
 		},
 		{
+			resolve: "gatsby-plugin-remote-images",
+			options: {
+				nodeType: "HomepageCardYaml",
+				imagePath: "picturePath",
+				name: "dynamicImage",
+				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
+				prepareUrl: (url: string) => `${config.siteMetadata!.assetBasePath}${url}`,
+			},
+		},
+		{
 			resolve: "gatsby-plugin-manifest",
 			options: {
 				name: "Genoswitch (City of London UK)",
@@ -192,22 +202,6 @@ const config = {
 			options: {
 				// Works in production using `gatsby build --prefix-paths`
 				siteUrl: `https://2023.igem.wiki/city-of-london-uk/`,
-			},
-		},
-		// Self hosted fonts for SeqViz
-		// External content (such as Google Fonts) not allowed as per iGEM rules
-		{
-			resolve: "gatsby-plugin-webfonts",
-			options: {
-				fonts: {
-					google: [
-						{
-							family: "Roboto Mono",
-							variants: ["300", "400", "500"],
-							strategy: "selfHosted",
-						},
-					],
-				},
 			},
 		},
 		`@genoswitch/gatsby-transformer-gitinfo`,

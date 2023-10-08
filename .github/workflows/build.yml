@@ -8,9 +8,13 @@ jobs:
   build:
     name: Test Build
     runs-on: ubuntu-latest
+    # If this job is running more than once on the same branch,
+    # cancel the older job. See mirror.yml for more details.
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref_name }}-build
+      cancel-in-progress: true
     permissions:
       checks: write # Create checks for commits
-      pull-requests: write # Add comments to PRs
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -29,7 +33,29 @@ jobs:
         run: pnpm install
 
       - name: Build site
-        run: npm run build
+        run: npm run build -- --prefix-paths --verbose --no-color
+
+      - name: Split static assets
+        run: chmod +x ./post-build-prod.sh && ./post-build-prod.sh
+
+      - name: Create tgz of public
+        run: cd public && tar czvf ../${{ github.sha }}.tgz ./
+
+      - uses: yamatt/backblaze-b2-upload-action@v6
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        with:
+          key_id: ${{ secrets.B2_KEY_ID }}
+          application_key: ${{ secrets.B2_APPLICATION_KEY }}
+          bucket_name: ${{ secrets.B2_BUCKET_NAME }}
+          file_path: ${{ github.sha }}.tgz
+          remote_path: wiki-builds/${{ github.sha }}.tgz
+
+      - name: Upload static assets
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: npx tsx src/post-build-upload.ts
+        env:
+          IGEM_USERNAME: ${{ secrets.IGEM_USERNAME }}
+          IGEM_PASSWORD: ${{ secrets.IGEM_PASSWORD }}
 
       - name: Send bundle stats to RelativeCI
         uses: relative-ci/agent-action@v2
@@ -60,6 +86,36 @@ jobs:
           conclusion: neutral
           output: |
             {"title":"${{ steps.determineSize.outputs.SIZE }} (of 5M)","summary":"${{ steps.determineSize.outputs.SIZE }} (of 5M)"}
+
+  build-staging:
+    name: Build Staging
+    runs-on: ubuntu-latest
+    # If this job is running more than once on the same branch,
+    # cancel the older job. See mirror.yml for more details.
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref_name }}-build-staging
+      cancel-in-progress: true
+    permissions:
+      pull-requests: write # Add comments to PRs
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build site
+        run: npm run build
 
       - name: Upload to netlify (staging environment - deploy preview, if a PR build)
         if: github.event_name == 'pull_request'
@@ -96,26 +152,25 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1
-
-  build-docker:
-    name: Test Build (Docker)
-    runs-on: ubuntu-latest
-    container:
-      image: node:latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # https://github.com/actions/runner/issues/2033
-      # https://github.com/tehraninasab/conventions/commit/6f8edca9848902b1be24c74b90e53768cf2104fd
-      - name: Repository ownership fix (github actions)
-        run: git config --system --add safe.directory /__w/wiki/wiki
-
-      - name: Setup pnpm
-        run: corepack enable && corepack prepare pnpm@latest --activate
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build site
-        run: NODE_OPTIONS=--max-old-space-size=4096 npm run build -- --prefix-paths --verbose --no-color
+#  build-docker:
+#    name: Test Build (Docker)
+#    runs-on: ubuntu-latest
+#    container:
+#      image: node:latest
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v3
+#
+#      # https://github.com/actions/runner/issues/2033
+#      # https://github.com/tehraninasab/conventions/commit/6f8edca9848902b1be24c74b90e53768cf2104fd
+#      - name: Repository ownership fix (github actions)
+#        run: git config --system --add safe.directory /__w/wiki/wiki
+#
+#      - name: Setup pnpm
+#        run: corepack enable && corepack prepare pnpm@latest --activate
+#
+#      - name: Install dependencies
+#        run: pnpm install
+#
+#      - name: Build site
+#        run: NODE_OPTIONS=--max-old-space-size=4096 npm run build -- --prefix-paths --verbose --no-color

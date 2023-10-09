@@ -1,52 +1,16 @@
----
-name: Human Practices
-description: TBD
-slug: /human-practices1
-references:
-  - number: 1
-    author: TBD
-    title: TBD
-    journal: TBD
-    volume: "TBD"
-    published_date: TBD
-    doi: TBD
+import * as React from "react";
 
-  - number: 2
-    author: TBD
-    title: TBD
-    journal: TBD
-    volume: "TBD"
-    published_date: TBD
-    doi: TBD
-
-  - number: 3
-    author: TBD
-    title: TBD
-    journal: TBD
-    volume: "TBD"
-    published_date: TBD
-    doi: TBD
-
-  - number: 4
-    author: TBD
-    title: TBD
-    journal: TBD
-    volume: "TBD"
-    published_date: TBD
-    doi: TBD
-
-  - number: 5
-    author: TBD
-    title: TBD
-    journal: TBD
-    volume: "TBD"
-    published_date: TBD
-    doi: TBD
----
-
+import HeaderFooterProvider from "../components/headerFooterProvider";
+import { Head as BaseHead } from "../components/head";
+import { Container } from "@mui/material";
 import { navigate } from "gatsby";
 
-<h1>Human Practices</h1>
+export default class HumanPracticesPage extends React.Component {
+	render(): React.ReactNode {
+		return (
+			<HeaderFooterProvider>
+				<Container>
+                <h1>Human Practices</h1>
 <h2 style={{ paddingTop: 8 }}>
 	<u>Values of our Project</u>
 </h2>
@@ -388,10 +352,10 @@ are promising. The National Institute for Health and Care Research conducted an 
 for HIV and found that HIV self-testing increased overall HIV test frequency by one extra test over a
 six-month time period (95% CI 0.52 to 1.24) and resulted in more first-time testers as for 9.9% of the
 participants this was their first test (95% CI 7.4 to 13.8).
-<Reference number={1} /> Recently, the NHS has implemented a program whereby bowel cancer self-testing
+<u>Ref1</u> Recently, the NHS has implemented a program whereby bowel cancer self-testing
 kits are sent to those eligible, which has seen the proportion of people choosing to participate in bowel
 screening has increased to 70.3% – the highest on record.
-<Reference number={2} /> Evidence from a US study surrounding cervical cancer (similarly under screened
+<u>Ref2</u> Evidence from a US study surrounding cervical cancer (similarly under screened
 and prone to late diagnosis to endometriosis) showed, in a CRT, that Screening uptake was 72% among women
 who received mailed self-testing kits compared to 37% for the other group of women. Home-screening “puts
 women in control” and can “better reach people without access to screening” according to study co-author
@@ -399,11 +363,11 @@ Noel T. Brewer.
 
 Currently the NHS offers at-home testing through the company <i>MonitorMyHealth</i>.
 
-<Reference number={3} /> The company sends a test pack to homes and offers a wide range of tests, all
+<u>Ref3</u> The company sends a test pack to homes and offers a wide range of tests, all
 using capillary blood collection via a finger prick.
-<Reference number={4} /> The capillary tests offered by <i>MonitorMyHealth</i> collect either 600 or
+<u>Ref4</u> The capillary tests offered by <i>MonitorMyHealth</i> collect either 600 or
 250µl of blood.
-<Reference number={5} /> However, capillary blood tests can collect up to 1 ml of blood meaning if more
+<u>Ref5</u> However, capillary blood tests can collect up to 1 ml of blood meaning if more
 blood was needed in order to detect sufficient numbers of miRNA for our project there is a possibility
 of developing a further blood test. It is important to note that given restricted time in the labs we
 aren’t able to determine the precise critical value for the number of miRNA that need to be present in
@@ -430,3 +394,15 @@ Dr Aka also emphasised the importance of non-invasive testing, drawing on his pr
 where patients were fearful of invasive procedures such as a laparoscopy. He also mentioned that should
 GENOSWITCH’s clinical viability be proven, he would prefer to use our testing method over those currently
 available.
+
+
+
+
+
+
+                </Container>
+			</HeaderFooterProvider>
+		);
+	}
+}
+export const Head = () => <BaseHead title="Human Practices" description="TBD" />;

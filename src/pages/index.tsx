@@ -10,7 +10,7 @@ import Footer from "../components/footer";
 import LoadingPage from "../components/loadingPage";
 
 import { HomepageCardNode } from "../types/graphql/homepageCardNode";
-
+import { Head as BaseHead } from "../components/head";
 interface HomepageState {
 	isReady: boolean;
 }

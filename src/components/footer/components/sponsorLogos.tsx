@@ -2,7 +2,6 @@ import * as React from "react";
 
 import { Grid } from "@mui/material";
 import { SponsorNode } from "../../../types/graphql/sponsorNode";
-import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
 
 type SponsorLogoProps = {
 	nodes: SponsorNode[];

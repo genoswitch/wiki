@@ -2,7 +2,6 @@ import * as React from "react";
 
 import { Grid } from "@mui/material";
 import { ProminentLogoNode } from "../../../types/graphql/prominentLogoNode";
-import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
 
 type ProminentLogoProps = {
 	nodes: ProminentLogoNode[];

@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 
 import { HomepageCardNode } from "../../types/graphql/homepageCardNode";
-import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
 
 import "./card.css";
 

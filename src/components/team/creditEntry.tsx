@@ -2,7 +2,6 @@ import * as React from "react";
 
 import { TeamBadges } from "./teamBadges";
 import { TeamMemberNode } from "../../types/graphql/teamMemberNode";
-import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
 
 import TeamTag from "../../types/team/teamTag";
 import {

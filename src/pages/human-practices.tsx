@@ -175,9 +175,7 @@ export default class HumanPracticesPage extends React.Component {
 						able to share brief and useful information about an area of healthcare which many people
 						are unaware of.
 					</p>
-					<h2 style={{ paddingTop: 8 }}>
-						<u>Disease Profiles</u>
-					</h2>
+					<h2 style={{ paddingTop: 8 }}>Disease Profiles</h2>
 					<HPDiseaseProfiles />
 					<h2 style={{ paddingTop: 8 }}>External Outreach</h2>
 					<HPExternalOutreach />

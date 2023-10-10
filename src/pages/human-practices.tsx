@@ -4,7 +4,7 @@ import { Container } from "@mui/material";
 
 import HeaderFooterProvider from "../components/headerFooterProvider";
 import { Head as BaseHead } from "../components/head";
-import HPTabbedResources from "../components/HpTabbedResources";
+import HPDiseaseProfiles from "../components/HPDiseaseProfiles";
 
 export default class HumanPracticesPage extends React.Component {
 	render(): React.ReactNode {
@@ -139,7 +139,7 @@ export default class HumanPracticesPage extends React.Component {
 					<h2 style={{ paddingTop: 8 }}>
 						<u>Disease Profiles</u>
 					</h2>
-					<HPTabbedResources />
+					<HPDiseaseProfiles />
 					<h2 style={{ paddingTop: 8 }}>External Outreach</h2>
 					We decided that the social impact of our project, centred around raising awareness and
 					empowering women in the workplace was appropriate having researched charities such as

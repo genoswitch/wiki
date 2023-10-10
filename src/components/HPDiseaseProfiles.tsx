@@ -34,7 +34,7 @@ function a11yProps(index: number) {
 	};
 }
 
-const HPTabbedResources = () => {
+const HPDiseaseProfiles = () => {
 	const [value, setValue] = React.useState(0);
 
 	const handleChange = (event: Event, newValue: number) => {
@@ -249,4 +249,4 @@ const HPTabbedResources = () => {
 	);
 };
 
-export default HPTabbedResources;
+export default HPDiseaseProfiles;

@@ -109,7 +109,10 @@ export default class HumanPracticesPage extends React.Component {
 					questions which provided us with an insight into the importance of education of female
 					healthcare.
 					<br />
-					<img style={{ maxWidth: "100%" }} src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure1.webp" />
+					<img
+						style={{ maxWidth: "100%" }}
+						src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure1.webp"
+					/>
 					<p>
 						Interestingly, respondents ranked their awareness of women's health concerns at 5.51 out
 						of 10 on average. There was a range of 4 across age groups, as seen in Figure 1.
@@ -123,7 +126,10 @@ export default class HumanPracticesPage extends React.Component {
 						number of people to be receiving health information from their schools.
 					</p>
 					<br />
-					<img style={{ maxWidth: "100%" }} src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure2.webp" />
+					<img
+						style={{ maxWidth: "100%" }}
+						src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure2.webp"
+					/>
 					<p>
 						However, as seen in Figure 2, only 41.9% of respondents got any kind of information from
 						their schools, with many saying that the information they received was “surface level”,
@@ -140,7 +146,10 @@ export default class HumanPracticesPage extends React.Component {
 						endometriosis, PCOS, ovarian cancer, and breast cancer.
 					</p>
 					<br />
-					<img style={{ maxWidth: "100%" }} src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure3.webp" />
+					<img
+						style={{ maxWidth: "100%" }}
+						src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure3.webp"
+					/>
 					<p>
 						As shown in Figure 3, the group who consistently had the largest proportion of people
 						unable to name any symptoms of these diseases were men. Overall, it can be seen that
@@ -148,7 +157,10 @@ export default class HumanPracticesPage extends React.Component {
 						second.
 					</p>
 					<br />
-					<img style={{ maxWidth: "100%" }} src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure4.webp" />
+					<img
+						style={{ maxWidth: "100%" }}
+						src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure4.webp"
+					/>
 					<p>
 						To gain an understanding of what knowledge participants had of these diseases, they were
 						asked to name common symptoms of PCOS, endometriosis, ovarian cancer, and breast cancer.

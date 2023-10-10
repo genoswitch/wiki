@@ -264,7 +264,65 @@ const BiologyProtocols = () => {
 					</ol>
 				</CustomTabPanel>
 				<CustomTabPanel value={value} index={7}>
-					<h3>Materials:</h3>
+				<h3>Materials:</h3>
+					<ul>
+						<li>Gel box</li>
+						<li>Gel Tray</li>
+						<li>Comb - 1% agarose in 1x TAE</li>
+						<li>SYBR Safe</li>
+						<li>100ml beaker</li>
+						<li>Distilled water</li>
+					</ul>
+					<h3 style={{ paddingTop: 4 }}>Preparing the Gel</h3>
+					<ol>
+						<li>
+							Prepare 300ml of the TAE buffer by dissolving 6ml of the 50X concentrated buffer in
+							294ml of distilled water.
+						</li>
+						<li>
+							Add 0.5g of agarose powder into 5ml of the diluted buffer and heat whilst stirring
+							continually until clear.
+						</li>
+						<li>Pour into the gel mould and add the comb with a required number of wells.</li>
+						<li>Pipette in 3µL of SYBR Safe dye and use the pipette tip to mix it around.</li>
+						<li>Mix 3µL of the DNA sample with 2µL of the loading dye.</li>
+					</ol>
+					<h3 style={{ paddingTop: 4 }}>Running the Gel</h3>
+					<ol>
+						<li>
+							Add enough 1X TAE to fill the reservoirs at both ends of the gel box and cover the
+							surface of the gel - the gel should be immersed. You should use the remaining TAE
+							buffer from 300ml.
+						</li>
+						<li>
+							Load 1μL prepared ladder (with dye and loading buffer). The concentration is 100μg/ml,
+							i.e. there will be a total of 0.1µg = 100nanograms of ladder in the well. The mass of
+							the ladder is important to know if you need to quantify your bands by comparison with
+							the ladder bands.
+						</li>
+					</ol>
+					<h3 style={{ paddingTop: 4 }}>Load Ladder in Left-Most Lane</h3>
+					<ol>
+						<li>Use 2 μL loading dye per 3 μL of sample.</li>
+						<li>Load samples from left to right.</li>
+						<li>
+							Place the cover on the gel box such that your samples will run towards the positive,
+							red electrode. Make sure that the cables from the cover are connected to the power
+							supply correctly.
+						</li>
+						<li>
+							Turn on the power supply and run your gel at ~85 V for 80 minutes (voltage and time
+							values can vary). Check regularly to see how far the dye has moved and stop the gel
+							when the dye has moved approximately 80% of the distance.
+						</li>
+						<li>
+							Verify that bubbles are rising from the electrodes once you start your gel to ensure
+							your gel is running properly.
+						</li>
+					</ol>
+				</CustomTabPanel>
+				<CustomTabPanel value={value} index={8}>
+				<h3>Materials:</h3>
 					<ul>
 						<li>25µl GoTaq Master Mix 2x concentrated (using 2-20 pipette, 10 and 15)</li>
 						<li>10µl from template DNA (either 1-mCherry or 2-GFP)</li>

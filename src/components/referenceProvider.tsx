@@ -28,7 +28,7 @@ const ReferenceProvider = ({ references }: ReferenceProviderProps) => {
 					// Required attributes
 					if (ref?.number && ref?.author && ref?.title && ref?.journal && ref?.published_date) {
 						return (
-							<span id={`ref_note-${ref?.number}`}>
+							<p id={`ref_note-${ref?.number}`}>
 								{ref?.number}. <a href={`#ref_${ref?.number}`}>^</a> {ref?.author}, "{ref?.title}",{" "}
 								<i>{ref?.journal}</i>
 								{ref?.volume ? `, ${ref.volume}` : ""}, {ref?.published_date}, Available:{" "}
@@ -40,7 +40,7 @@ const ReferenceProvider = ({ references }: ReferenceProviderProps) => {
 								) : (
 									<></>
 								)}
-							</span>
+							</p>
 						);
 					}
 				})}

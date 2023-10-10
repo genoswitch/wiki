@@ -14,9 +14,7 @@ export default class HumanPracticesPage extends React.Component {
 			<HeaderFooterProvider>
 				<Container>
 					<h1>Human Practices</h1>
-					<h2 style={{ paddingTop: 8 }}>
-						<u>Values of our Project</u>
-					</h2>
+					<h2 style={{ paddingTop: 8 }}>Values of our Project</h2>
 					When designing our project, we focused our efforts on making a test that would have a
 					strong social and scientific impact. It was important to us to create a tool that both
 					empowered females and helped healthcare professionals diagnose these diseases. We are
@@ -161,8 +159,10 @@ export default class HumanPracticesPage extends React.Component {
 					<HPDiseaseProfiles />
 					<h2 style={{ paddingTop: 8 }}>External Outreach</h2>
 					<HPExternalOutreach />
-					<h2 style={{ paddingTop: 8 }}>External Outreach</h2>
+					<h2 style={{ paddingTop: 8 }}>Education</h2>
 					<HPEducation />
+					<h2 style={{ paddingTop: 8 }}>NICE Guidelines</h2>
+					<b>Will insert shortly</b>
 				</Container>
 			</HeaderFooterProvider>
 		);

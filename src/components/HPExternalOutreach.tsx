@@ -50,7 +50,6 @@ const HPExternalOutreach = () => {
 						<Tab label="Feasibility of At-Home Testing" {...a11yProps(1)} />
 						<Tab label="Dr Omi Ohizua" {...a11yProps(2)} />
 						<Tab label="Dr Albert Aka" {...a11yProps(3)} />
-						<Tab label="CLSG Presentation Write-up" {...a11yProps(3)} />
 					</Tabs>
 				</Box>
 				<CustomTabPanel value={value} index={0}>

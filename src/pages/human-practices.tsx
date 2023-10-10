@@ -87,9 +87,22 @@ export default class HumanPracticesPage extends React.Component {
 					easily, and cost-effectively, ultimately decreasing the level of suffering of patients
 					awaiting a diagnosis.
 					<h2 style={{ paddingTop: 8 }}>Fundraising</h2>
-					We began by forming a fundraising strategy roughly outlining the steps we would take: write an investment brief, create a fundraising pitch deck. Then email the brief to every biotech investment firm under the sun, livery companies, biotech design companies, charities, past investors of the COL iGEM projects and anyone we thought might be interested, and then pitch to any companies that wanted an in-person pitch.
-When writing our investment brief, we kept it accessible to those who had experience in biotech investment and those who didn’t. We included the intricate details of our project and how it worked but also ensured that anyone who skimmed through this very biology-heavy section would still fully understand the project and its aims. First and foremost, one will usually write how the investment will benefit them and their team; however, we emphasised how these investing individuals and companies would profit from the exposure that our iGEM team would bring them. In the iGEM jamboree, in front of many teams and companies, their logo (either in pitch decks, on our team hoodies etc.) would be displayed - demonstrating their philanthropy and kindness.
-In the end, we didn’t have to give in person pitches to any of our investors - but our biggest win was emphasising how a contribution would benefit us, and also how it would benefit them!
+					We began by forming a fundraising strategy roughly outlining the steps we would take:
+					write an investment brief, create a fundraising pitch deck. Then email the brief to every
+					biotech investment firm under the sun, livery companies, biotech design companies,
+					charities, past investors of the COL iGEM projects and anyone we thought might be
+					interested, and then pitch to any companies that wanted an in-person pitch. When writing
+					our investment brief, we kept it accessible to those who had experience in biotech
+					investment and those who didn’t. We included the intricate details of our project and how
+					it worked but also ensured that anyone who skimmed through this very biology-heavy section
+					would still fully understand the project and its aims. First and foremost, one will
+					usually write how the investment will benefit them and their team; however, we emphasised
+					how these investing individuals and companies would profit from the exposure that our iGEM
+					team would bring them. In the iGEM jamboree, in front of many teams and companies, their
+					logo (either in pitch decks, on our team hoodies etc.) would be displayed - demonstrating
+					their philanthropy and kindness. In the end, we didn’t have to give in person pitches to
+					any of our investors - but our biggest win was emphasising how a contribution would
+					benefit us, and also how it would benefit them!
 					<h2 style={{ paddingTop: 8 }}>Data Collection</h2>
 					“What are the most pressing issues in women's healthcare today?”. This is one of the big
 					questions that the City of London iGEM team was tasked with answering when developing

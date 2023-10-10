@@ -15,7 +15,7 @@ export default class BiologyProtocolsPage extends React.Component {
 						In this section, you will find all the protocols that we used during our time in the
 						labs.
 					</b>
-				</br>
+				<br/>
 					Please click through the tabs below to look at each of our protocols.
 				<br/>
 					<BiologyProtocols />

@@ -17,7 +17,7 @@
 
 - name: Hardware
   path: /hardware/
-  picturePath: homepage/software.webp
+  picturePath: homepage/hardware-cropped.webp
   description: |
     In Project Genoswitch, the Hardware team has mainly focused on creating effective extraction and testing tools that are cheap, efficient and easy to use.
     Our primary method of extraction involves using magnetic nanoparticles and biotin-streptavidin in order to seperate miRNA from a medium, which can then be followed by RPA and miRPA for proper amplification.

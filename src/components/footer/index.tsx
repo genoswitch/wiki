@@ -96,6 +96,7 @@ export const query = graphql`
 			year
 			name
 			link
+			medal
 		}
 	}
 `;

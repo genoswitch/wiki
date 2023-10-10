@@ -10,4 +10,5 @@ type PreviousYearsYaml implements Node @dontInfer {
 	year: Int!
 	name: String!
 	link: String!
+	medal: String!
 }

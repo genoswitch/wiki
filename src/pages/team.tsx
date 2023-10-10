@@ -34,7 +34,6 @@ import FilterMenu from "../components/team/filterMenu";
 import LoadingPage from "../components/loadingPage";
 
 import { Head as BaseHead } from "../components/head";
-import { StaticImage } from "gatsby-plugin-image";
 
 // TypeScript type def for the component state
 // https://stackoverflow.com/questions/46987816/using-state-in-react-with-typescript
@@ -224,13 +223,9 @@ export default class TeamPage extends React.PureComponent<
 						<div style={{ padding: "16px" }}>
 							<Card>
 								{/** Copy options from GraphQL query at the end of team.tsx */}
-								<StaticImage
-									style={{ maxHeight: "75vh" }}
+								<img
+									style={{ maxHeight: "75vh", maxWidth: 2400 }}
 									src="https://static.igem.wiki/teams/4642/wiki/pictures/webp-default/group.webp"
-									placeholder="blurred"
-									formats={["webp"]}
-									width={2400}
-									outputPixelDensities={[0.25]} // 1x is always created, see below GraphQL query
 								/>
 
 								<CardContent>

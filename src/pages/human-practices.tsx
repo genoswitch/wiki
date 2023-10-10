@@ -1,4 +1,4 @@
-import * as React from "react";
+ import * as React from "react";
 
 import { Container } from "@mui/material";
 
@@ -159,7 +159,7 @@ export default class HumanPracticesPage extends React.Component {
 					<br />
 					<img
 						style={{ maxWidth: "100%" }}
-						src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/figure4-1.webp"
+						src="https://static.igem.wiki/teams/4642/wiki/human-practices/survey/hp-figure4-1.webp"
 					/>
 					<p>
 						To gain an understanding of what knowledge participants had of these diseases, they were

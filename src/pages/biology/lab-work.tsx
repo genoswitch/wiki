@@ -288,6 +288,67 @@ export default class BiologyLabWorkPage extends React.Component {
 							/>
 						</p>
 					</DayCard>
+					{/** Day 3 */}
+					<DayCard
+						date={"Monday 21st August 2023"}
+						time={"10am- 5pm"}
+						register={"Dave, Matt, Yilu"}
+					>
+						<Typography variant="h6" component="div">
+							Objective
+						</Typography>
+						<p>
+							Beginning PCR for the THS T7 GFP and mCherry circuits, then confirming amplification
+							with gel electrophoresis.
+						</p>
+
+						<Typography variant="h6" component="div">
+							Overview
+						</Typography>
+						<p>
+							5ng/mL - PCR Prep 25microL GoTaq Master Mix 2x concentrated (using 2-20 pipette, 10
+							and 15) 10 microL from template DNA (either 1 - mCherry and 2 - GFP) 5microL of each
+							primers (6F and 6R) 5microL of nuclease free water Start with larger volume first, so
+							that there is no liquid left in the pipette when inserting into pipette Using
+							centrifuge to get rid of air bubbles in the tubes A-test 95 52 - annealing temperature
+							72 1% agarose x2
+						</p>
+						<ul>
+							<li>Stir the gel and TAE buffer with avoiding getting the sediment up the side</li>
+							<li>
+								{">"}1kb of DNA use 1% agarose, and \{"<"}1kb DNA use {"<"}1% agarose
+							</li>
+							<li>
+								Microwave until the gel powder dissolves into the buffer, without over microwaving
+								(which would lower the concentration)
+							</li>
+						</ul>
+						<p>
+							1kb DNA ladder 10microL GelRed Nucleic acid into each 1% gel agarose Pour into the
+							tray with comb 100W power
+						</p>
+
+						<Typography variant="h6" component="div">
+							Photos
+						</Typography>
+						<p>
+							<ImageGallery
+								lazyLoad={true}
+								showThumbnails={false}
+								showIndex={true}
+								items={[
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/21082301.webp",
+									},
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/21082302.webp",
+									},
+								]}
+							/>
+						</p>
+					</DayCard>
 				</Container>
 			</HeaderFooterProvider>
 		);

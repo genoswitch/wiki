@@ -22,7 +22,7 @@ const VisualiserFilteredMenuItems = ({
 				.filter(x => x.tag == tag.tag)
 				.map(sequenceDefinition => (
 					<MenuItem value={sequenceDefinitions.indexOf(sequenceDefinition)} onClick={onClick}>
-						{sequenceDefinition.name}
+						{tag.name} - {sequenceDefinition.name}
 					</MenuItem>
 				))}
 		</>

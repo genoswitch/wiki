@@ -74,8 +74,8 @@ devDependencies:
     specifier: ^5.12.0
     version: 5.12.0(gatsby@5.12.5)
   gatsby-plugin-image:
-    specifier: ^3.12.0
-    version: 3.12.0(@babel/core@7.20.12)(gatsby-plugin-sharp@5.12.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.5)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^3.12.1
+    version: 3.12.1(@babel/core@7.20.12)(gatsby-plugin-sharp@5.12.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.5)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
   gatsby-plugin-manifest:
     specifier: ^5.12.0
     version: 5.12.0(gatsby@5.12.5)(graphql@16.8.1)
@@ -6362,8 +6362,8 @@ packages:
       gatsby: 5.12.5(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
     dev: true
 
-  /gatsby-plugin-image@3.12.0(@babel/core@7.20.12)(gatsby-plugin-sharp@5.12.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.5)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-zvkEotc3EgWfxdUuIeu81fN/dTY8GRVxGYwRKI7kkHpKAFUz2CIIQjxg16LSRxv0lGfRUxfPqxuMqBuk99GWOQ==}
+  /gatsby-plugin-image@3.12.1(@babel/core@7.20.12)(gatsby-plugin-sharp@5.12.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.5)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-OJ3PGxBp5WbadGFZtd1VqMOB3d8ktysgtkFZbHwLUuGqxFKFMuySBS/kFudohcMJSeCIEgK9pEzWJ1RWh3mDWw==}
     peerDependencies:
       '@babel/core': ^7.12.3
       gatsby: ^5.0.0-next
@@ -6380,7 +6380,7 @@ packages:
       '@babel/code-frame': 7.22.5
       '@babel/core': 7.20.12
       '@babel/parser': 7.22.5
-      '@babel/runtime': 7.22.11
+      '@babel/runtime': 7.23.1
       '@babel/traverse': 7.22.5
       babel-jsx-utils: 1.1.0
       babel-plugin-remove-graphql-queries: 5.12.0(@babel/core@7.20.12)(gatsby@5.12.5)
@@ -6391,7 +6391,7 @@ packages:
       gatsby: 5.12.5(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       gatsby-core-utils: 4.12.0
       gatsby-plugin-sharp: 5.12.0(gatsby@5.12.5)(graphql@16.8.1)
-      gatsby-plugin-utils: 4.12.0(gatsby@5.12.5)(graphql@16.8.1)
+      gatsby-plugin-utils: 4.12.1(gatsby@5.12.5)(graphql@16.8.1)
       gatsby-source-filesystem: 5.12.0(gatsby@5.12.5)
       objectFitPolyfill: 2.3.5
       prop-types: 15.8.1

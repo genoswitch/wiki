@@ -18,18 +18,20 @@ type DayCardProps = {
 class DayCard extends React.Component<DayCardProps, {}> {
 	render(): React.ReactNode {
 		return (
-			<Card variant="outlined">
-				<CardContent>
-					<Typography variant="h5" component="div">
-						{this.props.date}
-					</Typography>
-					<Typography color="text.secondary">Register: {this.props.register}</Typography>
-					<Typography sx={{ mb: 1.5 }} color="text.secondary">
-						Time: {this.props.time}
-					</Typography>
-					{this.props.children}
-				</CardContent>
-			</Card>
+			<div style={{ paddingTop: 16, paddingBottom: 16 }}>
+				<Card variant="outlined" raised={true}>
+					<CardContent>
+						<Typography variant="h5" component="div">
+							{this.props.date}
+						</Typography>
+						<Typography color="text.secondary">Register: {this.props.register}</Typography>
+						<Typography sx={{ mb: 1.5 }} color="text.secondary">
+							Time: {this.props.time}
+						</Typography>
+						{this.props.children}
+					</CardContent>
+				</Card>
+			</div>
 		);
 	}
 }
@@ -406,6 +408,43 @@ export default class BiologyLabWorkPage extends React.Component {
 										original:
 											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/22082305.webp",
 										description: "GFP",
+									},
+								]}
+							/>
+						</p>
+					</DayCard>
+					{/** Day 5 */}
+					<DayCard
+						date={"Wednesday 23rd August 2023"}
+						time={"11am-3pm"}
+						register={"Matt, Hester, Yilu"}
+					>
+						<p>
+							Repeated PCR again - difficulty with the number of bands shown in gel electrophoresis
+							Possibly due to problems with volumes of primers used (unequal) Found that tap water
+							was used, instead of distilled water, which explains why the number of bands did not
+							correlate with the results which we expected, as there were contaminants which would
+							have been removed in dH2O (as a precipitated solid). 10 microL of stock primer and 90
+							microL of water (FWD and REV) New master mix (perhaps a different level of ATCG-ase to
+							help with the annealing) GoTaq Long PCR Master Mix 2x A-test thermocycle temperature
+							95 - denaturing temperature 57 - annealing temperature (increased from yesterday) 72 -
+							extension temperature 20 mL TAE buffer 50x, fill to 1L pure water 2.4g of agarose,
+							120mL of TAE buffer dilute 10microL Blue/Orange 6X Loading Dye to GoTaq Long PCR
+							Master Mix tube (=60microL) Load the agarose gel with 30:20 GoTaq (Green) and 30:30
+							GoTaq Long Difficulties with the actual toehold switch mechanism: regarding E.coli vs
+							human ribosomal activity and whether proteins will be expressed
+						</p>
+						<Typography variant="h6" component="div">
+							Photos
+						</Typography>
+						<p>
+							<ImageGallery
+								lazyLoad={true}
+								showThumbnails={false}
+								items={[
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/23082301.webp",
 									},
 								]}
 							/>

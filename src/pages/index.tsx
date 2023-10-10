@@ -59,7 +59,10 @@ export default class Homepage extends React.Component<
 					<Container sx={{ width: "100vw" }}>
 						{this.cards.map(card => (
 							<div style={{ paddingBottom: "50px" }}>
-								<HomepageCard card={card} assetBasePath={this.data.site?.siteMetadata?.assetBasePath!} />
+								<HomepageCard
+									card={card}
+									assetBasePath={this.data.site?.siteMetadata?.assetBasePath!}
+								/>
 							</div>
 						))}
 					</Container>

@@ -21,7 +21,7 @@
     In order to create a robust testing system, we designed a custom luminometer that improves upon the designs of previous City iGEM teams by using multiple LDRs to allow for the simultaneous detection of several toehold switches, as well as integrating WebUSB to allow for easier interfacing with client-side devices.
 
 - name: Human Practices
-  picturePath: homepage/software.webp
+  picturePath: pictures/webp-default/group.webp
   description: |
     Using synthetic biology has great potential for a positive impact, however it can easily become irresponsible and not bring real benefits for society.
     Human practices therefore hold the responsibility to think deeply and creatively about whether our project is truly beneficial. Through gathering input from professionals in the field such as gynaecologists and pioneers in the field of synthetic biology, we can ensure that our project design is informed and has a real impact.

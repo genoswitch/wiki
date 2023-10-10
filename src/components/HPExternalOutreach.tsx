@@ -75,7 +75,6 @@ const HPExternalOutreach = () => {
 					session and information will not be remembered.
 				</CustomTabPanel>
 				<CustomTabPanel value={value} index={1}>
-					<h3 style={{ paddingTop: 8 }}></h3>
 					Prompted by our interview with Dr Omi, we conducted some research into the effects of
 					self-testing kits in the hope that it would increase the uptake of our tests. By creating
 					home-testing kits, we aim to be able to periodically test for conditions to detect them at

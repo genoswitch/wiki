@@ -134,21 +134,6 @@ const HPExternalOutreach = () => {
 					such as a laparoscopy. He also mentioned that should GENOSWITCH’s clinical viability be
 					proven, he would prefer to use our testing method over those currently available.
 				</CustomTabPanel>
-				<CustomTabPanel value={value} index={4}>
-					Engaging with those in the wider community of the City of London has been central to our
-					project from the start. Ensuring that pupils around the Square Mile are made aware of the
-					work we are doing is vital for inspiring a generation of budding researchers and problem
-					solvers. Given we have focused on tackling female reproductive health conditions, our
-					outreach at the City of London School for Girls has been especially important. Delivering
-					an assembly there about our work meant explaining the technical side of things in a
-					digestible way, clarifying our own understanding and ensuring that those who attended the
-					assembly left it curious to find out more. The assembly was also a fantastic opportunity
-					to involve pupils in our work by asking them to fill out a form about their awareness of
-					the conditions we are targeting and explaining how they can join the project in Years 11
-					and 12. Leaving the assembly on a positive note, highlighting how our methods could cut
-					down current diagnosis times from 7.5 years to shortly after symptom onset, meant that
-					pupils were left inspired and eager to join the team.
-				</CustomTabPanel>
 			</Box>
 		</Card>
 	);

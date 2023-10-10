@@ -224,7 +224,7 @@ export default class TeamPage extends React.PureComponent<
 							<Card>
 								{/** Copy options from GraphQL query at the end of team.tsx */}
 								<img
-									style={{ maxHeight: "75vh", maxWidth: 2400 }}
+									style={{ maxHeight: "75vh" }}
 									src="https://static.igem.wiki/teams/4642/wiki/pictures/webp-default/group.webp"
 								/>
 

@@ -29,13 +29,16 @@ const BiologyProtocols = () => {
 						<Tab label="Preparing Cells" {...a11yProps(3)} />
 						<Tab label="Making Competent Cells" {...a11yProps(4)} />
 						<Tab label="E. coli Transformation" {...a11yProps(5)} />
-						<Tab label="Determination of bacterial optical density (OD) using the spectrophotometer" {...a11yProps(6)} />
+						<Tab
+							label="Determination of bacterial optical density (OD) using the spectrophotometer"
+							{...a11yProps(6)}
+						/>
 						<Tab label="Conducting Gel Electrophoresis" {...a11yProps(7)} />
 						<Tab label="PCR Preparations" {...a11yProps(8)} />
 					</Tabs>
 				</Box>
 				<CustomTabPanel value={value} index={0}>
-				<ol>
+					<ol>
 						<li>
 							LB medium 200 ml in 1L flask (2g Tryptone, 1g Yeast extract, 1g NaCl and H₂O to
 							200ml). Close with sponge and foil. Label, <b>autoclave</b> at 125°C for 15 minutes
@@ -61,7 +64,7 @@ const BiologyProtocols = () => {
 					</ol>
 				</CustomTabPanel>
 				<CustomTabPanel value={value} index={1}>
-				Ampicillin 100 mg/ml – 1g in 10ml of MilliQ water.
+					Ampicillin 100 mg/ml – 1g in 10ml of MilliQ water.
 					<i>
 						The stock solutions are filtered through a 0.2 mm filter, aliquoted and stored at -20°C
 						until use.
@@ -69,7 +72,7 @@ const BiologyProtocols = () => {
 					<i>The final working concentration of all antibiotics is 1:1000 of the stock solution.</i>
 				</CustomTabPanel>
 				<CustomTabPanel value={value} index={2}>
-				<ol>
+					<ol>
 						<li>Wipe down the bench to with 70% EtOH or bleach.</li>
 						<li>Remove foil cover from LB agar flask but leave sponge.</li>
 						<li>Melt LB agar in microwave and cool to 50.</li>
@@ -90,7 +93,7 @@ const BiologyProtocols = () => {
 					</ol>
 				</CustomTabPanel>
 				<CustomTabPanel value={value} index={3}>
-				<ul>
+					<ul>
 						<li>XL1 Blue and DH5α E. coli cells are used for plasmid preparation</li>
 						<li>
 							BL21 (DE3), BL21 (DE3)pRARE and Rosetta gami B (DE3) E. coli are used for protein
@@ -108,8 +111,8 @@ const BiologyProtocols = () => {
 						</li>
 						<li>Wrap cells in a parafilm, and store at 4°C</li>
 					</ol>
-					</CustomTabPanel>
-					<CustomTabPanel value={value} index={4}>
+				</CustomTabPanel>
+				<CustomTabPanel value={value} index={4}>
 					<ol>
 						<li>
 							Pick a single colony of the cells from the LB agar plate into 10 ml of LB media
@@ -144,8 +147,8 @@ const BiologyProtocols = () => {
 							–80°C.
 						</li>
 					</ol>
-					</CustomTabPanel>
-					<CustomTabPanel value={value} index={5}>
+				</CustomTabPanel>
+				<CustomTabPanel value={value} index={5}>
 					<ol>
 						<li>Take 50 µl of prepared E. coli competent cells and put on ice for 5 minutes.</li>
 						<li>Add 1µl of plasmid DNA and incubate on ice for 5 minutes.</li>
@@ -159,8 +162,8 @@ const BiologyProtocols = () => {
 							The next day, count cell colony, and wrap the plate in a parafilm, storing it at 4°C.
 						</li>
 					</ol>
-					</CustomTabPanel>
-					<CustomTabPanel value={value} index={6}>
+				</CustomTabPanel>
+				<CustomTabPanel value={value} index={6}>
 					These steps should be carried out under the flame, with sterile pipet tips to avoid
 					contamination of your sterile media stock, and also to protect your cultures from
 					contamination, in case they need to grow longer.
@@ -201,8 +204,8 @@ const BiologyProtocols = () => {
 						<li>When finished with the spec, turn the spectrophotometer off.</li>
 						<li>Clean up your bench with 70% ethanol.</li>
 					</ol>
-					</CustomTabPanel>
-					<CustomTabPanel value={value} index={7}>
+				</CustomTabPanel>
+				<CustomTabPanel value={value} index={7}>
 					<h3>Materials:</h3>
 					<ul>
 						<li>Gel box</li>
@@ -259,8 +262,8 @@ const BiologyProtocols = () => {
 							your gel is running properly.
 						</li>
 					</ol>
-					</CustomTabPanel>
-					<CustomTabPanel value={value} index={7}>
+				</CustomTabPanel>
+				<CustomTabPanel value={value} index={7}>
 					<h3>Materials:</h3>
 					<ul>
 						<li>25µl GoTaq Master Mix 2x concentrated (using 2-20 pipette, 10 and 15)</li>
@@ -309,7 +312,7 @@ const BiologyProtocols = () => {
 					<h3 style={{ paddingTop: 4 }}>Analysis of Results:</h3>
 					Place gel under blue light filter box to observe DNA separation without risk of damaging
 					sample (no UV).
-					</CustomTabPanel>
+				</CustomTabPanel>
 			</Box>
 		</Card>
 	);

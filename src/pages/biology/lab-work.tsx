@@ -345,6 +345,59 @@ export default class BiologyLabWorkPage extends React.Component {
 										original:
 											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/21082302.webp",
 									},
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/21082303.webp",
+									},
+								]}
+							/>
+						</p>
+					</DayCard>
+					{/** Day 4 */}
+					<DayCard date={"Tuesday 22nd August 2023"} time={"2pm-5pm"} register={"Dave, Matt, Yilu"}>
+						<Typography variant="h6" component="div">
+							Overview
+						</Typography>
+						<p>
+							Repeated PCR prep with different annealing temperature A-test 95 55 72 Changed agarose
+							gel to 2% 10microL GelRed Nucleic acid Took photos not under UV to prevent mutation
+							risk of the DNA. Used a blue light filter box. The second set (GFP) of gel
+							electrophoresis was successful, showing only one band which is what we expected to be
+							shown from the amplification / PCR (and one lower down for the primers (fewer base
+							pairs). The first set however showed 3 bands. The faintest being primers again, but
+							the larger ones harder to "diagnose". Through comparison between the first and second
+							gels, as well as the sample ladder, it seemed most likely that the top band was the
+							sequence that we wanted. We removed both regardless.
+						</p>
+						<Typography variant="h6" component="div">
+							Photos
+						</Typography>
+						<p>
+							<ImageGallery
+								lazyLoad={true}
+								showThumbnails={false}
+								showIndex={true}
+								items={[
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/22082301.webp",
+									},
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/22082302.webp",
+									},
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/22082303.webp",
+									},
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/22082304.webp",
+									},
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/22082305.webp",
+									},
 								]}
 							/>
 						</p>

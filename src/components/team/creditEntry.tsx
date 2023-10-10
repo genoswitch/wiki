@@ -48,9 +48,6 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 	render() {
 		if (this.state.showModal && !this.state.modalIsReady) {
 		}
-		// To make TS happy, use the notNull assertion for dynamicImage as well as getImage's return value.
-		// Also cast dynamicImage to ImageDataLike (mismatched so must cast to unknown first.)
-		const image = getImage(this.props.member.dynamicImage! as unknown as ImageDataLike)!;
 		return (
 			<div style={{ padding: 16 }}>
 				<Card raised>

@@ -24,7 +24,7 @@ export default class BiologyProtocolsPage extends React.Component {
 						<li>Preparing Cells</li>
 						<li>Making Competent Cells</li>
 						<li>E. coli Transformation</li>
-						<li>Determination of bacterial optical density (OD) using the spectrophotometer"</li>
+						<li>Determination of bacterial optical density (OD) using the spectrophotometer</li>
 						<li>Conducting Gel Electrophoresis</li>
 						<li>PCR Preparations</li>
 					</ul>

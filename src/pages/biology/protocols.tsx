@@ -15,7 +15,7 @@ export default class BiologyProtocolsPage extends React.Component {
 						In this section, you will find all the protocols that we used during our time in the
 						labs.
 					</b>
-				<br/>
+					<br />
 					Please click through the tabs below to look at each of our protocols:
 					<ul>
 						<li>Stock solutions for creating competent bacteria</li>
@@ -28,7 +28,7 @@ export default class BiologyProtocolsPage extends React.Component {
 						<li>Conducting Gel Electrophoresis</li>
 						<li>PCR Preparations</li>
 					</ul>
-				<br/>
+					<br />
 					<BiologyProtocols />
 				</Container>
 			</HeaderFooterProvider>

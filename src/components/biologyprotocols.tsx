@@ -264,7 +264,7 @@ const BiologyProtocols = () => {
 					</ol>
 				</CustomTabPanel>
 				<CustomTabPanel value={value} index={7}>
-				<h3>Materials:</h3>
+					<h3>Materials:</h3>
 					<ul>
 						<li>Gel box</li>
 						<li>Gel Tray</li>
@@ -322,7 +322,7 @@ const BiologyProtocols = () => {
 					</ol>
 				</CustomTabPanel>
 				<CustomTabPanel value={value} index={8}>
-				<h3>Materials:</h3>
+					<h3>Materials:</h3>
 					<ul>
 						<li>25µl GoTaq Master Mix 2x concentrated (using 2-20 pipette, 10 and 15)</li>
 						<li>10µl from template DNA (either 1-mCherry or 2-GFP)</li>

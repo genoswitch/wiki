@@ -53,9 +53,6 @@ const HPDiseaseProfiles = () => {
 					</Tabs>
 				</Box>
 				<CustomTabPanel value={value} index={0}>
-					<h3 style={{ paddingTop: 2 }}>
-						<i>Endometriosis</i>
-					</h3>
 					<i>Average time until formal diagnosis after onset of symptoms: 7-9 years.</i>
 					<h4 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h4>
 					Social:
@@ -144,7 +141,6 @@ const HPDiseaseProfiles = () => {
 					</ul>
 				</CustomTabPanel>
 				<CustomTabPanel value={value} index={2}>
-					<h3 style={{ paddingTop: 2 }}>Ovarian Cancer</h3>
 					<i>
 						Average global time until formal diagnosis after onset of symptoms: 31 weeks, or 7.75
 						months.
@@ -193,7 +189,6 @@ const HPDiseaseProfiles = () => {
 					way to diagnose ovarian cancer.
 				</CustomTabPanel>
 				<CustomTabPanel value={value} index={3}>
-					<h3 style={{ paddingTop: 2 }}>Breast Cancer</h3>
 					<i>
 						Average time until formal diagnosis after onset of symptoms: 16 days for symptomatic
 						patients, up to 3 months otherwise.

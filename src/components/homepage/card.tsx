@@ -62,7 +62,11 @@ export default class HomepageCard extends React.Component<HomepageCardProps, {}>
 							borderRadius: "20px",
 						}}
 					>
-						<a href="#" onClick={() => navigate(this.props.card.path)} style={{ textDecoration: "none", color: "inherit" }}>
+						<a
+							href="#"
+							onClick={() => navigate(this.props.card.path)}
+							style={{ textDecoration: "none", color: "inherit" }}
+						>
 							<Card style={{ position: "relative" }}>
 								{/** cardMedia */}
 								<Box sx={imageStyle}>
@@ -75,7 +79,8 @@ export default class HomepageCard extends React.Component<HomepageCardProps, {}>
 											objectFit: "cover",
 											maskImage: "linear-gradient(to bottom, black 15%, transparent 55%)",
 											// Required for chromium based browsers.
-											"-webkit-mask-image": "linear-gradient(to bottom, black 15%, transparent 55%)",
+											"-webkit-mask-image":
+												"linear-gradient(to bottom, black 15%, transparent 55%)",
 										}}
 									/>
 								</Box>

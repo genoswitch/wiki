@@ -1,19 +1,19 @@
+import * as React from "react";
+
 import {
 	createTheme,
 	Card,
 	CardContent,
 	ThemeProvider,
 	Typography,
-	styled,
 	Theme,
 	Box,
 } from "@mui/material";
-import * as React from "react";
-import bioPhoto from "../../images/bioGang.png";
 
-import "./card.css";
 import { HomepageCardNode } from "../../types/graphql/homepageCardNode";
 import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
+
+import "./card.css";
 
 const theme = createTheme({
 	palette: {

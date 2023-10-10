@@ -2,8 +2,18 @@ import * as React from "react";
 
 import { Divider } from "@mui/material";
 
+type Reference = {
+	number?: number;
+	author?: string;
+	title?: string;
+	journal?: string;
+	volume?: string;
+	published_date?: string;
+	doi?: string;
+};
+
 type ReferenceProviderProps = {
-	references: readonly Queries.Maybe<Queries.MdxFrontmatterReferences>[] | undefined;
+	references: Reference[] | undefined;
 };
 
 const ReferenceProvider = ({ references }: ReferenceProviderProps) => {
@@ -14,25 +24,22 @@ const ReferenceProvider = ({ references }: ReferenceProviderProps) => {
 			<>
 				<Divider variant="middle" />
 				<h4>References</h4>
-				{references.map((ref: Queries.Maybe<Queries.MdxFrontmatterReferences>) => {
-					// 1. ref number, author, title, doi
-					if (
-						ref?.number &&
-						ref?.author &&
-						ref?.title &&
-						ref?.journal &&
-						ref?.published_date &&
-						ref?.doi
-					) {
+				{references.map((ref: Reference) => {
+					// Required attributes
+					if (ref?.number && ref?.author && ref?.title && ref?.journal && ref?.published_date) {
 						return (
 							<span id={`ref_note-${ref?.number}`}>
 								{ref?.number}. <a href={`#ref_${ref?.number}`}>^</a> {ref?.author}, "{ref?.title}",{" "}
 								<i>{ref?.journal}</i>
 								{ref?.volume ? `, ${ref.volume}` : ""}, {ref?.published_date}, Available:{" "}
-								<a
-									target="_blank"
-									href={`https://doi.org/${ref?.doi}`}
-								>{`https://doi.org/${ref?.doi}`}</a>
+								{ref?.doi ? (
+									<a
+										target="_blank"
+										href={`https://doi.org/${ref?.doi}`}
+									>{`https://doi.org/${ref?.doi}`}</a>
+								) : (
+									<></>
+								)}
 							</span>
 						);
 					}

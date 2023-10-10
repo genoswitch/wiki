@@ -73,16 +73,6 @@ const config = {
 			},
 		},
 		{
-			resolve: "gatsby-plugin-remote-images",
-			options: {
-				nodeType: "TeamMemberYaml",
-				imagePath: "picturePath",
-				name: "dynamicImage",
-				// siteMetdata could be undefined, but is not in our use case, so use ! (definitely assigned)
-				prepareUrl: url => `${config.siteMetadata.assetBasePath}${url}`,
-			},
-		},
-		{
 			resolve: "gatsby-plugin-manifest",
 			options: {
 				name: "Genoswitch (City of London UK)",

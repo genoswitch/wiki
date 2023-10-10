@@ -164,7 +164,7 @@ export default class HumanPracticesPage extends React.Component {
 					<p>
 						To gain an understanding of what knowledge participants had of these diseases, they were
 						asked to name common symptoms of PCOS, endometriosis, ovarian cancer, and breast cancer.
-						The symptoms most frequently identified were 'lump', 'pain', and 'period', as shown in
+						The symptoms most frequently identified were 'lump', 'pain', and 'heavy periods', as shown in
 						Figure 4. Another shocking statistic was men only being able to name 7/10 common
 						symptoms between the 4 diseases mentioned. This once again showed us the importance of
 						educating people on these conditions, which have the propensity to impact 50% of the

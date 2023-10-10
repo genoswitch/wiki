@@ -3,7 +3,6 @@ import * as React from "react";
 import { graphql, PageProps } from "gatsby";
 
 import { Button, Menu } from "@mui/material";
-import { NestedMenuItem } from "mui-nested-menu";
 
 import HeaderFooterProvider from "../components/headerFooterProvider";
 import LoadingPage from "../components/loadingPage";
@@ -110,14 +109,14 @@ export default class VisualiserPage extends React.Component<
 						<Menu anchorEl={this.state.anchorEl as Element} open={isOpen} onClose={handleClose}>
 							{/** Create a sub-menu for each tag */}
 							{this.sequenceTags.map(tag => (
-								<NestedMenuItem label={tag.name} parentMenuOpen={isOpen}>
+								<>
 									{/** Map each entry with this tag **/}
 									<VisualiserFilteredMenuItems
 										sequenceDefinitions={this.sequenceDefinitions}
 										tag={tag}
 										onClick={handleClose}
 									/>
-								</NestedMenuItem>
+								</>
 							))}
 						</Menu>
 					</div>

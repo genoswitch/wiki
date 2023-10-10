@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Box, Button, Grid, List, ListItem, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 
 import { PreviousYearsNode } from "../../../types/graphql/previousYearsNode";
 
@@ -29,7 +29,9 @@ const PreviousYears = ({ nodes, xs }: PreviousYearsProps) => {
 							>
 								<div style={{ width: "100%" }}>
 									<Typography variant="h6">{node.name}</Typography>
-									<Typography variant="caption">iGEM {node.year}</Typography>
+									<Typography variant="caption">
+										iGEM {node.year} - {node.medal} medallists
+									</Typography>
 								</div>
 							</Button>
 						</div>

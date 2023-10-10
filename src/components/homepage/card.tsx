@@ -30,6 +30,7 @@ const theme = createTheme({
 
 type HomepageCardProps = {
 	card: HomepageCardNode;
+	assetBasePath: string;
 };
 
 // Change size of card image depending on screen size
@@ -70,9 +71,9 @@ export default class HomepageCard extends React.Component<HomepageCardProps, {}>
 							<Card style={{ position: "relative" }}>
 								{/** cardMedia */}
 								<Box sx={imageStyle}>
-									<GatsbyImage
-										alt={`$${this.props.card.name} header image`}
-										image={image}
+									<img
+										src={`${this.props.assetBasePath}${this.props.card.picturePath}`}
+										alt={`${this.props.card.name} header image`}
 										style={{
 											position: "absolute",
 											width: "100%",

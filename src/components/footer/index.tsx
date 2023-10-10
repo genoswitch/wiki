@@ -36,25 +36,7 @@ export const query = graphql`
 		nodes {
 			name
 			url
-			# static, higher res (original) image
-			#logoPath
-			# gatsby-plugin-image (using logoPath)
-			dynamicImage {
-				childImageSharp {
-					gatsbyImageData(
-						# Set by height, width props.
-						#layout: FIXED
-						width: 125
-						# No placeholder image (team page has blurred placeholders)
-						placeholder: NONE
-						# WebP only.
-						formats: [WEBP]
-						outputPixelDensities: [0.25] # Generate 0.25x and 1x.
-						# 1x is always created (see below)
-						# https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#customizing-the-default-options:~:text=and%20will%20always%20include%20a%201x%20image.
-					)
-				}
-			}
+			logoPath
 		}
 	}
 
@@ -62,25 +44,7 @@ export const query = graphql`
 		nodes {
 			name
 			url
-			# static, higher res (original) image
-			#logoPath
-			# gatsby-plugin-image (using logoPath)
-			dynamicImage {
-				childImageSharp {
-					gatsbyImageData(
-						# Set by height, width props.
-						#layout: FIXED
-						width: 376
-						# No placeholder image (team page has blurred placeholders)
-						placeholder: NONE
-						# WebP only.
-						formats: [WEBP]
-						outputPixelDensities: [0.25] # Generate 0.25x and 1x.
-						# 1x is always created (see below)
-						# https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#customizing-the-default-options:~:text=and%20will%20always%20include%20a%201x%20image.
-					)
-				}
-			}
+			logoPath
 		}
 	}
 

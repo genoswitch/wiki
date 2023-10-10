@@ -78,7 +78,6 @@ const HPDiseaseProfiles = () => {
 					organ damage.
 				</CustomTabPanel>
 				<CustomTabPanel value={value} index={1}>
-					<h3 style={{ paddingTop: 6 }}>PCOS</h3>
 					<i>Average time until formal diagnosis after onset of symptoms: 2-3 years.</i>
 					<h4 style={{ paddingTop: 4 }}>Barriers to Diagnosis:</h4>
 					Symptoms (such as heavy menstrual bleeding or irregular periods) could have a variety of

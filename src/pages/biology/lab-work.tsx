@@ -3,31 +3,34 @@ import * as React from "react";
 import { Card, CardContent, Container, Typography } from "@mui/material";
 
 import ImageGallery from "react-image-gallery";
-import "react-image-gallery/styles/css/image-gallery.css"
+import "react-image-gallery/styles/css/image-gallery.css";
 
 import HeaderFooterProvider from "../../components/headerFooterProvider";
 import { Head as BaseHead } from "../../components/head";
 
 import { navigate } from "gatsby";
 
-
 type DayCardProps = {
 	date: string;
 	register: string;
-	time: string
-}
+	time: string;
+};
 class DayCard extends React.Component<DayCardProps, {}> {
 	render(): React.ReactNode {
 		return (
 			<Card variant="outlined">
 				<CardContent>
-					<Typography variant="h5" component="div">{this.props.date}</Typography>
+					<Typography variant="h5" component="div">
+						{this.props.date}
+					</Typography>
 					<Typography color="text.secondary">Register: {this.props.register}</Typography>
-					<Typography sx={{ mb: 1.5 }} color="text.secondary">Time: {this.props.time}</Typography>
+					<Typography sx={{ mb: 1.5 }} color="text.secondary">
+						Time: {this.props.time}
+					</Typography>
 					{this.props.children}
 				</CardContent>
-			</Card >
-		)
+			</Card>
+		);
 	}
 }
 
@@ -41,67 +44,74 @@ export default class BiologyLabWorkPage extends React.Component {
 						time={"10am-1pm"}
 						register={"Astrid, Dave, Emily, Hester, Lottie, Matt, Tobi, Yilu"}
 					>
-
-						<Typography variant="h6" component="div">Overview</Typography>
+						<Typography variant="h6" component="div">
+							Overview
+						</Typography>
 						<p>
-							Today we delivered the equipment to the lab and started the briefing with Dr Markiv at 10am.
-							This included safety briefing about bins, gloves and coats, as well as some core skills such as
-							pipetting. Dr Markiv also gave us a quick tour of the facilities including the Faculty of
-							Dentistry, Oral & Craniofacial Sciences. After going through our equipment, we decided what we
-							might need to use from KCL's equipment and what our plan was for the rest of the week. We also
-							found that in ordering the E.coli, they were not competent cells, as we had planned to use,
-							so our timescales would have to accommodate the new protocols to prepare them for transformations.
+							Today we delivered the equipment to the lab and started the briefing with Dr Markiv at
+							10am. This included safety briefing about bins, gloves and coats, as well as some core
+							skills such as pipetting. Dr Markiv also gave us a quick tour of the facilities
+							including the Faculty of Dentistry, Oral & Craniofacial Sciences. After going through
+							our equipment, we decided what we might need to use from KCL's equipment and what our
+							plan was for the rest of the week. We also found that in ordering the E.coli, they
+							were not competent cells, as we had planned to use, so our timescales would have to
+							accommodate the new protocols to prepare them for transformations.
 						</p>
-
 						Stock solutions prep for making competent E.coli:
 						<ul>
 							<li>20g/L LB broth x2; 500ml water flask</li>
-							<li>0.1 M CaCl2 solution (7.35 g of CaCl2·2H2O in 500 ml of H2O) in a 500 ml Pyrex bottle. Autoclave and store at 4 oC.</li>
-							<li>0.1 M MgCl2 solution (10.165 g of MgCl2 ·6H2O in 500ml of H2O) in a 500ml Pyrex bottle. Autoclave and store at 4 oC.</li>
+							<li>
+								0.1 M CaCl2 solution (7.35 g of CaCl2·2H2O in 500 ml of H2O) in a 500 ml Pyrex
+								bottle. Autoclave and store at 4 oC.
+							</li>
+							<li>
+								0.1 M MgCl2 solution (10.165 g of MgCl2 ·6H2O in 500ml of H2O) in a 500ml Pyrex
+								bottle. Autoclave and store at 4 oC.
+							</li>
 							<li>
 								50% glycerol solution (100 ml of glycerol and 100 ml H2O) in a 200 ml Pyrex bottle.
 								Autoclave and store at 4 oC.
 							</li>
 						</ul>
-
 						Stock solutions prep for Petri dishes:
-
 						<ul>
 							<li>
 								<p>
-									LB agar 2x 400ml in 500ml Pyrex bottle; 20g/L LB broth (8g) + 2% weight per volume agar (8g) in 400ml water
+									LB agar 2x 400ml in 500ml Pyrex bottle; 20g/L LB broth (8g) + 2% weight per volume
+									agar (8g) in 400ml water
 								</p>
 								<p>
-									Close with sponge and foil. Label, Autoclave 125 oC/15 min and store at room temperature.
+									Close with sponge and foil. Label, Autoclave 125 oC/15 min and store at room
+									temperature.
 								</p>
 							</li>
 							<li>
+								<p>20g/L LB broth; 200ml</p>
 								<p>
-									20g/L LB broth; 200ml
-								</p>
-								<p>
-									Close with sponge and foil. Label, Autoclave 125 oC/15 min and store at room temperature.
+									Close with sponge and foil. Label, Autoclave 125 oC/15 min and store at room
+									temperature.
 								</p>
 							</li>
 							<li>
-								<p>
-									Ampicillin 100 mg/ml - 1 g in 10 ml of MilliQ water.
-								</p>
+								<p>Ampicillin 100 mg/ml - 1 g in 10 ml of MilliQ water.</p>
 								<p>
 									<i>
-										The stock solution is filtered through a 0.2 mm filter, aliquoted into 10 tips (1μ/ml each) and stored at
-										-20oC until use. The final working concentration of all antibiotics is 1:1000 of the stock solution
-										(1000x ampicillin).
+										The stock solution is filtered through a 0.2 mm filter, aliquoted into 10 tips
+										(1μ/ml each) and stored at -20oC until use. The final working concentration of
+										all antibiotics is 1:1000 of the stock solution (1000x ampicillin).
 									</i>
 								</p>
 							</li>
 						</ul>
-
-
-						<Typography variant="h6" component="div">Onward Plan</Typography>
-						<p>Inoculating the E.coli cells onto agar plates which will have been prepared earlier.</p>
-
-						<Typography variant="h6" component="div">Photos</Typography>
+						<Typography variant="h6" component="div">
+							Onward Plan
+						</Typography>
+						<p>
+							Inoculating the E.coli cells onto agar plates which will have been prepared earlier.
+						</p>
+						<Typography variant="h6" component="div">
+							Photos
+						</Typography>
 						<p>
 							<ImageGallery
 								lazyLoad={true}
@@ -109,18 +119,173 @@ export default class BiologyLabWorkPage extends React.Component {
 								showIndex={true}
 								items={[
 									{
-										original: "https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/170823-1.webp",
-										description: "Aliquoting and labelling the ampicillin into tips. (1 of 2)"
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/170823-1.webp",
+										description: "Aliquoting and labelling the ampicillin into tips. (1 of 2)",
 									},
 									{
-										original: "https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/170823-2.webp",
-										description: "Aliquoting and labelling the ampicillin into tips. (2 of 2)"
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/170823-2.webp",
+										description: "Aliquoting and labelling the ampicillin into tips. (2 of 2)",
 									},
 									{
-										original: "https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/170823-3.webp",
-										description: "Our labelled stock solutions for LB broth, LB agar, 50% glycerol, CaCl2.2H2O and MgCl2.6H2O."
-									}
-								]} />
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/170823-3.webp",
+										description:
+											"Our labelled stock solutions for LB broth, LB agar, 50% glycerol, CaCl2.2H2O and MgCl2.6H2O.",
+									},
+								]}
+							/>
+						</p>
+					</DayCard>
+					{/** Day 2 */}
+					<DayCard
+						date={"Thursday 20th July 2023"}
+						time={"10am-1pm"}
+						register={"Astrid, Emily, Dave, Hester, Lottie, Tobi, Yilu"}
+					>
+						<Typography variant="h6" component="div">
+							Overview
+						</Typography>
+						<p>
+							Yesterday, we sorted our inoculation of our cells,the protocol of which can be found
+							below, to make competent cells and transform them. We also found that the plasmids
+							that we ordered, didn't have four random nucleotides on the ends of both restriction
+							enzymes. As a result, they were too close to the end which made it more difficult for
+							RNA polymerase to “break” the restriction enzymes..
+						</p>
+
+						<ul>
+							<li>
+								We used a mass spectrometer to measure the growth of E. Coli, based on its optical
+								density in respect to the density of the media alone (in our case LB Broth)
+							</li>
+							<li>detects absorbance 600 Nm</li>
+							<li>
+								first measurement was 0.3, so we let the bacteria grow in a shaking incubator for 20
+								mins
+							</li>
+							<li>
+								the second measurement was 0.585, which is within the range we needed (0.4-0.6)
+							</li>
+							{/** Photos */}
+							<li>now we place cells on ice for 30 mins</li>
+							<li>cells centrifuged in solutions</li>
+							<li>leave on ice</li>
+							<li>made agar plates</li>
+						</ul>
+
+						<p>Primers:</p>
+						<ul>
+							<li>
+								Need to order primers in order to amplify our GeneBricks as the restriction sites
+								are too close to the end. For fwd Primer, take first 18 nucleotides, or slightly
+								more as long as it ends on C or G. add 4 random nucleotides to the BEGINNING of the
+								sequence
+							</li>
+							<li>
+								for Rvs Primer, take the last 18 nucleotides and take the complementary bases, again
+								ending in C or G. Add 4 nucleotides to the BEGINNING of the sequence. ACTG
+							</li>
+							<li>
+								<u>NOTE FOR FUTURE TEAMS</u>: when ordering synthetic parts, always add 4 random
+								nucleotides to the ends of your sequence so the restriction sites can be reached
+								easily.
+							</li>
+						</ul>
+
+						<p>Inoculating and preparing cells:</p>
+						<i>K12 E.coli cells are being used (LZB 035) for transformations of both plasmids.</i>
+						<ol>
+							<li>Work under flame.</li>
+							<li>
+								Streak 10 ml of <i>E. coli</i> cells onto one of the LB agar plates containing no
+								antibiotic or specific for the cell type.
+							</li>
+							<li>Grow the cells overnight at 37 oC, no more than 16 h.</li>
+							<li>Wrap plate in a parafilm and store at 4 oC.</li>
+						</ol>
+						<i>Cells are stored upside down to ensure that the cells don’t dry out overnight.</i>
+
+						<p>Making competent cells:</p>
+						<ol>
+							<li>
+								Pick a single colony of the cells from the LB agar plate into 10 ml of LB media
+								containing no antibiotic or specific for the cell type. Grow the cultures overnight
+								at 37 oC with shaking at 250 rpm.
+							</li>
+							<li>
+								Inoculate 200 ml of prewarmed to 37oC LB medium (no antibiotics or specific for the
+								cell type) with 10 ml of the overnight cultures, and grow at 37oC for 60 min, with
+								vigorous shaking 250 rpm or until the OD600 is 0.4 - 0.5.
+							</li>
+							<li>
+								Put the flask on ice for 30 min. At the same time chill sterile falcon (centrifuge)
+								tubes.
+							</li>
+							<li>Aliquot culture into 50 ml each 4 x 50 ml chilled falcon (centrifuge) tubes.</li>
+							<li>
+								Harvest the cells by centrifugation for 7 min at 3500 rpm, at 4oC and discard
+								supernatants completely.
+							</li>
+							<li>
+								Resuspend cells in each tube in 12.5 ml of 0.1 M MgCl<sub>2</sub>.
+							</li>
+							<li>Centrifuge for 7 min at 3500 rpm, at 4oC and discard supernatants.</li>
+							<li>
+								Resuspend cells in each tube in 25 ml of 0.1 M CaCl<sub>2</sub>.
+							</li>
+							<li>Incubate cells on ice for 30 min.</li>
+							<li>Centrifuge for 7 min at 3500 rpm, at 4oC and discard supernatants.</li>
+							<li>
+								Resuspend cells in each tube in 700 ml of 0.1 M CaCl<sub>2</sub> and 300 ml of 50%
+								glycerol. Final volume 1 ml in each tube.
+							</li>
+							<li>
+								Aliquot 50 ml aliquots into 1.5 ml sterile microcentrifuge tube on ice and stored at
+								-80oC.
+							</li>
+						</ol>
+
+						<Typography variant="h6" component="div">
+							Onward Plan
+						</Typography>
+						<p>
+							Begin filming for our iGEM promotional video within the labs. + Order primers to add
+							onto GeneBricks. + Turn GeneBricks into plasmids.
+						</p>
+
+						<Typography variant="h6" component="div">
+							Photos
+						</Typography>
+						<p>
+							<ImageGallery
+								lazyLoad={true}
+								showThumbnails={false}
+								showIndex={true}
+								items={[
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/200823-1.webp",
+									},
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/200823-2.webp",
+									},
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/200823-3.webp",
+									},
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/200823-4.webp",
+									},
+									{
+										original:
+											"https://static.igem.wiki/teams/4642/wiki/human-practices/labbook/200823-5.webp",
+									},
+								]}
+							/>
 						</p>
 					</DayCard>
 				</Container>

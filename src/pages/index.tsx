@@ -59,7 +59,7 @@ export default class Homepage extends React.Component<
 					<Container sx={{ width: "100vw" }}>
 						{this.cards.map(card => (
 							<div style={{ paddingBottom: "50px" }}>
-								<HomepageCard card={card} />
+								<HomepageCard card={card} assetBasePath={this.data.site?.siteMetadata?.assetBasePath!} />
 							</div>
 						))}
 					</Container>
@@ -78,19 +78,6 @@ export const query = graphql`
 				path
 				picturePath
 				description
-				# gatsby-plugin-image, options from team.tsx
-				dynamicImage {
-					childImageSharp {
-						gatsbyImageData(
-							width: 800 # 800x(~1200)
-							placeholder: BLURRED
-							formats: [AUTO, WEBP, PNG]
-							outputPixelDensities: [0.25] # Generate 0.25x and 1x.
-							# 1x is always created (see below)
-							# https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#customizing-the-default-options:~:text=and%20will%20always%20include%20a%201x%20image.
-						)
-					}
-				}
 			}
 		}
 		# Footer data

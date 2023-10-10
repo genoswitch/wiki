@@ -30,6 +30,7 @@ const theme = createTheme({
 
 type HomepageCardProps = {
 	card: HomepageCardNode;
+	assetBasePath: string;
 };
 
 // Change size of card image depending on screen size
@@ -70,19 +71,15 @@ export default class HomepageCard extends React.Component<HomepageCardProps, {}>
 							<Card style={{ position: "relative" }}>
 								{/** cardMedia */}
 								<Box sx={imageStyle}>
-									<GatsbyImage
-										alt={`$${this.props.card.name} header image`}
-										image={image}
-										style={{
-											position: "absolute",
-											width: "100%",
-											objectFit: "cover",
-											maskImage: "linear-gradient(to bottom, black 15%, transparent 55%)",
-											// Required for chromium based browsers.
-											"-webkit-mask-image":
-												"linear-gradient(to bottom, black 15%, transparent 55%)",
-										}}
-									/>
+									<img src={`${this.props.assetBasePath}${this.props.card.picturePath}`} alt={`${this.props.card.name} header image`} style={{
+										position: "absolute",
+										width: "100%",
+										objectFit: "cover",
+										maskImage: "linear-gradient(to bottom, black 15%, transparent 55%)",
+										// Required for chromium based browsers.
+										"-webkit-mask-image":
+											"linear-gradient(to bottom, black 15%, transparent 55%)",
+									}} />
 								</Box>
 								{/** TODO: Need better solution for padding cardContent, doesn't really work on smaller screens. */}
 								<CardContent sx={{ paddingTop: "30vh" }}>

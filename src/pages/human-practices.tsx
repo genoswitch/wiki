@@ -143,7 +143,6 @@ export default class HumanPracticesPage extends React.Component {
 					<HPDiseaseProfiles />
 					<h2 style={{ paddingTop: 8 }}>External Outreach</h2>
 					<HPExternalOutreach />
-					
 				</Container>
 			</HeaderFooterProvider>
 		);

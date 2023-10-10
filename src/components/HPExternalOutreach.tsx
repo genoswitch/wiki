@@ -53,7 +53,7 @@ const HPExternalOutreach = () => {
 					</Tabs>
 				</Box>
 				<CustomTabPanel value={value} index={0}>
-                <h3 style={{ paddingTop: 8 }}>Macademia - Azoomee and DaVinci</h3>
+					<h3 style={{ paddingTop: 8 }}>Macademia - Azoomee and DaVinci</h3>
 					As part of our education aims, we talked to a global children's online education company
 					called Macademia. Macademia aims to provide educational play through games, challenges and
 					engaging content for children from the ages of 2-18 years old through their two brands:
@@ -73,9 +73,9 @@ const HPExternalOutreach = () => {
 					showed that many repeated sessions will cause the information to be stored in long-term
 					memory, while one long session may also lead to wavering interest over the length of the
 					session and information will not be remembered.
-                </CustomTabPanel>
+				</CustomTabPanel>
 				<CustomTabPanel value={value} index={1}>
-                <h3 style={{ paddingTop: 8 }}>Feasibility of At-Home Testing</h3>
+					<h3 style={{ paddingTop: 8 }}>Feasibility of At-Home Testing</h3>
 					Prompted by our interview with Dr Omi, we conducted some research into the effects of
 					self-testing kits in the hope that it would increase the uptake of our tests. By creating
 					home-testing kits, we aim to be able to periodically test for conditions to detect them at
@@ -107,7 +107,7 @@ const HPExternalOutreach = () => {
 					exciting scope for future development.
 				</CustomTabPanel>
 				<CustomTabPanel value={value} index={2}>
-                <h3 style={{ paddingTop: 8 }}>Dr Omi Ohizua</h3>
+					<h3 style={{ paddingTop: 8 }}>Dr Omi Ohizua</h3>
 					Dr Omi Ohizua is one of the UK’s leading clinicians and emphasised the importance of an
 					early screening device such as GENOSWITCH to reduce diagnostic times, particularly for
 					endometriosis due to its symptoms which overlap with other conditions. He also noted the
@@ -124,7 +124,7 @@ const HPExternalOutreach = () => {
 					ambiguity coming from overlap between miRNA of different diseases.
 				</CustomTabPanel>
 				<CustomTabPanel value={value} index={3}>
-                <h3 style={{ paddingTop: 8 }}>Dr Albert Aka</h3>
+					<h3 style={{ paddingTop: 8 }}>Dr Albert Aka</h3>
 					Dr Albert Aka, a gynaecologist and former Senior Consultant in Sexual and Reproductive
 					Health, emphasised the importance of raising awareness, prompting our surveys, assembly
 					and work with macademia to gather information and educate people on the issues of women’s

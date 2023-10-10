@@ -8,6 +8,7 @@
 type HomepageCardYaml implements Node @dontInfer {
 	# Non-nullable fields
 	name: String!
+	path: String!
 	picturePath: String!
 	description: String!
 }

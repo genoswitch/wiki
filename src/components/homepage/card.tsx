@@ -1,4 +1,5 @@
 import * as React from "react";
+import { navigate } from "gatsby";
 
 import {
 	createTheme,
@@ -61,36 +62,38 @@ export default class HomepageCard extends React.Component<HomepageCardProps, {}>
 							borderRadius: "20px",
 						}}
 					>
-						<Card style={{ position: "relative" }}>
-							{/** cardMedia */}
-							<Box sx={imageStyle}>
-								<GatsbyImage
-									alt={`$${this.props.card.name} header image`}
-									image={image}
-									style={{
-										position: "absolute",
-										width: "100%",
-										objectFit: "cover",
-										maskImage: "linear-gradient(to bottom, black 15%, transparent 55%)",
-										// Required for chromium based browsers.
-										"-webkit-mask-image": "linear-gradient(to bottom, black 15%, transparent 55%)",
-									}}
-								/>
-							</Box>
-							{/** TODO: Need better solution for padding cardContent, doesn't really work on smaller screens. */}
-							<CardContent sx={{ paddingTop: "30vh" }}>
-								<Typography
-									sx={{ textAlign: "center", letterSpacing: "10px" }}
-									className="cardHeader"
-									gutterBottom
-									variant="h2"
-									component="div"
-								>
-									{this.props.card.name}
-								</Typography>
-								{this.props.card.description}
-							</CardContent>
-						</Card>
+						<a href="#" onClick={() => navigate(this.props.card.path)} style={{ textDecoration: "none", color: "inherit" }}>
+							<Card style={{ position: "relative" }}>
+								{/** cardMedia */}
+								<Box sx={imageStyle}>
+									<GatsbyImage
+										alt={`$${this.props.card.name} header image`}
+										image={image}
+										style={{
+											position: "absolute",
+											width: "100%",
+											objectFit: "cover",
+											maskImage: "linear-gradient(to bottom, black 15%, transparent 55%)",
+											// Required for chromium based browsers.
+											"-webkit-mask-image": "linear-gradient(to bottom, black 15%, transparent 55%)",
+										}}
+									/>
+								</Box>
+								{/** TODO: Need better solution for padding cardContent, doesn't really work on smaller screens. */}
+								<CardContent sx={{ paddingTop: "30vh" }}>
+									<Typography
+										sx={{ textAlign: "center", letterSpacing: "10px" }}
+										className="cardHeader"
+										gutterBottom
+										variant="h2"
+										component="div"
+									>
+										{this.props.card.name}
+									</Typography>
+									{this.props.card.description}
+								</CardContent>
+							</Card>
+						</a>
 					</div>
 				</ThemeProvider>
 			</>

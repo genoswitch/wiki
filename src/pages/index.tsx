@@ -75,6 +75,7 @@ export const query = graphql`
 		allHomepageCardYaml {
 			nodes {
 				name
+				path
 				picturePath
 				description
 				# gatsby-plugin-image, options from team.tsx

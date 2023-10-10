@@ -1,4 +1,5 @@
 - name: Biology
+  path: /biology/
   picturePath: homepage/biology-homepage.webp
   description: |
     The project this year has focused on combating the antiquated tests currently in place for diseases linked to women’s health.
@@ -7,6 +8,7 @@
     Uniquely, our project allows for the miRNA binding sites to be swapped meaning various diseases can be tested for, using the database we have compiled.
 
 - name: Software
+  path: /software/
   picturePath: homepage/software.webp
   description: |
     Our project's software component is designed to empower iGEM teams by offering a seamless way of applying our modular toehold switch designs to a plethora of situations.
@@ -14,6 +16,7 @@
     This enables teams to effortlessly implement our innovative designs in any desired context.
 
 - name: Hardware
+  path: /hardware/
   picturePath: homepage/software.webp
   description: |
     In Project Genoswitch, the Hardware team has mainly focused on creating effective extraction and testing tools that are cheap, efficient and easy to use.
@@ -21,6 +24,7 @@
     In order to create a robust testing system, we designed a custom luminometer that improves upon the designs of previous City iGEM teams by using multiple LDRs to allow for the simultaneous detection of several toehold switches, as well as integrating WebUSB to allow for easier interfacing with client-side devices.
 
 - name: Human Practices
+  path: /human-practices/
   picturePath: pictures/webp-default/group.webp
   description: |
     Using synthetic biology has great potential for a positive impact, however it can easily become irresponsible and not bring real benefits for society.
@@ -29,6 +33,7 @@
     Human practices is not a specific activity, but we will aim to engage, educate, and inform the wider community of our intentions.
 
 - name: Modelling
+  path: /modelling/
   picturePath: homepage/modelling.webp
   description: |
     Modelling is integral to the smooth running of Project Genoswitch.

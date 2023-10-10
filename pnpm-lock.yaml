@@ -75,7 +75,7 @@ devDependencies:
     version: 5.12.0(gatsby@5.12.5)
   gatsby-plugin-image:
     specifier: ^3.12.1
-    version: 3.12.1(@babel/core@7.20.12)(gatsby-plugin-sharp@5.12.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.5)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+    version: 3.12.1(@babel/core@7.20.12)(gatsby-plugin-sharp@5.12.1)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.5)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
   gatsby-plugin-manifest:
     specifier: ^5.12.1
     version: 5.12.1(gatsby@5.12.5)(graphql@16.8.1)
@@ -98,8 +98,8 @@ devDependencies:
     specifier: ^3.6.6
     version: 3.6.6(gatsby@5.12.5)
   gatsby-plugin-sharp:
-    specifier: ^5.12.0
-    version: 5.12.0(gatsby@5.12.5)(graphql@16.8.1)
+    specifier: ^5.12.1
+    version: 5.12.1(gatsby@5.12.5)(graphql@16.8.1)
   gatsby-plugin-sitemap:
     specifier: ^6.12.0
     version: 6.12.0(gatsby@5.12.5)(react-dom@18.2.0)(react@18.2.0)
@@ -111,7 +111,7 @@ devDependencies:
     version: 1.1.0(gatsby@5.12.5)
   gatsby-transformer-sharp:
     specifier: ^5.12.1
-    version: 5.12.1(gatsby-plugin-sharp@5.12.0)(gatsby@5.12.5)(graphql@16.8.1)
+    version: 5.12.1(gatsby-plugin-sharp@5.12.1)(gatsby@5.12.5)(graphql@16.8.1)
   gatsby-transformer-yaml:
     specifier: ^5.12.0
     version: 5.12.0(gatsby@5.12.5)
@@ -6358,7 +6358,7 @@ packages:
       gatsby: 5.12.5(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
     dev: true
 
-  /gatsby-plugin-image@3.12.1(@babel/core@7.20.12)(gatsby-plugin-sharp@5.12.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.5)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
+  /gatsby-plugin-image@3.12.1(@babel/core@7.20.12)(gatsby-plugin-sharp@5.12.1)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.5)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-OJ3PGxBp5WbadGFZtd1VqMOB3d8ktysgtkFZbHwLUuGqxFKFMuySBS/kFudohcMJSeCIEgK9pEzWJ1RWh3mDWw==}
     peerDependencies:
       '@babel/core': ^7.12.3
@@ -6386,7 +6386,7 @@ packages:
       fs-extra: 11.1.1
       gatsby: 5.12.5(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       gatsby-core-utils: 4.12.0
-      gatsby-plugin-sharp: 5.12.0(gatsby@5.12.5)(graphql@16.8.1)
+      gatsby-plugin-sharp: 5.12.1(gatsby@5.12.5)(graphql@16.8.1)
       gatsby-plugin-utils: 4.12.1(gatsby@5.12.5)(graphql@16.8.1)
       gatsby-source-filesystem: 5.12.0(gatsby@5.12.5)
       objectFitPolyfill: 2.3.5
@@ -6544,13 +6544,13 @@ packages:
       - supports-color
     dev: true
 
-  /gatsby-plugin-sharp@5.12.0(gatsby@5.12.5)(graphql@16.8.1):
-    resolution: {integrity: sha512-of9E26/eLenTgNUjzFYJGbwIIGoXRCOCA1Dsz7dKvcx11b0pNf27C65AiEWPudWXHl+OUjFX/bNNBBooqN+nlg==}
+  /gatsby-plugin-sharp@5.12.1(gatsby@5.12.5)(graphql@16.8.1):
+    resolution: {integrity: sha512-IJFBL+m1H5RMs4rRiGiZa5NreKxRzycUzAVj17upxs3DTUysSlwoIORGEYJfIJP+bM2p7RjMccpEAqcrXQ8K5g==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       gatsby: ^5.0.0-next
     dependencies:
-      '@babel/runtime': 7.22.11
+      '@babel/runtime': 7.23.1
       async: 3.2.4
       bluebird: 3.7.2
       debug: 4.3.4
@@ -6558,11 +6558,11 @@ packages:
       fs-extra: 11.1.1
       gatsby: 5.12.5(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       gatsby-core-utils: 4.12.0
-      gatsby-plugin-utils: 4.12.0(gatsby@5.12.5)(graphql@16.8.1)
+      gatsby-plugin-utils: 4.12.1(gatsby@5.12.5)(graphql@16.8.1)
       lodash: 4.17.21
       probe-image-size: 7.2.3
       semver: 7.5.4
-      sharp: 0.32.1
+      sharp: 0.32.6
     transitivePeerDependencies:
       - graphql
       - supports-color
@@ -6741,7 +6741,7 @@ packages:
       - encoding
     dev: true
 
-  /gatsby-transformer-sharp@5.12.1(gatsby-plugin-sharp@5.12.0)(gatsby@5.12.5)(graphql@16.8.1):
+  /gatsby-transformer-sharp@5.12.1(gatsby-plugin-sharp@5.12.1)(gatsby@5.12.5)(graphql@16.8.1):
     resolution: {integrity: sha512-xcaWxQgdp8990Tyn88EyGQNl382trLumjYBtzL83blnQIJmbKhUoQDp4c/auZ1HylUw0IKJFvma2Yu6Ri3C7Bw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -6753,7 +6753,7 @@ packages:
       common-tags: 1.8.2
       fs-extra: 11.1.1
       gatsby: 5.12.5(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
-      gatsby-plugin-sharp: 5.12.0(gatsby@5.12.5)(graphql@16.8.1)
+      gatsby-plugin-sharp: 5.12.1(gatsby@5.12.5)(graphql@16.8.1)
       gatsby-plugin-utils: 4.12.1(gatsby@5.12.5)(graphql@16.8.1)
       probe-image-size: 7.2.3
       semver: 7.5.4
@@ -10933,21 +10933,6 @@ packages:
 
   /shallow-compare@1.2.2:
     resolution: {integrity: sha512-LUMFi+RppPlrHzbqmFnINTrazo0lPNwhcgzuAXVVcfy/mqPDrQmHAyz5bvV0gDAuRFrk804V0HpQ6u9sZ0tBeg==}
-
-  /sharp@0.32.1:
-    resolution: {integrity: sha512-kQTFtj7ldpUqSe8kDxoGLZc1rnMFU0AO2pqbX6pLy3b7Oj8ivJIdoKNwxHVQG2HN6XpHPJqCSM2nsma2gOXvOg==}
-    engines: {node: '>=14.15.0'}
-    requiresBuild: true
-    dependencies:
-      color: 4.2.3
-      detect-libc: 2.0.2
-      node-addon-api: 6.1.0
-      prebuild-install: 7.1.1
-      semver: 7.5.4
-      simple-get: 4.0.1
-      tar-fs: 2.1.1
-      tunnel-agent: 0.6.0
-    dev: true
 
   /sharp@0.32.6:
     resolution: {integrity: sha512-KyLTWwgcR9Oe4d9HwCwNM2l7+J0dUQwn/yf7S0EnTtb0eVS4RxO0eUSvxPtzT4F3SY+C4K6fqdv/DO27sJ/v/w==}

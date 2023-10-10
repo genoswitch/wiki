@@ -10,3 +10,6 @@ pnpm-lock.yaml
 # Auto-generated
 src/gatsby-types.d.ts
 webpack-stats.json
+
+# Specific formatting
+pages/mdx/biology.mdx

@@ -2,8 +2,68 @@
 name: Contribution
 description: TBD
 slug: /contribution
----
 
-# Contribution
+import * as React from "react";
+import {
+	Container,
+	Paper,
+	Table,
+	TableBody,
+	TableCell,
+	TableContainer,
+	TableHead,
+	TableRow,
+	Typography,
+} from "@mui/material";
+
+import HeaderFooterProvider from "../../components/headerFooterProvider";
+import { Head as BaseHead } from "../../components/head";
+---
+type Part = {
+	Part: string;
+	Createdby: string;
+};
+
+export default class ContributionParts extends React.Component {
+	Part: Part[] = [
+		{
+			Part: "Test",
+			Createdby: "Ryan Yapa",
+		},
+
+	];
+}
+
+
+
+
+
+type miRNA = {
+	miRNA: string;
+	Use: string;
+	Source: string;
+};
+
+export default class ContributionmiRNADatabase extends React.Component {
+	miRNA: miRNA[] = [
+		{
+			miRNA: "miRNA1",
+			Use: "Disease1",
+			Source:"Source1",
+		},
+
+	];
+}
+
+<h1>Contribution</h1>
 
 Welcome to the genoswitch wiki! Our Contribution page is a work-in-progress at the moment, but feel free to check out other pages using the navigation bar!
+
+<h2>Parts</h2>
+We have developed a number of parts this year, for future teams to use in their projects:
+<ContributionParts/>
+
+<h2>Collaborative miRNA Database</h2>
+We have started a Collaborative miRNA database, which we hope future teams will expand upon, and use in their future projects using toehold switches and more!
+You can find our full list below:
+<ContributionmiRNADatabase/>

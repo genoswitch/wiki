@@ -8,6 +8,8 @@ import { Head as BaseHead } from "../components/head";
 import HPDiseaseProfiles from "../components/human-practices/diseaseProfiles";
 import HPExternalOutreach from "../components/human-practices/externalOutreach";
 import HPEducation from "../components/human-practices/education";
+import NiceGuidelines from "../components/human-practices/niceGuidelines";
+import SWOTAnalysis from "../components/human-practices/swotanalysis";
 
 export default class HumanPracticesPage extends React.Component {
 	render(): React.ReactNode {
@@ -15,6 +17,8 @@ export default class HumanPracticesPage extends React.Component {
 			<HeaderFooterProvider>
 				<Container>
 					<h1>Human Practices</h1>
+					<h2 style={{ paddingTop: 8 }}>SWOT Analysis</h2>
+					<SWOTAnalysis />
 					<h2 style={{ paddingTop: 8 }}>Values of our Project</h2>
 					When designing our project, we focused our efforts on making a test that would have a
 					strong social and scientific impact. It was important to us to create a tool that both
@@ -182,15 +186,16 @@ export default class HumanPracticesPage extends React.Component {
 					<h2 style={{ paddingTop: 8 }}>Education</h2>
 					<HPEducation />
 					<h2 style={{ paddingTop: 8 }}>UK NSC Criteria for Screening Programmes</h2>
-					We have assesed our project against the UK National Screening Committee's criteria for
+					We have assessed our project against the UK National Screening Committee's criteria for
 					appraising the viability, effectiveness and appropriateness of a population screening
 					programme. Each criteria has been marked as: Green for fulfilled, yellow for partially met
 					/ unable to complete, red for unfulfilled.
+					<br />
 					<i>
 						Some criteria can not be fulfilled as of yet as we have not put our test through
 						clinical trials.
 					</i>
-					<b>INSERT UKNSC GUIDELINES HERE</b>
+					<NiceGuidelines />
 				</Container>
 			</HeaderFooterProvider>
 		);

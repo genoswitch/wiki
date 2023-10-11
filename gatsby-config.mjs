@@ -205,6 +205,9 @@ const config = {
 			},
 		},
 		`@genoswitch/gatsby-transformer-gitinfo`,
+		`gatsby-plugin-image`,
+		`gatsby-plugin-sharp`,
+		`gatsby-transformer-sharp`, // Needed for dynamic images
 		`gatsby-plugin-no-sourcemaps`,
 		{
 			resolve: `gatsby-plugin-mdx`,

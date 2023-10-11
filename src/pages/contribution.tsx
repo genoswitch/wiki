@@ -50,8 +50,7 @@ export default class HumanPracticesPage extends React.Component {
 		},
 		{
 			number: "BBa_K4642004",
-			name:
-				"T7 / Gen3 145-199a AND-Gate / Luciferase / Double Terminator / T7 / Gen3 145-199a AND-Gate Anti-miRNA / Terminator",
+			name: "T7 / Gen3 145-199a AND-Gate / Luciferase / Double Terminator / T7 / Gen3 145-199a AND-Gate Anti-miRNA / Terminator",
 			type: "Composite",
 		},
 		{
@@ -86,8 +85,7 @@ export default class HumanPracticesPage extends React.Component {
 		},
 		{
 			number: "BBa_K4642011",
-			name:
-				"T7 / Gen4 145-199a-125b Double AND-Gate / Luciferase / Double Terminator / T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 125b-199a / Terminator / T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 199a-145 / Terminator",
+			name: "T7 / Gen4 145-199a-125b Double AND-Gate / Luciferase / Double Terminator / T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 125b-199a / Terminator / T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 199a-145 / Terminator",
 			type: "Composite",
 		},
 		{
@@ -97,8 +95,7 @@ export default class HumanPracticesPage extends React.Component {
 		},
 		{
 			number: "BBa_K4642013",
-			name:
-				"T7 / Gen4 145-199a-125b Double AND-Gate / mCherry / Double Terminator / T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 125b-199a / Terminator / T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 199a-145 / Terminator",
+			name: "T7 / Gen4 145-199a-125b Double AND-Gate / mCherry / Double Terminator / T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 125b-199a / Terminator / T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 199a-145 / Terminator",
 			type: "Composite",
 		},
 		{
@@ -133,8 +130,7 @@ export default class HumanPracticesPage extends React.Component {
 		},
 		{
 			number: "BBa_K4642020",
-			name:
-				"T7 / Gen4 486-19b-1260a Double AND-Gate / GFP / Double Terminator / T7 / Gen4 486-19b-1260a Double AND-Gate Anti-miRNA 1260a-19b / Terminator / T7 / Gen4 486-19b-1260a Double AND-Gate Anti-miRNA 19b-486 / Terminator",
+			name: "T7 / Gen4 486-19b-1260a Double AND-Gate / GFP / Double Terminator / T7 / Gen4 486-19b-1260a Double AND-Gate Anti-miRNA 1260a-19b / Terminator / T7 / Gen4 486-19b-1260a Double AND-Gate Anti-miRNA 19b-486 / Terminator",
 			type: "Composite",
 		},
 		{
@@ -169,8 +165,7 @@ export default class HumanPracticesPage extends React.Component {
 		},
 		{
 			number: "BBa_K4642027",
-			name:
-				"T7 / Gen4 373-21-24 Double AND-Gate / Venus / Double Terminator / T7 / Gen4 373-21-24 Double AND-Gate Anti-miRNA 24-21 / Terminator / T7 / Gen4 373-21-24 Double AND-Gate Anti-miRNA 21-373 / Terminator",
+			name: "T7 / Gen4 373-21-24 Double AND-Gate / Venus / Double Terminator / T7 / Gen4 373-21-24 Double AND-Gate Anti-miRNA 24-21 / Terminator / T7 / Gen4 373-21-24 Double AND-Gate Anti-miRNA 21-373 / Terminator",
 			type: "Composite",
 		},
 		{
@@ -205,8 +200,7 @@ export default class HumanPracticesPage extends React.Component {
 		},
 		{
 			number: "BBa_K4642034",
-			name:
-				"T7 / Gen4 320b-320a-4640 Double AND-Gate / mCerulean / Double Terminator / T7 / Gen4 320b-320a-4640 Double AND-Gate Anti-miRNA 4640-320a / Terminator / T7 / Gen4 320b-320a-4640 Double AND-Gate Anti-miRNA 320a-320b / Terminator",
+			name: "T7 / Gen4 320b-320a-4640 Double AND-Gate / mCerulean / Double Terminator / T7 / Gen4 320b-320a-4640 Double AND-Gate Anti-miRNA 4640-320a / Terminator / T7 / Gen4 320b-320a-4640 Double AND-Gate Anti-miRNA 320a-320b / Terminator",
 			type: "Composite",
 		},
 		{
@@ -336,8 +330,7 @@ export default class HumanPracticesPage extends React.Component {
 		},
 		{
 			number: "BBa_K4642060",
-			name:
-				"T7 / Breast Cancer / Endometriosis / Ovarian Cancer / PCOS / Double Terminator / Anti-miRNAs / Terminator",
+			name: "T7 / Breast Cancer / Endometriosis / Ovarian Cancer / PCOS / Double Terminator / Anti-miRNAs / Terminator",
 			type: "Composite",
 		},
 	];

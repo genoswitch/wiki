@@ -55,8 +55,9 @@ const rows: Row[] = [
 				<u>Ovarian Cancer</u>
 				<p>
 					There are approximately 7,500 new ovarian cancer cases in the UK each year, with a 35%
-					survival rate over a ten year period.11 In the US, there were an estimated 236,511 women
-					in the United States alone living with ovarian cancer.
+					survival rate over a ten year period.
+					<Reference prefix={"hpNiceGuidelines"} number={11} /> In the US, there were an estimated
+					236,511 women in the United States alone living with ovarian cancer.
 					<Reference prefix={"hpNiceGuidelines"} number={10} /> Symptoms include difficulty eating
 					and persistent abdominal / pelvic pain.
 					<Reference prefix={"hpNiceGuidelines"} number={5} />

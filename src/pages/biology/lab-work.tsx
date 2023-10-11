@@ -450,6 +450,53 @@ export default class BiologyLabWorkPage extends React.Component {
 							/>
 						</p>
 					</DayCard>
+					{/** Day 6 */}
+					<DayCard
+						date={"Thursday 24th August 2023"}
+						time={"Unknown"}
+						register={"Hester, Lottie, Yilu"}
+					>
+						<Typography variant="h6" component="div">
+							General Notes
+						</Typography>
+						Today we realised it would be worthwhile making significant changes to our method. With
+						the help of Dr Markiv we have devised the below questions so we can continue lab work as
+						soon as possible.
+						<ol>
+							<li>
+								What <u>exactly</u> do we want to do?
+								<ul>
+									<li>Two fluorescent proteins and many miRNA?</li>
+									<li>Which backbone do we want to use to clone the plasmid DNA</li>
+								</ul>
+							</li>
+						</ol>
+						Following this we have come up with an action plan so we are able to continue our work:
+						<Typography variant="h6" component="div">
+							To-Do
+						</Typography>
+						<ol>
+							<li>Organise a call with Dr Markiv to discuss our new plans</li>
+							<li>
+								Choose a backbone
+								<ul>
+									<li>
+										ampicillin or chloramphenicol - ask him to tell us which antibiotic to use
+									</li>
+								</ul>
+							</li>
+							<li>
+								Check the validity of our{" "}
+								<a target="_blank" href="https://2021.igem.org/Team:Mingdao/Measurement">
+									TXTL protocol
+								</a>
+							</li>
+							<li>
+								Organise wet lab availability with all members of the team to continue lab work
+								later in the year.
+							</li>
+						</ol>
+					</DayCard>
 				</Container>
 			</HeaderFooterProvider>
 		);

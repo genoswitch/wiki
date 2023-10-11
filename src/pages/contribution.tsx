@@ -15,9 +15,9 @@ import HeaderFooterProvider from "../components/headerFooterProvider";
 import { Head as BaseHead } from "../components/head";
 
 type Part = {
-	partnumber: string;
-	partname: string;
-	parttype: string;
+	number: string;
+	name: string;
+	type: string;
 };
 
 type miRNA = {
@@ -29,316 +29,316 @@ type miRNA = {
 export default class HumanPracticesPage extends React.Component {
 	parts: Part[] = [
 		{
-			partnumber: "BBa_K4642000",
-			partname: "Gen3 145-199a AND-Gate Toehold Switch",
-			parttype: "Basic",
+			number: "BBa_K4642000",
+			name: "Gen3 145-199a AND-Gate Toehold Switch",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642001",
-			partname: "Gen3 145-199a AND-Gate Toehold Switch Anti-miRNA",
-			parttype: "Basic",
+			number: "BBa_K4642001",
+			name: "Gen3 145-199a AND-Gate Toehold Switch Anti-miRNA",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642002",
-			partname: "T7 / Gen3 145-199a AND-Gate / Luciferase / Double Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642002",
+			name: "T7 / Gen3 145-199a AND-Gate / Luciferase / Double Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642003",
-			partname: "T7 / Gen3 145-199a AND-Gate Anti-miRNA / Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642003",
+			name: "T7 / Gen3 145-199a AND-Gate Anti-miRNA / Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642004",
-			partname:
+			number: "BBa_K4642004",
+			name:
 				"T7 / Gen3 145-199a AND-Gate / Luciferase / Double Terminator / T7 / Gen3 145-199a AND-Gate Anti-miRNA / Terminator",
-			parttype: "Composite",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642005",
-			partname: "Gen4 145-199a-125b Double AND-Gate Toehold Switch",
-			parttype: "Basic",
+			number: "BBa_K4642005",
+			name: "Gen4 145-199a-125b Double AND-Gate Toehold Switch",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642006",
-			partname: "Gen4 145-199a-125b Double AND-Gate Toehold Switch Anti-miRNA 125b-199a",
-			parttype: "Basic",
+			number: "BBa_K4642006",
+			name: "Gen4 145-199a-125b Double AND-Gate Toehold Switch Anti-miRNA 125b-199a",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642007",
-			partname: "Gen4 145-199a-125b Double AND-Gate Toehold Switch Anti-miRNA 199a-145",
-			parttype: "Basic",
+			number: "BBa_K4642007",
+			name: "Gen4 145-199a-125b Double AND-Gate Toehold Switch Anti-miRNA 199a-145",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642008",
-			partname: "T7 / Gen4 145-199a-125b Double AND-Gate / Luciferase / Double Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642008",
+			name: "T7 / Gen4 145-199a-125b Double AND-Gate / Luciferase / Double Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642009",
-			partname: "T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 125b-199a / Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642009",
+			name: "T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 125b-199a / Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642010",
-			partname: "T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 199a-145 / Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642010",
+			name: "T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 199a-145 / Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642011",
-			partname:
+			number: "BBa_K4642011",
+			name:
 				"T7 / Gen4 145-199a-125b Double AND-Gate / Luciferase / Double Terminator / T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 125b-199a / Terminator / T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 199a-145 / Terminator",
-			parttype: "Composite",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642012",
-			partname: "T7 / Gen4 145-199a-125b Double AND-Gate / mCherry / Double Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642012",
+			name: "T7 / Gen4 145-199a-125b Double AND-Gate / mCherry / Double Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642013",
-			partname:
+			number: "BBa_K4642013",
+			name:
 				"T7 / Gen4 145-199a-125b Double AND-Gate / mCherry / Double Terminator / T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 125b-199a / Terminator / T7 / Gen4 145-199a-125b Double AND-Gate Anti-miRNA 199a-145 / Terminator",
-			parttype: "Composite",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642014",
-			partname: "Gen4 486-19b-1260a Double AND-Gate Toehold Switch",
-			parttype: "Basic",
+			number: "BBa_K4642014",
+			name: "Gen4 486-19b-1260a Double AND-Gate Toehold Switch",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642015",
-			partname: "Gen4 486-19b-1260a Double AND-Gate Toehold Switch Anti-miRNA 1260a-19b",
-			parttype: "Basic",
+			number: "BBa_K4642015",
+			name: "Gen4 486-19b-1260a Double AND-Gate Toehold Switch Anti-miRNA 1260a-19b",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642016",
-			partname: "Gen4 486-19b-1260a Double AND-Gate Toehold Switch Anti-miRNA 19b-486",
-			parttype: "Basic",
+			number: "BBa_K4642016",
+			name: "Gen4 486-19b-1260a Double AND-Gate Toehold Switch Anti-miRNA 19b-486",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642017",
-			partname: "T7 / Gen4 486-19b-1260a Double AND-Gate / GFP / Double Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642017",
+			name: "T7 / Gen4 486-19b-1260a Double AND-Gate / GFP / Double Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642018",
-			partname: "T7 / Gen4 486-19b-1260a Double AND-Gate Anti-miRNA 1260a-19b / Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642018",
+			name: "T7 / Gen4 486-19b-1260a Double AND-Gate Anti-miRNA 1260a-19b / Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642019",
-			partname: "T7 / Gen4 486-19b-1260a Double AND-Gate Anti-miRNA 19b-486 / Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642019",
+			name: "T7 / Gen4 486-19b-1260a Double AND-Gate Anti-miRNA 19b-486 / Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642020",
-			partname:
+			number: "BBa_K4642020",
+			name:
 				"T7 / Gen4 486-19b-1260a Double AND-Gate / GFP / Double Terminator / T7 / Gen4 486-19b-1260a Double AND-Gate Anti-miRNA 1260a-19b / Terminator / T7 / Gen4 486-19b-1260a Double AND-Gate Anti-miRNA 19b-486 / Terminator",
-			parttype: "Composite",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642021",
-			partname: "TGen4 373-21-24 Double AND-Gate Toehold Switch",
-			parttype: "Basic",
+			number: "BBa_K4642021",
+			name: "TGen4 373-21-24 Double AND-Gate Toehold Switch",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642022",
-			partname: "Gen4 373-21-24 Double AND-Gate Toehold Switch Anti-miRNA 24-21",
-			parttype: "Basic",
+			number: "BBa_K4642022",
+			name: "Gen4 373-21-24 Double AND-Gate Toehold Switch Anti-miRNA 24-21",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642023",
-			partname: "Gen4 373-21-24 Double AND-Gate Toehold Switch Anti-miRNA 21-373",
-			parttype: "Basic",
+			number: "BBa_K4642023",
+			name: "Gen4 373-21-24 Double AND-Gate Toehold Switch Anti-miRNA 21-373",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642024",
-			partname: "T7 / Gen4 373-21-24 Double AND-Gate / Venus / Double Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642024",
+			name: "T7 / Gen4 373-21-24 Double AND-Gate / Venus / Double Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642025",
-			partname: "T7 / Gen4 373-21-24 Double AND-Gate Anti-miRNA 24-21 / Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642025",
+			name: "T7 / Gen4 373-21-24 Double AND-Gate Anti-miRNA 24-21 / Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642026",
-			partname: "T7 / Gen4 373-21-24 Double AND-Gate Anti-miRNA 21-373 / Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642026",
+			name: "T7 / Gen4 373-21-24 Double AND-Gate Anti-miRNA 21-373 / Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642027",
-			partname:
+			number: "BBa_K4642027",
+			name:
 				"T7 / Gen4 373-21-24 Double AND-Gate / Venus / Double Terminator / T7 / Gen4 373-21-24 Double AND-Gate Anti-miRNA 24-21 / Terminator / T7 / Gen4 373-21-24 Double AND-Gate Anti-miRNA 21-373 / Terminator",
-			parttype: "Composite",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642028",
-			partname: "Gen4 320b-320a-4640 Double AND-Gate Toehold Switch",
-			parttype: "Basic",
+			number: "BBa_K4642028",
+			name: "Gen4 320b-320a-4640 Double AND-Gate Toehold Switch",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642029",
-			partname: "Gen4 320b-320a-4640 Double AND-Gate Toehold Switch Anti-miRNA 4640-320a",
-			parttype: "Basic",
+			number: "BBa_K4642029",
+			name: "Gen4 320b-320a-4640 Double AND-Gate Toehold Switch Anti-miRNA 4640-320a",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642030",
-			partname: "Gen4 320b-320a-4640 Double AND-Gate Toehold Switch Anti-miRNA 320a-320b",
-			parttype: "Basic",
+			number: "BBa_K4642030",
+			name: "Gen4 320b-320a-4640 Double AND-Gate Toehold Switch Anti-miRNA 320a-320b",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642031",
-			partname: "T7 / Gen4 320b-320a-4640 Double AND-Gate / mCerulean / Double Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642031",
+			name: "T7 / Gen4 320b-320a-4640 Double AND-Gate / mCerulean / Double Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642032",
-			partname: "T7 / Gen4 320b-320a-4640 Double AND-Gate Anti-miRNA 4640-320a / Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642032",
+			name: "T7 / Gen4 320b-320a-4640 Double AND-Gate Anti-miRNA 4640-320a / Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642033",
-			partname: "T7 / Gen4 320b-320a-4640 Double AND-Gate Anti-miRNA 320a-320b / Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642033",
+			name: "T7 / Gen4 320b-320a-4640 Double AND-Gate Anti-miRNA 320a-320b / Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642034",
-			partname:
+			number: "BBa_K4642034",
+			name:
 				"T7 / Gen4 320b-320a-4640 Double AND-Gate / mCerulean / Double Terminator / T7 / Gen4 320b-320a-4640 Double AND-Gate Anti-miRNA 4640-320a / Terminator / T7 / Gen4 320b-320a-4640 Double AND-Gate Anti-miRNA 320a-320b / Terminator",
-			parttype: "Composite",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642035",
-			partname: "hsa-miR-145 Probe 1",
-			parttype: "Basic",
+			number: "BBa_K4642035",
+			name: "hsa-miR-145 Probe 1",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642036",
-			partname: "hsa-miR-145 Probe 2",
-			parttype: "Basic",
+			number: "BBa_K4642036",
+			name: "hsa-miR-145 Probe 2",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642037",
-			partname: "hsa-miR-199a Probe 1",
-			parttype: "Basic",
+			number: "BBa_K4642037",
+			name: "hsa-miR-199a Probe 1",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642038",
-			partname: "hsa-miR-199a Probe 2",
-			parttype: "Basic",
+			number: "BBa_K4642038",
+			name: "hsa-miR-199a Probe 2",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642039",
-			partname: "hsa-miR-125b Probe 1",
-			parttype: "Basic",
+			number: "BBa_K4642039",
+			name: "hsa-miR-125b Probe 1",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642040",
-			partname: "hsa-miR-125b Probe 2",
-			parttype: "Basic",
+			number: "BBa_K4642040",
+			name: "hsa-miR-125b Probe 2",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642041",
-			partname: "hsa-miR-486 Probe 1",
-			parttype: "Basic",
+			number: "BBa_K4642041",
+			name: "hsa-miR-486 Probe 1",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642042",
-			partname: "hsa-miR-486 Probe 2",
-			parttype: "Basic",
+			number: "BBa_K4642042",
+			name: "hsa-miR-486 Probe 2",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642043",
-			partname: "hsa-miR-19b Probe 1",
-			parttype: "Basic",
+			number: "BBa_K4642043",
+			name: "hsa-miR-19b Probe 1",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642044",
-			partname: "hsa-miR-19b Probe 2",
-			parttype: "Basic",
+			number: "BBa_K4642044",
+			name: "hsa-miR-19b Probe 2",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642045",
-			partname: "hsa-miR-1260a Probe 1",
-			parttype: "Basic",
+			number: "BBa_K4642045",
+			name: "hsa-miR-1260a Probe 1",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642046",
-			partname: "hsa-miR-1260a Probe 2",
-			parttype: "Basic",
+			number: "BBa_K4642046",
+			name: "hsa-miR-1260a Probe 2",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642047",
-			partname: "hsa-miR-125b Probe 2",
-			parttype: "Basic",
+			number: "BBa_K4642047",
+			name: "hsa-miR-125b Probe 2",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642048",
-			partname: "hsa-miR-373 Probe 2",
-			parttype: "Basic",
+			number: "BBa_K4642048",
+			name: "hsa-miR-373 Probe 2",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642049",
-			partname: "hsa-miR-21 Probe 1",
-			parttype: "Basic",
+			number: "BBa_K4642049",
+			name: "hsa-miR-21 Probe 1",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642050",
-			partname: "hsa-miR-21 Probe 2",
-			parttype: "Basic",
+			number: "BBa_K4642050",
+			name: "hsa-miR-21 Probe 2",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642051",
-			partname: "hsa-miR-24 Probe 1",
-			parttype: "Basic",
+			number: "BBa_K4642051",
+			name: "hsa-miR-24 Probe 1",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642052",
-			partname: "hsa-miR-24 Probe 2",
-			parttype: "Basic",
+			number: "BBa_K4642052",
+			name: "hsa-miR-24 Probe 2",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642053",
-			partname: "hsa-miR-320b Probe 1",
-			parttype: "Basic",
+			number: "BBa_K4642053",
+			name: "hsa-miR-320b Probe 1",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642054",
-			partname: "hsa-miR-320b Probe 2",
-			parttype: "Basic",
+			number: "BBa_K4642054",
+			name: "hsa-miR-320b Probe 2",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642055",
-			partname: "hsa-miR-320a Probe 1",
-			parttype: "Basic",
+			number: "BBa_K4642055",
+			name: "hsa-miR-320a Probe 1",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642056",
-			partname: "hsa-miR-320a Probe 2",
-			parttype: "Basic",
+			number: "BBa_K4642056",
+			name: "hsa-miR-320a Probe 2",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642057",
-			partname: "hsa-miR-4640 Probe 1",
-			parttype: "Basic",
+			number: "BBa_K4642057",
+			name: "hsa-miR-4640 Probe 1",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642058",
-			partname: "hsa-miR-4640 Probe 2",
-			parttype: "Basic",
+			number: "BBa_K4642058",
+			name: "hsa-miR-4640 Probe 2",
+			type: "Basic",
 		},
 		{
-			partnumber: "BBa_K4642059",
-			partname: "T7 / Breast Cancer / Endometriosis / Ovarian Cancer / PCOS / Double Terminator",
-			parttype: "Composite",
+			number: "BBa_K4642059",
+			name: "T7 / Breast Cancer / Endometriosis / Ovarian Cancer / PCOS / Double Terminator",
+			type: "Composite",
 		},
 		{
-			partnumber: "BBa_K4642060",
-			partname:
+			number: "BBa_K4642060",
+			name:
 				"T7 / Breast Cancer / Endometriosis / Ovarian Cancer / PCOS / Double Terminator / Anti-miRNAs / Terminator",
-			parttype: "Composite",
+			type: "Composite",
 		},
 	];
 
@@ -364,6 +364,36 @@ export default class HumanPracticesPage extends React.Component {
 							<TableHead>
 								<TableRow>
 									<TableCell>
+										<b>Number</b>
+									</TableCell>
+									<TableCell>
+										<b>Part</b>
+									</TableCell>
+									<TableCell>
+										<b>Designed by</b>
+									</TableCell>
+								</TableRow>
+							</TableHead>
+							<TableBody>
+								{this.parts.map(part => (
+									<TableRow key={part.number}>
+										<TableCell>{part.number}</TableCell>
+										<TableCell>{part.name}</TableCell>
+										<TableCell>{part.type}</TableCell>
+									</TableRow>
+								))}
+							</TableBody>
+						</Table>
+					</TableContainer>
+					<h2>Collaborative miRNA Database</h2>
+					We have started a Collaborative miRNA database, which we hope future teams will expand
+					upon, and use in their future projects using toehold switches and more! You can find our
+					full list below:
+					<TableContainer component={Paper}>
+						<Table sx={{ minWidth: 650 }} aria-label="Part Table">
+							<TableHead>
+								<TableRow>
+									<TableCell>
 										<b>miRNA</b>
 									</TableCell>
 									<TableCell>
@@ -380,32 +410,6 @@ export default class HumanPracticesPage extends React.Component {
 										<TableCell>{miRNA.miRNA}</TableCell>
 										<TableCell>{miRNA.disease}</TableCell>
 										<TableCell>{miRNA.source}</TableCell>
-									</TableRow>
-								))}
-							</TableBody>
-						</Table>
-					</TableContainer>
-					<h2>Collaborative miRNA Database</h2>
-					We have started a Collaborative miRNA database, which we hope future teams will expand
-					upon, and use in their future projects using toehold switches and more! You can find our
-					full list below:
-					<TableContainer component={Paper}>
-						<Table sx={{ minWidth: 650 }} aria-label="Part Table">
-							<TableHead>
-								<TableRow>
-									<TableCell>
-										<b>Part</b>
-									</TableCell>
-									<TableCell>
-										<b>Designed by</b>
-									</TableCell>
-								</TableRow>
-							</TableHead>
-							<TableBody>
-								{this.parts.map(part => (
-									<TableRow key={part.partnumber}>
-										<TableCell>{part.partname}</TableCell>
-										<TableCell>{part.parttype}</TableCell>
 									</TableRow>
 								))}
 							</TableBody>

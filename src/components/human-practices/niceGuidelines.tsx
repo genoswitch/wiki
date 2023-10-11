@@ -372,7 +372,10 @@ const references: ReferenceType[] = [{
 	number: 1,
 	author: "Meuleman, C., Vandenabeele, B., Fieuws, S., Spiessens, C., Timmerman, D. and D’Hooghe, T.",
 	title: "High prevalence of endometriosis in infertile women with normal ovulation and normospermic partners",
-	// fill out the rest
+	journal: "Fertility and Sterility.",
+	volume: "92(1), pp.68-74",
+	published_date: "July 2009",
+	link: "https://www.fertstert.org/article/S0015-0282(08)00975-8/fulltext"
 }]
 
 const NiceGuidelines = () => {

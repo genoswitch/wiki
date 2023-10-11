@@ -74,8 +74,8 @@ devDependencies:
     specifier: ^5.12.1
     version: 5.12.1(gatsby@5.12.6)(graphql@16.8.1)
   gatsby-plugin-mdx:
-    specifier: ^5.12.0
-    version: 5.12.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.6)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^5.12.1
+    version: 5.12.1(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.6)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
   gatsby-plugin-no-sourcemaps:
     specifier: ^5.12.0
     version: 5.12.0(gatsby@5.12.6)
@@ -3187,13 +3187,13 @@ packages:
   /@types/mdast@3.0.11:
     resolution: {integrity: sha512-Y/uImid8aAwrEA24/1tcRZwpxX3pIFTSilcNDKSPn+Y2iDywSEachzRuvgAYYLR3wpGXAsMbv5lvKLDZLeYPAw==}
     dependencies:
-      '@types/unist': 2.0.6
+      '@types/unist': 3.0.0
     dev: true
 
   /@types/mdast@4.0.1:
     resolution: {integrity: sha512-IlKct1rUTJ1T81d8OHzyop15kGv9A/ff7Gz7IJgrk6jDb4Udw77pCJ+vq8oxZf4Ghpm+616+i1s/LNg/Vh7d+g==}
     dependencies:
-      '@types/unist': 2.0.6
+      '@types/unist': 3.0.0
     dev: false
 
   /@types/mdx@2.0.5:
@@ -3305,6 +3305,7 @@ packages:
 
   /@types/unist@2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
+    dev: true
 
   /@types/unist@3.0.0:
     resolution: {integrity: sha512-MFETx3tbTjE7Uk6vvnWINA/1iJ7LuMdO4fcq8UfF0pRbj01aGLduVvQcRyswuACJdpnHgg8E3rQLhaRdNEJS0w==}
@@ -6279,8 +6280,8 @@ packages:
       - graphql
     dev: true
 
-  /gatsby-plugin-mdx@5.12.0(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.6)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-ILjKk7NR+WdXGaFYdVRxjY04BChhZzY960HslTySjipgm0AzVPEjW1UQDXEeHKHdo7aLhrOlhifVYCXoq/FaOw==}
+  /gatsby-plugin-mdx@5.12.1(@mdx-js/react@2.3.0)(gatsby-source-filesystem@5.12.0)(gatsby@5.12.6)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Te337HaaC5Gx7ihvtoEGrW4tMYeeCb7KCeI1G4OpOFx7OhDWXwrDFSBpqdhCMxs5/CsLZeMaftNgZWmntnCJ0g==}
     peerDependencies:
       '@mdx-js/react': ^2.0.0
       gatsby: ^5.0.0-next
@@ -6298,7 +6299,7 @@ packages:
       fs-extra: 11.1.1
       gatsby: 5.12.6(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       gatsby-core-utils: 4.12.0
-      gatsby-plugin-utils: 4.12.0(gatsby@5.12.6)(graphql@16.8.1)
+      gatsby-plugin-utils: 4.12.1(gatsby@5.12.6)(graphql@16.8.1)
       gatsby-source-filesystem: 5.12.0(gatsby@5.12.6)
       gray-matter: 4.0.3
       mdast-util-mdx: 2.0.1
@@ -6429,26 +6430,6 @@ packages:
       gatsby: 5.12.6(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
     transitivePeerDependencies:
       - supports-color
-
-  /gatsby-plugin-utils@4.12.0(gatsby@5.12.6)(graphql@16.8.1):
-    resolution: {integrity: sha512-lU84VmWC9qGojROMZkBgGjCAzxcAUlyGAsd75vjj2y3yqGYtyvqInvK5tZvDyNNVvU21u040Ps4AKIvRVgMV/Q==}
-    engines: {node: '>=18.0.0'}
-    peerDependencies:
-      gatsby: ^5.0.0-next
-      graphql: ^16.0.0
-    dependencies:
-      '@babel/runtime': 7.23.1
-      fastq: 1.15.0
-      fs-extra: 11.1.1
-      gatsby: 5.12.6(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
-      gatsby-core-utils: 4.12.0
-      gatsby-sharp: 1.12.1
-      graphql: 16.8.1
-      graphql-compose: 9.0.10(graphql@16.8.1)
-      import-from: 4.0.0
-      joi: 17.9.2
-      mime: 3.0.0
-    dev: true
 
   /gatsby-plugin-utils@4.12.1(gatsby@5.12.6)(graphql@16.8.1):
     resolution: {integrity: sha512-WL8x0E4CkmP1m61aaIa23lhoOOpxH7PIlZCzly2ehcsZmyL/7dxfpm09B/IAkLYbSMzi6Uln1vmQAN7qvBan4A==}

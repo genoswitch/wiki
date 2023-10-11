@@ -136,7 +136,46 @@ Hardware page</a>.
 
 To increase the accessibility of our test, we have chosen to use miRPA to amplify the miRNA taken in
 our sample. This allows the miRNA to be isothermally amplified, and therefore doesn’t require the use
-of an expensive thermocycler. More information on the probes used can be found on our <a href="#" onClick={() => navigate("/software/")}>Software page</a>.<h2 style={{ paddingTop: 8 }}>MicroRNA</h2>
+of an expensive thermocycler. More information on the probes used can be found on our <a href="#" onClick={() => navigate("/software/")}>Software page</a>.
+
+<h3 style={{ paddingTop: 4 }}>Our Three-Step Process </h3>
+<h4 style={{ paddingTop: 4 }}>Step 1: Extraction of miRNA </h4>
+Extraction of miRNA is done using electromagnetic particles.
+<img
+						style={{ maxWidth: "100%" }}
+						src="https://uploads.igem.org/teams/4642/wiki/biology/step1.webp"
+					/>
+These are the steps:
+Samples of blood are taken from a patient and added to a solution containing magnetic nanoparticles. These nanoparticles often consist of a metal (usually iron) oxide and are also coated with a biotin-streptavidin bonded anti-miRNA strand. A set of electromagnets is turned on and off in quick succession, causing the nanoparticles to move and stir the solution. During this process, target miRNAs bond to the complementary anti-miRNA via base-pairing. Afterwards, the magnetic beads are pulled to the side of the container while the rest of the solution is removed. The miRNA is removed from the beads using an elution buffer. The previous steps are repeated three times in order to remove the maximum possible amount of miRNA for amplification.
+
+<h4 style={{ paddingTop: 4 }}>Step 2: miRPA </h4>
+As seen in RIBOTOX, it is difficult to discriminate between leaky expression of toehold switches and {"<"}2.25M concentrations of miRNAs, and there is no data giving concentrations of the trigger miRNAs we are concerned with online.
+ 
+Therefore, to ensure miRNA concentration is high enough for them to be detected by the toehold switches, we need to amplify our microRNAs. Not only is PCR difficult to perform on microRNAs due to their short length, we need to find a solution that will allow amplification to take place isothermally, in a single tube, increasing the accessibility of our tests.
+ 
+Recombinase Polymerase Amplification (RPA) is a single tube, isothermal alternative to PCR, which can amplify dsDNA strands. So, before RPA can work, we need to reverse transcribe miRNA into DNA. This can be done using miRPA.
+ 
+Two DNA probes, one with 5’ phosphorylation, bind to the miRNA, and are ligated together by DNA ligase. Then, primers are added, with DNA polymerase, and complementary strands to the ligated probes are synthesised. Then, RPA can take place: primers, which are associated with recombinase protein dislodge the strands, replicating them in a similar method to PCR, but as no heat cycles are required to break up the strands, the process can take place isothermally.
+ 
+In order for the miRNA to be detected, we use ‘asymmetric RPA’: an excess of forward primers are added (usually 5x the amount), so an excess of the strand that was originally miRNA form is produced, so there is now ssDNA with the miRNA code in DNA. This can be detected by toehold switches. In order to design probes for miRPA, we can use NUPACK’s design functions in its API to find probes which can bind to the miRNAs, but have overhangs which do not bind within themselves, to ensure primers can easily anneal to them.
+<img
+						style={{ maxWidth: "100%" }}
+						src="https://uploads.igem.org/teams/4642/wiki/biology/step2.webp"
+					/>
+
+<h4 style={{ paddingTop: 4 }}>Step 3: Charaterisation of toehold switches </h4>
+
+To detect this now amplified miRNA, we made use of toehold switches. Conventionally, toehold switches open in response to the presence of a specific trigger, usually a single miRNA strand, however this can create issues regarding specificity due to how many miRNA several different conditions can share. Our solution is to use AND gates made of RNA to detect a combination of miRNA all specific to 1 disease, solving this specificity problem.
+
+The RNA and gates are specially designed to join miRNA strands for a single disease together and create a trigger complex, the switches are designed to have a binding site that is complementary to the trigger complex’ unpaired bases. When the trigger complex binds to the switch, the switch collapses, exposing the RBS and start codon allowing for the translation of a reporter protein.
+
+As seen earlier, our switches are multiplexed allowing us to detect 4 diseases at once. Each switch has their own binding site and reporter protein depending on the condition the switch is designed to detect.
+<img
+						style={{ maxWidth: "100%" }}
+						src="https://uploads.igem.org/teams/4642/wiki/biology/step3.webp"
+					/>
+
+<h2 style={{ paddingTop: 8 }}>MicroRNA</h2>
 Our project uses microRNA biomarkers to indicate the presence of disease. MicroRNAs (miRNAs) are
 small, highly conserved non-coding RNA molecules involved in the regulation of gene expression.<Reference number={1}/>
 

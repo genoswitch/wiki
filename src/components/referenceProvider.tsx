@@ -2,19 +2,7 @@ import * as React from "react";
 
 import { Divider } from "@mui/material";
 
-type Reference = {
-	number?: number;
-	author?: string;
-	title?: string;
-	journal?: string;
-	volume?: string;
-	published_date?: string;
-	doi?: string;
-};
-
-type ReferenceProviderProps = {
-	references: Reference[] | undefined;
-};
+import { ReferenceProviderProps, ReferenceType } from "../types/reference";
 
 const ReferenceProvider = ({ references }: ReferenceProviderProps) => {
 	if (!references) {
@@ -24,25 +12,29 @@ const ReferenceProvider = ({ references }: ReferenceProviderProps) => {
 			<>
 				<Divider variant="middle" />
 				<h4>References</h4>
-				{references.map((ref: Reference) => {
-					// Required attributes
-					if (ref?.number && ref?.author && ref?.title && ref?.journal && ref?.published_date) {
-						return (
-							<p id={`ref_note-${ref?.number}`}>
-								{ref?.number}. <a href={`#ref_${ref?.number}`}>^</a> {ref?.author}, "{ref?.title}",{" "}
-								<i>{ref?.journal}</i>
-								{ref?.volume ? `, ${ref.volume}` : ""}, {ref?.published_date}, Available:{" "}
-								{ref?.doi ? (
-									<a
-										target="_blank"
-										href={`https://doi.org/${ref?.doi}`}
-									>{`https://doi.org/${ref?.doi}`}</a>
-								) : (
-									<></>
-								)}
-							</p>
-						);
-					}
+				{references.map((ref: ReferenceType) => {
+					return (
+						<p id={`ref_note-${ref?.number}`}>
+							{ref?.number}. <a href={`#ref_${ref?.number}`}>^</a> {ref?.author}, "{ref?.title}",{" "}
+							{ref?.journal ? <i>{ref?.journal}</i> : <></>}
+							{ref?.volume ? `, ${ref.volume}` : ""}, {ref?.published_date}, Available:{" "}
+							{ref?.doi ? (
+								<a
+									target="_blank"
+									href={`https://doi.org/${ref?.doi}`}
+								>{`https://doi.org/${ref?.doi}`}</a>
+							) : (
+								<></>
+							)}
+							{ref?.link ? (
+								<a target="blank" href={ref?.link}>
+									{ref?.link}
+								</a>
+							) : (
+								<></>
+							)}
+						</p>
+					);
 				})}
 			</>
 		);

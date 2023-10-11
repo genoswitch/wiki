@@ -89,8 +89,8 @@ devDependencies:
     specifier: ^7.12.0
     version: 7.12.0(gatsby@5.12.6)(preact-render-to-string@5.2.6)(preact@10.18.1)(webpack@5.88.2)
   gatsby-plugin-sitemap:
-    specifier: ^6.12.0
-    version: 6.12.0(gatsby@5.12.6)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^6.12.1
+    version: 6.12.1(gatsby@5.12.6)(react-dom@18.2.0)(react@18.2.0)
   gatsby-source-filesystem:
     specifier: ^5.12.0
     version: 5.12.0(gatsby@5.12.6)
@@ -6396,15 +6396,15 @@ packages:
       - webpack
     dev: true
 
-  /gatsby-plugin-sitemap@6.12.0(gatsby@5.12.6)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-wD8c++ubDOdYHND+w1nAkdpNGc9Tb0VLZua8PeVSSAFgqgQzgm+LXfuW2yg5wNUOkYG9Qc9HlkORg+oyzk3xTQ==}
+  /gatsby-plugin-sitemap@6.12.1(gatsby@5.12.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-rV0RGbkoiuPYe7znHxIyhBbD2Sb+OLoIKyHYD4+ufRgycefbwqIQTlc3QAR9PLiSD1eLtCpXeUsc9E/GJ3E/nA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       gatsby: ^5.0.0-next
       react: ^18.0.0 || ^0.0.0
       react-dom: ^18.0.0 || ^0.0.0
     dependencies:
-      '@babel/runtime': 7.22.11
+      '@babel/runtime': 7.23.1
       common-tags: 1.8.2
       gatsby: 5.12.6(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       minimatch: 3.1.2

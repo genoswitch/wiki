@@ -1,7 +1,7 @@
 import * as React from "react";
 import { navigate } from "gatsby";
 
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 import {
 	createTheme,
 	Card,
@@ -47,6 +47,9 @@ const imageStyle = (theme: Theme) => ({
 });
 export default class HomepageCard extends React.Component<HomepageCardProps, {}> {
 	render(): React.ReactNode {
+		// To make TS happy, use the notNull assertion for dynamicImage as well as getImage's return value.
+		// Also cast dynamicImage to ImageDataLike (mismatched so must cast to unknown first.)
+		const image = getImage(this.props.card.dynamicImage! as unknown as ImageDataLike)!;
 		return (
 			<>
 				<ThemeProvider theme={theme}>

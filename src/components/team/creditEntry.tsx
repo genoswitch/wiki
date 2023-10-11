@@ -17,7 +17,7 @@ import Grid from "@mui/material/Unstable_Grid2/Grid2";
 
 import HtmlReactParser from "html-react-parser";
 
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 
 type CreditEntryArgs = {
 	member: TeamMemberNode;
@@ -55,6 +55,9 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 			};
 			image.src = this.assetBasePath + this.props.member.picturePath;
 		}
+		// To make TS happy, use the notNull assertion for dynamicImage as well as getImage's return value.
+		// Also cast dynamicImage to ImageDataLike (mismatched so must cast to unknown first.)
+		const image = getImage(this.props.member.dynamicImage! as unknown as ImageDataLike)!;
 		return (
 			<div style={{ padding: 16 }}>
 				<Card raised>

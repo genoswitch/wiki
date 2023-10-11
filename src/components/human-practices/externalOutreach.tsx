@@ -140,7 +140,7 @@ const HPExternalOutreach = () => {
 						drastically reduced. Dr Aka also emphasised the importance of non-invasive testing,
 						drawing on his professional experience where patients were fearful of invasive procedures
 						such as a laparoscopy. He also mentioned that should GENOSWITCH’s clinical viability be
-						proven, he would prefer to use our testing method over those currently available.>
+						proven, he would prefer to use our testing method over those currently available.
 					</CustomTabPanel>
 				</Box>
 			</Card>

@@ -2,13 +2,14 @@ import * as React from "react";
 
 type ReferenceProps = {
 	number: number;
+	prefix: string;
 };
 
-const Reference = ({ number }: ReferenceProps) => {
+const Reference = ({ number, prefix = "default" }: ReferenceProps) => {
 	return (
 		<sup id={`ref_${number}`}>
 			{`[`}
-			<a href={`#ref_note-${number}`}>{number}</a>
+			<a href={`#${prefix}-ref_note-${number}`}>{number}</a>
 			{`]`}
 		</sup>
 	);

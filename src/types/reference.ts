@@ -11,6 +11,7 @@ type ReferenceType = {
 
 type ReferenceProviderProps = {
 	references: ReferenceType[] | undefined;
+	prefix: string;
 };
 
 export { ReferenceType, ReferenceProviderProps };

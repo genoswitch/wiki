@@ -93,7 +93,6 @@ export default class TeamPage extends React.PureComponent<
 			console.log(`Adding entry for '${member.name}'`);
 			this.entries.push(
 				<CreditEntry
-					assetBasePath={this.props.data.site?.siteMetadata?.assetBasePath!}
 					member={member}
 					data={this.data}
 					tags={this.discoveredTags}
@@ -321,7 +320,21 @@ export const query = graphql`
 				}
 				tags
 				position
+				# static, higher res image (used in the modal)
 				picturePath
+				# gatsby-plugin-image
+				dynamicImage {
+					childImageSharp {
+						gatsbyImageData(
+							width: 800 # 800x(~1200)
+							placeholder: BLURRED
+							formats: [WEBP]
+							outputPixelDensities: [0.25] # Generate 0.25x and 1x.
+							# 1x is always created (see below)
+							# https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#customizing-the-default-options:~:text=and%20will%20always%20include%20a%201x%20image.
+						)
+					}
+				}
 			}
 		}
 		allTeamTagColourYaml(filter: { tag: { ne: "example" } }) {

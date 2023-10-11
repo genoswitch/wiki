@@ -17,8 +17,9 @@ import Grid from "@mui/material/Unstable_Grid2/Grid2";
 
 import HtmlReactParser from "html-react-parser";
 
+import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
+
 type CreditEntryArgs = {
-	assetBasePath: string;
 	member: TeamMemberNode;
 	data: Queries.TeamPageDataQuery;
 	tags: TeamTag[];
@@ -47,17 +48,25 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 
 	render() {
 		if (this.state.showModal && !this.state.modalIsReady) {
+			// Preload the modal image
+			const image = new Image();
+			image.onload = () => {
+				this.setState({ modalIsReady: true });
+			};
+			image.src = this.assetBasePath + this.props.member.picturePath;
 		}
+		// To make TS happy, use the notNull assertion for dynamicImage as well as getImage's return value.
+		// Also cast dynamicImage to ImageDataLike (mismatched so must cast to unknown first.)
+		const image = getImage(this.props.member.dynamicImage! as unknown as ImageDataLike)!;
 		return (
 			<div style={{ padding: 16 }}>
 				<Card raised>
 					<Grid container spacing={0}>
 						<Grid xs={12} md={4}>
-							<img
-								style={{ maxHeight: "100%", maxWidth: "100%" }}
-								src={`${this.props.assetBasePath}${this.props.member.picturePath}`}
-								alt={`${this.props.member.name}'s picture.`}
-							/>
+							<div onClick={() => this.setState({ showModal: true })}>
+								{/*<Card.Img src={this.assetBasePath + this.props.member.picturePath} />*/}
+								<GatsbyImage image={image} alt={`${this.props.member.name}'s picture.`} />
+							</div>
 						</Grid>
 						<Grid xs={12} md={8} style={{ padding: 16 }}>
 							<Typography variant="h5">{this.props.member.name}</Typography>
@@ -89,6 +98,28 @@ export class CreditEntry extends React.Component<CreditEntryArgs, CreditEntrySta
 						</Grid>
 					</Grid>
 				</Card>
+				{/** MUI Dialog is more flexible than MUI Modal. */}
+				<Dialog
+					open={this.state.showModal}
+					onClose={() => this.setState({ showModal: false })}
+					closeAfterTransition
+				>
+					<DialogTitle>{this.props.member.name}</DialogTitle>
+					<DialogContent>
+						<div>
+							{this.state.modalIsReady ? (
+								<img
+									style={{ maxHeight: "100%", maxWidth: "100%" }}
+									src={this.assetBasePath + this.props.member.picturePath}
+								/>
+							) : (
+								<div style={{ display: "flex", justifyContent: "center" }}>
+									<CircularProgress />
+								</div>
+							)}
+						</div>
+					</DialogContent>
+				</Dialog>
 			</div>
 		);
 	}

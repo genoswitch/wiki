@@ -1,6 +1,7 @@
 import * as React from "react";
 import { navigate } from "gatsby";
 
+import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 import {
 	createTheme,
 	Card,
@@ -29,7 +30,6 @@ const theme = createTheme({
 
 type HomepageCardProps = {
 	card: HomepageCardNode;
-	assetBasePath: string;
 };
 
 // Change size of card image depending on screen size
@@ -47,6 +47,9 @@ const imageStyle = (theme: Theme) => ({
 });
 export default class HomepageCard extends React.Component<HomepageCardProps, {}> {
 	render(): React.ReactNode {
+		// To make TS happy, use the notNull assertion for dynamicImage as well as getImage's return value.
+		// Also cast dynamicImage to ImageDataLike (mismatched so must cast to unknown first.)
+		const image = getImage(this.props.card.dynamicImage! as unknown as ImageDataLike)!;
 		return (
 			<>
 				<ThemeProvider theme={theme}>
@@ -67,9 +70,9 @@ export default class HomepageCard extends React.Component<HomepageCardProps, {}>
 							<Card style={{ position: "relative" }}>
 								{/** cardMedia */}
 								<Box sx={imageStyle}>
-									<img
-										src={`${this.props.assetBasePath}${this.props.card.picturePath}`}
-										alt={`${this.props.card.name} header image`}
+									<GatsbyImage
+										alt={`$${this.props.card.name} header image`}
+										image={image}
 										style={{
 											position: "absolute",
 											width: "100%",

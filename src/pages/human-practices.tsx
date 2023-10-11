@@ -18,7 +18,7 @@ export default class HumanPracticesPage extends React.Component {
 				<Container>
 					<h1>Human Practices</h1>
 					<h2 style={{ paddingTop: 8 }}>SWOT Analysis</h2>
-					<SWOTAnalysis/>
+					<SWOTAnalysis />
 					<h2 style={{ paddingTop: 8 }}>Values of our Project</h2>
 					When designing our project, we focused our efforts on making a test that would have a
 					strong social and scientific impact. It was important to us to create a tool that both

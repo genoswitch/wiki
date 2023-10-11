@@ -348,8 +348,6 @@ export default class HumanPracticesPage extends React.Component {
 			<HeaderFooterProvider>
 				<Container>
 					<h1>Contribution</h1>
-					Welcome to the genoswitch wiki! Our Contribution page is a work-in-progress at the moment,
-					but feel free to check out other pages using the navigation bar!
 					<h2>Parts</h2>
 					We have developed a number of parts this year, for future teams to use in their projects:
 					<TableContainer component={Paper}>

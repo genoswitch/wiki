@@ -357,13 +357,13 @@ export default class HumanPracticesPage extends React.Component {
 							<TableHead>
 								<TableRow>
 									<TableCell>
-										<b>Number</b>
+										<b>Part Number</b>
 									</TableCell>
 									<TableCell>
-										<b>Part</b>
+										<b>Part Name</b>
 									</TableCell>
 									<TableCell>
-										<b>Designed by</b>
+										<b>Part Type</b>
 									</TableCell>
 								</TableRow>
 							</TableHead>

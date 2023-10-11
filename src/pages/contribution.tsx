@@ -376,7 +376,16 @@ export default class HumanPracticesPage extends React.Component {
 							</TableBody>
 						</Table>
 					</TableContainer>
-					<h2>Collaborative miRNA Database</h2>
+
+					<h2 style={{ paddingTop: 8 }}>The Advancement of Toehold Switches</h2>
+					Previously, toehold switches were only able to detect a maximum of two RNA strands at a time. Many teams in the past have submitted toehold switches with only one input such as the 2017 BATMAN project (Part:BBa_K2206000). The 2021 RIBOTOX project developed an AND-gate switch which can detect two RNAs simultaneously. The ability to detect two RNAs for one condition meant that luciferase was only produced when two trigger RNAs were present at sufficient concentrations which helped to increase the specificity. For other prevalent conditions however, this could prove problematic if multiple strands need to be detected as it is difficult to monitor and create the hardware to help detect a conglomerate of RNA. Furthermore, switches which induce a reporter protein in a CDS are unspecific. This is because the same miRNAs are upregulated in multiple conditions as extra-cellular microRNA networks are complex. We were able to scale up the design of past iGEM teams to produce systems that are able to detect several microRNAs. This exponentially increased specificity to the conditions we were testing for.
+									
+					<h2 style={{ paddingTop: 8 }}>A new method to design toehold switches</h2>
+									<b>INSERT HERE - RISH</b>
+					<h2 style={{ paddingTop: 8 }}>Issues with further development of Toehold Switches</h2>
+									<b>Insert here - RISH</b>
+
+					<h2 style={{ paddingTop: 8 }}>Our Collaborative miRNA Database</h2>
 					We have started a Collaborative miRNA database, which we hope future teams will expand
 					upon, and use in their future projects using toehold switches and more! You can find our
 					full list below:

@@ -17,6 +17,8 @@ import Grid from "@mui/material/Unstable_Grid2/Grid2";
 
 import HtmlReactParser from "html-react-parser";
 
+import { GatsbyImage } from "gatsby-plugin-image";
+
 type CreditEntryArgs = {
 	member: TeamMemberNode;
 	data: Queries.TeamPageDataQuery;

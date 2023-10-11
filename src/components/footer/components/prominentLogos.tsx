@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { Grid } from "@mui/material";
 import { ProminentLogoNode } from "../../../types/graphql/prominentLogoNode";
 

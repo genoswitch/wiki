@@ -1,6 +1,8 @@
 import * as React from "react";
 import { navigate } from "gatsby";
 
+
+import { GatsbyImage } from "gatsby-plugin-image";
 import {
 	createTheme,
 	Card,

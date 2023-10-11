@@ -2,46 +2,76 @@
 \usepackage{graphicx, geometry,amsmath}
 \geometry{margin = 2cm}
 \begin{document}
-    Note: \( (r,\theta , \phi) \) centred on \( (0,0,f) \)
+    First, we present a geometric demonstration of the coma which forms when the angle between the axis of symmetry of the parabola and the incident rays, \(\alpha\), is not 0:
+
+    Following reflection, all rays continue to move in straight lines. Thus, a point \(\begin{pmatrix} r \\ Kr^2 \end{pmatrix}\) on the parabola gives rise to a ray:
+
+    \[\begin{pmatrix} r \\ Kr^2 \end{pmatrix} + \lambda \begin{pmatrix} a(r) \\ b(r) \end{pmatrix}for \lambda \in [0,\infty)\]
+    
+    Wave fronts can be considered to start along the parabola as only the phase is affected. The direction of rays before reflection is \( \bar{A} = \begin{pmatrix} sin\alpha \\ -cos\alpha \end{pmatrix}\). \(\begin{pmatrix} a(r) \\ b(r) \end{pmatrix}\) is a reflection of \(\bar{A}\) in the normal to the parabola at \(\begin{pmatrix} r \\ Kr^2 \end{pmatrix}\).
+
+    The normal is \(\frac{1}{4K^2r^2+1} \begin{pmatrix} -2Kr \\ 1 \end{pmatrix} = \hat{n}(r)\)
+
+    The tangent is \(\frac{1}{4K^2r^2+1} \begin{pmatrix} 1 \\ 2Kr \end{pmatrix} = \hat{T}(r)\)
+
+    Thus \begin{align*}
+    \begin{pmatrix} a(r) \\ b(r) \end{pmatrix} &= -(\bar{A} \cdot \hat{n})\hat{n} + (\bar{A} \cdot \hat{T})\hat{T}
+    \\ &= \frac{1}{4K^2r^2+1} (cos\alpha + 2Krsin\alpha) \begin{pmatrix} -2Kr \\ 1 \end{pmatrix} + \frac{1}{4K^2r^2+1} (sin\alpha - 2Krcos\alpha) \begin{pmatrix} 1 \\ 2Kr \end{pmatrix}
+    \\ &= \frac{1}{4K^2r^2+1} \begin{pmatrix} sin\alpha (1-4K^2r^2) - cos\alpha(4Kr) \\ sin\alpha(4Kr) + cos\alpha(1-4K^2r^2) \end{pmatrix}
+    \end{align*}
+
+    Therefore parameterising a point's position along the ray, \(\lambda\), and the wave front, \(t\),
+
+    \[X(\lambda,t) = \left(t-\lambda sin\alpha \left(\frac{1-4K^2t^2}{1+4K^2t^2}\right) - \lambda cos\alpha \left(\frac{4Kt}{1+4K^2t^2}\right)\right)\]
+    \[Y(\lambda,t) = \left(Kt^2-\lambda cos\alpha \left(\frac{1-4K^2t^2}{1+4K^2t^2}\right) - \lambda sin\alpha \left(\frac{4Kt}{1+4K^2t^2}\right)\right)\]
+
+    It can be seen from the diagrams below that when \(\alpha = 0\) all rays pass through the focal point. It can also be seen that when \(\alpha \neq 0\) there is a coma formed, as well as a shifted region which resembles a focal point, but will be of lower intensity.
+
+    We shall work in spherical polar coordinates  \( (r,\theta , \phi) \) centred on \( (0,0,f) \)
 
     For an incident beam with intensity distribution \(I_0(\theta ) \) along \(\hat{z}\) axis, a paraboloid reflector: \(z^2 = K(x^2+y^2)\) which has focal point at (0,0,f):
     
-    Near focus:
+    Near focus [1]:
     \[ \bar{E}(r_0,\theta_0 ,\phi_0 ) = \frac{1}{2\pi i} \int_0^{2 \pi } \int_0^{\theta_{max}} \hat{a} (\theta , \phi) I_0(\theta) q(\theta) e^{-i K \bar{s}_0 \cdot \bar{r}_0} sin(\theta) \; {d\theta} \; {d\phi} \]
     \begin{itemize}
 	\item \( \hat{a}   (\theta , \phi) \) is the polarization direction
 	\item \( \hat{s} (\theta , \phi) \) is the unit vector in the direction of propagation
 	\item \( \bar{r}_0 \) is the position vector of point of measurement (point \( (r_0, \theta_0 , \phi_0)\))
-	\item \( q(\theta) \) is the apodization factor of a paraboloid
+	\item \( p(\theta) \) is the apodization factor of a paraboloid
     \end{itemize}
 
     Note: \(P\) depends on \(\theta\) as \( P(\theta) = f \, tan \theta - K \, P(\theta)^2 \, tan \theta = 2f \, \left(\frac{sec \theta - 1}{tan \theta}\right) = 2f \, tan\left(\frac{\theta}{2}\right)\)
 
-    The focal sphere is a sphere centred on \( (0,0,f) \) with radius \(f\). Consider an infinitesimally thin annulus of radius \(R\) taken from the incident beam. All of this light is focused into a strip on the focal sphere. The apodization factor, \(q(\theta)\), ensures conservation of energy since it is defined as the ratio \(\sqrt{\frac{dS_i}{dS_s}}\) where \(dS_i\) is an infinitesimal area of the incident beam (annulus) and \(dS_s\) is the corresponding area on the focal sphere.
+    The focal sphere is a sphere centred on \( (0,0,f) \) with radius \(f\). Consider an infinitesimally thin annulus of radius \(R\) taken from the incident beam. All of this light is focused into a strip on the focal sphere. The apodization factor, \(p(\theta)\), ensures conservation of energy since it is defined as the ratio \(\sqrt{\frac{dS_i}{dS_s}}\) where \(dS_i\) is an infinitesimal area of the incident beam (annulus) and \(dS_s\) is the corresponding area on the focal sphere.
     \[dS_i = 2 \pi R \; dR\]
     \[ R = P(\theta) = 2f \, tan\left(\frac{\theta}{2}\right)\]
     \[ dR = f \, sec^2\left(\frac{\theta}{2}\right) \; d\theta \]
     \[ dS_i = 4 \pi f^2 \, tan\left(\frac{\theta}{2}\right) \, sec^2\left(\frac{\theta}{2}\right) \; d\theta \]
     \[ dS_s = (2 \pi f) (sin \theta) (f \, d\theta) = 2 \pi f^2 \, sin \theta  \; d\theta \]
-    \[ q(\theta) = \sqrt{\frac{dS_i}{dS_s}} = \sqrt{\frac{4 \pi f^2 \, tan\left(\frac{\theta}{2}\right) sec^2\left(\frac{\theta}{2}\right) \; d\theta}{2 \pi f^2 \, sin \theta \; d\theta}} = \sqrt{\frac{2 tan\left(\frac{\theta}{2}\right) sec^2\left(\frac{\theta}{2}\right) }{2 sin\left(\frac{\theta}{2}\right) cos\left(\frac{\theta}{2}\right)}} = sec^2\left(\frac{\theta}{2}\right) \]
+    \[ p(\theta) = \sqrt{\frac{dS_i}{dS_s}} = \sqrt{\frac{4 \pi f^2 \, tan\left(\frac{\theta}{2}\right) sec^2\left(\frac{\theta}{2}\right) \; d\theta}{2 \pi f^2 \, sin \theta \; d\theta}} = \sqrt{\frac{2 tan\left(\frac{\theta}{2}\right) sec^2\left(\frac{\theta}{2}\right) }{2 sin\left(\frac{\theta}{2}\right) cos\left(\frac{\theta}{2}\right)}} = sec^2\left(\frac{\theta}{2}\right) \]
+    This result is the same as in [2]
 
-
+     
     By convention: \[ \bar{r}_0 = r_0 \begin{pmatrix} sin\theta_0 \, cos\phi_0 \\ sin\theta_0 \, sin\phi_0 \\ cos\theta_0\end{pmatrix}\]
 
     For incident rays parallel to \(\hat{z}\): \[\bar{s} = \begin{pmatrix} sin\theta \, cos\phi \\ sin\theta \, sin\phi \\ cos\theta\end{pmatrix} \]
 
-    \begin{align*}
+    Thus: \begin{align*}
     e^{-iK\bar{s}\cdot\bar{r}_0} & = e^{-i K r_0 (sin\theta \, sin\theta_0 \, [cos\phi\, cos\phi_0\, + sin\phi\, sin\phi_0] + cos\theta\, cos\theta_0)}\\ & = e^{-iK(sin\theta\, sin\theta_0\,cos(\phi-\phi_0)+cos\theta\,cos\theta_0)}
     \end{align*}
+    It can be seen by similar reasoning to earlier with the tangent and normal vectors that if:
     \begin{itemize}
         \item Before reflection, \(\hat{a}_0 = \begin{pmatrix} cos\phi \\ sin\phi \\ 0 \end{pmatrix}\)
+    
+    Then:
         \item After reflection, \(\hat{a}(\theta,\phi) = \begin{pmatrix} cos\theta\, cos\phi \\ cos\theta\, sin\phi \\ sin\theta \end{pmatrix}\)
-    \end{itemize}
+    \end{itemize} 
+    
     
     Therefore:
     \[\bar{E}(r_0, \theta_0,\phi_0) = \frac{Kf}{2\pi i}\int_0^{2\pi} \int_0^{\theta_{max}}I_0(\theta)sec^2\left(\frac{\theta}{2}\right)sin\theta e^{-iKr_0[sin\theta sin\theta_0 cos(\phi - \phi_0) + cos\theta cos\theta_0]} \hat{a}(\theta,\phi) \; d\theta \; d\phi\]
     
-    Note the following identities for the n\textsuperscript{th} bessel function of the first kind: \(J_n(x)\)
+    Note the following well known identities for the n\textsuperscript{th} bessel function of the first kind: \(J_n(x)\)
     \[\int_0^{2\pi} cos(n\varphi)e^{ixcos(\varphi-\varepsilon)}d\varphi = 2\pi i^n J_n(x) cos(n\varphi)\]
     \[\int_0^{2\pi} sin(n\varphi)e^{ixcos(\varphi-\varepsilon)}d\varphi = 2\pi i^n J_n(x) sin(n\varphi)\]
     
@@ -50,26 +80,23 @@
         \bar{E}(r_0,\theta_0,\phi_0) &= \frac{Kf}{2\pi i} \int_0^{\theta_{max}} I_0(\theta) sin\theta \, sec^2\left(\frac{\theta}{2}\right)e^{-iKr_0 cos\theta_0 cos\theta} cos\theta \int_0^{2\pi} \begin{pmatrix} cos\phi \\ sin\phi \\ tan\theta \end{pmatrix} e^{-iKr_0(sin\theta_0sin\theta cos(\phi-\phi_0))}d\phi \; d\theta \\ &= Kf \int_0^{\theta_{max}} I_0(\theta) sin\theta \, sec^2\left(\frac{\theta}{2}\right)e^{-iKr_0 cos\theta_0 cos\theta} \begin{pmatrix} J_1(Kr_0sin\theta_0sin\theta)cos\phi_0 \\ J_1(Kr_0sin\theta_0sin\theta)sin\phi_0 \\ -i J_0(Kr_0sin\theta_0sin\theta)tan\theta \end{pmatrix} d\theta
     \end{align*}
     
-    Represented in cylindrical coordinates:
+    Making use of the symmetry of rotation about the z axis, we can represent this in cylindrical coordinates to eliminate one component:
     \[E_z(r_0,\theta_0,\phi_0) = \bar{E} \cdot \hat{z} = -iKf \int_0^{\theta_{max}} I_0(\theta)sec^2\left(\frac{\theta}{2}\right) sin^2\theta e^{-iKr_0 cos\theta_0 cos\theta} J_0(Kr_0sin\theta_0sin\theta) \; d\theta\]
     \[E_r(r_0,\theta_0,\phi_0) = \bar{E} \cdot \hat{r} = \bar{E} \cdot \begin{pmatrix} cos\phi_0 \\ sin\phi_0 \\ 0 \end{pmatrix}\]
     \[= \frac{Kf}{2} \int_0^{\theta_{max}} I_0(\theta) sec^2\left(\frac{\theta}{2}\right) sin(2\theta) e^{-iKr_0 cos\theta_0 cos\theta} J_1(Kr_0sin\theta_0 sin\theta) \; d\theta\]
     \[E_{\phi}(r_0,\theta_0,\phi_0) = \bar{E} \cdot \hat{\phi} = \bar{E} \cdot \begin{pmatrix} -sin\phi_0 \\ cos\phi_0 \\ 0 \end{pmatrix} = 0 \]
     
-    For an angle of incidence \(\alpha \neq 0\):
-
-    Change of coordinates:
+    For an angle of incidence \(\alpha \neq 0\), we shall use a change of coordinates chosen such that the integrals for \(\bar{E}\) take the same form [4]:
     \[r_0 \mapsto r_0'(r_0,\theta,\phi_0)\]
     \[\phi_0 \mapsto \phi_0'(r_0,\theta,\phi_0)\]
-    
-    Such that the integrals for \(\bar{E}\) take the same form.
-    Additional phase factor: \(e^{-iK\zeta(\theta,\phi,\alpha)} = e^{-iK(2f\,tan\left(\frac{\theta}{2}\right)\, \alpha \, cos\phi)}\)
 
-    Therefore we require an aberration function, \(\zeta(\theta,\phi,\alpha)\). Thus the exponential term is now:
+    Additional phase factor [3]: \(e^{-iK\zeta(\theta,\phi,\alpha)} = e^{-iK(2f\,tan\left(\frac{\theta}{2}\right)\, \alpha \, cos\phi)}\)
+
+    The function, \(\zeta(\theta,\phi,\alpha)\) is an aberration function. Thus the exponential term is now:
     \[e^{-iK(sin\theta(f\alpha \frac{tan\left(\frac{\theta}{2}\right)cos\phi}{sin\theta} - r_0 cos\phi_0 cos_\phi - r_0 sin\phi_0 sin\phi)sin\theta_0 + r_0 cos\theta_0 cos\theta)}\]
     \[= e^{-iK[r_0'(sin\theta sin\theta_0 cos(\phi - \phi_0'))+r_0 cos\theta_0 cos\theta]}\]
     
-    Recall \(a\,cos\phi + b\,sin\phi = \sqrt{a^2 + b^2} \; cos\left(\phi - tan^{-1}\left(\frac{b}{a}\right)\right)\)
+    Recall the well known identity: \(a\,cos\phi + b\,sin\phi = \sqrt{a^2 + b^2} \; cos\left(\phi - tan^{-1}\left(\frac{b}{a}\right)\right)\)
 
     Substituting in values for \(a\) and \(b\):
     \[a = \frac{f\,\alpha\,tan\left(\frac{\theta}{2}\right)}{sin\theta} - r_0 cos\phi_0\]
@@ -82,6 +109,30 @@
     As before, using the new coordinates:
     \[\bar{E} = Kf \int_0^{\theta_{max}} I_0(\theta) sin\theta \, sec^2\left(\frac{\theta}{2}\right) cos\theta e^{-iK r_0' cos\theta_0 cos\theta} \begin{pmatrix} J_1(Kr_0' sin\theta_0 sin\theta)cos\phi_0' \\ J_1(Kr_0' sin\theta_0sin\theta)sin\phi_0' \\ -i J_0(Kr_0' sin\theta_0sin\theta)tan\theta \end{pmatrix} d\theta \]
 
-    We take the intensity distribution, \(I_0(\theta)\), to be:
+    We take the intensity distribution, \(I_0(\theta)\), to be that of a Bessel-Gauss beam [2]:
     \[I_0(\theta) = Ne^{-\left(\frac{r(\theta)}{w_0}\right)^2} J_1\left(\frac{2r(\theta)}{w_0}\right)\]
+    \\
+    \\
+    \\This then gives rise to the scatter plots, which show the intensity along the z axis, and the xy plane representing a cross section containing the focal point. Notice the symmetry in phi in the first plot, when the angle of incidence is 0. Notice also that the intensity at the focal point for a non-zero angle of incidence is practically zero. This means that if a measurement device was placed at the focal point, and polychromatic, collimated light was diffracted by reflection (to preserve its collimation) then passed onto a parabolic mirror, then a specific wavelength of light could be chosen to be at an angle of incidence of 0 and hence focused onto the focal point, while all other wavelengths would not. This may constitute a method to measure the relative intensities of the constituent wavelenghts of polychromatic light. \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+
+    [1] E. Wolf, “Electromagnetic diffraction in optical systems. I. An integral representation of the image field,” Proc.
+
+
+    [2] M. A. Lieb and A. J. Meixner, ―A high numerical aperture parabolic mirror as imaging device for confocal
+microscopy,‖ Opt. Express 8(7), 458–474 (2001).
+
+    [3] A. April, P. Bilodeau, and M. Piché, “Focusing a TM01 beam with a slightly tilted parabolic mirror,” Opt.
+Express 19, 9201–9212 (2011).
+
+    [4] R. Kant, ―An analytical method of vector diffraction for focusing optical systems with Seidel aberrations II:
+astigmatism and coma,‖ J. Mod. Opt. 42(2), 299–320 (1995).
 \end{document}

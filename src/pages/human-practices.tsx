@@ -37,7 +37,7 @@ export default class HumanPracticesPage extends React.Component {
 					addition, we have made an effort to educate the public through iGEM sessions at school and
 					a social media outreach programme. We did this to make sure that our project didn't just
 					focus on diagnosis, but also worked to increase awareness about females' health issues and
-					how to spot symptoms early, so that females don;t need to be in the late stages of their
+					how to spot symptoms early, so that females don't need to be in the late stages of their
 					condition to notice it.
 					<h2 style={{ paddingTop: 8 }}>Responsible and User-minded Design</h2>
 					Currently, the diagnostic processes for endometriosis, PCOS and breast and cervical

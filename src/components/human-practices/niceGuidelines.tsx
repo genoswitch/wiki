@@ -382,10 +382,8 @@ const references: ReferenceType[] = [
 	},
 	{
 		number: 2,
-		author:
-			"NHS England",
-		title:
-			"Endometriosis - Overview",
+		author: "NHS England",
+		title: "Endometriosis - Overview",
 		journal: "N/A",
 		volume: "N/A",
 		published_date: "September 2022",
@@ -393,10 +391,8 @@ const references: ReferenceType[] = [
 	},
 	{
 		number: 3,
-		author:
-			"NHS England",
-		title:
-			"Polycystic Ovary Syndrome - Overview",
+		author: "NHS England",
+		title: "Polycystic Ovary Syndrome - Overview",
 		journal: "N/A",
 		volume: "N/A",
 		published_date: "October 2022",
@@ -404,10 +400,8 @@ const references: ReferenceType[] = [
 	},
 	{
 		number: 4,
-		author:
-			"Cancer Research UK",
-		title:
-			"Screening for ovarian cancer",
+		author: "Cancer Research UK",
+		title: "Screening for ovarian cancer",
 		journal: "N/A",
 		volume: "N/A",
 		published_date: "N/A",
@@ -415,10 +409,8 @@ const references: ReferenceType[] = [
 	},
 	{
 		number: 5,
-		author:
-			"NHSinform",
-		title:
-			"Ovarian cancer symptoms and treatments",
+		author: "NHSinform",
+		title: "Ovarian cancer symptoms and treatments",
 		journal: "",
 		volume: "",
 		published_date: "February 2023",
@@ -437,10 +429,8 @@ const references: ReferenceType[] = [
 	},
 	{
 		number: 7,
-		author:
-			"World Health Organisation",
-		title:
-			"Breast Cancer",
+		author: "World Health Organisation",
+		title: "Breast Cancer",
 		journal: "N/A",
 		volume: "N/A",
 		published_date: "July 2023",
@@ -448,10 +438,8 @@ const references: ReferenceType[] = [
 	},
 	{
 		number: 8,
-		author:
-			"All Party Parliamentary Group",
-		title:
-			"Endometriosis in the UK: time for change",
+		author: "All Party Parliamentary Group",
+		title: "Endometriosis in the UK: time for change",
 		journal: "N/A",
 		volume: "N/A",
 		published_date: "2020",
@@ -459,10 +447,8 @@ const references: ReferenceType[] = [
 	},
 	{
 		number: 9,
-		author:
-			"Cancer Research UK",
-		title:
-			"Breast Cancer Screening",
+		author: "Cancer Research UK",
+		title: "Breast Cancer Screening",
 		journal: "N/A",
 		volume: "N/A",
 		published_date: "May 2023",
@@ -470,10 +456,8 @@ const references: ReferenceType[] = [
 	},
 	{
 		number: 10,
-		author:
-			"National Cancer Institute",
-		title:
-			"Cancer Stat Facts: Ovarian Cancer",
+		author: "National Cancer Institute",
+		title: "Cancer Stat Facts: Ovarian Cancer",
 		journal: "N/A",
 		volume: "N/A",
 		published_date: "2018",
@@ -481,10 +465,8 @@ const references: ReferenceType[] = [
 	},
 	{
 		number: 11,
-		author:
-			"Cancer Research UK",
-		title:
-			"Ovarian cancer statistics",
+		author: "Cancer Research UK",
+		title: "Ovarian cancer statistics",
 		journal: "N/A",
 		volume: "N/A",
 		published_date: "N/A",
@@ -492,10 +474,8 @@ const references: ReferenceType[] = [
 	},
 	{
 		number: 12,
-		author:
-			"NHS England",
-		title:
-			"Diagnosis - Polycystic ovary syndrome",
+		author: "NHS England",
+		title: "Diagnosis - Polycystic ovary syndrome",
 		journal: "N/A",
 		volume: "N/A",
 		published_date: "October 2022",
@@ -503,8 +483,7 @@ const references: ReferenceType[] = [
 	},
 	{
 		number: 13,
-		author:
-			"Cancer Research UK",
+		author: "Cancer Research UK",
 		title:
 			"Saving lives, averting costs - An analysis of the financial implications of achieving earlier diagnosis of colorectal, lung and ovarian cancer",
 		journal: "N/A",
@@ -514,10 +493,8 @@ const references: ReferenceType[] = [
 	},
 	{
 		number: 14,
-		author:
-			"NHS England",
-		title:
-			"NHS urges women to book a cervical screening as a third don’t take up vital offer",
+		author: "NHS England",
+		title: "NHS urges women to book a cervical screening as a third don’t take up vital offer",
 		journal: "N/A",
 		volume: "N/A",
 		published_date: "January 2023",
@@ -525,16 +502,13 @@ const references: ReferenceType[] = [
 	},
 	{
 		number: 15,
-		author:
-			"Hawkes, N.",
-		title:
-			"Cancer survival data emphasise importance of early diagnosis",
+		author: "Hawkes, N.",
+		title: "Cancer survival data emphasise importance of early diagnosis",
 		journal: "BMJ",
 		volume: "(8185), p.l408",
 		published_date: "January 2019",
 		doi: "10.1136/bmj.l408",
 	},
-
 ];
 
 const NiceGuidelines = () => {

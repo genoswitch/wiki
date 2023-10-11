@@ -181,8 +181,11 @@ export default class HumanPracticesPage extends React.Component {
 					<HPExternalOutreach />
 					<h2 style={{ paddingTop: 8 }}>Education</h2>
 					<HPEducation />
-					<h2 style={{ paddingTop: 8 }}>NICE Guidelines</h2>
-					<b>Will insert shortly</b>
+					<h2 style={{ paddingTop: 8 }}>UK NSC Criteria for Screening Programmes</h2>
+					We have assesed our project against the UK National Screening Committee's criteria for appraising the viability, effectiveness and appropriateness of a population screening programme.
+					Each criteria has been marked as: Green for fulfilled, yellow for partially met / unable to complete, red for unfulfilled.
+					<i>Some criteria can not be fulfilled as of yet as we have not put our test through clinical trials.</i>
+						<b>INSERT UKNSC GUIDELINES HERE</b>
 				</Container>
 			</HeaderFooterProvider>
 		);

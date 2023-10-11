@@ -380,6 +380,161 @@ const references: ReferenceType[] = [
 		published_date: "July 2009",
 		link: "https://www.fertstert.org/article/S0015-0282(08)00975-8/fulltext",
 	},
+	{
+		number: 2,
+		author:
+			"NHS England",
+		title:
+			"Endometriosis - Overview",
+		journal: "N/A",
+		volume: "N/A",
+		published_date: "September 2022",
+		link: "https://www.nhs.uk/conditions/endometriosis/",
+	},
+	{
+		number: 3,
+		author:
+			"NHS England",
+		title:
+			"Polycystic Ovary Syndrome - Overview",
+		journal: "N/A",
+		volume: "N/A",
+		published_date: "October 2022",
+		link: "https://www.nhs.uk/conditions/polycystic-ovary-syndrome-pcos/",
+	},
+	{
+		number: 4,
+		author:
+			"Cancer Research UK",
+		title:
+			"Screening for ovarian cancer",
+		journal: "N/A",
+		volume: "N/A",
+		published_date: "N/A",
+		link: "https://www.cancerresearchuk.org/about-cancer/ovarian-cancer/getting-diagnosed/screening",
+	},
+	{
+		number: 5,
+		author:
+			"NHSinform",
+		title:
+			"Ovarian cancer symptoms and treatments",
+		journal: "",
+		volume: "",
+		published_date: "February 2023",
+		link: "https://www.nhsinform.scot/illnesses-and-conditions/cancer/cancer-types-in-adults/ovarian-cancer",
+	},
+	{
+		number: 6,
+		author:
+			"Sung, H., Ferlay, J., Siegel, R.L., Laversanne, M., Soerjomataram, I., Jemal, A. and Bray, F.",
+		title:
+			"Global Cancer Statistics 2020: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries",
+		journal: "CA: Cancer Journal for Clinicians",
+		volume: "71(3), pp.209-249",
+		published_date: "2021",
+		doi: "10.3322/caac.21660",
+	},
+	{
+		number: 7,
+		author:
+			"World Health Organisation",
+		title:
+			"Breast Cancer",
+		journal: "N/A",
+		volume: "N/A",
+		published_date: "July 2023",
+		link: "https://www.who.int/news-room/fact-sheets/detail/breast-cancer",
+	},
+	{
+		number: 8,
+		author:
+			"All Party Parliamentary Group",
+		title:
+			"Endometriosis in the UK: time for change",
+		journal: "N/A",
+		volume: "N/A",
+		published_date: "2020",
+		link: "https://www.endometriosis-uk.org/sites/default/files/files/Endometriosis%20APPG%20Report%20Oct%202020.pdf",
+	},
+	{
+		number: 9,
+		author:
+			"Cancer Research UK",
+		title:
+			"Breast Cancer Screening",
+		journal: "N/A",
+		volume: "N/A",
+		published_date: "May 2023",
+		link: "https://www.cancerresearchuk.org/about-cancer/breast-cancer/getting-diagnosed/screening-breast",
+	},
+	{
+		number: 10,
+		author:
+			"National Cancer Institute",
+		title:
+			"Cancer Stat Facts: Ovarian Cancer",
+		journal: "N/A",
+		volume: "N/A",
+		published_date: "2018",
+		link: "https://seer.cancer.gov/statfacts/html/ovary.html",
+	},
+	{
+		number: 11,
+		author:
+			"Cancer Research UK",
+		title:
+			"Ovarian cancer statistics",
+		journal: "N/A",
+		volume: "N/A",
+		published_date: "N/A",
+		link: "https://www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-cancer-type/ovarian-cancer",
+	},
+	{
+		number: 12,
+		author:
+			"NHS England",
+		title:
+			"Diagnosis - Polycystic ovary syndrome",
+		journal: "N/A",
+		volume: "N/A",
+		published_date: "October 2022",
+		link: "https://www.fertstert.org/article/S0015-0282(08)00975-8/fulltext",
+	},
+	{
+		number: 13,
+		author:
+			"Cancer Research UK",
+		title:
+			"Saving lives, averting costs - An analysis of the financial implications of achieving earlier diagnosis of colorectal, lung and ovarian cancer",
+		journal: "N/A",
+		volume: "N/A",
+		published_date: "September 2014",
+		link: "https://www.cancerresearchuk.org/sites/default/files/saving_lives_averting_costs.pdf",
+	},
+	{
+		number: 14,
+		author:
+			"NHS England",
+		title:
+			"NHS urges women to book a cervical screening as a third don’t take up vital offer",
+		journal: "N/A",
+		volume: "N/A",
+		published_date: "January 2023",
+		link: "https://www.england.nhs.uk/2023/01/nhs-urges-women-to-book-a-cervical-screening-as-a-third-dont-take-up-vital-offer",
+	},
+	{
+		number: 15,
+		author:
+			"Hawkes, N.",
+		title:
+			"Cancer survival data emphasise importance of early diagnosis",
+		journal: "BMJ",
+		volume: "(8185), p.l408",
+		published_date: "January 2019",
+		doi: "10.1136/bmj.l408",
+	},
+
 ];
 
 const NiceGuidelines = () => {

@@ -190,6 +190,7 @@ export default class HumanPracticesPage extends React.Component {
 					appraising the viability, effectiveness and appropriateness of a population screening
 					programme. Each criteria has been marked as: Green for fulfilled, yellow for partially met
 					/ unable to complete, red for unfulfilled.
+					<br/>
 					<i>
 						Some criteria can not be fulfilled as of yet as we have not put our test through
 						clinical trials.

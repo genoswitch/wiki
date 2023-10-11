@@ -103,7 +103,7 @@ export default class VisualiserPage extends React.Component<
 				<HeaderFooterProvider data={this.data}>
 					<br />
 					<h1>Part Visualiser</h1>
-					
+
 					<div style={{ padding: "25px" }}>
 						<Button variant="contained" onClick={handleBtnClick}>
 							Choose a Sequence...

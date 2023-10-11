@@ -19,9 +19,10 @@ import {
 import HeaderFooterProvider from "../../components/headerFooterProvider";
 import { Head as BaseHead } from "../../components/head";
 ---
+
 type Part = {
-	Part: string;
-	Createdby: string;
+Part: string;
+Createdby: string;
 };
 
 export default class ContributionParts extends React.Component {
@@ -31,17 +32,14 @@ export default class ContributionParts extends React.Component {
 			Createdby: "Ryan Yapa",
 		},
 
-	];
+    ];
+
 }
 
-
-
-
-
 type miRNA = {
-	miRNA: string;
-	Use: string;
-	Source: string;
+miRNA: string;
+Use: string;
+Source: string;
 };
 
 export default class ContributionmiRNADatabase extends React.Component {
@@ -52,7 +50,8 @@ export default class ContributionmiRNADatabase extends React.Component {
 			Source:"Source1",
 		},
 
-	];
+    ];
+
 }
 
 <h1>Contribution</h1>
@@ -61,9 +60,9 @@ Welcome to the genoswitch wiki! Our Contribution page is a work-in-progress at t
 
 <h2>Parts</h2>
 We have developed a number of parts this year, for future teams to use in their projects:
-<ContributionParts/>
+<ContributionParts />
 
 <h2>Collaborative miRNA Database</h2>
-We have started a Collaborative miRNA database, which we hope future teams will expand upon, and use in their future projects using toehold switches and more!
-You can find our full list below:
-<ContributionmiRNADatabase/>
+We have started a Collaborative miRNA database, which we hope future teams will expand upon, and use
+in their future projects using toehold switches and more! You can find our full list below:
+<ContributionmiRNADatabase />

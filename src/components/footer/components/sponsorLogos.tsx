@@ -1,6 +1,5 @@
 import * as React from "react";
 
-
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { Grid } from "@mui/material";
 import { SponsorNode } from "../../../types/graphql/sponsorNode";

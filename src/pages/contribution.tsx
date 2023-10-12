@@ -386,20 +386,17 @@ export default class HumanPracticesPage extends React.Component {
 		{
 			miRNA: "miR-145-5p",
 			disease: "Endometriosis",
-			source:
-				"https://doi.org/10.31744/einstein_journal/2021RW5704",
+			source: "https://doi.org/10.31744/einstein_journal/2021RW5704",
 		},
 		{
 			miRNA: "miR-199a-3p",
 			disease: "Endometriosis",
-			source:
-				"https://doi.org/10.3390/jcm10163457",
+			source: "https://doi.org/10.3390/jcm10163457",
 		},
 		{
 			miRNA: "miR-125b-5p",
 			disease: "Endometriosis",
-			source:
-				"https://doi.org/10.31744/einstein_journal/2021RW5704",
+			source: "https://doi.org/10.31744/einstein_journal/2021RW5704",
 		},
 		{
 			miRNA: "miR-103a-3p",
@@ -501,7 +498,6 @@ export default class HumanPracticesPage extends React.Component {
 			disease: "Cystic Fibrosis",
 			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7765910/",
 		},
-
 	];
 
 	render(): React.ReactNode {

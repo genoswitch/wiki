@@ -35,4 +35,4 @@ export default class BiologyProtocolsPage extends React.Component {
 		);
 	}
 }
-export const Head = () => <BaseHead title="Biology Protocols" description="TBD" />;
+export const Head = () => <BaseHead title="Biology Protocols" description="Biology Protocols" />;

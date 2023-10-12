@@ -111,4 +111,4 @@ export const query = graphql`
 		}
 	}
 `;
-export const Head = () => <BaseHead title="Project GENOSWITCH - Home" description="TBD" />;
+export const Head = () => <BaseHead title="GENOSWITCH - Home" description="GENOSWITCH Homepage" />;

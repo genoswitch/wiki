@@ -201,4 +201,4 @@ export default class HumanPracticesPage extends React.Component {
 		);
 	}
 }
-export const Head = () => <BaseHead title="Human Practices" description="TBD" />;
+export const Head = () => <BaseHead title="Human Practices" description="See the Human Practices work that the team have carried out" />;

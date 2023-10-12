@@ -125,4 +125,4 @@ export default class SoftwarePage extends React.Component {
 		);
 	}
 }
-export const Head = () => <BaseHead title="Software" description="TBD" />;
+export const Head = () => <BaseHead title="Software" description="See our Software" />;

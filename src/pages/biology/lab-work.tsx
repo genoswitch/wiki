@@ -502,4 +502,4 @@ export default class BiologyLabWorkPage extends React.Component {
 		);
 	}
 }
-export const Head = () => <BaseHead title="Biology Lab Work" description="TBD" />;
+export const Head = () => <BaseHead title="Biology Lab Work" description="Biology Lab Work" />;

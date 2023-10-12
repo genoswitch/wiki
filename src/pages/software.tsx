@@ -42,7 +42,7 @@ export default class SoftwarePage extends React.Component {
 					</ul>
 					<h2 style={{ paddingTop: 8 }}>Usage:</h2>
 					We have created a video tutorial for the software which you can view below:
-					<br/>
+					<br />
 					<iframe
 						title="City-of-London-UK: A Guide to GENOSWITCH's Software (2023) [English]"
 						width="560"

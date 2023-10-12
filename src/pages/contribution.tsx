@@ -386,17 +386,20 @@ export default class HumanPracticesPage extends React.Component {
 		{
 			miRNA: "miR-145-5p",
 			disease: "Endometriosis",
-			source: "https://doi.org/10.3390/jcm10163457; https://doi.org/10.31744/einstein_journal/2021RW5704",
+			source:
+				"https://doi.org/10.3390/jcm10163457; https://doi.org/10.31744/einstein_journal/2021RW5704",
 		},
 		{
 			miRNA: "miR-199a-3p",
 			disease: "Endometriosis",
-			source: "https://doi.org/10.3390/jcm10163457; https://doi.org/10.31744/einstein_journal/2021RW5704",
+			source:
+				"https://doi.org/10.3390/jcm10163457; https://doi.org/10.31744/einstein_journal/2021RW5704",
 		},
 		{
 			miRNA: "miR-125b-5p",
 			disease: "Endometriosis",
-			source: "https://doi.org/10.3390/jcm10163457; https://doi.org/10.31744/einstein_journal/2021RW5704",
+			source:
+				"https://doi.org/10.3390/jcm10163457; https://doi.org/10.31744/einstein_journal/2021RW5704",
 		},
 	];
 

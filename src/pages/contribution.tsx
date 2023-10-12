@@ -387,19 +387,19 @@ export default class HumanPracticesPage extends React.Component {
 			miRNA: "miR-145-5p",
 			disease: "Endometriosis",
 			source:
-				"https://doi.org/10.3390/jcm10163457; https://doi.org/10.31744/einstein_journal/2021RW5704",
+				"https://doi.org/10.31744/einstein_journal/2021RW5704",
 		},
 		{
 			miRNA: "miR-199a-3p",
 			disease: "Endometriosis",
 			source:
-				"https://doi.org/10.3390/jcm10163457; https://doi.org/10.31744/einstein_journal/2021RW5704",
+				"https://doi.org/10.3390/jcm10163457",
 		},
 		{
 			miRNA: "miR-125b-5p",
 			disease: "Endometriosis",
 			source:
-				"https://doi.org/10.3390/jcm10163457; https://doi.org/10.31744/einstein_journal/2021RW5704",
+				"https://doi.org/10.31744/einstein_journal/2021RW5704",
 		},
 		{
 			miRNA: "miR-103a-3p",
@@ -441,6 +441,67 @@ export default class HumanPracticesPage extends React.Component {
 			disease: "Parkinson's disease",
 			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7072450/#sec7-cells-09-00276title",
 		},
+		{
+			miRNA: "miR-16",
+			disease: "Inflammatory Bowel Disease",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4265084/",
+		},
+		{
+			miRNA: "miR-21",
+			disease: "Inflammatory Bowel Disease",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4265084/",
+		},
+		{
+			miRNA: "miR-192",
+			disease: "Inflammatory Bowel Disease",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9047851/",
+		},
+		{
+			miRNA: "miR-106a",
+			disease: "Colorectal Cancer",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8232258/",
+		},
+		{
+			miRNA: "miR-19b",
+			disease: "Colorectal Cancer",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8232258/",
+		},
+		{
+			miRNA: "miR-92a",
+			disease: "Colorectal Cancer",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8232258/",
+		},
+		{
+			miRNA: "miR-424",
+			disease: "Pancreatic Cancer",
+			source: "https://bmccancer.biomedcentral.com/articles/10.1186/s12885-019-6284-y",
+		},
+		{
+			miRNA: "miR-100",
+			disease: "Pancreatic Cancer",
+			source: "https://bmccancer.biomedcentral.com/articles/10.1186/s12885-019-6284-y",
+		},
+		{
+			miRNA: "hsa-miR-105-5p",
+			disease: "Sickle Cell Disease",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6568309/",
+		},
+		{
+			miRNA: "hsa-miR-188-3p",
+			disease: "Sickle Cell Disease",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6568309/",
+		},
+		{
+			miRNA: "hsa-miR-1343-3p",
+			disease: "Gastric Cancer",
+			source: "https://www.frontiersin.org/articles/10.3389/fgene.2021.779455/full",
+		},
+		{
+			miRNA: "Mirc1/Mir17-92 cluster",
+			disease: "Cystic Fibrosis",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7765910/",
+		},
+
 	];
 
 	render(): React.ReactNode {

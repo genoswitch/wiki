@@ -3,6 +3,7 @@ import * as React from "react";
 import HeaderFooterProvider from "../components/headerFooterProvider";
 import { Head as BaseHead } from "../components/head";
 import { Container } from "@mui/material";
+import VideoUniverse from "../../src/components/videoUniverse";
 
 export default class SoftwarePage extends React.Component {
 	render(): React.ReactNode {
@@ -41,7 +42,41 @@ export default class SoftwarePage extends React.Component {
 					</ul>
 					<h2 style={{ paddingTop: 8 }}>Usage:</h2>
 					We have created a video tutorial for the software which you can view below:
-					<b>EMBED RISHABH'S VIDEO HERE</b>
+					<br />
+					<iframe
+						title="City-of-London-UK: A Guide to GENOSWITCH's Software (2023) [English]"
+						width="560"
+						height="315"
+						src="https://video.igem.org/videos/embed/bbb90f4c-002e-4e67-98f9-14b9d3118bac?subtitle=en"
+						frameborder="0"
+						allowfullscreen=""
+						sandbox="allow-same-origin allow-scripts allow-popups"
+					></iframe>
+					<h3 style={{ paddingTop: 8 }}>Transcript:</h3>
+					<details>
+						<summary>Video Transcript</summary>
+						<p>
+							Hi, I’m Rishabh, our team’s head of software. I’ll be showing you how to use our
+							team’s software tool. First of all, the software only works on Linux systems because
+							those are the only systems on which NUPACK runs. Upon opening the software, you will
+							be greeted by this title screen which has 3 different buttons for 3 different methods
+							of data entry. They all output the same thing, so first we’ll be going through the
+							manual miRNA entry. From this menu you can enter the name of your miRNA as well as the
+							sequences, you can add or remove miRNA to your will, and you can also reverse them.
+							The reason you would reverse them is because this orientation of miRNA may not give a
+							favourable structure. The second way of entering miRNA in the software is pulling
+							miRNA from miRbase. By clicking this button, it will pull the latest version of
+							miRbase, from which you can then type in your query and add whatever miRNA you want,
+							if you miss click you can remove things and reverse them, same as before. The final
+							mode of data entry is importing data directly from a .fasta file on your PC. By
+							clicking this button, you can open a file manager, from here you can then navigate to
+							where your .fasta file is saved, click on it, and import stands that you want. No
+							matter how you enter you miRNA strands, every page will have a submit button. Once you
+							press the submit button, it will then compute the best possible toehold switch and And
+							Gates for the miRNA you’ve input. You can then click next to view your results.
+							Moreover, you can save your results to a text file or a .fasta file.
+						</p>
+					</details>
 					<h2 style={{ paddingTop: 8 }}>How it works:</h2>
 					Normally, a toehold switch will be in a closed state until its trigger binding site binds
 					to the correct trigger, allowing for a reporter protein to be translated. This trigger has
@@ -54,6 +89,7 @@ export default class SoftwarePage extends React.Component {
 						style={{ maxWidth: "100%" }}
 						src="https://static.igem.wiki/teams/4642/wiki/software/software1.webp"
 					/>
+					<br />
 					The diagram above represents the mechanism associated with toehold switches that utilise
 					multiple miRNA. The fact that miRNA strands must be joined together before binding to the
 					switch means that “and gate” strands made of RNA must also be generated alongside the
@@ -62,10 +98,12 @@ export default class SoftwarePage extends React.Component {
 					The design of these And Gate strands depends on the miRNA used as well as the order in
 					which they are to be joined as seen in the diagram below picturing the trigger structure
 					for our switch designed to test for endometriosis:
+					<br />
 					<img
 						style={{ maxWidth: "100%" }}
 						src="https://static.igem.wiki/teams/4642/wiki/software/software2.webp"
 					/>
+					<br />
 					The And Gate strands are designed to be complementary to both of the strands they are to
 					join then have a region of many similar bases which will bind to the switch, this is to
 					ensure that the binding energy between these unpaired bases and the miRNA is less

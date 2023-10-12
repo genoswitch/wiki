@@ -394,11 +394,11 @@ export default class HumanPracticesPage extends React.Component {
 					exponentially increased specificity to the conditions we were testing for.
 					<img
 						style={{ maxWidth: "100%" }}
-						src="https://static.igem.wiki/teams/4642/wiki/contribution/tha_engineering2.webp"
+						src="https://static.igem.wiki/teams/4642/wiki/contribution/ths-engineering2.webp"
 					/>
 					<img
 						style={{ maxWidth: "100%" }}
-						src="https://static.igem.wiki/teams/4642/wiki/contribution/ths_engineering2.webp"
+						src="https://static.igem.wiki/teams/4642/wiki/contribution/ths-engineering2.webp"
 					/>
 					<h2 style={{ paddingTop: 8 }}>A new method to design toehold switches</h2>
 					Our team has created a software tool to generalise, generate and optimise our toehold

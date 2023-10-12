@@ -3,6 +3,7 @@ import * as React from "react";
 import HeaderFooterProvider from "../components/headerFooterProvider";
 import { Head as BaseHead } from "../components/head";
 import { Container } from "@mui/material";
+import VideoUniverse from "../../src/components/videoUniverse";
 
 export default class SoftwarePage extends React.Component {
 	render(): React.ReactNode {
@@ -50,7 +51,15 @@ export default class SoftwarePage extends React.Component {
 						allowfullscreen=""
 						sandbox="allow-same-origin allow-scripts allow-popups"
 					></iframe>
-					<b>EMBED RISHABH'S VIDEO HERE</b>
+					<h3 style={{ paddingTop: 8 }}>Trascript:</h3>
+					<details>
+  <summary>Video Transcript</summary>
+  <p>Hi, I’m Rishabh, our team’s head of software. I’ll be showing you how to use our team’s software tool. First of all, the software only works on Linux systems because those are the only systems on which NUPACK runs.
+Upon opening the software, you will be greeted by this title screen which has 3 different buttons for 3 different methods of data entry. They all output the same thing, so first we’ll be going through the manual miRNA entry. From this menu you can enter the name of your miRNA as well as the sequences, you can add or remove miRNA to your will, and you can also reverse them. The reason you would reverse them is because this orientation of miRNA may not give a favourable structure.
+The second way of entering miRNA in the software is pulling miRNA from miRbase. By clicking this button, it will pull the latest version of miRbase, from which you can then type in your query and add whatever miRNA you want, if you miss click you can remove things and reverse them, same as before.
+The final mode of data entry is importing data directly from a .fasta file on your PC. By clicking this button, you can open a file manager, from here you can then navigate to where your .fasta file is saved, click on it, and import stands that you want.
+No matter how you enter you miRNA strands, every page will have a submit button. Once you press the submit button, it will then compute the best possible toehold switch and And Gates for the miRNA you’ve input. You can then click next to view your results. Moreover, you can save your results to a text file or a .fasta file.</p>
+</details>
 					<h2 style={{ paddingTop: 8 }}>How it works:</h2>
 					Normally, a toehold switch will be in a closed state until its trigger binding site binds
 					to the correct trigger, allowing for a reporter protein to be translated. This trigger has

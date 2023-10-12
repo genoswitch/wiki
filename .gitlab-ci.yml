@@ -24,7 +24,7 @@ pages:
     - pnpm install
     - npm run clean # temporarily clean up old files
     # Pass --prefix-paths to gatsby build
-    - GATSBY_CPU_COUNT=1 NODE_OPTIONS=--max-old-space-size=1536 npm run build -- --prefix-paths --verbose --no-color
+    - GATSBY_CPU_COUNT=1 NODE_OPTIONS=--max-old-space-size=2048 npm run build -- --prefix-paths --verbose --no-color
   artifacts:
     paths:
       - public

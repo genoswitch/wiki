@@ -9,7 +9,7 @@
 
 - name: Software
   path: /software/
-  picturePath: homepage/software.webp
+  picturePath: homepage/homesoftware1.webp
   description: |
     Our project's software component is designed to empower iGEM teams by offering a seamless way of applying our modular toehold switch designs to a plethora of situations.
     Our goal is to ensure maximum efficiency and user-friendliness, achieved through comprehensive integration with widely used and accepted standards in bioinformatics and synthetic biology.

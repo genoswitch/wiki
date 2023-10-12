@@ -66,7 +66,78 @@ export default class HardwarePage extends React.Component {
 			<HeaderFooterProvider>
 				<Container>
 					<h1>Hardware</h1>
-					<h2 style={{ paddingTop: 8 }}>Extraction of miRNA</h2>
+					<h2>Open source links</h2>
+					<p>
+						<a target="_blank" href="">
+							Firmware
+						</a>
+					</p>
+					<h2>Design</h2>
+					<p>
+						Our hardware stack uses a Raspberry Pi Pico based custom board running FreeRTOS, a free
+						and open source real-time operating system. We have developed a number of custom tasks
+						that run on this OS in order for the device to be as efficient as possible.
+					</p>
+					<p>
+						We are using WebUSB for communication between the hardware and host device. This means
+						that no drivers or other software need to be installed. The device can be fully
+						controlled via a website when using a supported browser.
+					</p>
+					<p>
+						However, due to delays in testing, the client site as well as physical PCB designs are
+						not yet complete. We hope to complete this soon and will provide an update at the
+						Jamboree.
+					</p>
+					<h3>PCB Design</h3>
+					<p>
+						To reduce costs, we decided to make a custom PCB based on a Raspberry Pi Pico (whose
+						schematics are open-source). We integrated various components into the board such as the
+						voltage reference and created a modular board design wherein the ADCs are located on
+						seperate boards that can be plugged in as needed. This reduces costs as the user does
+						not have to fully populate the device if they do not wish to use all the channels
+						available.
+					</p>
+					<p>
+						Note that when designing a PCB with USB lines, special consideration must be taken to
+						ensure the device stays within specifications.
+					</p>
+					<h3>Client Architecture</h3>
+					<p>
+						The client sends messages using USB vendor defined messages. This provides an easy way
+						for the client to send a value (indicating a command) to the device and for the device
+						to respond.
+					</p>
+					<p>
+						For bulk communication, a bulk endpoint is used. This allows for higher-speed messaging
+						as there is reduced overhead at the expense of data being buffered in, therefore
+						requiring extra logic to convert back into packets of data.
+					</p>
+					<p>
+						To maximize throughput, we designed the protocol ourselves. This is documented on the
+						software repository.
+					</p>
+					<h3>Firmware Updates</h3>
+					<p>
+						Our firmware implements the Device Firmware Update (DFU) version 1.1. specification,
+						allowing for the device to be updated and re-flashed without leaving the client site.
+					</p>
+					<p>
+						To accomplish this we refactored an existing library, webdfu, to be more perforrmant and
+						easy to use.
+					</p>
+					<p>
+						This forked version of the library can be found{" "}
+						<a target="_blank" href="https://github.com/genoswitch/webdfu">
+							here on GitHub
+						</a>
+						. (external link)
+					</p>
+					<p>
+						For ease of use and to aid future teams who may be implementing a similar device, the
+						library is extensively documented. Unfortunately due to some technical issues we are not
+						able to push this to GitLab at this time.
+					</p>
+					<h2>Extraction of miRNA</h2>
 					<p>
 						In project Genoswitch, we have decided to use novel methods of electrochemical detection
 						and extraction of miRNA particles in order to achieve our projects’ goals of creating a

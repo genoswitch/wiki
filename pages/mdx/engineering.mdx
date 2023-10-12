@@ -22,4 +22,26 @@ Our fourth generation (Gen4) toehold switches initially used one anti-miRNA with
 Whilst initially pursuing variants of luciferase as our reporter proteins, we decided to use various fluorescence proteins, namely GFP, mCherry, Venus and mCerulean following advice from Dr Alex Green.
 
 <h2 style={{ paddingTop: 8 }}>Our Hardware</h2>
-<b>Please insert here Edwin</b>
+In the design of our luminometer, we sought to improve upon the designs of previous city iGEM teams. While previous teams used a digispark (Batman) and/or an Arduino (RIBOTOX), we decided to go with a Raspberry Pi Pico (uses the RP2040 SoC) based design since the board is more modern and widely available.
+
+We went through several design iterations in order to find the most accurate final luminometer. We started by using the built-in ADC channels and the 3.3v builtin voltage reference, however due to the lack of accuracy we decided to switch to an external 1.024v voltage reference, and then finally we switched to an mcp3008 (10-bit 8 channel ADC) since it was the most accurate for our needs.
+
+Our main design cycle took part in deciding what methods of detection our luminometer would use. We ultimately settled on two ideas, detection via LDRs and colour filters, and modelling the path of light rays through parabolic mirrors and a diffraction grating in order to direct specific wavelengths of light towards the luminometer to be detected. 
+
+We created a 3D model of the luminometer and we did some extensive modelling on the second of our detection ideas (the full details can be found on our <a href="#" onClick={() => navigate("/model/")}>modelling page</a>) in preparation for testing. 
+
+In our testing, we expected there to be an increase in the intensity of light detected by the luminometer when light was shone on the LDRs from a laser. Our results agreed with this statement: <b>(note that the following part numbers are Digi-Key part numbers)</b>
+<br/>
+<img src="https://static.igem.wiki/teams/4642/wwiki/engineering/engineering-hardware-1.webp" />
+<br/>
+However, we feel that there could be improvements to be made in the process of detection, by placing a parabolic reflector behind the sample that is emitting light. This would allow the intensity of light directed at the LDR to increase and become more focussed as such grant a clear difference between the desired light and the scattered light of the surroundings. This is due to the fact that the fluorescent proteins that we are using are excited by visible light, and as such we had to find ways of differentiating between the desired and undesired light.
+
+For the second method, we demonstrated that, at a nonzero angle of incidence, rays do not pass through the focal point as well as test the lasers with a diffraction grating. We found that while it was possible to achieve the intended effects, it would require careful precision that could not be done easily with human hands. Therefore, we think that for future improvements on this idea, it would be necessary to create pre-built 3D setups in order to achieve precise reflection and diffraction in order to achieve the desired results.
+
+In reflecting on our work, we feel that we have proved the general principles of our designs, but that in our experiments we have found that there are serious changes that could be made to the designs of the detection mechanisms in order to improve them. 
+
+This can be seen in the fact that the readings when light is shone on the LDR are noticeable but not large, and as such we hope that in future, once we have access to fluorescent proteins (which we were not able to use currently due to delays in ordering) to test with, we will be able to improve on these results by using parabolic reflectors to increase the intensity of light emitted from the desired light source and lessening the amount of environmental light that can reach the LDR.
+
+Moreover, it could be said that the diffraction and reflection detection method also demonstrates serious potential due to the control that is given to the user over which wavelengths of light are reflected into the LDR. However, this is undercut by the fact that this would involve incredibly precise measurements and calculations when setting up the parabolic mirrors and diffraction grating for each wavelength that you would want to detect. As such, when compared to the LDR-colour filter method, it seems that there would be greater setup costs involved with the diffraction and reflection detection method, but we are unsure if this would lead to better results. 
+
+We also believe that it may be viable to offer a combination of the two methods to allow for more control in which wavelengths are directed at the luminometer. As such it could remove possible interference or false positives from ambient light sources by directing only wavelengths within a desired range towards the luminometer and colour filters using the diffraction and reflection detection and result in clearer readings and results.

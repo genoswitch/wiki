@@ -498,6 +498,26 @@ export default class HumanPracticesPage extends React.Component {
 			disease: "Cystic Fibrosis",
 			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7765910/",
 		},
+		{
+			miRNA: "miR-210-3p",
+			disease: "Pre-eclampsia",
+			source: "https://pubmed.ncbi.nlm.nih.gov/31056162/",
+		},
+		{
+			miRNA: "miR-517-5p",
+			disease: "Pre-eclampsia",
+			source: "https://pubmed.ncbi.nlm.nih.gov/28182660/",
+		},
+		{
+			miRNA: "miR-15b-5p",
+			disease: "Non-small cell lung cancer",
+			source: "https://pubmed.ncbi.nlm.nih.gov/22389695/",
+		},
+		{
+			miRNA: "miR-27b-3p",
+			disease: "Non-small cell lung cancer",
+			source: "https://pubmed.ncbi.nlm.nih.gov/22389695/",
+		},
 	];
 
 	render(): React.ReactNode {
@@ -613,4 +633,4 @@ export default class HumanPracticesPage extends React.Component {
 		);
 	}
 }
-export const Head = () => <BaseHead title="Contribution" description="TBD" />;
+export const Head = () => <BaseHead title="Contribution" description="Contribution" />;

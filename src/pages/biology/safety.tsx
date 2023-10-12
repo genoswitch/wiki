@@ -204,4 +204,4 @@ export default class BiologySafetyPage extends React.Component {
 	}
 }
 
-export const Head = () => <BaseHead title="Biology Safety" description="TBD" />;
+export const Head = () => <BaseHead title="Biology Safety" description="Biology Safety" />;

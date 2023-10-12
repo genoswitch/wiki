@@ -101,12 +101,13 @@ export default class VisualiserPage extends React.Component<
 
 			return (
 				<HeaderFooterProvider data={this.data}>
-					<br />
-					<h1> Part Visualiser</h1>
-					This year, we have added a total of 60 parts to the registry. Our part visualiser allows
-					you to view and explore our sequences in full detail, and the colour-coding labelling
-					makes understanding the sequence easy and accessible.
 					<div style={{ padding: "25px" }}>
+						<h1> Part Visualiser</h1>
+						<p>
+							This year, we have added a total of 60 parts to the registry. Our part visualiser
+							allows you to view and explore our sequences in full detail, and the colour-coding
+							labelling makes understanding the sequence easy and accessible.
+						</p>
 						<Button variant="contained" onClick={handleBtnClick}>
 							Choose a Sequence...
 						</Button>

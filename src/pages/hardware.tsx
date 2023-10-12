@@ -334,21 +334,59 @@ export default class HardwarePage extends React.Component {
 							items={[
 								{
 									original: "https://static.igem.wiki/teams/4642/wiki/hardware/image1.jpg",
+									description: "Testing the parabolic mirror",
 								},
 								{
 									original: "https://static.igem.wiki/teams/4642/wiki/hardware/image2.jpg",
+									description: "Testing the parabolic mirror",
 								},
 								{
 									original: "https://static.igem.wiki/teams/4642/wiki/hardware/image3.jpg",
+									description: "Testing the parabolic mirror",
 								},
 								{
 									original: "https://static.igem.wiki/teams/4642/wiki/hardware/image4.jpg",
+									description: "Testing the parabolic mirror",
 								},
 								{
 									original: "https://static.igem.wiki/teams/4642/wiki/hardware/image6.jpg",
+									description: "Testing the parabolic mirror",
 								},
 								{
 									original: "https://static.igem.wiki/teams/4642/wiki/hardware/image8.jpg",
+									description: "Testing the parabolic mirror",
+								},
+								{
+									original: "https://static.igem.wiki/teams/4642/wiki/hardware/l1.jpeg",
+									description: "Testing the LDRs with our hardware prototype",
+								},
+								{
+									original: "https://static.igem.wiki/teams/4642/wiki/hardware/l2.jpeg",
+									description: "Testing the LDRs with our hardware prototype",
+								},
+								{
+									original: "https://static.igem.wiki/teams/4642/wiki/hardware/l3.jpeg",
+									description: "Testing the LDRs with our hardware prototype",
+								},
+								{
+									original: "https://static.igem.wiki/teams/4642/wiki/hardware/l4.jpeg",
+									description: "Testing the LDRs with our hardware prototype",
+								},
+								{
+									original: "https://static.igem.wiki/teams/4642/wiki/hardware/l5.jpeg",
+									description: "Testing the LDRs with our hardware prototype",
+								},
+								{
+									original: "https://static.igem.wiki/teams/4642/wiki/hardware/l6.jpeg",
+									description: "Testing the LDRs with our hardware prototype",
+								},
+								{
+									original: "https://static.igem.wiki/teams/4642/wiki/hardware/l7.jpeg",
+									description: "Testing the LDRs with our hardware prototype",
+								},
+								{
+									original: "https://static.igem.wiki/teams/4642/wiki/hardware/l8.jpeg",
+									description: "Testing the LDRs with our hardware prototype",
 								},
 							]}
 						/>

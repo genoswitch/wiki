@@ -401,8 +401,49 @@ export default class HumanPracticesPage extends React.Component {
 			source:
 				"https://doi.org/10.3390/jcm10163457; https://doi.org/10.31744/einstein_journal/2021RW5704",
 		},
+		{
+			miRNA: "miR-103a-3p",
+			disease: "Parkinson's disease",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7072450/#sec7-cells-09-00276title",
+		},
+		{
+			miRNA: "miR-30b-5p",
+			disease: "Parkinson's disease",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7072450/#sec7-cells-09-00276title",
+		},
+		{
+			miRNA: "miR-29a-3p",
+			disease: "Parkinson's disease",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7072450/#sec7-cells-09-00276title",
+		},
+		{
+			miRNA: "miR-4639-5p",
+			disease: "Parkinson's disease",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7072450/#sec7-cells-09-00276title",
+		},
+		{
+			miRNA: "miR-29a-3p",
+			disease: "Parkinson's disease",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7072450/#sec7-cells-09-00276title",
+		},
+		{
+			miRNA: "miR-29c-3p",
+			disease: "Parkinson's disease",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7072450/#sec7-cells-09-00276title",
+		},
+		{
+			miRNA: "miR-19a-3p",
+			disease: "Parkinson's disease",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7072450/#sec7-cells-09-00276title",
+		},
+		{
+			miRNA: "miR-19b-3p",
+			disease: "Parkinson's disease",
+			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7072450/#sec7-cells-09-00276title",
+		},
+		
 	];
-
+	
 	render(): React.ReactNode {
 		return (
 			<HeaderFooterProvider>
@@ -500,7 +541,11 @@ export default class HumanPracticesPage extends React.Component {
 									<TableRow key={miRNA.miRNA}>
 										<TableCell>{miRNA.miRNA}</TableCell>
 										<TableCell>{miRNA.disease}</TableCell>
-										<TableCell>{miRNA.source}</TableCell>
+										<TableCell>
+											<a href={miRNA.source} target={"_blank"}>
+												Source
+											</a>
+										</TableCell>
 									</TableRow>
 								))}
 							</TableBody>

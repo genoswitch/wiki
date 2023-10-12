@@ -393,7 +393,14 @@ export default class HumanPracticesPage extends React.Component {
 					<h2 style={{ paddingTop: 8 }}>A new method to design toehold switches</h2>
 					<b>INSERT HERE - RISH</b>
 					<h2 style={{ paddingTop: 8 }}>Issues with further development of Toehold Switches</h2>
-					Initially, our project tried to find the maximum generation of toehold switches that would feasibly work and react. To do this, prior to any software work, we tested a theoretical gen 5 toehold switch using 4 miRNA to compose the trigger structure by writing a script to vary the concentration of every strand in one of NUPCK’s tube ensembles. Once this was complete, we then wrote another script to find the combinations of concentrations of reactants that produced the maximum concentration of products. The maximum yield we found was that about 5% of switches would’ve activated, a percentage we deemed too low to continue perusing gen 5 switches or above.
+					Initially, our project tried to find the maximum generation of toehold switches that would
+					feasibly work and react. To do this, prior to any software work, we tested a theoretical
+					gen 5 toehold switch using 4 miRNA to compose the trigger structure by writing a script to
+					vary the concentration of every strand in one of NUPCK’s tube ensembles. Once this was
+					complete, we then wrote another script to find the combinations of concentrations of
+					reactants that produced the maximum concentration of products. The maximum yield we found
+					was that about 5% of switches would’ve activated, a percentage we deemed too low to
+					continue perusing gen 5 switches or above.
 					<h2 style={{ paddingTop: 8 }}>Our Collaborative miRNA Database</h2>
 					We have started a Collaborative miRNA database, which we hope future teams will expand
 					upon, and use in their future projects using toehold switches and more! You can find our

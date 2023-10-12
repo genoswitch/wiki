@@ -490,7 +490,6 @@ export default class HumanPracticesPage extends React.Component {
 					extra-cellular microRNA networks are complex. We were able to scale up the design of past
 					iGEM teams to produce systems that are able to detect several microRNAs. This
 					exponentially increased specificity to the conditions we were testing for.
-					
 					<h2 style={{ paddingTop: 8 }}>A new method to design toehold switches</h2>
 					Our team has created a software tool to generalise, generate and optimise our toehold
 					switches for other iGEM teams to use in any desired scenario. It is designed to be very
@@ -509,7 +508,7 @@ export default class HumanPracticesPage extends React.Component {
 					reactants that produced the maximum concentration of products. The maximum yield we found
 					was that about 5% of switches would’ve activated, a percentage we deemed too low to
 					continue perusing gen 5 switches or above.
-					<br/>
+					<br />
 					<img
 						style={{ maxWidth: "100%" }}
 						src="https://static.igem.wiki/teams/4642/wiki/contribution/ths-engineering1.webp"

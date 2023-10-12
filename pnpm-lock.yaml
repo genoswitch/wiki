@@ -94,6 +94,9 @@ devDependencies:
   gatsby-plugin-remote-images:
     specifier: ^3.6.6
     version: 3.6.6(gatsby@5.12.6)
+  gatsby-plugin-sharp:
+    specifier: ^5.12.1
+    version: 5.12.1(gatsby@5.12.6)(graphql@16.8.1)
   gatsby-plugin-sitemap:
     specifier: ^6.12.1
     version: 6.12.1(gatsby@5.12.6)(react-dom@18.2.0)(react@18.2.0)

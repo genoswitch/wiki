@@ -2,7 +2,7 @@ import * as React from "react";
 
 type ReferenceProps = {
 	number: number;
-	prefix: string;
+	prefix?: string;
 };
 
 const Reference = ({ number, prefix = "default" }: ReferenceProps) => {

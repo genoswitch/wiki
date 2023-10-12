@@ -103,6 +103,7 @@ export default class SoftwarePage extends React.Component {
 						style={{ maxWidth: "100%" }}
 						src="https://static.igem.wiki/teams/4642/wiki/software/software2.webp"
 					/>
+					<br/>
 					The And Gate strands are designed to be complementary to both of the strands they are to
 					join then have a region of many similar bases which will bind to the switch, this is to
 					ensure that the binding energy between these unpaired bases and the miRNA is less

@@ -441,9 +441,8 @@ export default class HumanPracticesPage extends React.Component {
 			disease: "Parkinson's disease",
 			source: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7072450/#sec7-cells-09-00276title",
 		},
-		
 	];
-	
+
 	render(): React.ReactNode {
 		return (
 			<HeaderFooterProvider>

@@ -339,9 +339,64 @@ export default class HumanPracticesPage extends React.Component {
 
 	miRNA: miRNA[] = [
 		{
-			miRNA: "miRNA1",
-			disease: "Disease1",
-			source: "Source",
+			miRNA: "miR-24-3p",
+			disease: "Breast Cancer",
+			source: "https://doi.org/10.2217/fon-2018-0334",
+		},
+		{
+			miRNA: "miR-21-3p",
+			disease: "Breast Cancer",
+			source: "https://doi.org/10.3233/DMA-120957",
+		},
+		{
+			miRNA: "miR-373-5p",
+			disease: "Breast Cancer",
+			source: "https://doi.org/10.1007/s10549-014-3079-3",
+		},
+		{
+			miRNA: "miR-19b-3p",
+			disease: "PCOS",
+			source: "https://doi.org/10.3389/fendo.2020.00206",
+		},
+		{
+			miRNA: "miR-486-5p",
+			disease: "PCOS",
+			source: "https://doi.org/10.26355/eurrev_201909_18823",
+		},
+		{
+			miRNA: "miR-1260a",
+			disease: "PCOS",
+			source: "https://doi.org/10.1016/j.tjog.2022.05.013",
+		},
+		{
+			miRNA: "miR-320a-5p",
+			disease: "Ovarian Cancer",
+			source: "https://doi.org/10.3389/fonc.2021.581932",
+		},
+		{
+			miRNA: "miR-320b",
+			disease: "Ovarian Cancer",
+			source: "https://doi.org/10.1371/journal.pone.0255804",
+		},
+		{
+			miRNA: "miR-4640-5p",
+			disease: "Ovarian Cancer",
+			source: "https://doi.org/10.1016/j.ebiom.2022.104001",
+		},
+		{
+			miRNA: "miR-145-5p",
+			disease: "Endometriosis",
+			source: "https://doi.org/10.3390/jcm10163457; https://doi.org/10.31744/einstein_journal/2021RW5704",
+		},
+		{
+			miRNA: "miR-199a-3p",
+			disease: "Endometriosis",
+			source: "https://doi.org/10.3390/jcm10163457; https://doi.org/10.31744/einstein_journal/2021RW5704",
+		},
+		{
+			miRNA: "miR-125b-5p",
+			disease: "Endometriosis",
+			source: "https://doi.org/10.3390/jcm10163457; https://doi.org/10.31744/einstein_journal/2021RW5704",
 		},
 	];
 

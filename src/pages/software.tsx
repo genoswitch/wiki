@@ -89,7 +89,7 @@ export default class SoftwarePage extends React.Component {
 						style={{ maxWidth: "100%" }}
 						src="https://static.igem.wiki/teams/4642/wiki/software/software1.webp"
 					/>
-					<br/>
+					<br />
 					The diagram above represents the mechanism associated with toehold switches that utilise
 					multiple miRNA. The fact that miRNA strands must be joined together before binding to the
 					switch means that “and gate” strands made of RNA must also be generated alongside the
@@ -98,7 +98,7 @@ export default class SoftwarePage extends React.Component {
 					The design of these And Gate strands depends on the miRNA used as well as the order in
 					which they are to be joined as seen in the diagram below picturing the trigger structure
 					for our switch designed to test for endometriosis:
-					<br/>
+					<br />
 					<img
 						style={{ maxWidth: "100%" }}
 						src="https://static.igem.wiki/teams/4642/wiki/software/software2.webp"

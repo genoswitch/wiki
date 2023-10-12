@@ -14,6 +14,8 @@ import {
 import HeaderFooterProvider from "../components/headerFooterProvider";
 import { Head as BaseHead } from "../components/head";
 
+import { navigate } from "gatsby";
+
 type Part = {
 	number: string;
 	name: string;
@@ -390,9 +392,24 @@ export default class HumanPracticesPage extends React.Component {
 					extra-cellular microRNA networks are complex. We were able to scale up the design of past
 					iGEM teams to produce systems that are able to detect several microRNAs. This
 					exponentially increased specificity to the conditions we were testing for.
+					<img
+						style={{ maxWidth: "100%" }}
+						src="https://static.igem.wiki/teams/4642/wiki/contribution/THS_engineering2.webp"
+					/>
+					<img
+						style={{ maxWidth: "100%" }}
+						src="https://static.igem.wiki/teams/4642/wiki/contribution/THS_engineering2.webp"
+					/>
 					<h2 style={{ paddingTop: 8 }}>A new method to design toehold switches</h2>
-					<b>INSERT HERE - RISH</b>
-					<h2 style={{ paddingTop: 8 }}>Issues with further development of Toehold Switches</h2>
+					Our team has created a software tool to generalise, generate and optimise our toehold
+					switches for other iGEM teams to use in any desired scenario. It is designed to be very
+					user-friendly and have integration with several different standards in bioinformatics to
+					speed up the process of creating toehold switches. You can find more information about
+					this on our{" "}
+					<a href="#" onClick={() => navigate("/software/")}>
+						Software page
+					</a>
+					.<h2 style={{ paddingTop: 8 }}>Issues with further development of Toehold Switches</h2>
 					Initially, our project tried to find the maximum generation of toehold switches that would
 					feasibly work and react. To do this, prior to any software work, we tested a theoretical
 					gen 5 toehold switch using 4 miRNA to compose the trigger structure by writing a script to

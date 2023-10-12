@@ -68,8 +68,27 @@ export default class HardwarePage extends React.Component {
 					<h1>Hardware</h1>
 					<h2>Open source links</h2>
 					<p>
-						<a target="_blank" href="">
-							Firmware
+						<a
+							target="_blank"
+							href="https://gitlab.igem.org/2023/software-tools/city-of-london-uk/-/tree/main/hardware/firmware"
+						>
+							Firmware (GitLab Software Tools)
+						</a>
+					</p>
+					<p>
+						<a
+							target="_blank"
+							href="https://gitlab.igem.org/2023/software-tools/city-of-london-uk/-/tree/main/hardware/client"
+						>
+							Client (GitLab Software Tools)
+						</a>
+					</p>
+					<p>
+						<a
+							target="_blank"
+							href="https://gitlab.igem.org/2023/software-tools/city-of-london-uk/-/tree/main/hardware/hardware"
+						>
+							Hardware (GitLab Software Tools)
 						</a>
 					</p>
 					<h2>Design</h2>
@@ -93,7 +112,7 @@ export default class HardwarePage extends React.Component {
 						To reduce costs, we decided to make a custom PCB based on a Raspberry Pi Pico (whose
 						schematics are open-source). We integrated various components into the board such as the
 						voltage reference and created a modular board design wherein the ADCs are located on
-						seperate boards that can be plugged in as needed. This reduces costs as the user does
+						separate boards that can be plugged in as needed. This reduces costs as the user does
 						not have to fully populate the device if they do not wish to use all the channels
 						available.
 					</p>
@@ -122,7 +141,7 @@ export default class HardwarePage extends React.Component {
 						allowing for the device to be updated and re-flashed without leaving the client site.
 					</p>
 					<p>
-						To accomplish this we refactored an existing library, webdfu, to be more perforrmant and
+						To accomplish this we refactored an existing library, webdfu, to be more performant and
 						easy to use.
 					</p>
 					<p>

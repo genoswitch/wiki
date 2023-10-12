@@ -5,16 +5,19 @@ slug: /engineering
 ---
 
 # Engineering
-<h2 style={{ paddingTop: 8 }}>Our Toehold Switches</h2>
-In order to create a working test, we designed multiple generations of toehold switches and an isothermal amplification strategy in addition to hardware including a luminometer. However, this section will focus on the engineering success of our toehold switches. 
 
-While we had access to labs at some points during our project, this came late on in our project, so much of our testing was done in-silico. On this page, we will outline our design cycle using in-silico testing using our software tool. 
+<h2 style={{ paddingTop: 8 }}>Our Toehold Switches</h2>
+In order to create a working test, we designed multiple generations of toehold switches and an isothermal
+amplification strategy in addition to hardware including a luminometer. However, this section will focus
+on the engineering success of our toehold switches.{" "}
+
+While we had access to labs at some points during our project, this came late on in our project, so much of our testing was done in-silico. On this page, we will outline our design cycle using in-silico testing using our software tool.
 
 The cycle starts with our third generation (Gen3) toehold switches, which use AND-gate logic to detect the presence of our two target miRNAs in one switch.
 
-This switch employs an anti-miRNA with three regions; two hybridization domains that are complementary to each of our trigger RNAs and the anti-miRNA’s own trigger site. This typically 30 nucleotide long strand has a 12 nucleotide long binding site for one miRNA and a 12 nucleotide long binding site for miRNA. This complex of the 3 RNA strands is necessary to bind to the toehold switch’s trigger binding site. We had to ensure that each of these trigger binding sites was >10 nucleotides. 
+This switch employs an anti-miRNA with three regions; two hybridization domains that are complementary to each of our trigger RNAs and the anti-miRNA’s own trigger site. This typically 30 nucleotide long strand has a 12 nucleotide long binding site for one miRNA and a 12 nucleotide long binding site for miRNA. This complex of the 3 RNA strands is necessary to bind to the toehold switch’s trigger binding site. We had to ensure that each of these trigger binding sites was >10 nucleotides.
 
-Our fourth generation (Gen4) toehold switches initially used one anti-miRNA with four regions, three hybridization domains that are complementary to each of our trigger RNAs and the anti-miRNA’s own trigger site. However, we decided that it would be more efficient to create two separate anti-miRNAs which we co-joined by the second miRNA. To ensure that the switch would unfold, we had to ensure that the difference in MFE structure between the ‘off’ and ‘on’ state was such that unfolding was thermodynamically favourable when the anti-miRNA-miRNA complex had formed. In order to help us achieve this energetically favourable state we replaced an adequate amount of C-G bonds with U-G bonds to raise the free energy of the MFE structure of the OFF state, whilst ensuring our GC content did not exceed 60%. We also had to ensure that our hairpins were modified to reduce the length of the stem or complement to less than roughly 20 bases. 
+Our fourth generation (Gen4) toehold switches initially used one anti-miRNA with four regions, three hybridization domains that are complementary to each of our trigger RNAs and the anti-miRNA’s own trigger site. However, we decided that it would be more efficient to create two separate anti-miRNAs which we co-joined by the second miRNA. To ensure that the switch would unfold, we had to ensure that the difference in MFE structure between the ‘off’ and ‘on’ state was such that unfolding was thermodynamically favourable when the anti-miRNA-miRNA complex had formed. In order to help us achieve this energetically favourable state we replaced an adequate amount of C-G bonds with U-G bonds to raise the free energy of the MFE structure of the OFF state, whilst ensuring our GC content did not exceed 60%. We also had to ensure that our hairpins were modified to reduce the length of the stem or complement to less than roughly 20 bases.
 
 Whilst initially pursuing variants of luciferase as our reporter proteins, we decided to use various fluorescence proteins, namely GFP, mCherry, Venus and mCerulean following advice from Dr Alex Green.
 

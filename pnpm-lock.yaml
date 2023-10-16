@@ -21,8 +21,8 @@ dependencies:
     specifier: ^5.12.6
     version: 5.12.6(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
   html-react-parser:
-    specifier: ^4.2.2
-    version: 4.2.2(react@18.2.0)
+    specifier: ^4.2.3
+    version: 4.2.3(react@18.2.0)
   immutability-helper:
     specifier: ^3.1.1
     version: 3.1.1
@@ -7435,8 +7435,8 @@ packages:
     dependencies:
       lru-cache: 6.0.0
 
-  /html-dom-parser@4.0.0:
-    resolution: {integrity: sha512-TUa3wIwi80f5NF8CVWzkopBVqVAtlawUzJoLwVLHns0XSJGynss4jiY0mTWpiDOsuyw+afP+ujjMgRh9CoZcXw==}
+  /html-dom-parser@4.0.1:
+    resolution: {integrity: sha512-YADpM4AxP/W4Kyea3Aonmwz64pwlijbXpKHaNwd0ipK/OzCOamI0a24L6nh60uwHmcpD7wC3xvL9unWCPk7tiQ==}
     dependencies:
       domhandler: 5.0.3
       htmlparser2: 9.0.0
@@ -7445,13 +7445,13 @@ packages:
   /html-entities@2.3.3:
     resolution: {integrity: sha512-DV5Ln36z34NNTDgnz0EWGBLZENelNAtkiFA4kyNOG2tDI6Mz1uSWiq1wAKdyjnJwyDiDO7Fa2SO1CTxPXL8VxA==}
 
-  /html-react-parser@4.2.2(react@18.2.0):
-    resolution: {integrity: sha512-lh0wEGISnFZEAmvQqK4xc0duFMUh/m9YYyAhFursWxdtNv+hCZge0kj1y4wep6qPB5Zm33L+2/P6TcGWAJJbjA==}
+  /html-react-parser@4.2.3(react@18.2.0):
+    resolution: {integrity: sha512-6ERAAEejIJwy5Tlxiq9to9MrKVBg2hAV/JALrr20pESBJ1uKqSGNhRjUAE/sdwmNs8DuGova5Rlz3Y6Yd9Ac9w==}
     peerDependencies:
       react: 0.14 || 15 || 16 || 17 || 18
     dependencies:
       domhandler: 5.0.3
-      html-dom-parser: 4.0.0
+      html-dom-parser: 4.0.1
       react: 18.2.0
       react-property: 2.0.0
       style-to-js: 1.1.4

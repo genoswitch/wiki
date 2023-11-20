@@ -122,8 +122,8 @@ devDependencies:
     specifier: ^3.0.3
     version: 3.0.3
   tsx:
-    specifier: ^3.13.0
-    version: 3.13.0
+    specifier: ^4.1.4
+    version: 4.1.4
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
@@ -11503,8 +11503,9 @@ packages:
       tslib: 1.14.1
       typescript: 5.2.2
 
-  /tsx@3.13.0:
-    resolution: {integrity: sha512-rjmRpTu3as/5fjNq/kOkOtihgLxuIz6pbKdj9xwP4J5jOLkBxw/rjN5ANw+KyrrOXV5uB7HC8+SrrSJxT65y+A==}
+  /tsx@4.1.4:
+    resolution: {integrity: sha512-9X7uBCIyUsvMzIH+o8m+5o/5eL461cChCF+XUtOZsPr1a4pZx2lTQx0Muu5G5VwJWZwAGKBe3sJHLk82BENAVw==}
+    engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
       esbuild: 0.18.20

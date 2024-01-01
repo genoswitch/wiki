@@ -38,7 +38,7 @@
   "devDependencies": {
     "@genoswitch/gatsby-transformer-gitinfo": "1.4.0-1",
     "@mdx-js/react": "^2.3.0",
-    "@types/node": "^20.8.4",
+    "@types/node": "^20.10.6",
     "@types/react-image-gallery": "^1.2.1",
     "@types/webpack-stats-plugin": "^0.3.3",
     "gatsby-plugin-canonical-urls": "^5.12.0",
